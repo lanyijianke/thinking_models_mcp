@@ -1,0 +1,45 @@
+params:
+  type: object
+  properties: {}
+  required: []
+
+rest:
+  name: thinking_models
+  port: 9593
+  endpoint: /rest
+
+npx:
+  command:
+    | npx -y @thinking-models/mcp-server
+  config:
+    | {
+        "mcpServers": {
+          "thinking-models": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "@thinking-models/mcp-server"
+            ],
+            "env": {}
+          }
+        }
+      }
+
+docker:
+  command:
+    | docker run -i --rm thinking-models/mcp-server
+  config:
+    | {
+        "mcpServers": {
+          "thinking-models": {
+            "command": "docker",
+            "args": [
+              "run",
+              "-i",
+              "--rm",
+              "thinking-models/mcp-server"
+            ],
+            "env": {}
+          }
+        }
+      }

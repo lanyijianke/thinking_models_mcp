@@ -1,0 +1,43 @@
+{
+  "name": "@thinking-models/mcp-server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "build/thinking_models_server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/thinking_models_server.js",
+    "prepare": "npm run build"
+  },
+  "bin": {
+    "thinking-models-mcp": "./build/thinking_models_server.js"
+  },
+  "files": [
+    "build",
+    "thinking_models_db"
+  ],
+  "keywords": [
+    "mcp",
+    "thinking-models",
+    "mental-models"
+  ],
+  "author": "",
+  "license": "MIT",
+  "description": "A Model Context Protocol (MCP) server for thinking models",
+  "dependencies": {
+    "@chatmcp/sdk": "^1.0.6",
+    "@modelcontextprotocol/sdk": "^1.11.0",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.15",
+    "typescript": "^5.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/thinking-models-mcp"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@thinking-models/mcp-server",
+  "version": "1.0.0",
+  "description": "思维模型 MCP 服务",
+  "command": "thinking-models-mcp",
+  "repository": "https://github.com/your-username/thinking-models-mcp",
+  "category": "productivity",
+  "readme": "./README.md",
+  "icon": "⚡️",
+  "languages": [
+    "zh",
+    "en"
+  ]
+}
