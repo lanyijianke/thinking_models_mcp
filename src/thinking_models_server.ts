@@ -6,6 +6,11 @@ import { z } from "zod";
 import fs from "fs/promises";
 import path from "path";
 import { watch } from "fs";
+import { fileURLToPath } from "url";
+
+// 兼容ESM的__dirname（修正Windows路径问题）
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // 支持的语言及对应文件
 const SUPPORTED_LANGUAGES = {
@@ -55,7 +60,8 @@ async function loadModels(lang?: SupportedLanguage) {
   const langsToLoad = lang ? [lang] : (Object.keys(SUPPORTED_LANGUAGES) as SupportedLanguage[]);
   
   for (const l of langsToLoad) {
-    const filePath = path.resolve(process.cwd(), SUPPORTED_LANGUAGES[l]);
+    // 修正为相对于代码目录的路径
+    const filePath = path.resolve(__dirname, "..", SUPPORTED_LANGUAGES[l]);
     try {
       log(`开始加载 ${filePath} ...`);
       const content = await fs.readFile(filePath, "utf-8");
@@ -83,13 +89,19 @@ await loadModels();
 
 // 监控模型文件变化
 for (const [lang, fileName] of Object.entries(SUPPORTED_LANGUAGES)) {
-  const filePath = path.resolve(process.cwd(), fileName);
-  watch(filePath, async (eventType) => {
-    if (eventType === "change") {
-      log(`${filePath} 发生变化，重新加载...`);
-      await loadModels(lang as SupportedLanguage);
-    }
-  });
+  // 修正为相对于代码目录的路径
+  const filePath = path.resolve(__dirname, "..", fileName);
+  try {
+    await fs.access(filePath);
+    watch(filePath, async (eventType) => {
+      if (eventType === "change") {
+        log(`${filePath} 发生变化，重新加载...`);
+        await loadModels(lang as SupportedLanguage);
+      }
+    });
+  } catch {
+    log(`模型文件 ${filePath} 不存在，跳过watch`);
+  }
 }
 
 // 注册工具: list_models
