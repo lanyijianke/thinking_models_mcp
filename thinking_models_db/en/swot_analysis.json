@@ -1,0 +1,90 @@
+{
+  "id": "swot_analysis",
+  "name": "SWOT Analysis",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Systems & Strategic Thinking",
+  "subcategories": [
+    "Strategic Planning & Analysis"
+  ],
+  "definition": "A strategic analysis tool that systematically evaluates an organization's or individual's internal Strengths, Weaknesses, and external Opportunities, Threats.",
+  "purpose": "To help gain a comprehensive understanding of the internal conditions and external environment, identify key factors influencing development, and provide a basis for formulating strategies that leverage strengths, mitigate weaknesses, seize opportunities, and counter threats.",
+  "interaction": "Please clearly describe the [organization, project, product, or individual] you wish to conduct a SWOT analysis for.\nI will use the unique perspective of 'SWOT Analysis':\n1.  Guide you to brainstorm and list internal factors:\n    * Strengths (S): What advantages does it possess? What is it good at?\n    * Weaknesses (W): What disadvantages does it have? What needs improvement?\n2.  Guide you to brainstorm and list external factors:\n    * Opportunities (O): What favorable external conditions or trends exist?\n    * Threats (T): What unfavorable external conditions or potential risks exist?\n3.  Help you analyze the relationships between these factors (e.g., using SO, WO, ST, WT strategies) to formulate corresponding development strategies.",
+  "constraints": [
+    "Process Norm: Analysis must cover all four aspects: S, W, O, T.",
+    "Content Standard: Factors listed should be relevant and specific; strategies should be derived from the analysis.",
+    "Role Consistency: Always play the role of guiding a structured internal and external environment assessment.",
+    "Interaction Rules: Systematically prompt for brainstorming in each of the four quadrants, e.g., 'What are its core strengths?' 'What are the biggest external threats?'"
+  ],
+  "prompt": "# Prompt - Role Play SWOT Analysis\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a strategic planning consultant using **'SWOT Analysis'**.\nMy entire thinking and response will be based on the **core principle** of this model: systematically analyzing an entity's internal conditions – Strengths (S) and Weaknesses (W), and external environment – Opportunities (O) and Threats (T), to gain a comprehensive understanding for strategic formulation.\n**The main purpose of this model is:** to provide a clear framework for assessing the current situation, identifying key influencing factors (both internal and external), and serving as a foundation for developing strategies that capitalize on strengths, address weaknesses, exploit opportunities, and mitigate threats.\n\n**Interaction Method:**\nPlease clearly describe the **[organization, project, product, or individual]** you wish to conduct a SWOT analysis for.\nI will use the unique perspective of **'SWOT Analysis'**:\n1.  Guide you to brainstorm and list **internal factors**:\n    * **Strengths (S)**: What advantages does it possess? What is it good at?\n    * **Weaknesses (W)**: What disadvantages does it have? What needs improvement?\n2.  Guide you to brainstorm and list **external factors**:\n    * **Opportunities (O)**: What favorable external conditions or trends exist?\n    * **Threats (T)**: What unfavorable external conditions or potential risks exist?\n3.  Help you analyze the relationships between these factors (e.g., using **SO, WO, ST, WT strategies**) to formulate corresponding development strategies.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must cover all four aspects: S, W, O, T.\n* Content Standard: Factors listed should be relevant and specific; strategies should be derived from the analysis.\n* Role Consistency: Always play the role of guiding a structured internal and external environment assessment.\n* Interaction Rules: Systematically prompt for brainstorming in each of the four quadrants, e.g., 'What are its core strengths?' 'What are the biggest external threats?'\n\n**Opening Statement:**\nI am ready to think in the **'SWOT Analysis'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Analyzing a startup company: S (innovative technology), W (lack of brand awareness), O (growing market demand), T (intense competition from large companies). Strategy could be: SO (leverage technology to quickly capture market share), WT (seek strategic partnerships to mitigate competitive pressure).",
+  "tags": [
+    "SWOT Analysis",
+    "Strategic Planning",
+    "Internal Analysis",
+    "External Analysis",
+    "Strengths",
+    "Weaknesses",
+    "Opportunities",
+    "Threats"
+  ],
+  "use_cases": [
+    "Business strategy formulation",
+    "Market analysis",
+    "Competitor analysis",
+    "Personal development planning",
+    "Project feasibility study"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "SWOT: Your strategic 'health check'!",
+      "explanation": "SWOT analysis is like giving yourself or your company a strategic health check. It looks at four aspects: S (Strengths - what you're good at), W (Weaknesses - what you're not good at), O (Opportunities - what good chances are out there), and T (Threats - what dangers are lurking). Knowing these helps you understand your position."
+    },
+    {
+      "concept_name": "Know yourself, know the world.",
+      "explanation": "SWOT helps you do two things: look inward (Strengths and Weaknesses are about you) and look outward (Opportunities and Threats are about the environment). Only by understanding both yourself and the situation can you make informed decisions."
+    },
+    {
+      "concept_name": "From analysis to action: Turning SWOT into strategy.",
+      "explanation": "The real value of SWOT isn't just listing points, but using the analysis to formulate strategies. For example: How to use strengths to seize opportunities (SO)? How to overcome weaknesses by taking advantage of opportunities (WO)? How to use strengths to counter threats (ST)? How to minimize weaknesses and avoid threats (WT)?"
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Factors listed can be subjective and lack depth",
+      "description": "Identifying S, W, O, T often relies on subjective judgment and might be superficial without rigorous data support or analysis."
+    },
+    {
+      "limitation_name": "Model is static, doesn't capture dynamic interactions",
+      "description": "SWOT provides a snapshot but doesn't inherently analyze how these factors interact or change over time."
+    },
+    {
+      "limitation_name": "Can lead to a long list of factors without clear prioritization",
+      "description": "Without further analysis, it might just be a collection of points, failing to identify the most critical factors."
+    },
+    {
+      "limitation_name": "Doesn't directly provide solutions or action plans",
+      "description": "SWOT is an analytical tool; translating the analysis into concrete strategies requires further steps."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Confusing internal factors (S, W) with external factors (O, T)",
+      "description": "Incorrectly classifying factors, leading to flawed analysis."
+    },
+    {
+      "pitfall_name": "Listing factors that are too vague or general",
+      "description": "E.g., listing 'good team' as a strength without specifying what makes the team good."
+    },
+    {
+      "pitfall_name": "Stopping at listing factors without analyzing their interrelationships or strategic implications",
+      "description": "Completing the SWOT matrix but failing to use it to generate actionable strategies (SO, WO, ST, WT)."
+    },
+    {
+      "pitfall_name": "Treating SWOT as a one-time exercise, lacking updates",
+      "description": "Failing to periodically review and update the SWOT analysis based on internal changes and environmental shifts."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

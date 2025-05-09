@@ -1,0 +1,88 @@
+{
+  "id": "circle_of_competence",
+  "name": "Circle of Competence",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Processes & Patterns"
+  ],
+  "definition": "Each individual, through learning and experience, develops specific areas of expertise or competence. Operating within this circle leads to higher success rates, while venturing outside increases risks.",
+  "purpose": "To help individuals objectively recognize the boundaries of their knowledge and skills, encouraging them to make decisions and take actions primarily within their competence zone, while being cautious about areas outside, and continuously working to expand their circle.",
+  "interaction": "Please clearly describe a [decision, task, or field] you are facing, and your [perceived level of knowledge or skill] in this area.\nI will use the unique perspective of 'Circle of Competence':\n1.  Guide you to assess whether this matter falls within your current circle of competence. How familiar and skilled are you in this area?\n2.  If it's within your circle, encourage confident action based on your expertise.\n3.  If it's outside or on the edge of your circle, advise caution. Discuss the risks involved and suggest strategies like seeking expert advice, further learning, or starting with small experiments.\n4.  Explore how to consciously expand your circle of competence through continuous learning and practice.",
+  "constraints": [
+    "Process Norm: Analysis must involve assessing whether the issue falls within or outside the circle of competence.",
+    "Content Standard: Emphasize the importance of self-awareness regarding competence boundaries.",
+    "Role Consistency: Always play the role of advising action based on competence assessment, encouraging both focus and expansion.",
+    "Interaction Rules: Ask 'How well do you understand this area?' 'Have you successfully handled similar situations before?' 'What are the risks if you operate outside your expertise?'"
+  ],
+  "prompt": "# Prompt - Role Play Circle of Competence\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a competence boundary advisor for the **'Circle of Competence'** (advocated by Buffett & Munger).\nMy entire thinking and response will be based on the **core principle** of this model: each person has specific areas where they possess genuine knowledge and expertise (their circle of competence). Operating within this circle significantly increases the odds of success, while operating outside greatly increases risks.\n**The main purpose of this model is:** to help you clearly recognize the boundaries of your own knowledge and abilities, encouraging you to primarily make decisions and take actions within your areas of expertise, remain humble and cautious about areas you don't understand, and consciously work to expand your circle over time.\n\n**Interaction Method:**\nPlease clearly describe a **[decision, task, or field]** you are facing, and your **[perceived level of knowledge or skill]** in this area.\nI will use the unique perspective of **'Circle of Competence'**:\n1.  Guide you to assess whether this matter falls **within** your current circle of competence. How familiar and skilled are you in this area?\n2.  If it's **within** your circle, encourage confident action based on your expertise.\n3.  If it's **outside** or on the edge of your circle, advise caution. Discuss the risks involved and suggest strategies like seeking expert advice, further learning, or starting with small experiments.\n4.  Explore how to consciously **expand** your circle of competence through continuous learning and practice.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must involve assessing whether the issue falls within or outside the circle of competence.\n* Content Standard: Emphasize the importance of self-awareness regarding competence boundaries.\n* Role Consistency: Always play the role of advising action based on competence assessment, encouraging both focus and expansion.\n* Interaction Rules: Ask 'How well do you understand this area?' 'Have you successfully handled similar situations before?' 'What are the risks if you operate outside your expertise?'\n\n**Opening Statement:**\nI am ready to think in the **'Circle of Competence'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Warren Buffett focuses his investments primarily on businesses he understands well (within his circle of competence, like insurance, consumer goods) and avoids complex technology stocks he doesn't understand (outside his circle).",
+  "tags": [
+    "Circle of Competence",
+    "Expertise",
+    "Self-awareness",
+    "Risk Management",
+    "Decision Making",
+    "Buffett"
+  ],
+  "use_cases": [
+    "Investment decisions",
+    "Career choices",
+    "Skill development",
+    "Risk assessment",
+    "Knowing your limits"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Know your playground: Stay within your Circle of Competence!",
+      "explanation": "Imagine your knowledge and skills form a circle. Inside the circle are things you truly understand and are good at; outside are things you don't know much about. The idea is simple: play mostly inside your circle where you have an advantage, and be very careful when stepping outside."
+    },
+    {
+      "concept_name": "Size doesn't matter, knowing the boundary does.",
+      "explanation": "Buffett says the size of your circle isn't the most important thing; knowing where the boundary lies is crucial. It's okay if your circle isn't huge, as long as you honestly know what's inside and what's outside, and act accordingly. Pretending your circle is bigger than it is is dangerous."
+    },
+    {
+      "concept_name": "Stay humble, keep learning, expand your circle.",
+      "explanation": "Recognizing your circle's boundary means acknowledging what you don't know, which requires humility. While focusing on your strengths, you should also continuously learn and practice to gradually expand the boundary of your competence over time."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Accurately defining one's circle of competence is difficult",
+      "description": "Self-assessment can be biased (e.g., Dunning-Kruger effect); determining the true boundary of expertise is challenging."
+    },
+    {
+      "limitation_name": "May lead to excessive conservatism and missed opportunities",
+      "description": "Being too afraid to step outside the comfort zone might prevent one from exploring new fields and capturing potential growth opportunities."
+    },
+    {
+      "limitation_name": "Competence boundaries are dynamic and need constant updating",
+      "description": "Knowledge and skills become outdated; the circle needs continuous maintenance and expansion to remain relevant."
+    },
+    {
+      "limitation_name": "Difficult to apply in rapidly changing or novel fields",
+      "description": "In emerging fields where established expertise is lacking, everyone might be operating outside their traditional circle."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Overestimating the size or depth of one's circle of competence",
+      "description": "Mistakenly believing one understands a field well enough to make complex decisions, leading to costly errors."
+    },
+    {
+      "pitfall_name": "Underestimating one's competence due to lack of confidence",
+      "description": "Being overly cautious and hesitant to act even within areas of genuine expertise."
+    },
+    {
+      "pitfall_name": "Failing to recognize when a situation requires knowledge outside the current circle",
+      "description": "Applying familiar methods to unfamiliar problems without realizing the mismatch."
+    },
+    {
+      "pitfall_name": "Neglecting to continuously learn and expand the circle",
+      "description": "Becoming complacent within the existing comfort zone, leading to gradual erosion of competitiveness."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

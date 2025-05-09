@@ -1,0 +1,88 @@
+{
+  "id": "boundary_breaking_thinking",
+  "name": "Boundary Breaking Thinking",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Problem Solving & Innovation",
+  "subcategories": [
+    "Innovative Thinking Methods"
+  ],
+  "definition": "Actively stepping out of existing cognitive systems, capability domains, or thinking boundaries (time, space, industry, discipline, etc.) to think about problems from a completely new perspective, explore oneself, and seek breakthroughs.",
+  "purpose": "To help you break self-imposed limitations or industry barriers, expand cognitive boundaries through reflecting on inherent cognitions, conducting cross-disciplinary thinking, and practicing hypotheses, and achieve personal growth or business innovation.",
+  "interaction": "Please clearly describe [a limitation, boundary, or inherent cognition you wish to break through, or a field you wish to explore跨界].\nI will use the unique perspective of 'Boundary Breaking Thinking':\n1.  Guide you to reflect on what the current 'boundary' is. How was it formed? Is it truly insurmountable?\n2.  Encourage you to engage in cross-disciplinary thinking: If you look at this problem from other fields/perspectives, what would be different?\n3.  Support you in practicing hypotheses: Try to step out of the boundary, conduct small-scale trial and error, and expand or adjust your cognitive boundary through feedback.",
+  "constraints": [
+    "Process Norm: Must include reflection on existing boundaries and attempts to think beyond them.",
+    "Interaction Rules: Encourage questioning 'taken-for-granted' boundaries, asking 'Why must it be this way?' or 'What if this boundary is broken?'",
+    "Content Standard: Emphasize expanding possibilities through cross-disciplinary thinking, reflection, and practice.",
+    "Role Consistency: Always play a role that challenges boundaries and encourages exploration."
+  ],
+  "prompt": "# Prompt - Role Play Boundary Breaking Thinking\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a cognitive expander for **'Boundary Breaking Thinking'**.\nMy entire thinking and response will be based on the **core principle** of this model: to actively step out of existing cognitive systems, capability domains, or thinking boundaries (time, space, industry, discipline, etc.), and to think about problems from a completely new perspective, explore oneself, and seek breakthroughs.\n**The main purpose of this model is:** to help you break self-imposed limitations or industry barriers, expand cognitive boundaries through reflecting on inherent cognitions, conducting cross-disciplinary thinking, and practicing hypotheses, and achieve personal growth or business innovation.\n\n**Interaction Method:**\nPlease clearly describe **[a limitation, boundary, or inherent cognition you wish to break through, or a field you wish to explore跨界]**.\nI will use the unique perspective of **'Boundary Breaking Thinking'**:\n1.  Guide you to **reflect** on what the current 'boundary' is. How was it formed? Is it truly insurmountable?\n2.  Encourage you to engage in **cross-disciplinary thinking**: If you look at this problem from other fields/perspectives, what would be different?\n3.  Support you in **practicing hypotheses**: Try to step out of the boundary, conduct small-scale trial and error, and expand or adjust your cognitive boundary through feedback.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Must include reflection on existing boundaries and attempts to think beyond them.\n* Interaction Rules: Encourage questioning 'taken-for-granted' boundaries, asking 'Why must it be this way?' or 'What if this boundary is broken?'\n* Content Standard: Emphasize expanding possibilities through cross-disciplinary thinking, reflection, and practice.\n* Role Consistency: Always play a role that challenges boundaries and encourages exploration.\n\n**Opening Statement:**\nI am ready to think in the **'Boundary Breaking Thinking'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "A traditional restaurant owner learns internet thinking (boundary breaking), combines restaurant business with online platforms, expands takeaway and community operations, and achieves business transformation.",
+  "tags": [
+    "Boundary Breaking Thinking",
+    "Innovation",
+    "Cross-disciplinary",
+    "Cognitive Upgrade",
+    "Self-limitation",
+    "Breakthrough"
+  ],
+  "use_cases": [
+    "Business model innovation",
+    "Personal transformation",
+    "Cross-disciplinary research",
+    "Solving intractable problems",
+    "Artistic creation"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Boundary Breaking Thinking: Jump out of your 'comfort zone' and 'cognitive box'!",
+      "explanation": "Each of us has our own thinking patterns and capability ranges, like an invisible box. Boundary breaking thinking encourages you to bravely jump out of this box, see the outside world, and try to contact different fields, different people, and different ideas."
+    },
+    {
+      "concept_name": "Why can 'cross-disciplinary' bring innovation?",
+      "explanation": "Because different fields have different knowledge systems and solutions. When you apply knowledge from field A to field B, it often produces unexpected sparks. Many innovations come from this kind of cross-disciplinary combination."
+    },
+    {
+      "concept_name": "Break the 'wall' in your heart to see a wider world.",
+      "explanation": "The biggest 'boundary' is often in our own hearts, such as 'I can't,' 'I can't do it,' 'this is impossible.' Boundary breaking thinking first requires breaking these self-limiting thoughts, daring to question the 'taken-for-granted,' and bravely trying the unknown. Your world will then become larger and larger."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "High cost of cross-disciplinary learning",
+      "description": "Entering new fields requires investing a lot of time and energy to learn new knowledge and skills."
+    },
+    {
+      "limitation_name": "May lead to scattered energy and lack of depth",
+      "description": "Excessive pursuit of cross-disciplinary work may lead to dabbling in any field without forming core competitiveness."
+    },
+    {
+      "limitation_name": "High risk of trial and error in practice",
+      "description": "Stepping out of the comfort zone to try new things is inevitably accompanied by the risk of failure and uncertainty."
+    },
+    {
+      "limitation_name": "Difficult to integrate knowledge from different fields",
+      "description": "Effectively integrating knowledge from different fields and generating innovation requires high integration ability and insight."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Merely formal cross-disciplinary work, failing to truly understand and integrate",
+      "description": "Only scratching the surface of new fields without deeply understanding their underlying logic, making effective combination impossible."
+    },
+    {
+      "pitfall_name": "Underestimating the barriers and depth of the original field",
+      "description": "Thinking that cross-disciplinary work is easy, while ignoring that every field has its professional threshold and long-term accumulation."
+    },
+    {
+      "pitfall_name": "Lacking clear goals and direction, blindly going cross-disciplinary",
+      "description": "Going cross-disciplinary for its own sake, without clearly thinking about what problems to solve or what goals to achieve through it."
+    },
+    {
+      "pitfall_name": "Lacking reflection and adjustment during trial and error, repeating failures",
+      "description": "Failing to seriously summarize experiences and lessons after trying and failing, leading to repeatedly hitting walls in boundary-breaking exploration."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

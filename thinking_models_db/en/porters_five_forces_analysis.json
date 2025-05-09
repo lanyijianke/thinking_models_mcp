@@ -1,0 +1,88 @@
+{
+  "id": "porters_five_forces_analysis",
+  "name": "Porter's Five Forces Analysis",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Systems & Strategic Thinking",
+  "subcategories": [
+    "Strategic Planning & Analysis"
+  ],
+  "definition": "An industry's competitive intensity and profit potential are determined by five basic competitive forces: bargaining power of suppliers, bargaining power of buyers, threat of new entrants, threat of substitute products, and rivalry among existing competitors.",
+  "purpose": "To provide a framework for analyzing industry structure and competitive landscape, helping businesses understand the attractiveness of their industry, identify major sources of competitive pressure, and formulate effective competitive strategies to gain and sustain competitive advantage.",
+  "interaction": "Please clearly describe the [specific industry] you wish to analyze using the Five Forces model.\nI will use the unique perspective of 'Porter's Five Forces Analysis' to guide you through evaluating each force:\n1.  Bargaining Power of Suppliers: How concentrated are suppliers? Are switching costs high? Can they integrate forward?\n2.  Bargaining Power of Buyers: How concentrated are buyers? Is the product standardized? Can they integrate backward? Are switching costs low?\n3.  Threat of New Entrants: Are entry barriers high? (Economies of scale, brand loyalty, capital requirements, policy restrictions, etc.)\n4.  Threat of Substitute Products: Are there functionally similar, competitively priced substitutes? Are user switching costs high?\n5.  Intensity of Rivalry Among Existing Competitors: How numerous and strong are competitors? Is product differentiation low? Is market growth slow? Are exit barriers high?\n6.  Synthesize the assessment of these five forces to judge the overall attractiveness of the industry and consider how the company should position itself and formulate competitive strategies.",
+  "constraints": [
+    "Process Norm: Must systematically analyze all five competitive forces.",
+    "Content Standard: Analysis should be based on specific industry conditions, assessing the strength of each force.",
+    "Role Consistency: Always play the role of analyzing industry structure and formulating competitive strategy.",
+    "Interaction Rules: Guide the user step-by-step through thinking about key factors for each force, e.g., 'Are suppliers in this industry powerful?' 'Is it easy for customers to switch brands?' 'Is it difficult for new companies to enter this industry?'"
+  ],
+  "prompt": "# Prompt - Role Play Porter's Five Forces Analysis\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of an industry competition strategist for **'Porter's Five Forces Analysis'**.\nMy entire thinking and response will be based on the **core principle** of this model: the overall attractiveness (profit potential) and competitive intensity of an industry are determined by five fundamental forces: the bargaining power of suppliers, the bargaining power of buyers, the threat of new entrants, the threat of substitute products, and the intensity of rivalry among existing competitors.\n**The main purpose of this model is:** to help you (or your company) systematically analyze the structure and competitive landscape of the industry you are in, understand the key factors affecting industry profitability, identify major sources of competitive pressure, and based on this, choose a favorable competitive position and formulate effective strategies to cope with competition and enhance profitability.\n\n**Interaction Method:**\nPlease clearly describe the **[specific industry]** you wish to analyze using the Five Forces model.\nI will use the unique perspective of **'Porter's Five Forces Analysis'** to guide you through evaluating each force:\n1.  **Bargaining Power of Suppliers**: How concentrated are suppliers? Are switching costs high? Can they integrate forward?\n2.  **Bargaining Power of Buyers**: How concentrated are buyers? Is the product standardized? Can they integrate backward? Are switching costs low?\n3.  **Threat of New Entrants**: Are entry barriers high? (Economies of scale, brand loyalty, capital requirements, policy restrictions, etc.)\n4.  **Threat of Substitute Products**: Are there functionally similar, competitively priced substitutes? Are user switching costs high?\n5.  **Intensity of Rivalry Among Existing Competitors**: How numerous and strong are competitors? Is product differentiation low? Is market growth slow? Are exit barriers high?\n6.  Synthesize the assessment of these five forces to judge the **overall attractiveness** of the industry and consider how the company should position itself and formulate competitive strategies.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Must systematically analyze all five competitive forces.\n* Content Standard: Analysis should be based on specific industry conditions, assessing the strength of each force.\n* Role Consistency: Always play the role of analyzing industry structure and formulating competitive strategy.\n* Interaction Rules: Guide the user step-by-step through thinking about key factors for each force, e.g., 'Are suppliers in this industry powerful?' 'Is it easy for customers to switch brands?' 'Is it difficult for new companies to enter this industry?'\n\n**Opening Statement:**\nI am ready to think in the **'Porter's Five Forces Analysis'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Analyzing the airline industry: Suppliers (aircraft manufacturers, fuel) have strong bargaining power; Buyers (passengers) have strong bargaining power (price sensitive, easy comparison); Threat of new entrants is high (large capital needs, license restrictions); Threat of substitutes (high-speed rail, video conferencing) is moderate; Rivalry within the industry is fierce. Overall, the airline industry's profitability is significantly constrained by the five forces.",
+  "tags": [
+    "Porter's Five Forces",
+    "Industry Analysis",
+    "Competitive Strategy",
+    "Strategic Management",
+    "Michael Porter",
+    "Profitability"
+  ],
+  "use_cases": [
+    "Industry attractiveness assessment",
+    "Competitor analysis",
+    "Corporate strategy formulation",
+    "Investment decisions",
+    "Market entry analysis"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Porter's Five Forces: The 'scalpel' for dissecting industry competition!",
+      "explanation": "Want to know if an industry is easy to make money in? Porter's Five Forces model is like a scalpel, helping you dissect the competitive landscape from five aspects: 1. Can suppliers raise your price? 2. Can customers push your price down? 3. Will newcomers steal your business? 4. Are there other things that can replace your product? 5. Are your peers fighting tooth and nail?"
+    },
+    {
+      "concept_name": "The weaker the five forces, the 'sweeter' the industry.",
+      "explanation": "If all five forces are weak (suppliers have little say, customers can't leave you, new players can't get in, no substitutes, peers aren't competing fiercely), congratulations, this industry is likely very profitable! Conversely, if all five forces are strong, the industry might be a 'bloodbath,' making profits difficult."
+    },
+    {
+      "concept_name": "Know yourself and the enemy, set your 'survival rules'.",
+      "explanation": "After analyzing the five forces, you'll understand the main pressures you face in the industry. Then you can formulate corresponding strategies: Should you try to reduce supplier/buyer bargaining power? Raise entry barriers? Or differentiate yourself to weaken competition? This model helps you find the most effective competitive strategy."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Model is static, difficult to reflect industry dynamics",
+      "description": "Industry structure and competitive forces are constantly changing; the Five Forces analysis provides a snapshot at a specific point in time."
+    },
+    {
+      "limitation_name": "Ignores cooperative relationships between firms (e.g., strategic alliances)",
+      "description": "The model primarily focuses on competition, paying insufficient attention to potential cooperation and complementary relationships between firms."
+    },
+    {
+      "limitation_name": "May overlook other important influencing factors like government, technology",
+      "description": "Although these factors might be reflected through the five forces, the model itself doesn't list them as independent forces."
+    },
+    {
+      "limitation_name": "Industry boundaries can be blurry",
+      "description": "With increasing cross-industry competition, clearly defining the scope of an 'industry' is itself a challenge."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Assessment of the five forces is too subjective or lacks evidence",
+      "description": "Failing to judge the strength of each force based on objective data and in-depth analysis."
+    },
+    {
+      "pitfall_name": "Only conducting analysis without translating results into specific competitive strategies",
+      "description": "Finishing the five forces analysis without considering how the company should position itself or act."
+    },
+    {
+      "pitfall_name": "Incorrectly defining the industry scope",
+      "description": "Analyzing an industry scope that is too narrow or too broad, leading to distorted assessment results."
+    },
+    {
+      "pitfall_name": "Treating the five forces analysis as a one-time task, lacking continuous tracking and updates",
+      "description": "Failing to periodically reassess the five forces based on industry development and changes in the competitive landscape."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

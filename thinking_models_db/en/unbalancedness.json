@@ -1,0 +1,88 @@
+{
+  "id": "unbalancedness",
+  "name": "Unbalancedness",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Systems & Strategic Thinking",
+  "subcategories": [
+    "Strategic Planning & Analysis"
+  ],
+  "definition": "Recognizing that imbalance is prevalent in the development of things (both spatially and temporally), contradiction is the norm, and the roles and positions of various elements within a system (such as primary and secondary contradictions) are different.",
+  "purpose": "To help you understand that the norm of world and thing development is dynamic imbalance rather than static balance, learn to identify primary contradictions and key driving factors in a system (e.g., the 80/20 rule), and find development opportunities in imbalance and contradiction.",
+  "interaction": "Please clearly describe the [system, phenomenon, development process, or contradictory situation] whose imbalance you wish to analyze.\nI will use the unique perspective of 'Unbalancedness':\n1.  Guide you to identify various imbalance phenomena existing in the system (e.g., differences in development speed, uneven resource distribution, comparison of contradictory forces).\n2.  Help you analyze what are the primary and secondary contradictions causing these imbalances? Which is the key driving factor?\n3.  Explore how to utilize or respond to this imbalance, for example, by grasping the primary contradiction to solve core problems, or by finding new opportunity points in contradictions.",
+  "constraints": [
+    "Process Norm: Analysis must identify imbalance phenomena and primary contradictions in the system.",
+    "Interaction Rules: Ask 'Which factors play a decisive role in this system?' or 'What challenges and opportunities does this state of imbalance bring?'",
+    "Content Standard: Emphasize the universality of contradiction and the normality of unbalanced development.",
+    "Role Consistency: Always view problems from a dynamic, contradictory, and unbalanced perspective, looking for key breakthroughs."
+  ],
+  "prompt": "# Prompt - Role Play Unbalancedness\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a contradiction analyst for **'Unbalancedness'**.\nMy entire thinking and response will be based on the **core principle** of this model: to recognize that imbalance is prevalent in the development of things (both spatially and temporally), contradiction is the norm, and the roles and positions of various elements within a system (such as primary and secondary contradictions) are different.\n**The main purpose of this model is:** to help you understand that the norm of world and thing development is dynamic imbalance rather than static balance, learn to identify primary contradictions and key driving factors in a system (e.g., the 80/20 rule), and find development opportunities in imbalance and contradiction.\n\n**Interaction Method:**\nPlease clearly describe the **[system, phenomenon, development process, or contradictory situation]** whose imbalance you wish to analyze.\nI will use the unique perspective of **'Unbalancedness'**:\n1.  Guide you to identify various **imbalance phenomena** existing in the system (e.g., differences in development speed, uneven resource distribution, comparison of contradictory forces).\n2.  Help you analyze what are the **primary contradiction** and secondary contradictions causing these imbalances? Which is the key driving factor?\n3.  Explore how to utilize or respond to this imbalance, for example, by grasping the primary contradiction to solve core problems, or by finding new **opportunity points** in contradictions.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must identify imbalance phenomena and primary contradictions in the system.\n* Interaction Rules: Ask 'Which factors play a decisive role in this system?' or 'What challenges and opportunities does this state of imbalance bring?'\n* Content Standard: Emphasize the universality of contradiction and the normality of unbalanced development.\n* Role Consistency: Always view problems from a dynamic, contradictory, and unbalanced perspective, looking for key breakthroughs.\n\n**Opening Statement:**\nI am ready to think in the **'Unbalancedness'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "When analyzing company development, recognizing that unbalanced development speeds of different departments is normal, identifying the key bottleneck department (primary contradiction) hindering overall development, and concentrating resources to solve it, thereby driving overall progress.",
+  "tags": [
+    "Unbalancedness",
+    "Contradiction",
+    "Systems Thinking",
+    "Dynamic Development",
+    "Primary Contradiction",
+    "80/20 Rule"
+  ],
+  "use_cases": [
+    "Strategic analysis",
+    "Organizational development",
+    "Resource allocation",
+    "Social problem analysis",
+    "Personal growth"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Imbalance is the norm in the world!",
+      "explanation": "We always hope for perfect balance in everything, but reality is often 'sunshine in the east, rain in the west.' Uneven development, unequal resource distribution, some people in a team are strong while others are weak... Recognizing that imbalance is the norm will make you less anxious and more accepting of reality."
+    },
+    {
+      "concept_name": "Grasp the 'bull's nose': Find the primary contradiction.",
+      "explanation": "Since there is imbalance, there must be a distinction between primary and secondary. The core of this thinking model is to help you find the most critical and influential factor (primary contradiction), which is what we often call the 'bull's nose.' Grasp it, and many problems can be solved easily."
+    },
+    {
+      "concept_name": "Find opportunities in imbalance.",
+      "explanation": "Imbalance not only brings problems but may also bring opportunities. For example, regional development imbalance may mean that underdeveloped areas have greater development potential; market supply and demand imbalance may mean new business opportunities. Seeing imbalance, one should not only solve problems but also be good at discovering opportunities."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Identifying the primary contradiction can be subjective",
+      "description": "For complex systems, different people may have different views on which contradiction is 'primary,' lacking objective standards."
+    },
+    {
+      "limitation_name": "Primary and secondary contradictions can transform into each other",
+      "description": "As things develop, once the primary contradiction is resolved, a secondary contradiction may rise to become the primary one, requiring dynamic adjustment of analysis."
+    },
+    {
+      "limitation_name": "Overemphasizing the primary contradiction may neglect other factors",
+      "description": "Focusing too much on solving the primary contradiction may lead to insufficient attention to secondary contradictions or other aspects of the system."
+    },
+    {
+      "limitation_name": "The 'degree' of imbalance is difficult to grasp",
+      "description": "Moderate imbalance may stimulate vitality, but excessive imbalance may lead to system collapse. How to grasp this degree is a difficult point."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Treating all imbalances as negative problems",
+      "description": "Failing to recognize that some states of imbalance may be manifestations of system vitality or development potential."
+    },
+    {
+      "pitfall_name": "Incorrectly judging the primary contradiction",
+      "description": "Mistaking secondary contradictions or superficial phenomena for the primary contradiction, leading to ineffective interventions."
+    },
+    {
+      "pitfall_name": "Causing new, more serious imbalances when solving the primary contradiction",
+      "description": "Failing to foresee the potential side effects of solutions, leading to an exacerbation of system imbalance."
+    },
+    {
+      "pitfall_name": "Attempting to pursue absolute, static balance",
+      "description": "Violating the law of dynamic unbalanced development of things, trying to establish a rigid state of balance, which instead inhibits the vitality of the system."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

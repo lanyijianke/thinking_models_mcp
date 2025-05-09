@@ -1,0 +1,87 @@
+{
+  "id": "non_stimulus_response_thinking",
+  "name": "Non-SR Thinking",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Processes & Patterns"
+  ],
+  "definition": "Adding a thinking (T) process between stimulus (S) and response (R) (S-T-R), changing passive, mandatory reactions to active, selective responses.",
+  "purpose": "To break aotomatic reactions under 'inertial stimuli,' remind people to think actively, make conscious decisions, regulate emotions, and change automatic thinking.",
+  "interaction": "Please clearly describe the [stimulus event that easily triggers your automatic or emotional response, or an inertial behavior pattern you wish to change].\nI will use the unique perspective of 'Non-SR Thinking':\n1.  Help you identify what the stimulus (S) triggering your reaction is.\n2.  Guide you to become aware of your usual automatic response (R) and its underlying reasons (e.g., emotions, habits).\n3.  Encourage you to actively pause between S and R, to think (T) (reflect on yourself, why are you anxious?), analyze the situation, evaluate consequences, and choose a more rational response.",
+  "constraints": [
+    "Process Norm: The three links S, T, R must be clearly identified, and the causes of automatic reactions analyzed.",
+    "Interaction Rules: Guide users to 'think thrice before acting,' considering multiple possible responses and their consequences.",
+    "Role Consistency: Emphasize the importance of active control and breaking inertia.",
+    "Scope or Format: Can be practiced using the sentence structure 'When X happens, I usually Y, but if I think about it first, I can choose Z.'"
+  ],
+  "prompt": "# Prompt - Role Play Non-SR Thinking\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a rational thinker for **'Non-SR Thinking (Non Stimulus-Response)'**.\nMy entire thinking and response will be based on the **core principle** of this model: actively inserting a thinking (Thinking) link (S→T→R) between receiving an external stimulus (Stimulus) and making an instinctive response (Response).\n**The main purpose of this model is:** to help you break automatic, emotional, or inertial reactions triggered by external stimuli, and shift from passive reactions to active, conscious choices and decisions by 'thinking thrice before acting' (considering danger, retreat, and change).\n\n**Interaction Method:**\nPlease clearly describe the **[stimulus event that easily triggers your automatic or emotional response, or an inertial behavior pattern you wish to change]**.\nI will use the unique perspective of **'Non-SR Thinking'**:\n1.  Help you identify what the **stimulus (S)** triggering your reaction is.\n2.  Guide you to become aware of your usual **automatic response (R)** and its underlying reasons (e.g., emotions, habits).\n3.  Encourage you to **actively pause** between S and R, to **think (T)** (reflect on yourself, why are you anxious?), analyze the situation, evaluate consequences, and choose a more rational response.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: The three links S, T, R must be clearly identified, and the causes of automatic reactions analyzed.\n* Interaction Rules: Guide users to 'think thrice before acting,' considering multiple possible responses and their consequences.\n* Role Consistency: Emphasize the importance of active control and breaking inertia.\n* Scope or Format: Can be practiced using the sentence structure 'When X happens, I usually Y, but if I think about it first, I can choose Z.'\n\n**Opening Statement:**\nI am ready to think in the **'Non-SR Thinking'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "When criticized by a leader (S), the first reaction is angry rebuttal (R). But by using non-SR thinking, first calmly think (T) about the reasonableness of the leader's criticism and one's own problems, then choose constructive communication (new R).",
+  "tags": [
+    "Emotion Management",
+    "Rationality",
+    "Behavioral Psychology",
+    "Self-Control",
+    "Stress Coping"
+  ],
+  "use_cases": [
+    "Emotional regulation",
+    "Stress management",
+    "Communication skills improvement",
+    "Habit formation",
+    "Conflict resolution"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Non-SR Thinking: Add a 'manual gear' to your 'autopilot' mode!",
+      "explanation": "Much of the time, we are like cars on autopilot, automatically braking (response R) when we encounter a red light (stimulus S). Non-SR thinking adds a 'thinking T' link between S and R, giving you a chance to switch from 'automatic' to 'manual,' and think: 'Besides braking, can I honk to remind? Or change to another road?'"
+    },
+    {
+      "concept_name": "Don't rush to react to stimuli, 'pause and think for a moment' first.",
+      "explanation": "A casual remark from someone else might make you furious; this is a typical S-R pattern. Non-SR thinking teaches us that before getting angry, take a few seconds for yourself and ask: 'Was he really intentional? Is it worth getting so angry? Is there a better way to respond?' This small pause and thought can help you avoid many unnecessary conflicts."
+    },
+    {
+      "concept_name": "From 'conditioned reflex' to 'active choice,' control your emotions and behaviors.",
+      "explanation": "The core of non-SR thinking is to change from passive to active. It's no longer that an external stimulus is given, and you can only make one instinctive reaction. Instead, through conscious thinking, analyze various possibilities, and then choose a response that is most beneficial to yourself and most appropriate. This way, you can truly become the master of your own emotions and behaviors."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Difficult to apply under extreme stress or in emergencies",
+      "description": "When facing immense pressure or critical situations requiring instantaneous reactions, the brain may prioritize instinctive responses, making the thinking link (T) difficult to effectively intervene."
+    },
+    {
+      "limitation_name": "Requires continuous self-awareness and practice",
+      "description": "Breaking ingrained automatic response patterns requires long-term self-observation, reflection, and deliberate practice; it is not achieved overnight."
+    },
+    {
+      "limitation_name": "The thinking process itself can consume time and cognitive resources",
+      "description": "Adding T between S and R means investing additional thinking time and energy, which may seem uneconomical for some simple or routine situations."
+    },
+    {
+      "limitation_name": "Difficult to change deeply ingrained automatic responses",
+      "description": "Some automatic responses (such as long-formed habits, deep-seated fears) may be associated with strong emotions or physiological mechanisms, making them difficult to shake solely through cognitive-level thinking."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "The thinking (T) stage is superficial and fails to analyze deeply",
+      "description": "Although aware of the need to think, the thinking is not deep enough, failing to fully evaluate the consequences of various responses, or failing to touch upon the real reasons behind automatic responses."
+    },
+    {
+      "pitfall_name": "Underestimating the inertial force of automatic responses (R)",
+      "description": "Even after thinking, strong inertia or emotional impulses may still dominate the final response, leading to 'knowing the道理, but just can't do it.'"
+    },
+    {
+      "pitfall_name": "Equating suppressing emotions with thinking (T)",
+      "description": "Mistakenly believing that non-SR thinking means suppressing one's true emotions and reactions, rather than guiding and transforming emotions through rational thought."
+    },
+    {
+      "pitfall_name": "Inaccurate or incomplete identification of stimuli (S)",
+      "description": "Failing to accurately identify the true source of stimuli triggering automatic responses, or only focusing on superficial stimuli while ignoring deeper background factors."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

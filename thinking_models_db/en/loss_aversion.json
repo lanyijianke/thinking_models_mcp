@@ -1,0 +1,88 @@
+{
+  "id": "loss_aversion",
+  "name": "Loss Aversion",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Decision Making & Judgment",
+  "subcategories": [
+    "Risk & Reward Assessment"
+  ],
+  "definition": "People feel the pain of an equivalent loss more strongly than the pleasure of a gain (the pain of loss is about 2-2.5 times the pleasure of an equivalent gain), thus tending to avoid losses (risk-seeking) and being risk-averse (when gains are involved).",
+  "purpose": "To help identify and understand this common psychological bias, avoid making irrational choices due to excessive fear of loss in decision-making, and evaluate risks and rewards more objectively.",
+  "interaction": "Please clearly describe the [decision-making situation involving potential gains and losses, or a choice that makes you feel hesitant].\nI will use the unique perspective of 'Loss Aversion':\n1.  Remind you to pay attention to whether you might be overemphasizing negative possibilities due to fear of loss, or tending to take risks when facing losses (reflection effect).\n2.  Guide you to objectively view the actual value of gains and losses, rather than being swayed by emotional 'pain' or 'pleasure'.\n3.  Explore how to adjust the decision frame (e.g., adjusting reference points, looking at long-term value) to mitigate the impact of loss aversion bias.",
+  "constraints": [
+    "Process Norm: Analysis must identify potential losses and gains in the situation and assess their impact on the decision.",
+    "Interaction Rules: Challenge the user's potential mentality of 'fear of losing' or 'gambling to break even'.",
+    "Content Standard: Emphasize the asymmetry of losses and gains psychologically and seek more rational assessment methods.",
+    "Role Consistency: Always examine decision biases from the perspective of loss aversion."
+  ],
+  "prompt": "# Prompt - Role Play Loss Aversion\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a decision bias warner for **'Loss Aversion'**.\nMy entire thinking and response will be based on the **core principle** of this model: people feel the pain of an equivalent loss more strongly than the pleasure of a gain (the pain of loss is about 2-2.5 times the pleasure of an equivalent gain), thus tending to avoid losses (risk-seeking) and being risk-averse (when gains are involved).\n**The main purpose of this model is:** to help you identify and understand this common psychological bias, avoid making irrational choices due to excessive fear of loss in decision-making, and evaluate risks and rewards more objectively.\n\n**Interaction Method:**\nPlease clearly describe the **[decision-making situation involving potential gains and losses, or a choice that makes you feel hesitant]**.\nI will use the unique perspective of **'Loss Aversion'**:\n1.  Remind you to pay attention to whether you might be overemphasizing negative possibilities due to **fear of loss**, or tending to take risks when facing losses (reflection effect).\n2.  Guide you to **objectively view** the actual value of gains and losses, rather than being swayed by emotional 'pain' or 'pleasure'.\n3.  Explore how to adjust the decision frame (e.g., adjusting reference points, looking at long-term value) to **mitigate** the impact of loss aversion bias.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must identify potential losses and gains in the situation and assess their impact on the decision.\n* Interaction Rules: Challenge the user's potential mentality of 'fear of losing' or 'gambling to break even'.\n* Content Standard: Emphasize the asymmetry of losses and gains psychologically and seek more rational assessment methods.\n* Role Consistency: Always examine decision biases from the perspective of loss aversion.\n\n**Opening Statement:**\nI am ready to think in the **'Loss Aversion'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Investors tend to sell rising stocks too early (locking in gains) and hold onto falling stocks for too long (unwilling to admit losses), even if the fundamentals of the latter have deteriorated.",
+  "tags": [
+    "Loss Aversion",
+    "Cognitive Bias",
+    "Behavioral Economics",
+    "Prospect Theory",
+    "Risk Appetite",
+    "Decision Psychology"
+  ],
+  "use_cases": [
+    "Investment decisions",
+    "Consumer behavior",
+    "Negotiation strategies",
+    "Insurance purchases",
+    "Product pricing"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Losing $100 feels worse than finding $100? That's loss aversion!",
+      "explanation": "Simply put, we are inherently more afraid of losing, and the pain of loss is far greater than the pleasure of gaining the same thing. The pain of losing $100 might require the pleasure of finding $200 to offset."
+    },
+    {
+      "concept_name": "The 'break-even' mentality: Rather not earn than lose.",
+      "explanation": "Because of the fear of loss, we often become conservative when facing gains, preferring certain, safe small gains (certainty effect); whereas when facing losses, we become adventurous, preferring to gamble big to avoid certain losses (reflection effect)."
+    },
+    {
+      "concept_name": "Recognize it, overcome it: Don't let 'fear of losing' ruin your decisions.",
+      "explanation": "Understanding loss aversion can help us realize the potential irrational tendencies in our decision-making. When making decisions, try to objectively assess the actual value of losses and gains, rather than being swayed by emotions. Ask yourself: 'If I already had this gain/loss, would I still make the same choice?' (adjusting the reference point)."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "The degree of loss aversion varies from person to person",
+      "description": "Different individuals have different sensitivities to loss, influenced by personality, experience, culture, and other factors."
+    },
+    {
+      "limitation_name": "The determination of reference points can be subjective",
+      "description": "The reference point people use to judge 'loss' or 'gain' is not always objective and can be influenced by context or artificial settings."
+    },
+    {
+      "limitation_name": "In some situations, avoiding loss is rational",
+      "description": "For example, when facing huge losses that could lead to bankruptcy, strong loss aversion is a reasonable survival strategy."
+    },
+    {
+      "limitation_name": "Difficult to completely escape its influence",
+      "description": "Loss aversion is a powerful tendency rooted in human psychology. Even when aware of its existence, it is difficult to completely eliminate its influence in decision-making."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Holding onto losing assets for too long, unwilling to cut losses",
+      "description": "Continuing to hold assets with deteriorating fundamentals or uncertain prospects due to unwillingness to accept paper losses, leading to greater losses."
+    },
+    {
+      "pitfall_name": "Locking in profits too early, missing out on greater gains",
+      "description": "Selling promising assets prematurely due to fear of losing acquired gains, thus missing out on subsequent larger increases."
+    },
+    {
+      "pitfall_name": "Taking excessive risks in the loss zone to try to 'break even'",
+      "description": "Engaging in higher-risk operations when already in a loss position to avoid confirming the loss, potentially exacerbating losses."
+    },
+    {
+      "pitfall_name": "Overemphasizing 'sunk costs,' affecting future decisions",
+      "description": "Treating unrecoverable losses (sunk costs) as 'losses' that need to be compensated for, thereby affecting rational decisions based on future prospects."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

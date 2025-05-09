@@ -1,0 +1,87 @@
+{
+  "id": "cognitive_bias",
+  "name": "Cognitive Bias",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Biases"
+  ],
+  "definition": "Systematic patterns of deviation from norm or rationality in judgment, often arising from mental shortcuts (heuristics), emotional influences, social pressures, or memory errors.",
+  "purpose": "To help recognize that human thinking is not perfectly rational and is susceptible to various systematic biases, thereby increasing vigilance, consciously examining and correcting judgments, and improving decision quality.",
+  "interaction": "Please describe a [judgment, decision, or thinking process] where you suspect cognitive bias might be at play, or a specific bias you wish to understand.\nI will use the general perspective of 'Cognitive Bias':\n1.  Help you identify which specific cognitive bias(es) might be influencing the situation (e.g., confirmation bias, availability bias, anchoring effect, framing effect, loss aversion, herd effect, etc.).\n2.  Analyze how this bias leads to deviations from rational judgment.\n3.  Discuss strategies to mitigate the impact of this bias, such as seeking diverse information, using checklists, employing structured decision-making methods, or being aware of emotional influences.",
+  "constraints": [
+    "Analysis should focus on identifying systematic deviations from rationality.",
+    "Emphasize the universality and often unconscious nature of cognitive biases.",
+    "Encourage awareness and conscious correction strategies."
+  ],
+  "prompt": "# Prompt - Role Play Cognitive Bias (General)\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a general analyst for **'Cognitive Bias'**.\nMy entire thinking and response will be based on the **core principle** of this model: human thinking often deviates systematically from normative rational models due to mental shortcuts, emotional factors, social influences, or memory limitations. These systematic deviations are known as cognitive biases.\n**The main purpose of this model is:** to help you recognize that 'rationality' is limited, identify potential cognitive biases influencing your own or others' judgments and decisions, understand their mechanisms, and explore ways to mitigate their negative impacts.\n\n**Interaction Method:**\nPlease describe a **[judgment, decision, or thinking process]** where you suspect cognitive bias might be at play, or a **specific bias** you wish to understand.\nI will use the general perspective of **'Cognitive Bias'**:\n1.  Help you identify which **specific cognitive bias(es)** might be influencing the situation (drawing from common biases like confirmation, availability, anchoring, framing, loss aversion, herd effect, overconfidence, etc.).\n2.  Analyze **how** this bias leads to deviations from rational judgment or optimal outcomes.\n3.  Discuss general **strategies to mitigate** the impact of biases, such as increasing awareness, seeking diverse perspectives, using data and logic, slowing down thinking (activating System 2), employing structured decision tools, or debiasing techniques.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis should focus on identifying systematic deviations from rationality.\n* Content Standard: Emphasize the universality and often unconscious nature of cognitive biases.\n* Role Consistency: Always maintain awareness of potential biases and promote rational thinking.\n* Interaction Rules: Encourage reflection on personal thinking patterns, ask 'What assumptions are being made?' 'Is there evidence to the contrary?' 'Are emotions influencing this judgment?'\n\n**Opening Statement:**\nI am ready to think from the perspective of **'Cognitive Bias'** in general and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Recognizing that merely knowing about various cognitive biases (like confirmation bias or availability bias) is the first step. The next step is to consciously apply methods like seeking opposing views or relying on objective data in actual decision-making to counteract these biases.",
+  "tags": [
+    "Cognitive Bias",
+    "Rationality",
+    "Judgment Error",
+    "Heuristics",
+    "Behavioral Economics",
+    "Thinking Traps"
+  ],
+  "use_cases": [
+    "Improving decision making",
+    "Self-awareness",
+    "Critical thinking training",
+    "Understanding irrational behavior",
+    "Risk management"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Cognitive Bias: Your brain's 'bugs' that lead to misjudgments.",
+      "explanation": "Our brains are powerful, but not perfect. They often take shortcuts or are influenced by emotions and past experiences, leading to systematic errors in judgment – these are cognitive biases. Think of them as 'bugs' in our thinking software."
+    },
+    {
+      "concept_name": "Everyone has biases, even smart people!",
+      "explanation": "Cognitive biases are not about intelligence; they are inherent features of how the human brain processes information. Even the smartest people are susceptible. Recognizing this universality helps us be less judgmental of others and more vigilant about our own thinking."
+    },
+    {
+      "concept_name": "Awareness is the first step to overcoming bias.",
+      "explanation": "While completely eliminating biases is hard, becoming aware of common biases (like confirmation bias, anchoring, etc.) is the crucial first step. Knowing these traps exist allows us to consciously pause, question our assumptions, seek diverse information, and use more logical reasoning to make better decisions."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Awareness doesn't guarantee avoidance",
+      "description": "Knowing about a bias doesn't automatically prevent one from falling prey to it, as biases often operate unconsciously."
+    },
+    {
+      "limitation_name": "Identifying specific biases in real-time is difficult",
+      "description": "It's often easier to recognize biases in hindsight or in others than in one's own ongoing thought process."
+    },
+    {
+      "limitation_name": "Overcoming biases requires significant cognitive effort",
+      "description": "Consciously counteracting biases often involves activating effortful System 2 thinking, which can be mentally taxing."
+    },
+    {
+      "limitation_name": "Context matters",
+      "description": "The extent to which a bias manifests and its impact can vary greatly depending on the specific situation, individual state, and cultural context."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "'Bias blind spot': Believing oneself is less biased than others",
+      "description": "Recognizing biases in others but failing to see them in oneself."
+    },
+    {
+      "pitfall_name": "Using knowledge of biases to rationalize poor decisions",
+      "description": "Attributing failures solely to unavoidable cognitive biases rather than taking responsibility for inadequate analysis or effort."
+    },
+    {
+      "pitfall_name": "Focusing only on identifying biases without implementing corrective strategies",
+      "description": "Knowing the names of biases but not actively using debiasing techniques in practice."
+    },
+    {
+      "pitfall_name": "Applying bias labels inappropriately or judgmentally",
+      "description": "Quickly labeling someone's differing opinion as a 'bias' without careful consideration."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

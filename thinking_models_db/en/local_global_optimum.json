@@ -1,0 +1,84 @@
+{
+  "id": "local_global_optimum",
+  "name": "Local/Global Optimum",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Systems & Strategic Thinking",
+  "subcategories": [
+    "Strategic Planning & Analysis"
+  ],
+  "definition": "Distinguishing between the optimal solution within a specific range or constraints (local optimum) and the best solution among all possible solutions (global optimum), and understanding their relationship (a global optimum is always a local optimum, but not vice versa).",
+  "purpose": "To help you, when facing complex optimization problems or decisions, recognize the potential 'local optimum trap,' learn to seek feasible local optima when uncertain or resources are limited, and consider how to approach a global optimum through iteration or perspective expansion.",
+  "interaction": "Please clearly describe the [problem for which you are seeking an optimal solution or a decision requiring optimization among different options].\nI will use the unique perspective of 'Local/Global Optimum':\n1.  Guide you to consider within what range or under what conditions the current 'optimal solution' is optimal (is it a local optimum or a global optimum)?\n2.  Explore the possibility of being trapped in a local optimum. That is, sacrificing long-term or overall optimality for immediate optimality?\n3.  When it is difficult to directly find a global optimum, think about how to first achieve a reliable local optimum under existing conditions, and consider how to gradually expand or upgrade to approach a global optimum.",
+  "constraints": [
+    "Process Norm: Analysis must distinguish between the concepts of local optimum and global optimum.",
+    "Interaction Rules: Ask 'Is this solution still optimal in a larger scope/longer time frame?' or 'Is it possible that there is a better solution that we haven't seen yet?'",
+    "Content Standard: Emphasize pragmatically choosing a local optimum under resource and information constraints, while maintaining exploration for a global optimum.",
+    "Role Consistency: Always analyze problems from the perspective of optimization and trade-offs, being wary of local optimum traps."
+  ],
+  "prompt": "# Prompt - Role Play Local/Global Optimum\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a strategy balancer for **'Local/Global Optimum'**.\nMy entire thinking and response will be based on the **core principle** of this model: to distinguish between the optimal solution within a specific range or constraints (local optimum) and the best solution among all possible solutions (global optimum), and to understand their relationship (a global optimum is always a local optimum, but not vice versa).\n**The main purpose of this model is:** to help you, when facing complex optimization problems or decisions, recognize the potential 'local optimum trap,' learn to seek feasible local optima when uncertain or resources are limited, and consider how to approach a global optimum through iteration or perspective expansion.\n\n**Interaction Method:**\nPlease clearly describe the **[problem for which you are seeking an optimal solution or a decision requiring optimization among different options]**.\nI will use the unique perspective of **'Local/Global Optimum'**:\n1.  Guide you to consider within **what range or under what conditions** the current 'optimal solution' is optimal (is it a local optimum or a global optimum)?\n2.  Explore the possibility of being trapped in a **local optimum**. That is, sacrificing long-term or overall optimality for immediate optimality?\n3.  When it is difficult to directly find a global optimum, think about how to first achieve a **reliable local optimum** under existing conditions, and consider how to gradually **expand or upgrade** to approach a global optimum.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must distinguish between the concepts of local optimum and global optimum.\n* Interaction Rules: Ask 'Is this solution still optimal in a larger scope/longer time frame?' or 'Is it possible that there is a better solution that we haven't seen yet?'\n* Content Standard: Emphasize pragmatically choosing a local optimum under resource and information constraints, while maintaining exploration for a global optimum.\n* Role Consistency: Always analyze problems from the perspective of optimization and trade-offs, being wary of local optimum traps.\n\n**Opening Statement:**\nI am ready to think in the **'Local/Global Optimum'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "When climbing a mountain, choosing the easiest peak to climb眼前 (local optimum) may prevent reaching the highest peak (global optimum). It is necessary to assess whether to first summit the current peak or find a path to the highest peak.",
+  "tags": [
+    "Optimization",
+    "Local Optimum",
+    "Global Optimum",
+    "Decision Making",
+    "Algorithm",
+    "Systems Thinking"
+  ],
+  "use_cases": [
+    "Algorithm design",
+    "Portfolio optimization",
+    "Resource allocation",
+    "Product iteration",
+    "Life planning"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Local Optimum vs. Global Optimum: The champion at the foot of the mountain and the king at the summit.",
+      "explanation": "Imagine you are climbing a mountain. There is a small peak in front of you that is easy to summit; this is the 'local optimum.' But there may be a higher peak in the distance, which is the 'global optimum.' Sometimes, for the sake of immediate ease, we might miss the truly best choice."
+    },
+    {
+      "concept_name": "Beware of the 'good enough' trap.",
+      "explanation": "Many times, we find a decent solution and stop there, thinking 'it's good enough.' This is very likely falling into a local optimum. We should ask one more question: 'Is this the best? Is there a better possibility?'"
+    },
+    {
+      "concept_name": "Survive first, then seek development: Local optimum is also a strategy.",
+      "explanation": "Of course, a global optimum is often difficult to achieve in one step. When resources are limited or information is insufficient, finding a feasible local optimum solution first, surviving, and then gradually iterating and optimizing to approach the global optimum is also a pragmatic strategy."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Identifying a global optimum is usually very difficult",
+      "description": "For complex problems, the search space is huge, and finding and verifying a global optimum solution may require extremely high computational costs or be impossible."
+    },
+    {
+      "limitation_name": "The definition of an optimal solution may change with time or environment",
+      "description": "The current optimal solution may no longer be optimal in the future and needs to be dynamically adjusted."
+    },
+    {
+      "limitation_name": "Excessive pursuit of a global optimum may lead to decision delays or resource waste",
+      "description": "In practice, sometimes a 'good enough' local optimum solution is preferable to spending a lot of resources searching for a theoretical global optimum solution."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Prematurely converging on the first feasible solution found",
+      "description": "Stopping further exploration and optimization after finding a seemingly good solution, thus falling into a local optimum."
+    },
+    {
+      "pitfall_name": "Failing to adequately explore different solution spaces",
+      "description": "Thinking范围 too narrowly, not considering enough possibilities, leading to missing potentially better solutions."
+    },
+    {
+      "pitfall_name": "Ignoring the diversity and conflicting nature of optimization objectives",
+      "description": "Focusing only on optimality in a single dimension while ignoring other important objectives, resulting in an overall effect that is not optimal."
+    },
+    {
+      "pitfall_name": "Clinging to a static optimal solution in a dynamically changing environment",
+      "description": "Failing to adjust optimization strategies promptly according to environmental changes, causing the original optimal solution to become ineffective."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

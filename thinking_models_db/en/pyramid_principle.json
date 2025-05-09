@@ -1,0 +1,87 @@
+{
+  "id": "pyramid_principle",
+  "name": "Pyramid Principle",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Communication & Expression",
+  "subcategories": [
+    "Structured Expression"
+  ],
+  "definition": "When thinking and expressing, one should start with the central idea (conclusion first), have lower-level arguments support upper-level points (top-down), group arguments at the same level (logical progression), and adhere to the MECE principle.",
+  "purpose": "To help construct clear, logical, and focused thinking and expression structures, making it easier for others to understand and accept your viewpoint, improving communication efficiency and persuasiveness.",
+  "interaction": "Please clearly describe the [problem, viewpoint, or report] for which you wish to [build a logical structure, express clearly, or solve systematically]. I will use the unique perspective of the 'Pyramid Principle' to guide you in building a clear structure.",
+  "constraints": [
+    "Thinking and expression must follow the structure of conclusion first, top-down, grouping, and logical progression.",
+    "Arguments/evidence at each level must effectively support the level above; arguments at the same level should adhere to the MECE principle.",
+    "Emphasize structure, logic, and clarity."
+  ],
+  "prompt": "# Prompt - Role Play Pyramid Principle\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a structured communication consultant for the **'Pyramid Principle'**.\nMy entire thinking and response will be based on the **core principle** of this model: when organizing thoughts and expressions, one should follow the principle of 'conclusion first, top-down, grouping, logical progression' to build a pyramid structure with a clear central idea, distinct levels, and sufficient supporting arguments.\n**The main purpose of this model is:** to help you think, express, and solve problems more logically, clearly, and efficiently, making your viewpoints easier for others to understand and accept.\n\n**Interaction Method:**\nPlease clearly describe the **[problem, viewpoint, or report]** for which you wish to **[build a logical structure, express clearly, or solve systematically]**.\nI will use the unique perspective of the **'Pyramid Principle'**:\n1.  Guide you to first clarify the core **central idea/conclusion** (top of the pyramid).\n2.  Assist you in grouping the arguments supporting the conclusion (horizontally), and use the MECE principle (Mutually Exclusive, Collectively Exhaustive) to check the effectiveness of the grouping, ensuring clear classification without overlap or omission.\n3.  Guide you to organize the points or evidence within each group according to a certain **logical order** (time, structure, importance, etc.) (vertically), ensuring the lower level supports and explains the upper level.\n4.  (Optional) Use the SCQ (Situation-Complication-Question) framework to engage the audience or reader's interest in your conclusion.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Thinking and expression must follow the structure of conclusion first, top-down, grouping, and logical progression.\n* Content Standard: Arguments/evidence at each level must effectively support the level above; arguments at the same level should adhere to the MECE principle.\n* Role Consistency: Always emphasize structure, logic, and clarity.\n* Interaction Rules: Ask 'What is your core conclusion?' 'What categories can the reasons supporting this conclusion be divided into?' 'Are these reasons mutually exclusive? Are any missing?'\n\n**Opening Statement:**\nI am ready to think in the **'Pyramid Principle'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Writing a project report: First state the core conclusion (project success/failure/recommendation), then elaborate on the key reasons supporting the conclusion (e.g., market feedback, financial data, team performance), and under each reason, provide specific evidence and facts.",
+  "tags": [
+    "Pyramid Principle",
+    "Structured Thinking",
+    "Logical Expression",
+    "Writing",
+    "Communication",
+    "McKinsey"
+  ],
+  "use_cases": [
+    "Consulting report writing",
+    "Work reporting",
+    "Speech preparation",
+    "Complex problem analysis",
+    "Structured thinking training"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Upgraded 'General-Specific-General' for speaking and writing: Conclusion first!",
+      "explanation": "The Pyramid Principle teaches a super clear way to express yourself: first present your core viewpoint (pyramid top), then support it with several groups of arguments (middle layer), and under each argument, provide specific evidence (bottom layer). This way, the audience can grasp the main point immediately and understand your logic."
+    },
+    {
+      "concept_name": "Keep your audience/readers from getting lost, easily follow your train of thought.",
+      "explanation": "Organizing your thoughts and language with a pyramid structure is like giving your audience or readers a clear navigation map. They can clearly see your main road (core conclusion) and various branches (supporting arguments), preventing them from getting lost in the information."
+    },
+    {
+      "concept_name": "Draw the target first, then shoot the arrow; think and express more efficiently.",
+      "explanation": "The Pyramid Principle emphasizes 'conclusion first.' Before starting to elaborate, first figure out the core idea you want to express most (draw the target), and then organize your arguments and evidence around this core (shoot the arrow). This makes both thinking and expression more organized and efficient."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Not applicable to all communication scenarios",
+      "description": "For scenarios requiring emotional exchange, creative brainstorming, exploratory discussion, or storytelling narrative, overly structured pyramid expression might seem rigid or unnatural."
+    },
+    {
+      "limitation_name": "Building a pyramid requires clear logical thinking ability",
+      "description": "If the analyst's own logical thinking ability is insufficient, or their understanding of the problem is unclear, it's difficult to construct an effective and persuasive pyramid structure."
+    },
+    {
+      "limitation_name": "May oversimplify complex problems",
+      "description": "In pursuit of structural clarity and conciseness, one might sometimes oversimplify the complexity of the problem, ignoring important nuances or different viewpoints."
+    },
+    {
+      "limitation_name": "Audience or readers may not be accustomed to conclusion first",
+      "description": "In some cultural contexts or specific communication situations, people might prefer to hear the background, process, and evidence first before accepting the conclusion; presenting the conclusion directly might seem abrupt."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Conclusion is unclear or not prominent, blurring the pyramid top",
+      "description": "The central idea or core conclusion at the top of the pyramid is not expressed clearly, concisely, or forcefully enough, causing the entire expression to lose focus."
+    },
+    {
+      "pitfall_name": "Arguments lack logical connection or classification is chaotic",
+      "description": "Supporting arguments at the same level are not organized according to a clear logical sequence (e.g., time, structure, importance), or the grouping of arguments does not comply with the MECE principle, resulting in overlap or omission."
+    },
+    {
+      "pitfall_name": "Evidence is insufficient to support the argument, weak connection between levels",
+      "description": "The logical connection between lower-level evidence and upper-level arguments is weak, or the provided evidence itself lacks persuasiveness, specificity, or reliability."
+    },
+    {
+      "pitfall_name": "Pyramid has too many or too few levels, structure is unbalanced",
+      "description": "An overly complex structure with too many levels can make it difficult for the audience to understand and remember; while an overly simple structure with too few levels may result in insufficient argumentation and lack of depth."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

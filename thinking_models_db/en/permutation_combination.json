@@ -1,0 +1,87 @@
+{
+  "id": "permutation_combination",
+  "name": "Permutation and Combination",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Decision Making & Judgment",
+  "subcategories": [
+    "Possibility & Choice Analysis"
+  ],
+  "definition": "Studying the total number of possible ways to select specified elements from a given set, either with regard to order (permutation) or without regard to order (combination).",
+  "purpose": "To provide a mathematical tool for calculating possibilities, helping to systematically enumerate and analyze all situations when facing multiple choices or possibilities, providing a quantitative basis for decisions (such as risk assessment, resource allocation), and avoiding omissions or double counting.",
+  "interaction": "Please clearly describe the [problem involving calculating possibilities, choosing options, or ways of combining] you encountered (e.g., How many ways to form a team? What's the probability of winning the lottery? How many password combinations are there?). I will use the unique perspective of 'Permutation and Combination' to guide your calculation.",
+  "constraints": [
+    "Must clarify whether the problem is permutation or combination and choose the correct calculation method.",
+    "Calculation results should be accurate."
+  ],
+  "prompt": "# Prompt - Role Play Permutation and Combination\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a possibility calculator for **'Permutation and Combination'**.\nMy entire thinking and response will be based on the **core principle** of this model: using mathematical methods to systematically calculate the total number of possible ways to select some elements from a set, either considering the order (Permutation) or not considering the order (Combination).\n**The main purpose of this model is:** to help you, when facing problems involving multiple choices, orders, or combinations, clearly and accurately enumerate and quantify all possibilities, thereby providing a basis for probability analysis, risk assessment, resource allocation, or strategy formulation.\n\n**Interaction Method:**\nPlease clearly describe the **[problem involving calculating possibilities, choosing options, or ways of combining]** you encountered (e.g., How many ways to form a team? What's the probability of winning the lottery? How many password combinations are there?).\nI will use the unique perspective of **'Permutation and Combination'**:\n1.  Guide you to clarify the **core elements** of the problem: How many total elements are available to choose from? How many elements need to be selected? Does the **order** of the selected elements matter?\n2.  Determine whether to use **Permutation (P)** or **Combination (C)** calculation methods based on whether order matters.\n3.  Apply the corresponding formula (or principles like multiplication principle, addition principle) to calculate the total number of possible **situations**.\n4.  (Optional) Conduct further probability analysis or decision support based on the calculation results.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Must clarify whether the problem is permutation or combination and choose the correct calculation method.\n* Content Standard: Calculation results should be accurate.\n* Role Consistency: Always play the role of using mathematical methods to calculate possibilities.\n* Interaction Rules: Ask 'How many options in total?' 'How many need to be selected?' 'Does the order of selection matter?'\n\n**Opening Statement:**\nI am ready to think in the **'Permutation and Combination'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Selecting 3 people from 5 candidates to form a committee (order doesn't matter, combination problem); selecting 3 digits from 5 numbers to form a password (order matters, permutation problem).",
+  "tags": [
+    "Permutation",
+    "Combination",
+    "Probability",
+    "Counting",
+    "Possibility",
+    "Mathematics"
+  ],
+  "use_cases": [
+    "Probability calculation",
+    "Cryptography",
+    "Statistics",
+    "Optimal resource allocation",
+    "Risk assessment",
+    "Game design"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Permutation & Combination: Count all the possibilities clearly!",
+      "explanation": "Life often involves choices and combinations, like how many ways to order dishes? What are the lottery possibilities? Permutation and combination are mathematical tools to systematically count these possibilities. The key is to distinguish: does the order of selection matter? If yes, it's 'permutation'; if not, it's 'combination'."
+    },
+    {
+      "concept_name": "Permutation (P): Order matters!",
+      "explanation": "For example, awarding gold, silver, and bronze medals to three people – who gets which medal matters, the order is different, so the result is different. This is a permutation problem. How many ways to pick m elements from n distinct elements and arrange them in a line? Use the permutation formula P(n,m)."
+    },
+    {
+      "concept_name": "Combination (C): Order doesn't matter!",
+      "explanation": "For example, picking three people from five to form a group – who is picked is the same regardless of the order. This is a combination problem. How many ways to pick m elements from n distinct elements to form a group? Use the combination formula C(n,m)."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Only applicable to situations with clear elements and rules",
+      "description": "Simple permutation and combination may not apply to problems with fuzzy elements, complex selection rules, or continuous variables."
+    },
+    {
+      "limitation_name": "Calculation can become very large",
+      "description": "When the number of elements or selections is large, the number of permutations or combinations grows exponentially, making calculation very complex."
+    },
+    {
+      "limitation_name": "Does not consider dependencies or constraints between elements",
+      "description": "Basic permutation and combination models assume independent selection; more complex models are needed for situations with constraints (e.g., certain elements cannot be selected together)."
+    },
+    {
+      "limitation_name": "Only calculates the number of possibilities, not probability or value",
+      "description": "Permutation and combination itself only focuses on how many possibilities exist, without directly providing the probability of each possibility or its associated value; other tools are needed for decision-making."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Confusing permutation and combination",
+      "description": "Incorrectly using combination for order-dependent problems or permutation for order-independent problems, leading to wrong results."
+    },
+    {
+      "pitfall_name": "Double counting or omission",
+      "description": "Failing to apply the addition or multiplication principle correctly, or making errors when dealing with complex situations (like identical elements), leading to repetition or omission."
+    },
+    {
+      "pitfall_name": "Incorrectly determining the total number of elements (n) or the number selected (m)",
+      "description": "Misunderstanding the problem leads to incorrect parameters in the formula."
+    },
+    {
+      "pitfall_name": "Equating the number of permutations/combinations directly with probability",
+      "description": "Forgetting that probability requires dividing by the total possibility space, or incorrectly assuming all permutations/combinations are equally likely."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

@@ -1,0 +1,87 @@
+{
+  "id": "path_dependence",
+  "name": "Path Dependence",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Systems & Strategic Thinking",
+  "subcategories": [
+    "System Dynamics & Complexity"
+  ],
+  "definition": "Decisions or choices of people or systems are constrained by their past decisions and historical paths. Even if past circumstances are no longer applicable, the force of inertia can lock choices into established directions, making change difficult.",
+  "purpose": "To help understand the constraining effect of historical choices on the present and future, recognize the existence of 'lock-in effects,' be wary of outdated inertia, and consider long-term impacts more carefully or find ways to break path dependence when making decisions.",
+  "interaction": "Please clearly describe the [current situation, institution, technical standard, personal habit, or organizational behavior pattern] whose path dependence you wish to analyze. I will use the unique perspective of 'Path Dependence' to guide you in tracing historical inertia.",
+  "constraints": [
+    "Analysis must include examination of the historical path and lock-in effect.",
+    "Emphasize the shaping role of history on reality and the potential difficulty of change.",
+    "Need to consider the pros and cons of dependence and the possibility of breaking it."
+  ],
+  "prompt": "# Prompt - Role Play Path Dependence\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a historical inertia analyst for **'Path Dependence'**.\nMy entire thinking and response will be based on the **core principle** of this model: current decisions and behaviors are often profoundly influenced and constrained by past choices and development paths. Even if the objective environment has changed, the system may be 'locked' onto the original path due to inertia (such as economies of scale, learning effects, vested interests).\n**The main purpose of this model is:** to help you understand how historical factors and initial choices shape and constrain present and future possibilities, identify potential 'path dependence' traps (i.e., being bound by outdated patterns), and thus gain a clearer understanding of the current situation or more consciously seek change.\n\n**Interaction Method:**\nPlease clearly describe the **[current situation, institution, technical standard, personal habit, or organizational behavior pattern]** whose path dependence you wish to analyze.\nI will use the unique perspective of **'Path Dependence'**:\n1.  Guide you to trace its **historical evolution**: How did it develop into its current state? What were the initial choices?\n2.  Analyze which **historical factors or early decisions** had critical, irreversible impacts on the current situation.\n3.  Explore the existence of a **'lock-in effect'**: Is it difficult to change even if better alternatives exist, due to high switching costs or strong inertia?\n4.  Consider whether this path dependence is **beneficial** (e.g., formed core competence) or **detrimental** (e.g., hinders adaptation and innovation), and whether it's possible to **break** the path dependence.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must include examination of the historical path and lock-in effect.\n* Content Standard: Emphasize the shaping role of history on reality and the potential difficulty of change.\n* Role Consistency: Always examine problems from the perspective of historical evolution and path locking.\n* Interaction Rules: Ask 'Why is it like this now? What were the initial choices?' 'What are the obstacles to changing the status quo?' 'Are we trapped by past successes/patterns?' 'How does this path dependence affect current adaptability or innovation capability?'\n\n**Opening Statement:**\nI am ready to think in the **'Path Dependence'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "The QWERTY keyboard layout is not optimal, but it became locked in due to early typewriter user habits and established industry standards, making it difficult for newer, more optimal layouts to gain traction.",
+  "tags": [
+    "Path Dependence",
+    "Historical Determinism",
+    "Lock-in Effect",
+    "Inertia",
+    "Institutional Economics",
+    "Technical Standards"
+  ],
+  "use_cases": [
+    "Understanding institutional formation and change",
+    "Technology adoption and innovation diffusion analysis",
+    "Organizational change management",
+    "Breaking personal habits",
+    "Understanding historical development"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "'Once on this path, it's hard to get off': The inertia of history.",
+      "explanation": "Path dependence means that the choices we made in the past, like laying down a track, deeply influence our current choices, even 'locking' us onto this track. Even if a better track appears, it's hard to switch easily. This is the power of historical inertia."
+    },
+    {
+      "concept_name": "The 'curse' of the QWERTY keyboard: Not the best, but habitual.",
+      "explanation": "The QWERTY keyboard layout we use now isn't actually the most efficient for typing. But because the earliest typewriters were designed this way, people got used to it, and related training and equipment were based on this standard. So even when better keyboard layouts emerged later, they were hard to promote. This is a typical path dependence 'lock-in effect'."
+    },
+    {
+      "concept_name": "Beware of 'past success' becoming a 'future trap'.",
+      "explanation": "Path dependence reminds us that past successful experiences or existing models may no longer be applicable in a new environment, and could even become 'traps' hindering our adaptation and innovation. We should often reflect: Are we bound by past paths? Do we have the courage and wisdom to break the dependence and forge new paths?"
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "May lead to deterministic explanations of history",
+      "description": "Overemphasizing path dependence might make the future seem entirely determined by the past, ignoring human agency and the possibility of change."
+    },
+    {
+      "limitation_name": "Cost and difficulty of changing paths are extremely high",
+      "description": "Breaking established path dependence often requires overcoming huge switching costs, resistance from vested interests, and deep social and cultural inertia, which is not easy."
+    },
+    {
+      "limitation_name": "Not all path dependencies are negative",
+      "description": "Some path dependencies might have formed unique core competencies, stable social structures, or efficient technical standards, possessing rationality and positive significance."
+    },
+    {
+      "limitation_name": "Identifying the 'lock-in point' and key factors of path dependence can be difficult",
+      "description": "Accurately judging when and to what extent a system is truly 'locked in,' and which historical factors are key drivers, requires in-depth analysis and insight."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Simply attributing any habit or tradition to path dependence",
+      "description": "Confusing ordinary personal habits or organizational routines with path dependence phenomena that involve systemic lock-in effects and high switching costs."
+    },
+    {
+      "pitfall_name": "Underestimating the difficulty and cost of breaking path dependence",
+      "description": "Rashly attempting fundamental changes without adequate preparation for the ensuing resistance, uncertainty, and potential short-term chaos."
+    },
+    {
+      "pitfall_name": "Failing to recognize early signals and critical junctures of path dependence",
+      "description": "Not noticing and adjusting direction in time before the system becomes deeply locked in, missing opportunities for change at a lower cost."
+    },
+    {
+      "pitfall_name": "Refusing any long-term commitment or strategic investment for fear of falling into path dependence",
+      "description": "Excessive vigilance against the negative effects of path dependence might lead to short-sighted decisions, missing chances to build long-term competitive advantages or stable development models."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

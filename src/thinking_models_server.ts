@@ -12,10 +12,10 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 支持的语言及对应文件
+// 支持的语言及对应文件目录
 const SUPPORTED_LANGUAGES = {
-  zh: "thinking_models_db/model.zh.json",
-  en: "thinking_models_db/model.en.json"
+  zh: "thinking_models_db/zh", // 指向中文模型目录
+  en: "thinking_models_db/en"  // 指向英文模型目录
 } as const;
 
 // 类型定义
@@ -58,18 +58,34 @@ function log(...args: any[]) {
 // 加载模型数据
 async function loadModels(lang?: SupportedLanguage) {
   const langsToLoad = lang ? [lang] : (Object.keys(SUPPORTED_LANGUAGES) as SupportedLanguage[]);
-  
+
   for (const l of langsToLoad) {
-    // 修正为相对于代码目录的路径
-    const filePath = path.resolve(__dirname, "..", SUPPORTED_LANGUAGES[l]);
+    const langDir = path.resolve(__dirname, "..", SUPPORTED_LANGUAGES[l]);
+    MODELS[l] = []; // 清空旧数据以便重新加载
     try {
-      log(`开始加载 ${filePath} ...`);
-      const content = await fs.readFile(filePath, "utf-8");
-      MODELS[l] = JSON.parse(content);
-      log(`${filePath} 加载成功，共 ${MODELS[l].length} 个模型, 文件大小: ${(await fs.stat(filePath)).size / 1024}KB`);
+      log(`开始加载语言 '${l}' 从目录 ${langDir} ...`);
+      const files = await fs.readdir(langDir);
+      let loadedCount = 0;
+      let totalSizeKb = 0;
+
+      for (const file of files) {
+        if (path.extname(file).toLowerCase() === ".json") {
+          const filePath = path.join(langDir, file);
+          try {
+            const content = await fs.readFile(filePath, "utf-8");
+            const model = JSON.parse(content) as ThinkingModel; // 假设每个文件是一个模型对象
+            MODELS[l].push(model);
+            loadedCount++;
+            totalSizeKb += (await fs.stat(filePath)).size / 1024;
+          } catch (e: any) {
+            log(`加载或解析模型文件 ${filePath} 失败: ${e.message}`);
+          }
+        }
+      }
+      log(`语言 '${l}' 加载完成，共 ${loadedCount} 个模型, 总大小: ${totalSizeKb.toFixed(2)}KB`);
     } catch (e: any) {
-      log(`加载 ${filePath} 失败: ${e.message}`);
-      MODELS[l] = [];
+      log(`加载语言 '${l}' 的模型目录 ${langDir} 失败: ${e.message}`);
+      MODELS[l] = []; // 确保出错时数据为空
     }
   }
 }
@@ -88,19 +104,20 @@ const server = new McpServer({
 await loadModels();
 
 // 监控模型文件变化
-for (const [lang, fileName] of Object.entries(SUPPORTED_LANGUAGES)) {
-  // 修正为相对于代码目录的路径
-  const filePath = path.resolve(__dirname, "..", fileName);
+for (const [lang, dirPath] of Object.entries(SUPPORTED_LANGUAGES)) {
+  const langDir = path.resolve(__dirname, "..", dirPath);
   try {
-    await fs.access(filePath);
-    watch(filePath, async (eventType) => {
-      if (eventType === "change") {
-        log(`${filePath} 发生变化，重新加载...`);
+    // 确保目录存在
+    await fs.access(langDir);
+    watch(langDir, { recursive: false }, async (eventType, filename) => {
+      if (filename && path.extname(filename).toLowerCase() === ".json") {
+        log(`${langDir}/${filename} 发生变化，重新加载语言 '${lang}'...`);
         await loadModels(lang as SupportedLanguage);
       }
     });
-  } catch {
-    log(`模型文件 ${filePath} 不存在，跳过watch`);
+    log(`正在监控目录: ${langDir}`);
+  } catch (e: any) {
+    log(`模型目录 ${langDir} 不存在或无法访问，跳过监控`);
   }
 }
 

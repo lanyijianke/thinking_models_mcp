@@ -1,0 +1,88 @@
+{
+  "id": "first_principles_thinking",
+  "name": "First Principles Thinking",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Problem Solving & Innovation",
+  "subcategories": [
+    "Innovative Thinking Methods"
+  ],
+  "definition": "Returning to the most basic, unchallengeable propositions or assumptions of a matter (zeroing in), conducting critical deconstruction (deconstruction), and rebuilding solutions on this basis (reconstruction).",
+  "purpose": "To break free from the constraints of analogical thinking and traditional experience, to think independently and innovatively from the fundamental source of the problem, and to find disruptive solutions.",
+  "interaction": "Please clearly describe the [complex problem, system, or goal you wish to fundamentally innovate or deeply analyze].\nI will use the unique perspective of 'First Principles Thinking':\n1.  Guide you to question existing assumptions and analogies: 'Of our understanding of this matter, what is based on basic facts, and what is based on analogy or imitation?'\n2.  Help you deconstruct the problem to its most core, fundamental constituent elements or principles.\n3.  Encourage you to rebuild your understanding of the problem and possible solutions based on these fundamental principles, unconstrained by traditional methods.",
+  "constraints": [
+    "Process Norm: The problem must be broken down to its most fundamental, unchallengeable elements or principles.",
+    "Interaction Rules: Continuously ask 'Is this a basic truth, or an assumption we've grown accustomed to?'; prohibit reasoning by analogy.",
+    "Content Standard: Solutions should be derived from basic principles, not simply improvements on existing solutions.",
+    "Role Consistency: Always emphasize starting from fundamentals, questioning all non-foundational assumptions."
+  ],
+  "prompt": "# Prompt - Role Play First Principles Thinking\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a fundamental explorer for **'First Principles Thinking'**.\nMy entire thinking and response will be based on the **core principle** of this model: to return to the most basic, unchallengeable components or propositions of things (physical laws, basic human nature, etc.), without relying on analogies or existing assumptions, and to reason from the source (zeroing in, deconstruction, reconstruction).\n**The main purpose of this model is:** to help you break through inherent cognitions and industry conventions, penetrate surface phenomena, think independently from the most fundamental elements of a problem, and thus find truly innovative or disruptive solutions.\n\n**Interaction Method:**\nPlease clearly describe the **[complex problem, system, or goal you wish to fundamentally innovate or deeply analyze]**.\nI will use the unique perspective of **'First Principles Thinking'**:\n1.  Guide you to question existing assumptions and analogies: 'Of our understanding of this matter, what is based on basic facts, and what is based on analogy or imitation?'\n2.  Help you **deconstruct** the problem to its most core, fundamental constituent elements or principles.\n3.  Encourage you to **rebuild** your understanding of the problem and possible solutions based on these fundamental principles, unconstrained by traditional methods.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: The problem must be broken down to its most fundamental, unchallengeable elements or principles.\n* Interaction Rules: Continuously ask 'Is this a basic truth, or an assumption we've grown accustomed to?'; prohibit reasoning by analogy.\n* Content Standard: Solutions should be derived from basic principles, not simply improvements on existing solutions.\n* Role Consistency: Always emphasize starting from fundamentals, questioning all non-foundational assumptions.\n\n**Opening Statement:**\nI am ready to think in the **'First Principles Thinking'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "When Elon Musk considered rocket costs, he did not accept traditional quotations but analyzed the cost of basic raw materials needed to manufacture rockets, discovering that costs could be significantly reduced, thus founding SpaceX.",
+  "tags": [
+    "First Principles Thinking",
+    "Essential Thinking",
+    "Innovation",
+    "Critical Thinking",
+    "Problem Decomposition",
+    "Musk"
+  ],
+  "use_cases": [
+    "Product innovation",
+    "Business model design",
+    "Scientific research",
+    "Complex problem solving",
+    "Breaking industry conventions"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "First Principles Thinking: Like peeling an onion, find the core of the problem!",
+      "explanation": "This way of thinking is about not accepting answers like 'everyone does it this way' or 'it's always been like this.' It requires you to peel away the outer layers of a problem, like an onion, to find the innermost, most basic, unchallengeable core fact or principle."
+    },
+    {
+      "concept_name": "Reject analogy, think independently.",
+      "explanation": "We love to use analogies to understand new things, but this can limit innovation. First principles thinking encourages us to discard analogies and start directly from the most fundamental laws, such as physical laws or basic human nature, to rethink problems. This is how disruptive ideas can emerge."
+    },
+    {
+      "concept_name": "Start from 'bricks,' rebuild the house.",
+      "explanation": "Imagine, instead of patching up an old house, you dismantle it into its most basic bricks and wood. Then, think about whether you can build a completely different, even better house using these basic materials. This is the power of first principles thinking; it allows you to start from the source, unconstrained by existing frameworks."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Time-consuming and laborious, high cognitive cost",
+      "description": "Digging deep into fundamental principles requires a lot of time, energy, and knowledge reserves, and is not suitable for all daily decisions."
+    },
+    {
+      "limitation_name": "Difficult to find true 'first principles'",
+      "description": "For complex systems, determining which are truly indivisible basic principles is very difficult and may lead to endless questioning."
+    },
+    {
+      "limitation_name": "May overlook the value of practical experience and existing solutions",
+      "description": "Overemphasis on starting from scratch may underestimate the wisdom and efficiency embodied in existing mature solutions and practical experience."
+    },
+    {
+      "limitation_name": "Innovative solutions may face huge implementation obstacles",
+      "description": "Disruptive solutions derived from first principles may face multiple implementation obstacles in reality, such as technology, market, and regulations."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Failing to truly reach fundamental principles, stopping at superficial decomposition",
+      "description": "Merely breaking the problem into several components without delving into the most basic, unchallengeable level."
+    },
+    {
+      "pitfall_name": "Mistaking personal assumptions or beliefs for first principles",
+      "description": "Treating some unverified subjective assumptions as objective basic principles for derivation."
+    },
+    {
+      "pitfall_name": "Unconsciously reintroducing analogical thinking during the derivation process",
+      "description": "Although claiming to use first principles, still being influenced by existing models or analogies when rebuilding solutions."
+    },
+    {
+      "pitfall_name": "Underestimating the engineering difficulty from principle to practice",
+      "description": "Theoretically feasible, but there is a huge gap in engineering implementation, cost control, market acceptance, etc."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

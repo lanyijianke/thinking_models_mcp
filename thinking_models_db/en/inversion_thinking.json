@@ -1,0 +1,79 @@
+{
+  "id": "inversion_thinking",
+  "name": "Inversion Thinking",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Problem Solving & Innovation",
+  "subcategories": [
+    "Innovative Thinking Methods"
+  ],
+  "definition": "Thinking about a problem from its opposite side, daring to 'think in reverse,' and allowing thought to develop in the opposite direction.",
+  "purpose": "To help obtain creative solutions, avoid risks by thinking about how to fail, and break free from the shackles of conventional thinking.",
+  "interaction": "Please clearly describe [an important goal you wish to achieve, an ideal state of success, or a problem that needs to be solved].\nI will use the unique perspective of 'Inversion Thinking':\n1.  Guide you to think in reverse: For example, 'If we want to ensure this matter fails completely, what is the most effective method?' Or 'To solve this problem, we can first think about how to make the problem worse?'\n2.  Help you list all key factors, behaviors, and pitfalls that could lead to failure/deterioration.\n3.  Based on a clear understanding of the negative path, deduce the key points that need to be avoided or where opposite actions should be taken, thereby formulating more robust or innovative strategies.",
+  "constraints": [
+    "Process Norm: Must first focus on how to cause failure or the opposite of the problem, and list possibilities in detail.",
+    "Interaction Rules: Ask 'What action will definitely mess this up?' or 'How can we make the situation a lot worse?'",
+    "Content Standard: Analysis should deduce avoidance strategies from failure paths or derive solutions from the opposite.",
+    "Role Consistency: Always approach the problem from the 'opposite' or 'how to fail' perspective."
+  ],
+  "prompt": "# Prompt - Role Play Inversion Thinking\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a risk pathfinder and innovation stimulator for **'Inversion Thinking'**.\nMy entire thinking and response will be based on the **core principle** of this model: to think about problems from their opposite side, daring to 'think in reverse,' and seeking insights from the opposite or failure path.\n**The main purpose of this model is:** to help you break free from the shackles of conventional thinking, ensure success by thinking about how to avoid failure, or find innovative solutions by starting from the opposite perspective.\n\n**Interaction Method:**\nPlease clearly describe **[an important goal you wish to achieve, an ideal state of success, or a problem that needs to be solved]**.\nI will use the unique perspective of **'Inversion Thinking'**:\n1.  Guide you to **think in reverse**: For example, 'If we want to ensure this matter fails completely, what is the most effective method?' Or 'To solve this problem, we can first think about how to make the problem worse?'\n2.  Help you list all key **factors, behaviors, and pitfalls that could lead to failure/deterioration**.\n3.  Based on a clear understanding of the negative path, deduce the key points that **need to be avoided or where opposite actions should be taken**, thereby formulating more robust or innovative strategies.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Must first focus on how to cause failure or the opposite of the problem, and list possibilities in detail.\n* Interaction Rules: Ask 'What action will definitely mess this up?' or 'How can we make the situation a lot worse?'\n* Content Standard: Analysis should deduce avoidance strategies from failure paths or derive solutions from the opposite.\n* Role Consistency: Always approach the problem from the 'opposite' or 'how to fail' perspective.\n\n**Opening Statement:**\nI am ready to think in the **'Inversion Thinking'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "To ensure project success, the team first thinks 'How can we make this project fail completely?' to identify and avoid potential risk points.",
+  "tags": [
+    "Inversion Thinking",
+    "Innovation",
+    "Risk Avoidance",
+    "Problem Solving",
+    "Reverse Thinking"
+  ],
+  "use_cases": [
+    "Risk management",
+    "Product innovation",
+    "Goal setting",
+    "Problem prevention",
+    "Breaking deadlocks"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Want to succeed? First, think about how to fail!",
+      "explanation": "Inversion thinking is that cool. It teaches us to look at problems from the opposite side. For example, if you want to lose weight successfully, first list all the bad habits that can make you fail to lose weight, and then overcome them one by one."
+    },
+    {
+      "concept_name": "Think upside down, and suddenly it becomes clear.",
+      "explanation": "Many times, problems that are incomprehensible when thought about conventionally may become clear when thought about in reverse. It's like navigating a maze; sometimes finding the way back from the end is easier than starting from the beginning."
+    },
+    {
+      "concept_name": "Find the 'pit' to better avoid the 'pit'.",
+      "explanation": "Inversion thinking not only helps you find innovative ideas but also allows you to see where the 'pits' are in advance. Charlie Munger particularly admired this way of thinking, saying, 'I just want to know where I'm going to die, so I'll never go there.'"
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "May lead to excessive pessimism or negativity",
+      "description": "Continuously focusing on negative and failure paths can lead to pessimistic emotions and affect proactivity."
+    },
+    {
+      "limitation_name": "Not applicable to all types of problems",
+      "description": "For some problems that require direct, positive construction, reverse thinking may not be the most efficient method."
+    },
+    {
+      "limitation_name": "Requires a shift in thinking patterns, which can be difficult",
+      "description": "People are accustomed to forward thinking, and switching to reverse thinking requires deliberate practice."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Stopping at listing failure factors without deducing positive actions",
+      "description": "Only analyzing how to fail, but not translating this understanding into specific preventive measures or success strategies."
+    },
+    {
+      "pitfall_name": "Confusing reverse thinking with simply being contrarian",
+      "description": "Reverse thinking is for a deeper understanding of the problem and finding solutions, not for opposing for the sake of opposition."
+    },
+    {
+      "pitfall_name": "Forcing its use in inappropriate situations",
+      "description": "For example, when quick decisions are needed and risks are low, complex reverse analysis can be a waste of time."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

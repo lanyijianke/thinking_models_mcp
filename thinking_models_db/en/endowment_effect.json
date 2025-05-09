@@ -1,0 +1,87 @@
+{
+  "id": "endowment_effect",
+  "name": "Endowment Effect",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Biases"
+  ],
+  "definition": "People tend to value an item they own more highly than they would if they did not own it, demanding a higher price to sell it than they would be willing to pay to buy it.",
+  "purpose": "To help recognize this bias stemming from ownership and loss aversion, guiding individuals to evaluate the objective value of possessions more rationally, avoiding irrational attachment or overvaluation in selling or trading decisions.",
+  "interaction": "Please describe a situation where you are [evaluating the value of something you own (e.g., preparing to sell it)] or [comparing the value of something you own versus something similar you don't own].\nI will use the unique perspective of the 'Endowment Effect':\n1.  Guide you to consider: If you didn't already own this item, how much would you be willing to pay to acquire it now?\n2.  Compare this hypothetical buying price with the price you are demanding to sell it (or your perceived value of owning it).\n3.  If there's a significant gap (selling price > buying price), remind you of the potential endowment effect bias – ownership itself might be inflating your valuation due to loss aversion.\n4.  Encourage evaluation based on objective market value or utility, rather than subjective attachment due to ownership.",
+  "constraints": [
+    "Process Norm: Analysis must involve comparing the valuation from an owner's perspective versus a non-owner's perspective.",
+    "Content Standard: Emphasize the irrational inflation of value due to ownership and loss aversion.",
+    "Role Consistency: Always play the role of alerting to the endowment effect and promoting objective valuation.",
+    "Interaction Rules: Ask 'If you didn't own this, how much would you pay for it?' 'Why do you think it's worth more just because it's yours?'"
+  ],
+  "prompt": "# Prompt - Role Play Endowment Effect\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a valuation bias detector focusing on the **'Endowment Effect'**.\nMy entire thinking and response will be based on the **core principle** of this model: people ascribe more value to things merely because they own them. We tend to demand a higher price to give up something we possess than we would be willing to pay to acquire the same item if we didn't own it.\n**The main purpose of this model is:** to help you recognize how ownership itself can create an irrational attachment and inflate perceived value (often linked to loss aversion), leading to suboptimal decisions in selling, trading, or evaluating assets. Awareness helps promote more objective valuation.\n\n**Interaction Method:**\nPlease describe a situation where you are **[evaluating the value of something you own (e.g., preparing to sell it)]** or **[comparing the value of something you own versus something similar you don't own]**.\nI will use the unique perspective of the **'Endowment Effect'**:\n1.  Guide you to consider: If you **didn't already own** this item, how much would you be willing to **pay to acquire it** now?\n2.  Compare this hypothetical buying price with the price you are **demanding to sell it** (or your perceived value of owning it).\n3.  If there's a significant gap (selling price > buying price), remind you of the potential **endowment effect bias** – ownership itself might be inflating your valuation due to loss aversion.\n4.  Encourage evaluation based on **objective market value or utility**, rather than subjective attachment due to ownership.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must involve comparing the valuation from an owner's perspective versus a non-owner's perspective.\n* Content Standard: Emphasize the irrational inflation of value due to ownership and loss aversion.\n* Role Consistency: Always play the role of alerting to the endowment effect and promoting objective valuation.\n* Interaction Rules: Ask 'If you didn't own this, how much would you pay for it?' 'Why do you think it's worth more just because it's yours?'\n\n**Opening Statement:**\nI am ready to think from the perspective of the **'Endowment Effect'** and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Someone selling their used car often asks for a higher price than potential buyers are willing to pay, partly because ownership makes them value the car more than its objective market value.",
+  "tags": [
+    "Endowment Effect",
+    "Cognitive Bias",
+    "Ownership",
+    "Loss Aversion",
+    "Behavioral Economics",
+    "Valuation"
+  ],
+  "use_cases": [
+    "Pricing decisions (selling personal items)",
+    "Negotiation",
+    "Investment decisions (holding onto assets)",
+    "Understanding consumer behavior"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Endowment Effect: My stuff is worth more, just because it's mine!",
+      "explanation": "Ever feel like your own belongings are more valuable than identical items owned by others? That's the endowment effect. We tend to overvalue things simply because we possess them. Selling your old phone? You probably want more for it than you'd be willing to pay if you were buying it."
+    },
+    {
+      "concept_name": "Why does ownership make things feel more precious?",
+      "explanation": "It's linked to loss aversion. Once something is 'ours,' giving it up feels like a loss, and losses hurt more than equivalent gains feel good. So, we demand a higher price (compensation for the pain of loss) to part with our possessions."
+    },
+    {
+      "concept_name": "Be objective: Value things for what they are, not because they're yours.",
+      "explanation": "To counter the endowment effect, try this thought experiment: 'If I didn't own this, how much would I pay for it today?' Compare that to your selling price. Also, focus on objective factors like market price or actual utility, rather than emotional attachment."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Effect strength varies",
+      "description": "The endowment effect might be stronger for items with sentimental value or items held for longer periods."
+    },
+    {
+      "limitation_name": "Not applicable to all goods",
+      "description": "The effect might be weaker or absent for purely transactional goods (like money) or items intended for exchange."
+    },
+    {
+      "limitation_name": "Difficult to completely separate from rational valuation factors",
+      "description": "Sometimes higher valuation by owners might reflect better knowledge of the item's condition or unique features, not just bias."
+    },
+    {
+      "limitation_name": "Cultural differences might exist",
+      "description": "The extent of the endowment effect could potentially vary across different cultures."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Overpricing personal items when selling",
+      "description": "Setting unrealistic selling prices based on inflated perceived value due to ownership, hindering successful transactions."
+    },
+    {
+      "pitfall_name": "Holding onto underperforming investments or unused possessions too long",
+      "description": "Reluctance to sell ('lose') assets even when objectively rational to do so, because ownership inflates their perceived worth."
+    },
+    {
+      "pitfall_name": "Making poor trading decisions",
+      "description": "Valuing what you have more than what you could get in an exchange, even if the trade is objectively fair or advantageous."
+    },
+    {
+      "pitfall_name": "Failing to recognize the effect in others during negotiations",
+      "description": "Not understanding that the other party might genuinely value their possession more highly simply because they own it."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

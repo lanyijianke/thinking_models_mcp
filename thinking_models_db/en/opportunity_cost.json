@@ -1,0 +1,89 @@
+{
+  "id": "opportunity_cost",
+  "name": "Opportunity Cost",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Decision Making & Judgment",
+  "subcategories": [
+    "Risk & Reward Assessment"
+  ],
+  "definition": "The true cost of any choice is the highest value among the other options that must be forgone for it.",
+  "purpose": "To help you make wiser, value-maximizing decisions when faced with multiple choices by measuring the value of forgone options.",
+  "interaction": "Please clearly describe the decision-making situation or the multiple options you are facing. I will guide you to identify the best alternative forgone and help you quantify the opportunity cost, ultimately providing decision-making advice.",
+  "constraints": [
+    "The best alternative forgone and its value must be clearly identified.",
+    "The analysis should include not only monetary costs but also implicit costs such as time, energy, and emotions.",
+    "Always analyze from the perspective of opportunity cost, reminding users that 'there is no free lunch' and 'you can't have your cake and eat it too.'",
+    "Guide users to think about the long-term value of options rather than just short-term or superficial value."
+  ],
+  "prompt": "# Prompt - Role Play Opportunity Cost\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a decision analyst for **'Opportunity Cost'**.\nMy entire thinking and response will be based on the **core principle** of this model: the true cost of any choice is the highest value among the other options that must be forgone for it.\n**The main purpose of this model is:** to help you make wiser, value-maximizing decisions when faced with multiple choices by measuring the value of forgone options.\n\n**Interaction Method:**\nPlease clearly describe the **[decision-making situation requiring trade-offs or multiple options you are facing]**.\nI will use the unique perspective of **'Opportunity Cost'**:\n1.  Guide you to identify the highest value among the **other options sacrificed** after you make a certain choice.\n2.  Help you quantify or evaluate the value (explicit + implicit costs) of this 'forgone option', i.e., the opportunity cost.\n3.  Provide you with **decision-making advice** from the perspective of opportunity cost, measuring which choice has a better actual benefit after deducting its opportunity cost.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: The best alternative forgone and its value must be clearly identified.\n* Content Standard: The analysis should include not only monetary costs but also implicit costs such as time, energy, and emotions.\n* Role Consistency: Always analyze from the perspective of opportunity cost, reminding users that 'there is no free lunch' and 'you can't have your cake and eat it too.'\n* Interaction Rules: Guide users to think about the long-term value of options rather than just short-term or superficial value.\n",
+  "example": "How to use the opportunity cost model to analyze job hopping versus staying at the current company?",
+  "tags": [
+    "Decision Making",
+    "Economics",
+    "Cost Analysis",
+    "Trade-offs"
+  ],
+  "use_cases": [
+    "Career development decisions",
+    "Investment choices",
+    "Time management",
+    "Resource allocation"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "What is opportunity cost? A small example in life.",
+      "explanation": "Imagine you have $10. You can buy an ice cream cone or a bag of chips. If you choose the ice cream cone, then the happiness the bag of chips would have brought you (like satisfying a craving, having snacks while watching a show) is the 'opportunity cost' of eating the ice cream cone. Simply put, opportunity cost is the value of the 'best B' you have to give up to get A. It reminds us that every choice has a cost, and this cost is the most valuable among the other possibilities we've given up. So, next time you make a choice, ask yourself: 'What's the best thing I'm giving up for this?' This will help you make a wiser decision!"
+    },
+    {
+      "concept_name": "Opportunity cost is everywhere: it's not just about money.",
+      "explanation": "It's not just about spending money; there's an opportunity cost to everything we do. For example, if you spend an afternoon playing games, that afternoon you could have used to learn a new skill, accompany your family, or go for a walk in the park. Among these things you gave up, the one that is most valuable to you is the opportunity cost of playing games. Understanding opportunity cost will make you cherish your time, money, and energy more, and use them wisely. It's not meant to make you anxious, but to help you more clearly understand the true meaning of choices."
+    },
+    {
+      "concept_name": "Why is it important to know opportunity cost?",
+      "explanation": "Knowing opportunity cost is like having a pair of 'sharp eyes' that can help you see through the real costs and potential benefits behind choices. It allows you, when faced with a dazzling array of options, not just to see which one looks good on the surface, but to think about which choice makes the things you give up 'least regrettable,' or in other words, which choice gives you the most 'net benefit.' This way, whether you're deciding to buy a house, change jobs, or plan a vacation, you can make decisions that are more in line with your long-term interests."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Value is difficult to quantify",
+      "description": "When options involve complex emotional values, personal preferences, or moral considerations, their 'value' is difficult to quantify and measure accurately using a unified standard, making the assessment of opportunity cost subjective and challenging."
+    },
+    {
+      "limitation_name": "Information asymmetry and uncertainty",
+      "description": "Accurately assessing the potential benefits and costs of all options requires sufficient information. If information is incomplete, inaccurate, or the future is full of uncertainty, the results of the opportunity cost analysis may be biased."
+    },
+    {
+      "limitation_name": "Influence of cognitive biases",
+      "description": "People may be influenced by various cognitive biases (such as loss aversion, confirmation bias) when making decisions, which can lead to inaccurate assessment of the value of forgone options, thereby affecting the objectivity of opportunity cost analysis."
+    },
+    {
+      "limitation_name": "Ignoring dynamic changes",
+      "description": "Opportunity cost analysis is usually based on current information and predictions about the future. However, the reality is dynamic, and the initially best forgone option may change its value over time, reducing the effectiveness of the initial analysis."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Ignoring implicit costs",
+      "description": "People tend to focus on explicit monetary costs while overlooking implicit costs such as time, energy, learning curves, and emotional stress. A choice that seems low in monetary cost may have a very high total opportunity cost due to significant implicit costs."
+    },
+    {
+      "pitfall_name": "Incorrectly identifying the 'best' forgone option",
+      "description": "Opportunity cost is the 'highest value' among the forgone options. If all possible alternatives are not correctly identified, or their values are incorrectly assessed, the true opportunity cost will be underestimated or overestimated."
+    },
+    {
+      "pitfall_name": "Interference from sunk costs",
+      "description": "People are often troubled by sunk costs that have already been incurred and cannot be recovered (e.g., having spent a lot of time on an unsatisfactory project), mistakenly including them in future decision considerations instead of focusing on future opportunity costs."
+    },
+    {
+      "pitfall_name": "Focusing only on the short term, not the long term",
+      "description": "Some decisions may have low short-term opportunity costs but may lead to missing greater development opportunities or incurring higher future costs in the long run. The reverse is also true. It is necessary to balance short-term and long-term impacts."
+    },
+    {
+      "pitfall_name": "Oversimplification or overcomplication",
+      "description": "Oversimplifying complex decisions may omit key opportunity cost factors. Conversely, excessively pursuing precise quantification of all minutiae may lead to analysis paralysis and loss of decision-making efficiency."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

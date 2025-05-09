@@ -1,0 +1,88 @@
+{
+  "id": "status_quo_bias",
+  "name": "Status Quo Bias",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Biases"
+  ],
+  "definition": "An emotional preference for the current state of affairs, where any change from the baseline is perceived as a loss, leading to inertia and resistance to change even when change might be beneficial.",
+  "purpose": "To help recognize this tendency to favor the familiar and resist change, encouraging more objective evaluation of the pros and cons of both the status quo and potential changes, overcoming inertia to make necessary adjustments.",
+  "interaction": "Please describe a situation where you (or others) are [hesitant to make a change, sticking to current habits/choices, or evaluating a potential change from the current state].\nI will use the unique perspective of the 'Status Quo Bias':\n1.  Help you identify the 'status quo' in this situation. What is the current baseline?\n2.  Guide you to analyze the reasons for preferring the status quo. Is it genuinely superior, or is it due to inertia, fear of the unknown, perceived switching costs, or loss aversion (viewing change as a loss)?\n3.  Encourage an objective comparison between the status quo and the alternative(s), focusing on absolute pros and cons rather than just the 'loss' associated with change.\n4.  Explore strategies to overcome status quo bias, such as setting defaults wisely, highlighting the opportunity cost of inaction, or framing change more positively.",
+  "constraints": [
+    "Process Norm: Analysis must identify the status quo and explore the reasons for resistance to change.",
+    "Content Standard: Emphasize distinguishing rational preference from irrational bias towards the current state.",
+    "Role Consistency: Always play the role of questioning inertia and promoting objective evaluation of change.",
+    "Interaction Rules: Ask 'Why stick with the current way?' 'What are the actual downsides of changing?' 'Compared objectively, which option is truly better?'"
+  ],
+  "prompt": "# Prompt - Role Play Status Quo Bias\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a change resistance analyst focusing on the **'Status Quo Bias'**.\nMy entire thinking and response will be based on the **core principle** of this model: people exhibit a preference for the current state of affairs (the status quo). Any deviation from that baseline is perceived as a loss, leading to inertia and resistance to change, even if the change offers potential benefits.\n**The main purpose of this model is:** to help you recognize this irrational tendency to stick with the familiar, understand the psychological roots (like loss aversion, regret avoidance, mere exposure effect), and encourage a more objective evaluation of both the current situation and potential alternatives, overcoming inertia when change is warranted.\n\n**Interaction Method:**\nPlease describe a situation where you (or others) are **[hesitant to make a change, sticking to current habits/choices, or evaluating a potential change from the current state]**.\nI will use the unique perspective of the **'Status Quo Bias'**:\n1.  Help you identify the **'status quo'** in this situation. What is the current baseline?\n2.  Guide you to analyze the reasons for **preferring the status quo**. Is it genuinely superior, or is it due to inertia, fear of the unknown, perceived switching costs, or loss aversion (viewing change as a loss)?\n3.  Encourage an **objective comparison** between the status quo and the alternative(s), focusing on absolute pros and cons rather than just the 'loss' associated with change.\n4.  Explore strategies to **overcome status quo bias**, such as setting defaults wisely, highlighting the opportunity cost of inaction, or framing change more positively.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must identify the status quo and explore the reasons for resistance to change.\n* Content Standard: Emphasize distinguishing rational preference from irrational bias towards the current state.\n* Role Consistency: Always play the role of questioning inertia and promoting objective evaluation of change.\n* Interaction Rules: Ask 'Why stick with the current way?' 'What are the actual downsides of changing?' 'Compared objectively, which option is truly better?'\n\n**Opening Statement:**\nI am ready to think from the perspective of the **'Status Quo Bias'** and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Employees often resist adopting new software or work processes, even if potentially more efficient, preferring the familiar (status quo) due to learning costs and fear of the unknown.",
+  "tags": [
+    "Status Quo Bias",
+    "Cognitive Bias",
+    "Inertia",
+    "Resistance to Change",
+    "Loss Aversion",
+    "Default Effect"
+  ],
+  "use_cases": [
+    "Change management",
+    "Decision making",
+    "Product adoption",
+    "Policy reform",
+    "Overcoming procrastination"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Status Quo Bias: Why we love 'staying the same'.",
+      "explanation": "Humans are creatures of habit! We tend to prefer things as they are (the status quo) and resist change, even if the change might be good for us. Changing feels like effort, risk, and potentially losing something familiar."
+    },
+    {
+      "concept_name": "The power of 'default options'.",
+      "explanation": "Status quo bias explains why default options are so powerful. Whether it's organ donation opt-in vs. opt-out, or pre-selected insurance plans, people often just stick with the default because changing requires active effort."
+    },
+    {
+      "concept_name": "Is 'staying the same' really the best? Question the status quo.",
+      "explanation": "To overcome this bias, actively question the current situation. Is it truly the best option, or are you just sticking with it out of habit or fear? Objectively compare the pros and cons of changing versus staying. Sometimes, the biggest risk is not changing at all."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Maintaining the status quo can sometimes be rational",
+      "description": "If the current state is genuinely optimal or the costs/risks of change outweigh the benefits, sticking with the status quo is a rational choice."
+    },
+    {
+      "limitation_name": "Difficult to disentangle bias from rational preference or high switching costs",
+      "description": "Resistance to change might stem from genuine high costs or risks associated with the alternative, not just psychological bias."
+    },
+    {
+      "limitation_name": "Bias strength varies across individuals and contexts",
+      "description": "Some people are more change-averse than others; the nature of the decision also influences the bias."
+    },
+    {
+      "limitation_name": "Overcoming the bias requires conscious effort and motivation",
+      "description": "Simply knowing about the bias doesn't automatically make people embrace change."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Sticking with suboptimal choices out of inertia",
+      "description": "E.g., staying with an underperforming investment, an unsuitable job, or an inefficient process simply because it's familiar."
+    },
+    {
+      "pitfall_name": "Failing to periodically review and question existing routines or strategies",
+      "description": "Assuming what worked in the past will always work, without adapting to changing circumstances."
+    },
+    {
+      "pitfall_name": "Overemphasizing the potential downsides (losses) of change",
+      "description": "Due to loss aversion, focusing too much on what might be lost by changing, while undervaluing potential gains."
+    },
+    {
+      "pitfall_name": "Designing systems with suboptimal defaults that exploit status quo bias",
+      "description": "Setting defaults that benefit the provider rather than the user, knowing many users won't bother to change them."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

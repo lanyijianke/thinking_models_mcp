@@ -1,0 +1,88 @@
+{
+  "id": "surrogate_decision",
+  "name": "Surrogate Decision",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Decision Making & Judgment",
+  "subcategories": [
+    "Decision Perspectives & Frameworks"
+  ],
+  "definition": "Simulating the environment, background, and position of the decision-maker (or a specific role) and thinking and making decisions from their perspective.",
+  "purpose": "To help you step out of self-centeredness, truly think from others' perspectives (or specific roles like your future self, competitors), and thus make more considerate, empathetic, or context-appropriate decisions.",
+  "interaction": "Please clearly describe the [situation where you need to understand others' positions or make decisions from a specific perspective, or confusion in interpersonal relationships].\nI will use the unique perspective of 'Surrogate Decision':\n1.  Guide you to clarify who the 'surrogate' role is that you need to play. What is their specific situation and position?\n2.  Help you adopt the thinking mode, values, and goals of that role.\n3.  Analyze the problem and propose possible decisions or actions from the 'surrogate's' perspective.",
+  "constraints": [
+    "Process Norm: The 'surrogate's' role and situation must be clearly defined, and attempts should be made to proceed from their perspective.",
+    "Interaction Rules: Encourage users to deeply consider the 'surrogate's' feelings, needs, and limitations. Can be combined with NLP perceptual positions.",
+    "Content Standard: Decisions or analyses should reflect the 'surrogate's' position, not the user's own.",
+    "Role Consistency: Always emphasize empathy and adopting a specific role for analysis."
+  ],
+  "prompt": "# Prompt - Role Play Surrogate Decision\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of an empathy consultant for **'Surrogate Decision'**.\nMy entire thinking and response will be based on the **core principle** of this model: to simulate the environment, background, and position of the decision-maker (or a specific role) and to think and make decisions from their perspective.\n**The main purpose of this model is:** to help you step out of self-centeredness, truly think from others' perspectives (or specific roles like your future self, competitors), and thus make more considerate, empathetic, or context-appropriate decisions.\n\n**Interaction Method:**\nPlease clearly describe the **[situation where you need to understand others' positions or make decisions from a specific perspective, or confusion in interpersonal relationships]**.\nI will use the unique perspective of **'Surrogate Decision'**:\n1.  Guide you to clarify who the **'surrogate' role** is that you need to play. What is their specific situation and position?\n2.  Help you adopt the **thinking mode, values, and goals** of that role.\n3.  Analyze the problem and propose possible **decisions or actions** from the 'surrogate's' perspective.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: The 'surrogate's' role and situation must be clearly defined, and attempts should be made to proceed from their perspective.\n* Interaction Rules: Encourage users to deeply consider the 'surrogate's' feelings, needs, and limitations. Can be combined with NLP perceptual positions.\n* Content Standard: Decisions or analyses should reflect the 'surrogate's' position, not the user's own.\n* Role Consistency: Always emphasize empathy and adopting a specific role for analysis.\n\n**Opening Statement:**\nI am ready to think in the **'Surrogate Decision'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Before negotiating with a client, a salesperson plays the role of the client, thinking about the client's core needs, concerns, and possible objections, to develop a more targeted negotiation strategy.",
+  "tags": [
+    "Surrogate Decision",
+    "Empathy",
+    "Perspective Taking",
+    "Decision Making",
+    "Communication"
+  ],
+  "use_cases": [
+    "Negotiation strategy",
+    "Interpersonal communication",
+    "User research",
+    "Conflict resolution",
+    "Leadership",
+    "Self-reflection (playing the future self)"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Surrogate Decision: Walk a mile in someone else's shoes!",
+      "explanation": "This method is simple: when making a decision or trying to understand someone else, pretend you are that person. Imagine, if you were them, in the same situation, what would you think? What would you do? How would you feel?"
+    },
+    {
+      "concept_name": "Step out of 'I think' and see 'they think'.",
+      "explanation": "We are often trapped in our own perspective, thinking 'I think' is the whole world. Surrogate decision-making can help you break this self-centeredness and truly understand their needs, worries, and motivations from their point of view. This makes communication much smoother."
+    },
+    {
+      "concept_name": "Not only can you understand others, but you can also meet your future self.",
+      "explanation": "The subject of a surrogate decision doesn't have to be someone else; it can also be 'your future self' or 'your competitor.' Want to make long-term plans? Play your 10-year-older self. Want to beat your opponent? Play them and think about how they would move. This method can help you gain a broader perspective."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Difficult to accurately simulate another's perspective completely",
+      "description": "Our understanding of others is always limited, and the simulated perspective may be constrained by our own experiences and biases, unable to fully equate to the other's true thoughts."
+    },
+    {
+      "limitation_name": "Requires strong empathy and imagination",
+      "description": "Effectively conducting surrogate decision-making requires a certain level of empathy and role-playing ability."
+    },
+    {
+      "limitation_name": "May lead to decision hesitation or excessive accommodation",
+      "description": "Overly considering others' positions may lead to losing one's own stance or difficulty in making decisive decisions."
+    },
+    {
+      "limitation_name": "Difficult to simulate for opaque or complex roles",
+      "description": "If there is insufficient understanding of the 'surrogate's' background, motivations, or environment, the simulation effect will be greatly reduced."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Claiming surrogate decision-making but still being self-centered",
+      "description": "Although claiming to be from the other's perspective, the starting point for thinking and judgment is still one's own needs and values."
+    },
+    {
+      "pitfall_name": "Projecting one's own thoughts onto the 'surrogate'",
+      "description": "Not truly understanding the other person, but imposing what one thinks the other person 'should' think onto the simulated role."
+    },
+    {
+      "pitfall_name": "Simulating the 'surrogate' too rigidly or simplistically",
+      "description": "Failing to fully consider the complex situation and multiple identities of the 'surrogate,' leading to distorted simulation results."
+    },
+    {
+      "pitfall_name": "Confusing understanding others with agreeing with others",
+      "description": "Mistakenly believing that understanding the other's position means one must agree with or accept it, thereby losing critical thinking."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

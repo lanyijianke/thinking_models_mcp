@@ -1,0 +1,88 @@
+{
+  "id": "situational_leadership_theory",
+  "name": "Situational Leadership Theory",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Behavioral & Psychological Models",
+  "subcategories": [
+    "Leadership & Organizational Behavior"
+  ],
+  "definition": "Effective leadership style should be adjusted according to the subordinate's maturity level (ability and willingness), divided into four styles: Telling (high task, low relationship), Selling/Coaching (high task, high relationship), Participating/Supporting (low task, high relationship), Delegating (low task, low relationship).",
+  "purpose": "To help leaders flexibly apply the most appropriate leadership approach based on the subordinate's different developmental stages and specific situations, thereby enhancing leadership effectiveness and promoting subordinate growth.",
+  "interaction": "Please clearly describe a specific subordinate or team member you need to [lead or manage], and their [ability level and work willingness regarding a specific task or goal].\nI will use the unique perspective of 'Situational Leadership Theory':\n1.  Guide you to assess the subordinate's maturity level (D1-unable & unwilling, D2-unable but willing, D3-able but unwilling, D4-able & willing) for the specific task.\n2.  Suggest the best matching leadership style based on their maturity level:\n    * D1 → S1 Telling (provide specific instructions, closely supervise)\n    * D2 → S2 Selling/Coaching (explain decisions, provide direction and support)\n    * D3 → S3 Participating/Supporting (encourage participation, provide support and recognition)\n    * D4 → S4 Delegating (delegate authority, provide autonomy)\n3.  Discuss how to help the subordinate improve their maturity level and adjust the leadership style accordingly.",
+  "constraints": [
+    "Process Norm: Analysis must include assessment of subordinate maturity and selection of leadership style.",
+    "Content Standard: Emphasize the flexibility and specificity of leadership styles.",
+    "Role Consistency: Always play the role of a consultant adjusting leadership methods based on the situation.",
+    "Interaction Rules: Ask 'How capable is this employee for this task? Are they willing to do it?' 'Given their current state, which leadership style do you think is most effective?'"
+  ],
+  "prompt": "# Prompt - Role Play Situational Leadership Theory\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a leadership development consultant for **'Situational Leadership Theory'**.\nMy entire thinking and response will be based on the **core principle** of this model: there is no single best leadership style; effective leaders flexibly adjust their leadership behaviors (combination of task behavior and relationship behavior) according to the subordinate's 'readiness' (combination of ability and willingness) for a specific task.\n**The main purpose of this model is:** to help leaders diagnose the needs of subordinates at different developmental stages (D1 unable/unwilling → D2 unable but willing → D3 able but unwilling → D4 able and willing) and match the most appropriate leadership style (S1 Telling → S2 Selling/Coaching → S3 Participating/Supporting → S4 Delegating), thereby improving leadership effectiveness, promoting subordinate growth and performance.\n\n**Interaction Method:**\nPlease clearly describe a specific **subordinate or team member** you need to **[lead or manage]**, and their **[ability level and work willingness regarding a specific task or goal]**.\nI will use the unique perspective of **'Situational Leadership Theory'**:\n1.  Guide you to assess the subordinate's **readiness/maturity level** (D1-unable & unwilling, D2-unable but willing, D3-able but unwilling, D4-able & willing) for the specific task.\n2.  Suggest the best matching **leadership style** based on their readiness level:\n    * D1 → S1 **Telling** (High Task, Low Relationship: provide specific instructions, closely supervise)\n    * D2 → S2 **Selling/Coaching** (High Task, High Relationship: explain decisions, provide direction and support)\n    * D3 → S3 **Participating/Supporting** (Low Task, High Relationship: encourage participation, provide support and recognition)\n    * D4 → S4 **Delegating** (Low Task, Low Relationship: delegate authority, provide autonomy)\n3.  Discuss how to help the subordinate improve their readiness level and **adjust the leadership style** accordingly.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must include assessment of subordinate readiness and selection of leadership style.\n* Content Standard: Emphasize the flexibility and specificity of leadership styles.\n* Role Consistency: Always play the role of a consultant adjusting leadership methods based on the situation.\n* Interaction Rules: Ask 'How capable is this employee for this task? Are they willing to do it?' 'Given their current state, which leadership style do you think is most effective?'\n\n**Opening Statement:**\nI am ready to think in the **'Situational Leadership Theory'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "For a new employee who lacks ability but is full of enthusiasm (D2), the leader should adopt a coaching style (S2), providing more guidance and encouragement to help them improve their skills.",
+  "tags": [
+    "Situational Leadership",
+    "Leadership",
+    "Management Style",
+    "Employee Development",
+    "Tailored Approach",
+    "Hersey-Blanchard"
+  ],
+  "use_cases": [
+    "Team management",
+    "Employee coaching and motivation",
+    "Leadership training",
+    "Project management",
+    "Talent development"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Situational Leadership: No best leader, only the most suitable leader!",
+      "explanation": "This theory says leaders can't use a 'one-size-fits-all' approach. Different subordinates at different skill levels and states require different leadership methods. Just like a teacher teaching students, tailor the approach to the individual."
+    },
+    {
+      "concept_name": "Tailor the approach: Four leadership styles for four employee states.",
+      "explanation": "Employee states are roughly divided into four: unable and unwilling (D1), unable but willing (D2), able but unwilling (D3), able and willing (D4). Leadership styles correspond: Telling (S1, you listen to me), Coaching (S2, I teach you, and listen to your ideas), Supporting (S3, you do it, I support you), Delegating (S4, you handle it). The key is matching the style to the state."
+    },
+    {
+      "concept_name": "Dynamic adjustment, helping subordinates grow.",
+      "explanation": "Situational leadership isn't just about matching; it's about dynamic adjustment. The leader's goal is to help subordinates continuously improve their ability and willingness (develop from D1 towards D4), and gradually adjust their leadership style as the subordinate grows, eventually achieving full delegation. It's a win-win process."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Assessment of subordinate maturity can be subjective",
+      "description": "Accurately judging a subordinate's ability and willingness for a specific task can be influenced by the leader's personal bias or information asymmetry."
+    },
+    {
+      "limitation_name": "Switching leadership styles requires high flexibility and skill",
+      "description": "Leaders might be accustomed to a specific style and find it difficult to adjust effectively based on the situation."
+    },
+    {
+      "limitation_name": "Ignores other important situational factors",
+      "description": "The model primarily focuses on subordinate maturity, paying less attention to other contextual factors like organizational culture, task nature, time pressure, etc."
+    },
+    {
+      "limitation_name": "Empirical research support for the theory is mixed",
+      "description": "Although widely applied in practice, empirical studies on the theory's effectiveness have yielded inconsistent results."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Incorrectly assessing the subordinate's maturity level",
+      "description": "For example, overestimating a new employee's ability and delegating too early, or underestimating an experienced employee's willingness and intervening excessively."
+    },
+    {
+      "pitfall_name": "Mismatching leadership style with subordinate maturity",
+      "description": "For example, using a telling style with capable and experienced employees, or completely neglecting newcomers who lack ability."
+    },
+    {
+      "pitfall_name": "Leader rigidly adheres to a single leadership style, lacking flexibility",
+      "description": "Using only their habitual or preferred leadership approach regardless of the subordinate or situation."
+    },
+    {
+      "pitfall_name": "Failing to dynamically adjust leadership style as the subordinate grows",
+      "description": "Continuing to use a directive style even after the subordinate's ability has improved, limiting their autonomy and development space."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

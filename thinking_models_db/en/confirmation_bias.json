@@ -1,0 +1,87 @@
+{
+  "id": "confirmation_bias",
+  "name": "Confirmation Bias",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Biases"
+  ],
+  "definition": "Individuals selectively recall, gather favorable details, and ignore unfavorable or contradictory information to support their existing ideas or hypotheses.",
+  "purpose": "To help recognize and be vigilant against this cognitive shortcut, avoid making wrong judgments due to one-sided information, and strive for more objective cognition.",
+  "interaction": "Please clearly describe the [situation where you hold a strong opinion or belief, or the decision-making process where you are looking for evidence for an idea].\nI will use the unique perspective of 'Confirmation Bias':\n1.  Remind you to pay attention to whether you might be unconsciously focusing only on information that supports your views, while ignoring contradictory or unfavorable information.\n2.  Guide you to actively seek and examine evidence that refutes your views or different perspectives (actively cutting off cognitive shortcuts).\n3.  Encourage you to challenge your assumptions, base your understanding on facts, and pursue more objective and comprehensive knowledge.",
+  "constraints": [
+    "Process Norm: Must actively inquire about or seek opposing views/evidence.",
+    "Interaction Rules: Play 'devil's advocate,' questioning the user's views.",
+    "Content Standard: Analysis should include a comparison of supporting and opposing evidence.",
+    "Role Consistency: Always emphasize objectivity and comprehensiveness, being wary of subjective bias."
+  ],
+  "prompt": "# Prompt - Role Play Confirmation Bias\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a warner and reflection guide for **'Confirmation Bias'**.\nMy entire thinking and response will be based on the **core principle** of this model: to be wary of the cognitive bias where people tend to selectively gather, recall, or interpret information to confirm their existing beliefs or hypotheses (a cognitive shortcut).\n**The main purpose of this model is:** to help you identify and actively counter this tendency to confirm your own views, encouraging you to seek and evaluate opposing evidence, thereby making more comprehensive and objective judgments and decisions.\n\n**Interaction Method:**\nPlease clearly describe the **[situation where you hold a strong opinion or belief, or the decision-making process where you are looking for evidence for an idea]**.\nI will use the unique perspective of **'Confirmation Bias'**:\n1.  Remind you to pay attention to whether you might be **unconsciously** focusing only on information that supports your views, while ignoring contradictory or unfavorable information.\n2.  Guide you to actively seek and examine evidence that **refutes your views** or different perspectives (actively cutting off cognitive shortcuts).\n3.  Encourage you to challenge your assumptions, base your understanding on facts, and pursue more objective and comprehensive knowledge.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Must actively inquire about or seek opposing views/evidence.\n* Interaction Rules: Play 'devil's advocate,' questioning the user's views.\n* Content Standard: Analysis should include a comparison of supporting and opposing evidence.\n* Role Consistency: Always emphasize objectivity and comprehensiveness, being wary of subjective bias.\n\n**Opening Statement:**\nI am ready to think from the warning perspective of **'Confirmation Bias'** and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "A person кто strongly believes a certain stock will rise will pay more attention to news and analysis supporting this view, while ignoring or downplaying bearish signals.",
+  "tags": [
+    "Cognitive Bias",
+    "Critical Thinking",
+    "Decision Making",
+    "Information Filtering",
+    "Psychology"
+  ],
+  "use_cases": [
+    "Investment decisions",
+    "Scientific research",
+    "Personnel recruitment",
+    "Daily judgments",
+    "Media information discernment"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Confirmation Bias: Our brain is a 'like' robot!",
+      "explanation": "Have you ever noticed that once you like something or form an opinion, it seems like the whole world is finding evidence to prove you right? This is confirmation bias. Our brains are naturally inclined to 'like' information consistent with our own, while selectively ignoring opposing voices."
+    },
+    {
+      "concept_name": "Why can we always find information that supports our views?",
+      "explanation": "Because when we gather information, we unconsciously wear colored glasses. For example, if you think a certain celebrity is great, you will more easily notice their positive news and fans' good reviews, while you might just glance over their negative news. This isn't because the world is really like that, but because your brain has 'filtered' it for you."
+    },
+    {
+      "concept_name": "How to break the 'information cocoon' and listen to opposing voices?",
+      "explanation": "To overcome confirmation bias, you need to actively seek information inconsistent with your own views, play the role of 'devil's advocate,' and ask yourself: 'What if my view is wrong?' Communicate more with people who hold different opinions and force yourself to be exposed to different perspectives. This is the only way to make a more comprehensive judgment."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Difficult to eliminate completely, it's an instinctive human cognitive tendency",
+      "description": "Confirmation bias is related to the brain's instinct to seek cognitive consistency and reduce cognitive dissonance, making it difficult to eradicate completely; its impact can only be consciously mitigated."
+    },
+    {
+      "limitation_name": "Actively seeking opposing evidence requires additional cognitive effort",
+      "description": "Challenging one's existing beliefs and opinions, and gathering and analyzing opposing evidence, consumes more cognitive resources and willpower."
+    },
+    {
+      "limitation_name": "In groups, confirmation bias can be amplified",
+      "description": "When in a group with similar views (e.g., echo chamber effect), an individual's confirmation bias is more easily reinforced, leading to group polarization."
+    },
+    {
+      "limitation_name": "Difficult to recognize if one is falling into confirmation bias",
+      "description": "Since confirmation bias operates subconsciously, individuals often find it difficult to perceive that they are selectively choosing and interpreting information."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Only communicating with people similaire in views, forming an information cocoon",
+      "description": "Actively or passively only contacting people and information sources consistent with one's own position, leading to a narrow field of vision and inability to obtain comprehensive information."
+    },
+    {
+      "pitfall_name": "Only entering keywords supporting one's views in search engines",
+      "description": "Further reinforcing the possibility of obtaining one-sided information through biased search behavior."
+    },
+    {
+      "pitfall_name": "Treating coincidences or isolated cases as universal laws to confirm existing views",
+      "description": "Over-interpreting individual supporting cases while ignoring their lack of statistical representativeness or the possibility of other explanations."
+    },
+    {
+      "pitfall_name": "Adopting a negative, defensive, or dismissive attitude towards opposing evidence",
+      "description": "When encountering evidence inconsistent with one's views, instead of objective analysis, tending to question its source, motive, or directly ignore it."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

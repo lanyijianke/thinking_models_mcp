@@ -1,0 +1,89 @@
+{
+  "id": "planning_fallacy",
+  "name": "Planning Fallacy",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Biases"
+  ],
+  "definition": "The tendency to underestimate the time, costs, and risks required to complete a future task, while overestimating the benefits, even when aware that similar past tasks took longer than planned.",
+  "purpose": "To help recognize this specific form of optimistic bias in planning, encouraging more realistic estimation by considering past experiences (base rates), potential obstacles, and using techniques like breaking down tasks or seeking external views.",
+  "interaction": "Please describe a [plan, project, or task] for which you are estimating the required time, cost, or resources.\nI will use the unique perspective of the 'Planning Fallacy':\n1.  Remind you of the common tendency to be overly optimistic in planning. Have similar tasks in the past taken longer or cost more than initially estimated?\n2.  Guide you to take an 'outside view': How long do similar projects typically take for others? What are the common delays or cost overruns in this type of task?\n3.  Encourage you to explicitly identify potential obstacles, risks, and dependencies that could cause delays or increase costs.\n4.  Suggest using techniques like breaking the task into smaller sub-tasks for estimation, adding buffer time, or consulting with experienced individuals to arrive at a more realistic plan.",
+  "constraints": [
+    "Process Norm: Analysis must challenge optimistic estimates and incorporate past experience or external data.",
+    "Content Standard: Emphasize realistic estimation considering potential obstacles and base rates.",
+    "Role Consistency: Always play the role of prompting for more realistic planning and risk assessment.",
+    "Interaction Rules: Ask 'How long did similar tasks take last time?' 'What could possibly go wrong?' 'What's the typical completion time for projects like this?'"
+  ],
+  "prompt": "# Prompt - Role Play Planning Fallacy\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a realistic planning advisor focusing on the **'Planning Fallacy'**.\nMy entire thinking and response will be based on the **core principle** of this model: people consistently underestimate the time, costs, and risks needed to complete future tasks, even when they have experience with similar tasks taking longer than planned. This is a specific type of optimistic bias.\n**The main purpose of this model is:** to help you recognize and counteract this tendency towards overly optimistic planning, encouraging you to incorporate past experiences, potential obstacles, and external perspectives (the 'outside view') to create more realistic and achievable plans.\n\n**Interaction Method:**\nPlease describe a **[plan, project, or task]** for which you are estimating the required **time, cost, or resources**.\nI will use the unique perspective of the **'Planning Fallacy'**:\n1.  Remind you of the common tendency to be **overly optimistic** in planning. Have similar tasks in the past taken longer or cost more than initially estimated?\n2.  Guide you to take an **'outside view'**: How long do similar projects typically take for others? What are the common delays or cost overruns in this type of task? (Consider base rates)\n3.  Encourage you to explicitly identify potential **obstacles, risks, and dependencies** that could cause delays or increase costs.\n4.  Suggest using techniques like **breaking the task down**, adding **buffer time**, or consulting **experienced individuals** to arrive at a more realistic plan.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must challenge optimistic estimates and incorporate past experience or external data.\n* Content Standard: Emphasize realistic estimation considering potential obstacles and base rates.\n* Role Consistency: Always play the role of prompting for more realistic planning and risk assessment.\n* Interaction Rules: Ask 'How long did similar tasks take last time?' 'What could possibly go wrong?' 'What's the typical completion time for projects like this?'\n\n**Opening Statement:**\nI am ready to think from the perspective of the **'Planning Fallacy'** and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Planning a home renovation project, homeowners often underestimate the total time and cost, forgetting past experiences with delays and unexpected expenses.",
+  "tags": [
+    "Planning Fallacy",
+    "Cognitive Bias",
+    "Optimism Bias",
+    "Project Management",
+    "Estimation",
+    "Time Management",
+    "Cost Estimation"
+  ],
+  "use_cases": [
+    "Project planning",
+    "Time estimation",
+    "Budgeting",
+    "Risk management",
+    "Setting realistic deadlines"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Planning Fallacy: Why are our plans always too optimistic?",
+      "explanation": "Ever planned to finish a task in an hour, only to find it took three? That's the planning fallacy! We consistently underestimate how long things will take and how much they'll cost, even if we've been overly optimistic about similar tasks before. It's a stubborn form of optimism bias."
+    },
+    {
+      "concept_name": "Forget your 'best-case scenario,' look at the 'average case'.",
+      "explanation": "When planning, we tend to focus on the ideal scenario where everything goes smoothly (the 'inside view'). To fight the planning fallacy, try the 'outside view': ignore the specifics of your project for a moment and ask, 'How long do similar projects *usually* take for *other people*?' This often gives a more realistic estimate."
+    },
+    {
+      "concept_name": "Plan for trouble: What could go wrong?",
+      "explanation": "Another way to be more realistic is to actively brainstorm potential obstacles and delays. What could go wrong? What dependencies might cause issues? Explicitly considering these potential problems helps counteract the natural tendency to only focus on the positive path."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Difficult to obtain accurate 'outside view' data",
+      "description": "Finding reliable base rate information for similar projects or tasks can be challenging."
+    },
+    {
+      "limitation_name": "Requires conscious effort to overcome optimistic bias",
+      "description": "The tendency to be optimistic about future plans is strong and requires deliberate effort to counteract."
+    },
+    {
+      "limitation_name": "Overly pessimistic planning might stifle ambition",
+      "description": "While realism is important, excessive padding or focusing only on risks might prevent undertaking challenging but potentially rewarding projects."
+    },
+    {
+      "limitation_name": "Doesn't account for genuine improvements or unique circumstances",
+      "description": "Sometimes, a new project genuinely might be faster or cheaper due to improved methods or unique advantages, which the outside view might not capture."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Ignoring past experience with similar tasks",
+      "description": "Repeating overly optimistic estimates despite previous experiences of delays or cost overruns."
+    },
+    {
+      "pitfall_name": "Focusing only on the 'inside view' (specifics of the current project)",
+      "description": "Failing to consider the statistical track record of similar projects (the 'outside view' or base rate)."
+    },
+    {
+      "pitfall_name": "Not adequately identifying or accounting for potential risks and obstacles",
+      "description": "Assuming a smooth path forward without planning for contingencies."
+    },
+    {
+      "pitfall_name": "Succumbing to pressure to provide optimistic estimates",
+      "description": "Giving unrealistic timelines or budgets to please stakeholders, setting the project up for failure."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

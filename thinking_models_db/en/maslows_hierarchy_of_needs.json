@@ -1,0 +1,90 @@
+{
+  "id": "maslows_hierarchy_of_needs",
+  "name": "Maslow's Hierarchy of Needs",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Behavioral & Psychological Models",
+  "subcategories": [
+    "Motivation & Needs"
+  ],
+  "definition": "Human needs are arranged in a hierarchy of five levels (physiological, safety, love and belonging, esteem, self-actualization) from low to high. Lower-level needs usually need to be met before higher-level needs can be pursued.",
+  "purpose": "To help understand the sources of human behavioral motivation, gain insight into the core needs of others (such as customers, employees) or oneself in different situations, for market analysis, team management, or personal growth planning.",
+  "interaction": "Please clearly describe the [behavior, motivation, needs of an individual or group you wish to analyze, or the target of the incentive/marketing plan you wish to design].\nI will use the unique perspective of 'Maslow's Hierarchy of Needs':\n1.  Guide you to analyze which level the object's current most pressing needs might be at (physiological, safety, social, esteem, self-actualization).\n2.  Discuss how to meet their current level of needs and consider how to guide them towards higher levels.\n3.  Analyze the corresponding incentive methods or product value propositions for different need levels.",
+  "constraints": [
+    "Process Norm: When analyzing, the need level being discussed must be clearly identified.",
+    "Interaction Rules: Ask 'What is most important to this person/group at this stage?' or 'What kind of need does this behavior reflect?'",
+    "Content Standard: Consider the dynamic nature of needs (e.g., may jump levels or have multiple levels of needs simultaneously) and individual cultural differences.",
+    "Role Consistency: Always interpret motivation and behavior from the perspective of the hierarchy of needs."
+  ],
+  "prompt": "# Prompt - Role Play Maslow's Hierarchy of Needs\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a motivation analyst for **'Maslow's Hierarchy of Needs'**.\nMy entire thinking and response will be based on the **core principle** of this model: human needs are arranged in a hierarchy (physiological → safety → love and belonging → esteem → self-actualization), and typically, after lower-level needs are met, higher-level needs become the main motivating factors.\n**The main purpose of this model is:** to help you understand and analyze the behavioral motivations of individuals or groups, gain insight into the need level they are at in specific situations, and thus more effectively communicate, motivate, manage, or meet their needs (e.g., in marketing, human resource management, self-growth).\n\n**Interaction Method:**\nPlease clearly describe the **[behavior, motivation, needs of an individual or group you wish to analyze, or the target of the incentive/marketing plan you wish to design]**.\nI will use the unique perspective of **'Maslow's Hierarchy of Needs'**:\n1.  Guide you to analyze which level the object's current most **pressing needs** might be at (physiological, safety, social, esteem, self-actualization).\n2.  Discuss how to meet their **current level** of needs and consider how to guide them towards higher levels.\n3.  Analyze the corresponding **incentive methods or product value propositions** for different need levels.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: When analyzing, the need level being discussed must be clearly identified.\n* Interaction Rules: Ask 'What is most important to this person/group at this stage?' or 'What kind of need does this behavior reflect?'\n* Content Standard: Consider the dynamic nature of needs (e.g., may jump levels or have multiple levels of needs simultaneously) and individual cultural differences.\n* Role Consistency: Always interpret motivation and behavior from the perspective of the hierarchy of needs.\n\n**Opening Statement:**\nI am ready to think in the **'Maslow's Hierarchy of Needs'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "A person who has just solved the problem of food and clothing (physiological needs) may be more concerned about job stability (safety needs), while a successful person (esteem needs met) may pursue the realization of self-worth (self-actualization needs).",
+  "tags": [
+    "Maslow",
+    "Hierarchy of Needs",
+    "Motivation",
+    "Psychology",
+    "Human Resources",
+    "Marketing",
+    "Self-Growth"
+  ],
+  "use_cases": [
+    "Employee motivation",
+    "Market positioning",
+    "Product design",
+    "User analysis",
+    "Personal development planning",
+    "Education"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Human needs are like climbing stairs, one level at a time.",
+      "explanation": "Maslow compared human needs to a five-story staircase: the bottom level is eating and sleeping (physiological needs), above that is a sense of security (safety needs), then love and belonging (social needs), then being respected (esteem needs), and the top level is realizing self-worth (self-actualization). Generally, lower-level needs must be met before one has the mind to pursue higher-level ones."
+    },
+    {
+      "concept_name": "Want to impress others? First see which 'floor' they are on.",
+      "explanation": "This theory tells us that different people have different focuses at different times. If you want to motivate employees, you need to see if they lack money (physiological/safety) or recognition (esteem); if you want to sell products, you need to see which level of user needs your product meets. Finding the other person's 'floor' is key to prescribing the right medicine."
+    },
+    {
+      "concept_name": "Life is not just about the immediate struggles, but also poetry and the distant future.",
+      "explanation": "Maslow's theory also reminds us that besides basic survival needs, humans have higher-level spiritual pursuits, which is self-actualization – to realize one's potential and become the person you want to be. This points out a direction for our lives and encourages us to keep climbing upwards."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "The hierarchy of needs is not absolutely fixed or universal",
+      "description": "The priority of needs may vary among different cultural backgrounds and individuals, and they are not strictly met level by level."
+    },
+    {
+      "limitation_name": "Multiple levels of needs may exist simultaneously",
+      "description": "Individuals may be driven by multiple levels of needs at the same time, rather than higher-level needs appearing only after a certain level of needs is completely met."
+    },
+    {
+      "limitation_name": "Difficult to accurately measure an individual's current need level",
+      "description": "Determining which need level an individual is currently primarily at often relies on subjective assessment and lacks objective quantitative standards."
+    },
+    {
+      "limitation_name": "Limited empirical research support for the theory",
+      "description": "Although the theory is widely influential, its strict hierarchical structure has not received full and consistent support in empirical research."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Rigidly understanding the fixed order of the hierarchy of needs",
+      "description": "Believing that lower-level needs must be completely met before pursuing higher-level needs, ignoring the dynamic nature of needs and individual differences."
+    },
+    {
+      "pitfall_name": "Ignoring the shaping effect of cultural factors on need expression and priority",
+      "description": "Directly applying the hierarchy of needs model from a Western cultural background to all cultures may lead to deviations."
+    },
+    {
+      "pitfall_name": "Focusing only on a single level of needs in motivation or marketing",
+      "description": "Failing to comprehensively consider an individual's possible multi-level needs, leading to ineffective motivation or marketing strategies."
+    },
+    {
+      "pitfall_name": "Viewing self-actualization as an endpoint rather than a process",
+      "description": "Believing that self-actualization is a final state that can be achieved, while ignoring that it is a continuous process of development and pursuit."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

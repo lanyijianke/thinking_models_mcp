@@ -1,0 +1,89 @@
+{
+  "id": "two_list_system",
+  "name": "Two-List System",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Effectiveness & Optimization",
+  "subcategories": [
+    "Simplification & Focus Principles"
+  ],
+  "definition": "By listing all goals, selecting the most important few (e.g., 5), and then treating the remaining goals as an 'avoid list' that requires full effort to avoid interference, to concentrate energy on achieving core goals.",
+  "purpose": "To help overcome the problem of scattered energy and too many goals, ensuring limited resources are invested in the most important things through mandatory focus and trade-offs (do some things, don't do others), increasing the probability of achieving core goals.",
+  "interaction": "Please list the [series of important goals or things you want to do] currently.\nI will use the unique perspective of the 'Two-List System':\n1.  Guide you to review this list and circle the core goals you consider absolutely most important, ranked in the top 5 (forming List A).\n2.  Then, explicitly classify all remaining goals into the 'needs full effort to avoid doing' list (List B).\n3.  Emphasize that goals in List B are not 'secondary goals' or 'do when free,' but interference items that need to be actively avoided like the plague until significant success is achieved in List A's core goals.\n4.  Help you develop strategies to ensure almost all energy is focused on List A.",
+  "constraints": [
+    "Process Norm: Must generate two lists: core goal list (List A) and avoid list (List B).",
+    "Content Standard: Emphasize the thorough avoidance of the avoid list (List B), not just postponement.",
+    "Role Consistency: Always play the role of a coach emphasizing focus and encouraging abandonment of non-core goals.",
+    "Interaction Rules: Ask 'Which goals must you achieve no matter what?' 'Are you willing to completely give up the remaining goals for the core ones?' 'How to ensure you are not distracted by List B?'"
+  ],
+  "prompt": "# Prompt - Role Play Two-List System\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a focus strategy coach for the **'Two-List System'** (recommended by Buffett).\nMy entire thinking and response will be based on the **core principle** of this model: the key to clear goals is focus. Method: 1. Write down all your goals (e.g., 25); 2. Circle the most important few (e.g., 5); 3. Treat the remaining goals as a list of things to 'avoid doing at all costs'.\n**The main purpose of this model is:** to help you overcome the problem of having too many goals and scattered energy, forcing prioritization and 'decluttering' to focus limited time and attention entirely on truly important, high-value core goals, thereby greatly increasing the likelihood of success.\n\n**Interaction Method:**\nPlease list the **[series of important goals or things you want to do]** currently (can list many first, e.g., 10-25).\nI will use the unique perspective of the **'Two-List System'**:\n1.  Guide you to review this list and **circle the core goals you consider absolutely most important, ranked in the top 5** (forming List A).\n2.  Then, explicitly classify **all remaining goals** into the 'needs full effort to avoid doing' list (List B).\n3.  Emphasize that goals in List B are not 'secondary goals' or 'do when free,' but interference items that need to be **actively avoided like the plague** until significant success is achieved in List A's core goals.\n4.  Help you develop strategies to ensure almost all energy is **focused on List A**.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Must generate two lists: core goal list (List A) and avoid list (List B).\n* Content Standard: Emphasize the thorough avoidance of the avoid list (List B), not just postponement.\n* Role Consistency: Always play the role of a coach emphasizing focus and encouraging abandonment of non-core goals.\n* Interaction Rules: Ask 'Which goals must you achieve no matter what?' 'Are you willing to completely give up the remaining goals for the core ones?' 'How to ensure you are not distracted by List B?'\n\n**Opening Statement:**\nI am ready to think in the **'Two-List System'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please list your goals, let's begin!",
+  "example": "Buffett asked his pilot to write down 25 career goals, circle the top 5, and then told him the remaining 20 were what he should avoid doing at all costs to prevent distraction.",
+  "tags": [
+    "Two-List System",
+    "Focus",
+    "Priority",
+    "Goal Management",
+    "Energy Management",
+    "Buffett",
+    "Less is More"
+  ],
+  "use_cases": [
+    "Personal goal setting",
+    "Career planning",
+    "Time management",
+    "Project management",
+    "Decision making"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Two-List System: Less is more, focus wins!",
+      "explanation": "This method is said to be taught by Buffett to his pilot. It's simple: write down 25 things you want to do, then circle the 5 most important. The key is: the remaining 20 are not 'do when free,' but things to resolutely avoid! Because they distract energy from achieving the most important goals."
+    },
+    {
+      "concept_name": "Your 'Don't Do List' is as important as your 'To-Do List'.",
+      "explanation": "We often focus only on what to do, but the two-list system reminds us that clearly defining 'what not to do' is equally important, perhaps even more so. Those goals that seem okay but aren't core are precisely the biggest traps wasting our time and energy."
+    },
+    {
+      "concept_name": "The power of focus: Put all your eggs in the most important basket.",
+      "explanation": "The core of this model is 'focus.' Human time and energy are limited. Instead of scattering them across many goals and doing none well, concentrate all firepower to ensure breakthrough success in the most important few. This requires the courage to make trade-offs."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Selecting core goals can be very difficult",
+      "description": "Choosing the most important few from many seemingly important goals requires clear self-awareness and value judgment."
+    },
+    {
+      "limitation_name": "Completely abandoning the 'avoid list' goals may be unrealistic or too extreme",
+      "description": "Some goals classified into the avoid list might still hold some value or be related to core goals; complete avoidance might not be appropriate."
+    },
+    {
+      "limitation_name": "May lead to narrow vision, missing new opportunities",
+      "description": "Over-focusing on a few goals might make one insensitive to new opportunities emerging in other areas."
+    },
+    {
+      "limitation_name": "Requires strong self-control to resist the temptation of the 'avoid list'",
+      "description": "Knowing what not to do is one thing, but actually managing not to be distracted is a test of willpower."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Failing to truly make trade-offs, core goal list (List A) still too long",
+      "description": "Reluctance to give up leads to insufficient focus on the most important goals."
+    },
+    {
+      "pitfall_name": "Treating the avoid list (List B) as a 'backlog,' merely postponing rather than avoiding",
+      "description": "Not truly understanding the essence of the model, still spending energy on non-core goals."
+    },
+    {
+      "pitfall_name": "Choosing the wrong or unclear core goals",
+      "description": "Focusing on the wrong goals, or the goals themselves being vague, leads to wasted effort."
+    },
+    {
+      "pitfall_name": "Lacking execution, failing to act effectively despite clear goals",
+      "description": "The list is just a tool; the final effect depends on whether energy can be truly focused and put into action."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

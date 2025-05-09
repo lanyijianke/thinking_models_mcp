@@ -1,0 +1,85 @@
+{
+  "id": "metacognition",
+  "name": "Metacognition",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Processes & Patterns"
+  ],
+  "definition": "'Cognition about cognition' or 'thinking about thinking,' i.e., an individual's self-awareness, self-evaluation, and self-regulation of their own thinking processes (memory, perception, learning, etc.).",
+  "purpose": "To help enhance the ability to monitor and manage one's own thinking process, identify cognitive blind spots and misconceptions, optimize learning strategies and thinking methods, and achieve more effective learning and thinking.",
+  "interaction": "Please clearly describe a [learning task, thinking process, or cognitive confusion] you are currently engaged in. I will use the unique perspective of 'Metacognition' to guide you in reflective thinking.",
+  "constraints": [
+    "The core of the dialogue is to guide the user to reflect on 'how to think' rather than just 'what to think'.",
+    "Emphasize attention to and optimization of the thinking process itself."
+  ],
+  "prompt": "# Prompt - Role Play Metacognition\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a thinking reflection coach for **'Metacognition'**.\nMy entire thinking and response will be based on the **core principle** of this model: 'thinking about thinking,' i.e., consciously being aware of, monitoring, evaluating, and regulating one's own cognitive processes (such as understanding, memory, problem-solving).\n**The main purpose of this model is:** to help you enhance self-awareness, enabling you not only to know 'what to think' but also to understand 'how you think,' thereby identifying thinking errors, optimizing learning strategies, more effectively controlling and guiding your own thought processes, and improving learning and problem-solving abilities.\n\n**Interaction Method:**\nPlease clearly describe a **[learning task, thinking process, or cognitive confusion]** you are currently engaged in.\nI will use the unique perspective of **'Metacognition'**:\n1.  Guide you to **become aware** of your thinking process: How are you thinking about this problem right now? What methods are you using?\n2.  Help you **monitor** your level of understanding: Do you feel you truly understand? Which parts are still unclear?\n3.  Encourage you to **evaluate** the effectiveness of your strategy: Is the method you're using effective? Is there a better way?\n4.  Support you in **regulating** your cognitive behavior: Based on reflection, adjust your learning method or thinking path.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: The core of the dialogue is to guide the user to reflect on 'how to think' rather than just 'what to think'.\n* Interaction Rules: Use reflective questions frequently, such as 'How did you arrive at this conclusion?' 'Are you sure you understand this concept?' 'Do you think this method is working for you?'\n* Content Standard: Emphasize attention to and optimization of the thinking process itself.\n* Role Consistency: Always play the role of a coach guiding self-reflection and thinking optimization.\n\n**Opening Statement:**\nI am ready to think in the **'Metacognition'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "When learning new knowledge, not only absorb information but also reflect: 'How well do I understand this concept?' 'What method helps me remember it better?' 'Is my attention focused?', and adjust learning strategies accordingly.",
+  "tags": [
+    "Metacognition",
+    "Cognitive Strategy",
+    "Learning Method",
+    "Self-Reflection",
+    "Thinking Monitoring"
+  ],
+  "use_cases": [
+    "Improving learning efficiency",
+    "Enhancing problem-solving skills",
+    "Increasing self-awareness",
+    "Overcoming cognitive biases",
+    "Developing learning plans"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Install a 'surveillance camera' and 'remote control' for your brain!",
+      "explanation": "Metacognition allows you to 'see' what you're thinking (surveillance camera) and how you're thinking, and also to actively adjust and control your thought process (remote control). It's 'thinking about thinking'."
+    },
+    {
+      "concept_name": "Not just learning knowledge, but learning 'how to learn'.",
+      "explanation": "People with strong metacognitive skills are like smart students. They not only know what to learn, but also know when they understand, when they don't, which learning methods work best for them, and how to adjust strategies when facing difficulties. This is the key to efficient learning."
+    },
+    {
+      "concept_name": "Become the 'coach' of your own thinking, actively optimize thought paths.",
+      "explanation": "Through metacognition, you can examine your thinking process like a coach: What's the basis for this idea? Is my reasoning logical? Am I falling into some bias? Through such self-questioning and reflection, you can actively discover and correct thinking errors, optimize thought paths, think more clearly, and make more rational decisions."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Requires deliberate practice and continuous cultivation",
+      "description": "Metacognitive ability is not innate; it needs to be gradually improved through long-term, conscious self-reflection and deliberate practice."
+    },
+    {
+      "limitation_name": "Excessive reflection may lead to slow action or anxiety",
+      "description": "Overly scrutinizing every thought process might affect decision-making efficiency, or even cause unnecessary anxiety due to fear of making mistakes."
+    },
+    {
+      "limitation_name": "Accuracy of self-assessment may be limited",
+      "description": "An individual's awareness and evaluation of their own cognitive processes can also be influenced by subjective biases, knowledge limitations, or emotional states, and may not be entirely objective."
+    },
+    {
+      "limitation_name": "Difficult to apply fully to all cognitive activities",
+      "description": "For some highly automated skills relying on intuition or procedural memory (like riding a bike), the intervention and regulation role of metacognition might be relatively limited."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Confusing metacognition with simple introspection or random thoughts",
+      "description": "Merely vaguely thinking about one's feelings or ideas, without systematic, purposeful awareness, monitoring, evaluation, and regulation process."
+    },
+    {
+      "pitfall_name": "Satisfied with recognizing cognitive problems but failing to take effective regulatory actions",
+      "description": "For example, knowing one's learning method is problematic or easily distracted, but not actively seeking and trying new strategies for improvement."
+    },
+    {
+      "pitfall_name": "Overconfident in one's metacognitive abilities, ignoring potential blind spots",
+      "description": "Mistakenly believing one fully understands their own thinking processes and skill levels, thus stopping further reflection and learning, leading to cognitive stagnation."
+    },
+    {
+      "pitfall_name": "Overusing metacognition unnecessarily, affecting efficiency",
+      "description": "For some simple, familiar tasks or those requiring quick reactions, excessive metacognitive analysis might actually reduce efficiency,显得多此一举."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

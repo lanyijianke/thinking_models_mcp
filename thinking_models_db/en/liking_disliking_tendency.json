@@ -1,0 +1,88 @@
+{
+  "id": "liking_disliking_tendency",
+  "name": "Liking/Disliking Tendency",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Biases"
+  ],
+  "definition": "People tend to distort facts or judgments to favor those they like and admire, while distorting them to disadvantage those they dislike or resent.",
+  "purpose": "To help recognize how personal feelings (like/dislike, love/hate) can cloud judgment, encouraging more objective evaluation of people and situations based on facts and merits, rather than emotional preference.",
+  "interaction": "Please describe a situation where your [judgment, decision, or perception] might be influenced by your strong positive or negative feelings towards a [person, group, product, or idea].\nI will use the unique perspective of the 'Liking/Disliking Tendency':\n1.  Guide you to acknowledge your emotional stance: Do you inherently like or dislike the subject in question? Why?\n2.  Help you consciously separate your feelings from the objective facts or merits of the case. Are you overlooking flaws because you like them, or ignoring virtues because you dislike them?\n3.  Encourage seeking objective data, considering opposing viewpoints (even if they come from disliked sources), or applying consistent standards regardless of personal preference.\n4.  Promote judgments based on rational analysis rather than emotional bias.",
+  "constraints": [
+    "Process Norm: Analysis must identify the emotional preference (like/dislike) and its potential distorting effect on judgment.",
+    "Content Standard: Emphasize separating feelings from objective evaluation.",
+    "Role Consistency: Always play the role of alerting to emotional biases and advocating for objectivity.",
+    "Interaction Rules: Ask 'How do you feel about this person/thing?' 'Could your feelings be affecting how you see the facts?' 'Try to evaluate this as if you had no prior feelings about it.'"
+  ],
+  "prompt": "# Prompt - Role Play Liking/Disliking Tendency\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of an emotional bias analyst focusing on the **'Liking/Disliking Tendency'** (from Munger's Psychology of Human Misjudgment).\nMy entire thinking and response will be based on the **core principle** of this model: humans are prone to distorting facts and judgments to facilitate liking/loving or disliking/hating. We tend to ignore the faults of those we like and the virtues of those we dislike.\n**The main purpose of this model is:** to help you recognize how powerful personal feelings (positive or negative) can unconsciously bias your perception and evaluation of people, ideas, or situations, encouraging you to strive for more objective assessments based on merits rather than affection or animosity.\n\n**Interaction Method:**\nPlease describe a situation where your **[judgment, decision, or perception]** might be influenced by your **strong positive or negative feelings** towards a **[person, group, product, or idea]**.\nI will use the unique perspective of the **'Liking/Disliking Tendency'**:\n1.  Guide you to acknowledge your **emotional stance**: Do you inherently like or dislike the subject in question? Why?\n2.  Help you consciously **separate your feelings** from the **objective facts or merits** of the case. Are you overlooking flaws because you like them, or ignoring virtues because you dislike them?\n3.  Encourage seeking **objective data**, considering **opposing viewpoints** (even if they come from disliked sources), or applying **consistent standards** regardless of personal preference.\n4.  Promote judgments based on **rational analysis** rather than emotional bias.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must identify the emotional preference (like/dislike) and its potential distorting effect on judgment.\n* Content Standard: Emphasize separating feelings from objective evaluation.\n* Role Consistency: Always play the role of alerting to emotional biases and advocating for objectivity.\n* Interaction Rules: Ask 'How do you feel about this person/thing?' 'Could your feelings be affecting how you see the facts?' 'Try to evaluate this as if you had no prior feelings about it.'\n\n**Opening Statement:**\nI am ready to think from the perspective of the **'Liking/Disliking Tendency'** and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Hiring managers might favor candidates they personally like or find similar to themselves (liking tendency), potentially overlooking more qualified candidates they don't connect with emotionally.",
+  "tags": [
+    "Liking/Disliking Tendency",
+    "Cognitive Bias",
+    "Emotional Bias",
+    "Halo Effect (related)",
+    "Objectivity",
+    "Munger"
+  ],
+  "use_cases": [
+    "Personnel decisions (hiring, promotion)",
+    "Evaluating arguments or proposals",
+    "Interpersonal judgment",
+    "Investment decisions",
+    "Avoiding prejudice"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Liking/Disliking Bias: Love makes blind, hate makes deaf!",
+      "explanation": "We tend to wear 'rose-tinted glasses' when looking at people or things we like, automatically seeing their good points and ignoring flaws. Conversely, for things we dislike, we often focus only on the negatives and overlook any positives. Our emotions heavily influence our judgment."
+    },
+    {
+      "concept_name": "The 'Halo Effect' and its dark twin.",
+      "explanation": "Liking someone can create a 'halo effect' – we assume they are good in all aspects. Disliking someone can create the opposite 'horns effect' – we assume they are bad all around. This prevents us from making fair and objective assessments."
+    },
+    {
+      "concept_name": "Separate feelings from facts.",
+      "explanation": "To combat this bias, consciously try to separate your personal feelings from the objective evaluation. Ask yourself: If I didn't like/dislike this person/thing, how would I judge it based purely on the facts and merits? Force yourself to consider information that contradicts your feelings."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Difficult to completely suppress emotional responses",
+      "description": "Liking and disliking are natural human emotions that inevitably influence perception to some degree."
+    },
+    {
+      "limitation_name": "Identifying the extent of emotional bias is subjective",
+      "description": "It's hard to know precisely how much our feelings are distorting our judgment."
+    },
+    {
+      "limitation_name": "Sometimes 'liking' is based on valid positive attributes",
+      "description": "Positive feelings might stem from genuinely good qualities or past positive experiences, not just bias."
+    },
+    {
+      "limitation_name": "Requires high self-awareness and emotional regulation",
+      "description": "Recognizing and managing the influence of strong emotions on judgment takes practice."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Favoring friends or liked individuals in evaluations or resource allocation",
+      "description": "Giving preferential treatment based on personal affection rather than objective merit."
+    },
+    {
+      "pitfall_name": "Dismissing valid arguments or good ideas simply because they come from disliked individuals or groups",
+      "description": "Letting personal animosity prevent objective consideration of information."
+    },
+    {
+      "pitfall_name": "Making impulsive decisions based on initial positive or negative feelings",
+      "description": "E.g., buying a product solely because of liking the salesperson, or rejecting a proposal because of disliking the presenter."
+    },
+    {
+      "pitfall_name": "Failing to recognize how factors like physical attractiveness or similarity influence liking and subsequent judgments",
+      "description": "Unconsciously being biased by superficial factors that trigger the liking tendency."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

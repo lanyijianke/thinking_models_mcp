@@ -1,0 +1,88 @@
+{
+  "id": "outcome_bias",
+  "name": "Outcome Bias",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Biases"
+  ],
+  "definition": "The tendency to judge the quality of a decision based primarily on its outcome, rather than on the quality of the decision-making process at the time the decision was made (considering the information available then).",
+  "purpose": "To help recognize this bias where results overshadow process, encouraging evaluation of decisions based on the reasoning and information available *before* the outcome was known, promoting fairer assessments and better learning from both successes and failures.",
+  "interaction": "Please describe a [past decision] whose [outcome (good or bad)] is known, and how you (or others) are evaluating the quality of that decision.\nI will use the unique perspective of 'Outcome Bias':\n1.  Remind you that a good outcome doesn't automatically mean the decision process was good (could be luck), and a bad outcome doesn't automatically mean the process was bad (could be bad luck or unforeseen factors).\n2.  Guide you to reconstruct the decision-making situation *at the time*: What information was available? What were the alternatives considered? What was the reasoning process?\n3.  Evaluate the *quality of the process* itself, independent of the eventual outcome. Was the reasoning sound? Was the information used appropriately? Were risks considered?\n4.  Encourage learning from the process, not just celebrating good outcomes or blaming bad ones.",
+  "constraints": [
+    "Process Norm: Analysis must separate the evaluation of the decision process from the evaluation of the outcome.",
+    "Content Standard: Emphasize judging decisions based on the quality of reasoning and information available at the time.",
+    "Role Consistency: Always play the role of challenging outcome-based judgments and promoting process-focused evaluation.",
+    "Interaction Rules: Ask 'Ignoring the result for a moment, was the decision reasonable given what was known then?' 'Could a good process still lead to a bad outcome here?'"
+  ],
+  "prompt": "# Prompt - Role Play Outcome Bias\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a decision process evaluator focusing on **'Outcome Bias'**.\nMy entire thinking and response will be based on the **core principle** of this model: people tend to judge the quality of a past decision based primarily on its outcome (whether it turned out well or poorly), rather than on the quality of the decision-making process itself given the information available at the time.\n**The main purpose of this model is:** to help you recognize this bias, encouraging you to evaluate decisions based on the soundness of the reasoning and the information available *before* the outcome was known. This promotes fairer assessments, better learning from both success (was it luck?) and failure (was the process flawed, or just unlucky?), and avoids reinforcing poor decision habits that happened to lead to good outcomes.\n\n**Interaction Method:**\nPlease describe a **[past decision]** whose **[outcome (good or bad)]** is known, and how you (or others) are **evaluating the quality** of that decision.\nI will use the unique perspective of **'Outcome Bias'**:\n1.  Remind you that a **good outcome doesn't automatically mean the decision process was good** (could be luck), and a **bad outcome doesn't automatically mean the process was bad** (could be bad luck or unforeseen factors).\n2.  Guide you to reconstruct the **decision-making situation _at the time_**: What information was available? What were the alternatives considered? What was the reasoning process?\n3.  Evaluate the **_quality of the process_** itself, independent of the eventual outcome. Was the reasoning sound? Was the information used appropriately? Were risks considered?\n4.  Encourage **learning from the process**, not just celebrating good outcomes or blaming bad ones.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must separate the evaluation of the decision process from the evaluation of the outcome.\n* Content Standard: Emphasize judging decisions based on the quality of reasoning and information available at the time.\n* Role Consistency: Always play the role of challenging outcome-based judgments and promoting process-focused evaluation.\n* Interaction Rules: Ask 'Ignoring the result for a moment, was the decision reasonable given what was known then?' 'Could a good process still lead to a bad outcome here?'\n\n**Opening Statement:**\nI am ready to think from the perspective of **'Outcome Bias'** and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "A risky investment strategy yields a high return due to unexpected market conditions (good outcome). Outcome bias might lead one to praise the strategy as brilliant, ignoring the poor risk assessment process. Conversely, a well-reasoned decision might lead to failure due to unforeseen events (bad outcome), and outcome bias might lead to unfair criticism of the decision process.",
+  "tags": [
+    "Outcome Bias",
+    "Cognitive Bias",
+    "Decision Evaluation",
+    "Process vs. Outcome",
+    "Hindsight Bias (related)",
+    "Learning from Mistakes"
+  ],
+  "use_cases": [
+    "Performance evaluation",
+    "Post-mortem analysis (projects, investments)",
+    "Learning from experience",
+    "Fair judgment",
+    "Medical decision analysis"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Outcome Bias: Don't just look at the results, look at the process!",
+      "explanation": "We often judge a decision solely by whether it turned out well or badly. If it succeeded, we think it was a great decision; if it failed, we think it was terrible. But outcome bias warns us: a good decision process can still lead to a bad outcome (bad luck!), and a terrible process might luckily lead to a good outcome. We should evaluate the decision based on the situation *at the time* it was made."
+    },
+    {
+      "concept_name": "Winning the lottery doesn't make buying lottery tickets a good investment strategy.",
+      "explanation": "This is a classic example. Just because someone got lucky and won (good outcome) doesn't mean the decision to buy the ticket (the process, considering the odds) was rational. Outcome bias can make us learn the wrong lessons."
+    },
+    {
+      "concept_name": "Focus on improving the process, not just chasing good outcomes.",
+      "explanation": "To make better decisions in the long run, focus on improving your decision-making *process*. Did you gather enough information? Did you consider alternatives? Was your reasoning sound? Even if a good process sometimes leads to bad luck, over time, a better process will lead to better average outcomes."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Difficult to completely ignore salient outcomes",
+      "description": "Outcomes, especially extreme ones, are naturally very attention-grabbing and emotionally charged, making objective process evaluation hard."
+    },
+    {
+      "limitation_name": "Evaluating the 'quality' of the decision process itself can be subjective",
+      "description": "Determining what constitutes a 'good' process at the time can be debatable, especially with incomplete information."
+    },
+    {
+      "limitation_name": "Outcomes do provide valuable feedback",
+      "description": "While not the sole basis for judgment, outcomes are crucial data points for learning and refining future decision processes."
+    },
+    {
+      "limitation_name": "Can be difficult to reconstruct the exact information and mindset at the time of decision",
+      "description": "Memory is fallible and influenced by knowing the outcome (related to hindsight bias)."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Rewarding employees based solely on outcomes, ignoring process or luck",
+      "description": "Promoting someone who achieved success through reckless gambling, while penalizing someone whose careful plan failed due to external factors."
+    },
+    {
+      "pitfall_name": "Repeating poor decision processes because they luckily led to good outcomes previously",
+      "description": "Failing to recognize that past success was due to luck and not sound strategy."
+    },
+    {
+      "pitfall_name": "Excessively blaming oneself or others for negative outcomes that resulted from reasonable decisions under uncertainty",
+      "description": "Creating a culture of fear where people are afraid to make sound decisions that involve risk."
+    },
+    {
+      "pitfall_name": "Failing to extract valuable process lessons from both successes and failures",
+      "description": "Attributing success solely to skill and failure solely to bad luck, hindering learning."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

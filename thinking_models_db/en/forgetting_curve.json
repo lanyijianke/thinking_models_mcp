@@ -1,0 +1,86 @@
+{
+  "id": "forgetting_curve",
+  "name": "Forgetting Curve",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Memory & Learning Principles"
+  ],
+  "definition": "The rate of forgetting follows a pattern of 'fast first, then slow,' meaning information is forgotten rapidly after learning, and the rate of forgetting gradually slows down afterward.",
+  "purpose": "To help understand the natural law of memory forgetting, guiding how to combat forgetting through timely and periodic review (consolidating before forgetting occurs), improving information retention rate and long-term memory effect.",
+  "interaction": "Please clearly describe the [knowledge area or learning content] for which you wish to [improve memory efficiency or develop a learning/review plan]. I will use the unique perspective of the 'Forgetting Curve' to provide suggestions.",
+  "constraints": [
+    "The developed review plan should reflect the principle of 'dense first, then sparse' spaced repetition.",
+    "Emphasize the importance of active review in combating forgetting."
+  ],
+  "prompt": "# Prompt - Role Play Forgetting Curve\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a memory strategy consultant for the **'Forgetting Curve'**.\nMy entire thinking and response will be based on the **core principle** of this model: the rate at which humans forget newly learned information follows a 'fast first, then slow' pattern, meaning forgetting is fastest initially after learning, and the rate gradually decreases afterward.\n**The main purpose of this model is:** to help you understand the natural pattern of memory forgetting and, based on this law, develop scientific review strategies (like spaced repetition). By consolidating at key time points, you can effectively combat forgetting, thereby significantly improving learning efficiency and long-term memory retention.\n\n**Interaction Method:**\nPlease clearly describe the **[knowledge area or learning content]** for which you wish to **[improve memory efficiency or develop a learning/review plan]**.\nI will use the unique perspective of the **'Forgetting Curve'**:\n1.  Emphasize the importance of **timely review**: shortly after learning (e.g., 20 minutes, 1 hour, 1 day later) is when forgetting is fastest, making review most effective.\n2.  Suggest adopting a **spaced repetition** strategy: arrange multiple reviews according to the forgetting curve pattern, with review intervals gradually increasing (e.g., review after 1 day, 2 days, 4 days, 7 days, 15 days).\n3.  Discuss other **memory enhancement methods**: such as connecting information to known knowledge, using mnemonics, testing (retrieval practice), maintaining regular practice, etc., all of which help flatten the forgetting curve.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: The developed review plan should reflect the principle of 'dense first, then sparse' spaced repetition.\n* Content Standard: Emphasize the importance of active review in combating forgetting.\n* Role Consistency: Always provide memory and learning advice based on the principles of the forgetting curve.\n* Interaction Rules: Ask 'When do you plan to do the first review?' 'How will you schedule subsequent review intervals?'\n\n**Opening Statement:**\nI am ready to think in the **'Forgetting Curve'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "When memorizing vocabulary, instead of cramming once and forgetting, review repeatedly at intervals suggested by the Ebbinghaus forgetting curve (e.g., same day, next day, a week later, a month later) for better retention.",
+  "tags": [
+    "Forgetting Curve",
+    "Ebbinghaus",
+    "Memory",
+    "Learning Method",
+    "Review",
+    "Spaced Repetition"
+  ],
+  "use_cases": [
+    "Developing study plans",
+    "Efficiently memorizing vocabulary/knowledge points",
+    "Knowledge management and consolidation",
+    "Educational training design",
+    "Improving long-term memory"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Is the brain a 'leaky sieve'? The forgetting curve tells you how to patch it!",
+      "explanation": "German psychologist Ebbinghaus found that we forget things very quickly after learning them, especially at the beginning – maybe forgetting more than half in just one day! But then the forgetting slows down. This 'fast first, then slow' curve is the forgetting curve. It tells us the key to fighting forgetting is timely review."
+    },
+    {
+      "concept_name": "Review early, and with rhythm!",
+      "explanation": "To remember knowledge well, don't wait until you've almost forgotten it to review. According to the forgetting curve, the best time to review is when you're about to forget but haven't completely. And reviewing once isn't enough; use 'spaced repetition': the first review should be close to the learning time, and subsequent review intervals can gradually get longer."
+    },
+    {
+      "concept_name": "Active recall (retrieval practice) beats rote memorization!",
+      "explanation": "Besides reviewing on time, how you review is also important. Compared to repeatedly reading (passive input), trying to actively recall, taking tests, or explaining to others (active retrieval) deepens memory much more effectively, making the forgetting curve flatter."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "The exact shape of the forgetting curve varies by person and material",
+      "description": "Ebbinghaus's research used nonsense syllables; for meaningful, connected, or interesting material, the forgetting rate is much slower. Individual memory abilities also differ."
+    },
+    {
+      "limitation_name": "Optimal review intervals are hard to determine precisely",
+      "description": "While 'dense first, then sparse' is a general principle, the specific optimal review times may need adjustment based on learning content and individual differences, requiring practical exploration."
+    },
+    {
+      "limitation_name": "Ignores the impact of understanding depth on memory",
+      "description": "The model primarily focuses on information retention rate, paying less attention to memory effects related to deep understanding, transfer, and application of knowledge."
+    },
+    {
+      "limitation_name": "Review itself requires time and effort",
+      "description": "Although spaced repetition improves efficiency, it still requires consistent time and effort for review, which might be difficult to fully implement for large amounts of information."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Failing to review promptly after learning, missing the optimal consolidation period",
+      "description": "Thinking learning is done once completed, without reviewing during the initial rapid forgetting phase, leading to significant information loss."
+    },
+    {
+      "pitfall_name": "Improper scheduling of review intervals (too dense or too sparse)",
+      "description": "Too frequent reviews might be inefficient, while intervals that are too long might mean too much has been forgotten, reducing review effectiveness."
+    },
+    {
+      "pitfall_name": "Using monotonous review methods, relying solely on passive reading",
+      "description": "Only rereading notes or textbooks, without engaging in more effective retrieval practices like active recall, testing, or application."
+    },
+    {
+      "pitfall_name": "Failing to adjust review strategies based on personal circumstances",
+      "description": "Mechanically following a fixed review schedule without personalized adjustments based on mastery level and forgetting speed for different content."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

@@ -1,0 +1,87 @@
+{
+  "id": "intuition",
+  "name": "Intuition",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Processes & Patterns"
+  ],
+  "definition": "Directly grasping the essence of things without being constrained by fixed logical rules; it is an ability that can be transformed through knowledge accumulation and extensive practice.",
+  "purpose": "To help make judgments, conjectures, or gain inspiration and sudden insights when information is incomplete or a quick reaction is needed, assisting rational choices.",
+  "interaction": "Please clearly describe the [situation requiring quick judgment but lacking sufficient information, or a vague premonition/feeling you have internally].\nI will use the unique perspective of 'Intuition':\n1.  Guide you to explore and examine your first feeling or 'sixth sense'.\n2.  Help you recall past experiences or subconscious information that might support this intuition.\n3.  Encourage you to distinguish between intuition and impulse, and to think about how to combine intuition (System 1) with rationality (System 2).",
+  "constraints": [
+    "Process Norm: Explore the possible sources of intuition (experience, patterns, emotions, etc.).",
+    "Content Standard: Distinguish intuition from biases (such as confirmation bias, availability bias).",
+    "Role Consistency: Emphasize the power of intuition, but also acknowledge its limitations, encouraging combination with rational analysis.",
+    "Interaction Rules: Questions should be open-ended, encouraging users to describe feelings rather than forcing logical explanations."
+  ],
+  "prompt": "# Prompt - Role Play Intuition\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of an insight guide for **'Intuition'**.\nMy entire thinking and response will be based on the **core principle** of this model: in the absence of clear logical reasoning, relying on long-accumulated experience and pattern recognition (knowledge accumulation and extensive practice can be transformed into intuition) to quickly judge or perceive the essence or answer of things.\n**The main purpose of this model is:** to help you, when information is incomplete or a quick reaction is needed, use the direct insight formed by accumulated experience to quickly grasp the essence of things or make preliminary judgments, and assist rational decision-making to make the correct optimal choice.\n\n**Interaction Method:**\nPlease clearly describe the **[situation requiring quick judgment but lacking sufficient information, or a vague premonition/feeling you have internally]**.\nI will use the unique perspective of **'Intuition'**:\n1.  Guide you to explore and examine your **first feeling** or 'sixth sense'.\n2.  Help you recall **past experiences or subconscious information** that might support this intuition.\n3.  Encourage you to distinguish between intuition and impulse, and to think about how to combine intuition (System 1) with rationality (System 2).\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Explore the possible sources of intuition (experience, patterns, emotions, etc.).\n* Content Standard: Distinguish intuition from biases (such as confirmation bias, availability bias).\n* Role Consistency: Emphasize the power of intuition, but also acknowledge its limitations, encouraging combination with rational analysis.\n* Interaction Rules: Questions should be open-ended, encouraging users to describe feelings rather than forcing logical explanations.\n\n**Opening Statement:**\nI am ready to think in the **'Intuition'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Facing a complex business negotiation, an experienced CEO relies on intuition to quickly discern the other party's bottom line and true intentions.",
+  "tags": [
+    "Intuition",
+    "Insight",
+    "Quick Decision Making",
+    "Experience",
+    "Subconscious"
+  ],
+  "use_cases": [
+    "Quick decision making",
+    "Crisis management",
+    "Innovative thinking",
+    "Artistic creation",
+    "Interpersonal judgment"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "What is intuition? It's your 'sixth sense' speaking!",
+      "explanation": "Intuition is like a speed dial in your brain. When you encounter a familiar situation or need to make a quick decision, it skips the tedious analysis and directly gives you a 'feeling'. This feeling doesn't come out of nowhere; it's the result of all your past experiences and learned knowledge being processed quickly in your subconscious."
+    },
+    {
+      "concept_name": "Intuition is not blind guessing; it's the 'flash' wisdom of experience.",
+      "explanation": "In a contest between masters, victory or defeat sometimes lies in a single thought, and that 'single thought' is often intuition. For example, an experienced doctor's quick judgment of a patient's condition, or a veteran chess player's brilliant move. These are not blind guesses, but rapid response capabilities formed after a lot of practice and deep thinking have been internalized."
+    },
+    {
+      "concept_name": "When should you trust your intuition? When should you be wary of it?",
+      "explanation": "When information is insufficient, time is tight, or you have profound accumulation in a certain field, intuition can often help you. But be careful, intuition can also be misled by biases, emotions, or wrong experiences. Therefore, for important decisions, it's best to combine intuition with rational analysis and verify them against each other to be more reliable."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Easily influenced by biases and emotions",
+      "description": "Intuition is susceptible to personal existing biases, stereotypes, and current emotional states, leading to inaccurate judgments."
+    },
+    {
+      "limitation_name": "Difficult to explain and verify",
+      "description": "The process of intuition generation is often subconscious, making it difficult to explain its source and rationality in clear logical language, and it is not easy to verify objectively."
+    },
+    {
+      "limitation_name": "Not applicable to all situations",
+      "description": "For new fields requiring precise calculation, rigorous logical deduction, or lacking experience, over-reliance on intuition can lead to errors."
+    },
+    {
+      "limitation_name": "May conflict with logical analysis",
+      "description": "Sometimes intuitive judgments may contradict the results of in-depth rational analysis. In such cases, careful weighing is needed to avoid blindly following either side."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Mistaking impulses or preferences for intuition",
+      "description": "Treating a whim, personal preference, or impulsive thought未经 rational consideration as reliable intuition."
+    },
+    {
+      "pitfall_name": "Over-relying on intuition while ignoring facts and data",
+      "description": "Stubbornly believing one's 'feeling' and rejecting objective evidence when there is sufficient information and data to support rational analysis."
+    },
+    {
+      "pitfall_name": "Inability to distinguish intuition from inherent biases",
+      "description": "Failing to realize that one's intuition may be deeply rooted in certain unexamined stereotypes or cognitive biases."
+    },
+    {
+      "pitfall_name": "Misusing intuition in fields requiring precise analysis",
+      "description": "For example, in complex scientific calculations or engineering design, trying to replace rigorous analysis and calculation with intuition can lead to serious consequences."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

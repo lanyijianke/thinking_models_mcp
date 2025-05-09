@@ -1,0 +1,87 @@
+{
+  "id": "decision_tree",
+  "name": "Decision Tree",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Decision Making & Judgment",
+  "subcategories": [
+    "Structured Decision Methods"
+  ],
+  "definition": "Creating a plan to reach a goal by graphically listing decision steps, random events (probabilities), resource costs, and outcomes.",
+  "purpose": "To assist in making objective and rational decisions, helping to determine the strategy most likely to achieve the goal.",
+  "interaction": "Please clearly describe the [complex decision problem requiring a choice or a situation needing planning to achieve a certain goal].\nI will use the unique perspective of 'Decision Tree':\n1.  Guide you to identify key decision nodes (your choices), chance nodes (uncertain events), and outcome nodes (final outputs) in the decision.\n2.  Help you sort out the possibilities (probabilities) of each branch and their corresponding values (benefits or costs).\n3.  Provide you with a quantitative basis for decision-making by calculating the expected value of each path or assessing risks.",
+  "constraints": [
+    "Process Norm: Decision nodes and chance nodes must be clearly distinguished, and attempts should be made to estimate probabilities and outcome values.",
+    "Content Standard: Analysis should include quantitative assessment, such as calculating expected values.",
+    "Role Consistency: Emphasize logical and structured analysis, sorting out problems like drawing a tree diagram.",
+    "Interaction Rules: Guide users to sort out decision paths with structured questions."
+  ],
+  "prompt": "# Prompt - Role Play Decision Tree\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a structured decision planner for **'Decision Tree'**.\nMy entire thinking and response will be based on the **core principle** of this model: to visually list decision options, probabilities of possible events, resource costs, and corresponding outcomes by constructing a tree diagram.\n**The main purpose of this model is:** to help you systematically sort out the paths and possible consequences of complex decisions, and to assist you in making objective, rational, and goal-achieving strategy choices through quantitative analysis.\n\n**Interaction Method:**\nPlease clearly describe the **[complex decision problem requiring a choice or a situation needing planning to achieve a certain goal]**.\nI will use the unique perspective of **'Decision Tree'**:\n1.  Guide you to identify key **decision nodes** (your choices), **chance nodes** (uncertain events), and **outcome nodes** (final outputs) in the decision.\n2.  Help you sort out the possibilities (probabilities) of each branch and their corresponding values (benefits or costs).\n3.  Provide you with a **quantitative** basis for decision-making by calculating the expected value of each path or assessing risks.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Decision nodes and chance nodes must be clearly distinguished, and attempts should be made to estimate probabilities and outcome values.\n* Content Standard: Analysis should include quantitative assessment, such as calculating expected values.\n* Role Consistency: Emphasize logical and structured analysis, sorting out problems like drawing a tree diagram.\n* Interaction Rules: Guide users to sort out decision paths with structured questions.\n\n**Opening Statement:**\nI am ready to think in the **'Decision Tree'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "A company is considering whether to invest in a new project. By analyzing different investment amounts, success probabilities, and corresponding returns through a decision tree, the optimal plan is chosen.",
+  "tags": [
+    "Decision Tree",
+    "Structured Thinking",
+    "Probability",
+    "Risk Management",
+    "Strategy Planning"
+  ],
+  "use_cases": [
+    "Investment decisions",
+    "Project management",
+    "Product development",
+    "Medical diagnosis",
+    "Business strategy"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Decision Tree: Draw a 'map' for your choices!",
+      "explanation": "Facing decision-making difficulties? A decision tree is like a navigation map, helping you draw out various possibilities (e.g., choose A or B), the consequences (good or bad) of each possibility, and the probability of these consequences occurring. This way, you can see at a glance which path is most likely to lead to your goal."
+    },
+    {
+      "concept_name": "Probabilities and numbers make decisions no longer reliant on feelings.",
+      "explanation": "The power of a decision tree lies in its introduction of probability and expected value. It's no longer 'I feel this plan is good,' but rather by calculating the 'expected return' of each option (e.g., probability of success multiplied by the reward after success), using numbers to speak, making decisions more scientific and rational."
+    },
+    {
+      "concept_name": "Decompose step by step, and even complex problems can be clarified.",
+      "explanation": "Some decisions seem to have a thousand loose ends. A decision tree can help you break them down into small decision points and uncertain events. Just like solving a math problem, step by step, once each small problem is clarified, the final answer will naturally emerge. It is particularly suitable for complex decisions with multiple stages and multiple variables."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Estimation of probabilities and outcome values relies on subjective judgment",
+      "description": "The accuracy of a decision tree highly depends on the estimation of probabilities and outcome values for each branch, which often involves subjectivity or incomplete information."
+    },
+    {
+      "limitation_name": "Complex decision trees can be difficult to construct and understand",
+      "description": "When there are too many decision options and uncertain factors, the decision tree can become very large and complex, making it difficult to present clearly and analyze effectively."
+    },
+    {
+      "limitation_name": "Difficult to handle continuous variables or a large number of branches",
+      "description": "Decision trees are more suitable for handling discrete options and outcomes. They are more difficult to handle for continuously varying variables or situations with countless possible branches."
+    },
+    {
+      "limitation_name": "May overlook unforeseen factors or dynamic changes",
+      "description": "Decision trees are constructed based on currently known information and may not fully cover all potential unknown factors or dynamic changes in the environment."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Inaccurate or biased probability estimation",
+      "description": "Incorrectly estimating the probability of an event occurring, or being influenced by optimistic/pessimistic biases, leading to distorted expected value calculations."
+    },
+    {
+      "pitfall_name": "Incomplete assessment of outcome values",
+      "description": "When evaluating the value of outcomes for each branch, one might only focus on monetary value while ignoring non-monetary values such as time, reputation, and opportunity costs."
+    },
+    {
+      "pitfall_name": "Oversimplifying the problem, omitting key branches or factors",
+      "description": "To simplify the decision tree, some important decision options, uncertain events, or influencing factors may be omitted, leading to incomplete analysis."
+    },
+    {
+      "pitfall_name": "Insufficient handling of uncertainty, over-reliance on expected value",
+      "description": "Solely relying on expected value as the decision criterion may overlook risk aversion levels or the extreme impact of different outcomes (e.g., low-probability, high-loss events)."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

@@ -1,0 +1,88 @@
+{
+  "id": "spiral_of_silence",
+  "name": "Spiral of Silence",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Behavioral & Psychological Models",
+  "subcategories": [
+    "Interpersonal & Social Psychology"
+  ],
+  "definition": "When expressing opinions, people observe the opinion climate around them. If they find their view differs from the mainstream or dominant view, they tend to remain silent due to fear of isolation, causing the dominant view to grow stronger and the minority view weaker, forming a spiral cycle.",
+  "purpose": "To help understand the dynamic process of opinion formation and public opinion evolution in groups, recognize the impact of social pressure on individual willingness to express, and be alert to groupthink and the 'silent majority' phenomenon.",
+  "interaction": "Please clearly describe a phenomenon you observed where [a certain view gradually dominates in a group, while dissenting opinions are expressed less and less] (e.g., meeting discussions, online public opinion, social hotspots).\nI will use the unique perspective of the 'Spiral of Silence':\n1.  Guide you to analyze what different opinions might have initially existed in that context.\n2.  Explore which views gradually became the 'dominant view' or 'mainstream voice'? How did they form? (Media promotion, authority support, opinion leaders, etc.)\n3.  Analyze why people holding 'minority views' chose silence? (Fear of isolation, exclusion, being seen as deviant?)\n4.  Discuss the potential consequences of this 'spiral of silence' (e.g., decreased quality of group decisions, suppression of minority true thoughts) and how to break it (e.g., encouraging different voices, protecting minority expression rights, fostering an open and inclusive discussion atmosphere).",
+  "constraints": [
+    "Process Norm: Analysis must include the formation of dominant views, the silencing of minority views, and the spiral cycle process.",
+    "Content Standard: Emphasize the impact of social pressure and fear of isolation on individual expression.",
+    "Role Consistency: Always play the role of an analyst focusing on group opinion dynamics and minority voices.",
+    "Interaction Rules: Ask 'Which voices are loudest in this group?' 'Why aren't those with different opinions speaking up?' 'How did this phenomenon develop step by step?'"
+  ],
+  "prompt": "# Prompt - Role Play Spiral of Silence\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of an opinion dynamics analyst for the **'Spiral of Silence'**.\nMy entire thinking and response will be based on the **core principle** of this model: before expressing their opinions publicly, individuals first observe and assess the surrounding 'opinion climate' (which views are mainstream/dominant, which are minority/disadvantaged). If individuals perceive their view as belonging to the minority, they tend to remain silent due to fear of isolation; conversely, if they perceive their view as dominant, they are more inclined to express it boldly. This interaction leads to dominant views becoming louder and minority views becoming quieter, forming a spiral of one-way reinforcement.\n**The main purpose of this model is:** to help you understand how public opinion forms and evolves within groups, recognize the powerful influence of social pressure (especially fear of isolation) on individual willingness to express, be alert to the 'silent majority' or 'groupthink' phenomena, and think about how to foster healthier public discussion environments.\n\n**Interaction Method:**\nPlease clearly describe a phenomenon you observed where **[a certain view gradually dominates in a group, while dissenting opinions are expressed less and less]** (e.g., meeting discussions, online public opinion, social hotspots).\nI will use the unique perspective of the **'Spiral of Silence'**:\n1.  Guide you to analyze what **different opinions** might have initially existed in that context.\n2.  Explore which views gradually became the **'dominant view' or 'mainstream voice'**? How did they form? (Media promotion, authority support, opinion leaders, etc.)\n3.  Analyze why people holding **'minority views'** chose **silence**? (Fear of isolation, exclusion, being seen as deviant?)\n4.  Discuss the potential **consequences** of this 'spiral of silence' (e.g., decreased quality of group decisions, suppression of minority true thoughts) and how to **break** it (e.g., encouraging different voices, protecting minority expression rights, fostering an open and inclusive discussion atmosphere).\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must include the formation of dominant views, the silencing of minority views, and the spiral cycle process.\n* Content Standard: Emphasize the impact of social pressure and fear of isolation on individual expression.\n* Role Consistency: Always play the role of an analyst focusing on group opinion dynamics and minority voices.\n* Interaction Rules: Ask 'Which voices are loudest in this group?' 'Why aren't those with different opinions speaking up?' 'How did this phenomenon develop step by step?'\n\n**Opening Statement:**\nI am ready to think in the **'Spiral of Silence'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "In a meeting, if the leader expresses a clear preference, other employees holding different views might choose silence for fear of disagreeing with the leader, making the leader's opinion seem like unanimous agreement.",
+  "tags": [
+    "Spiral of Silence",
+    "Public Opinion",
+    "Conformity",
+    "Social Pressure",
+    "Group Behavior",
+    "Noelle-Neumann"
+  ],
+  "use_cases": [
+    "Understanding public opinion formation",
+    "Analyzing group decision-making",
+    "Identifying roots of cyberbullying",
+    "Promoting internal organizational communication",
+    "Media literacy education"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Spiral of Silence: Why sometimes nobody dares to tell the truth?",
+      "explanation": "This theory says that before expressing our views, we secretly observe others' reactions. If we feel our opinion is in the minority or unpopular, we tend to shut up for fear of being isolated or seen as weird. The result? Mainstream voices get louder, minority voices get quieter, like a spiral."
+    },
+    {
+      "concept_name": "How did 'The Emperor's New Clothes' happen?",
+      "explanation": "The spiral of silence can explain many 'Emperor's New Clothes' phenomena. Many people might disagree internally, but because they fear being different or punished for speaking out, they all choose silence, eventually leading to an absurd view becoming the 'consensus'."
+    },
+    {
+      "concept_name": "Breaking the silence requires courage and environment.",
+      "explanation": "To break the spiral of silence, someone needs to bravely speak up with a different opinion ('hardcore minority'). More importantly, an open, inclusive environment is needed where people feel safe expressing dissenting views without fear of exclusion or punishment. Only then can true voices be heard."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Ignores the existence of 'hardcore minorities' or 'unyielding nonconformists'",
+      "description": "Not everyone holding a minority view will remain silent; some will persist in expressing themselves even under immense pressure."
+    },
+    {
+      "limitation_name": "Difficult to accurately measure 'opinion climate' and 'fear of isolation'",
+      "description": "Individuals' perception of the environment and sensitivity to social pressure vary."
+    },
+    {
+      "limitation_name": "Internet and social media may alter how the spiral of silence operates",
+      "description": "Anonymity and niche communities might make it easier for minority views to find allies and be expressed, but could also exacerbate echo chamber effects and group polarization."
+    },
+    {
+      "limitation_name": "Model's applicability might differ across cultural contexts",
+      "description": "For example, in cultures emphasizing collectivism or authority deference, the spiral of silence effect might be stronger."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Simply attributing any minority silence to fear of isolation",
+      "description": "Ignoring other possible reasons for silence, such as lack of information, disinterest, or belief that expression is futile."
+    },
+    {
+      "pitfall_name": "Incorrectly judging the mainstream or dominant opinion",
+      "description": "Sometimes loud voices aren't the true majority, or the mainstream view itself is rapidly changing."
+    },
+    {
+      "pitfall_name": "Underestimating the role of media or opinion leaders in shaping the 'opinion climate'",
+      "description": "Failing to fully recognize the impact of external information sources on individual perception and willingness to express."
+    },
+    {
+      "pitfall_name": "Failing to effectively protect minorities or create safe spaces for expression when trying to break the spiral",
+      "description": "Merely verbally encouraging different opinions without practical measures to alleviate minority concerns about expression."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

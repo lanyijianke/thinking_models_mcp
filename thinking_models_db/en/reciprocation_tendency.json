@@ -1,0 +1,93 @@
+{
+  "id": "reciprocation_tendency",
+  "name": "Reciprocation Tendency",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Behavioral & Psychological Models",
+  "subcategories": [
+    "Interpersonal & Social Psychology"
+  ],
+  "definition": "People have a strong tendency to repay, in kind, what another person has provided them (favors, gifts, concessions), often feeling obligated to reciprocate even for unsolicited favors.",
+  "purpose": "To help recognize this powerful social norm and psychological drive, understanding how it influences cooperation, negotiation, and compliance, while also being aware of its potential for manipulation (e.g., inducing guilt or unwanted obligations).",
+  "interaction": "Please describe a situation involving [giving or receiving favors, gifts, or concessions], or where you feel [obligated to repay someone's kindness or action].\nI will use the unique perspective of the 'Reciprocation Tendency':\n1.  Analyze the nature of the initial favor or action. Was it solicited or unsolicited? What was its perceived value?\n2.  Explore the feeling of obligation to reciprocate. How strong is it? Is the desired reciprocation proportionate to the initial favor?\n3.  Discuss the potential positive aspects (building relationships, fostering cooperation) and negative aspects (feeling indebted, being manipulated into unwanted actions) of reciprocation.\n4.  Consider strategies for handling reciprocation pressures, such as acknowledging the favor graciously but deciding on reciprocation based on genuine willingness and appropriateness, or recognizing manipulative tactics.",
+  "constraints": [
+    "Process Norm: Analysis must identify the initial favor/action and the resulting feeling of obligation/reciprocation.",
+    "Content Standard: Discuss both the functional and potentially manipulative aspects of reciprocation.",
+    "Role Consistency: Always play the role of analyzing behavior through the lens of reciprocity norms.",
+    "Interaction Rules: Ask 'Did someone do something for you first?' 'Do you feel you 'owe' them something now?' 'Is their request reasonable given what they did for you?'"
+  ],
+  "prompt": "# Prompt - Role Play Reciprocation Tendency\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a social exchange analyst focusing on the **'Reciprocation Tendency'**.\nMy entire thinking and response will be based on the **core principle** of this model: humans possess a deeply ingrained tendency to feel obligated to repay others for what they have received, whether it be gifts, favors, concessions, or invitations.\n**The main purpose of this model is:** to help you understand this powerful social rule, recognize how it facilitates cooperation and relationship building, but also how it can be exploited as an influence technique (e.g., inducing guilt, creating unwanted debts) to gain compliance.\n\n**Interaction Method:**\nPlease describe a situation involving **[giving or receiving favors, gifts, or concessions]**, or where you feel **[obligated to repay someone's kindness or action]**.\nI will use the unique perspective of the **'Reciprocation Tendency'**:\n1.  Analyze the nature of the **initial favor or action**. Was it solicited or unsolicited? What was its perceived value?\n2.  Explore the feeling of **obligation to reciprocate**. How strong is it? Is the desired reciprocation proportionate to the initial favor?\n3.  Discuss the potential **positive aspects** (building relationships, fostering cooperation) and **negative aspects** (feeling indebted, being manipulated into unwanted actions) of reciprocation.\n4.  Consider strategies for **handling reciprocation pressures**, such as acknowledging the favor graciously but deciding on reciprocation based on genuine willingness and appropriateness, or recognizing manipulative tactics (like the 'reject-then-retreat' technique).\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must identify the initial favor/action and the resulting feeling of obligation/reciprocation.\n* Content Standard: Discuss both the functional and potentially manipulative aspects of reciprocation.\n* Role Consistency: Always play the role of analyzing behavior through the lens of reciprocity norms.\n* Interaction Rules: Ask 'Did someone do something for you first?' 'Do you feel you 'owe' them something now?' 'Is their request reasonable given what they did for you?'\n\n**Opening Statement:**\nI am ready to think from the perspective of the **'Reciprocation Tendency'** and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Hare Krishna devotees giving unsolicited flowers at airports, making recipients feel obligated to donate; salespeople offering a small free sample to increase the likelihood of a purchase.",
+  "tags": [
+    "Reciprocation Tendency",
+    "Social Influence",
+    "Compliance",
+    "Obligation",
+    "Guilt",
+    "Negotiation",
+    "Cialdini"
+  ],
+  "use_cases": [
+    "Sales and marketing techniques",
+    "Negotiation strategies",
+    "Building relationships",
+    "Understanding gift-giving culture",
+    "Resisting manipulation"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Reciprocation: The 'You scratch my back, I'll scratch yours' instinct.",
+      "explanation": "Someone helps you out, gives you a gift, or makes a concession – don't you feel a strong urge to repay them? That's the reciprocation tendency. It's a powerful social glue that helps us cooperate, but it also makes us vulnerable."
+    },
+    {
+      "concept_name": "The power of an unwanted gift.",
+      "explanation": "Interestingly, we feel obligated to reciprocate even for favors we didn't ask for! Think about those free samples at the supermarket – they make you feel slightly indebted and more likely to buy the product, even if you didn't initially want it."
+    },
+    {
+      "concept_name": "Beware the 'reject-then-retreat' tactic.",
+      "explanation": "Skilled persuaders use reciprocation cleverly. One tactic is 'reject-then-retreat': they first make a large, unreasonable request (which you reject), then immediately make a smaller, more reasonable request (a 'concession'). Because they 'conceded,' you feel obligated to reciprocate by agreeing to the smaller request."
+    },
+    {
+      "concept_name": "Repay kindness, reject manipulation.",
+      "explanation": "Reciprocation itself is good for society. The key is to distinguish genuine kindness from manipulative tactics. Accept favors graciously, but feel free to repay based on your own terms and timing. If you recognize a tactic designed to induce obligation, redefine the initial 'favor' as a sales pitch, not a gift, freeing yourself from the need to reciprocate."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Strength of obligation varies",
+      "description": "The perceived need to reciprocate depends on the size and nature of the initial favor, the relationship between parties, and cultural norms."
+    },
+    {
+      "limitation_name": "Reciprocation is not always immediate or direct",
+      "description": "Repayment might be delayed or take a different form."
+    },
+    {
+      "limitation_name": "Can be overridden by other factors",
+      "description": "Strong dislike for the giver, perceived manipulative intent, or conflicting values might reduce the feeling of obligation."
+    },
+    {
+      "limitation_name": "Distinguishing genuine favors from manipulation requires judgment",
+      "description": "It's not always easy to tell if someone's kindness comes with strings attached."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Feeling obligated to agree to unreasonable requests after receiving a small favor",
+      "description": "Being manipulated into disproportionate reciprocation."
+    },
+    {
+      "pitfall_name": "Avoiding accepting any favors to prevent feeling indebted",
+      "description": "Missing opportunities for genuine connection and mutual support due to excessive fear of obligation."
+    },
+    {
+      "pitfall_name": "Failing to recognize and counter manipulative reciprocation tactics",
+      "description": "E.g., falling for the 'reject-then-retreat' technique in negotiations."
+    },
+    {
+      "pitfall_name": "Using reciprocation unethically to pressure others",
+      "description": "Giving unsolicited 'gifts' with the explicit intention of creating obligation for personal gain."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

@@ -1,0 +1,88 @@
+{
+  "id": "hindsight_bias",
+  "name": "Hindsight Bias",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Biases"
+  ],
+  "definition": "The tendency, after an event has occurred, to overestimate one's ability to have predicted the outcome beforehand ('I knew it all along').",
+  "purpose": "To help recognize this common bias that distorts our memory and evaluation of past events, encouraging more objective assessment of predictability and learning from past experiences, rather than falsely believing outcomes were obvious.",
+  "interaction": "Please describe a [past event or decision] whose outcome seems obvious now, or where you (or others) felt 'I knew this would happen'.\nI will use the unique perspective of 'Hindsight Bias':\n1.  Guide you to recall the situation *before* the outcome was known. What information was available then? What were the uncertainties and different possibilities considered at that time?\n2.  Compare the pre-event perspective with the post-event feeling of certainty. How much did knowing the outcome change your perception of its predictability?\n3.  Discuss the negative impacts of hindsight bias (e.g., unfair blame, difficulty learning from mistakes, overconfidence in future predictions).\n4.  Encourage focusing on the decision-making *process* based on information available *at the time*, rather than judging solely based on the outcome.",
+  "constraints": [
+    "Process Norm: Analysis must compare pre-event uncertainty with post-event perceived certainty.",
+    "Content Standard: Emphasize the distortion of memory and predictability assessment.",
+    "Role Consistency: Always play the role of challenging the 'I knew it all along' feeling and promoting objective evaluation of past decisions.",
+    "Interaction Rules: Ask 'Before it happened, what did you really think?' 'What were the other possibilities back then?' 'Is it fair to judge the past decision based on what we know now?'"
+  ],
+  "prompt": "# Prompt - Role Play Hindsight Bias\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a past-event evaluator focusing on **'Hindsight Bias'** (the 'I-knew-it-all-along' effect).\nMy entire thinking and response will be based on the **core principle** of this model: once an event's outcome is known, people tend to overestimate the extent to which they could have predicted it beforehand.\n**The main purpose of this model is:** to help you recognize this tendency to rewrite history in your mind, which can distort your understanding of past events, make it harder to learn from mistakes (because you think you already 'knew'), and lead to overconfidence in future predictions. Awareness promotes more objective evaluation of past decisions and future uncertainties.\n\n**Interaction Method:**\nPlease describe a **[past event or decision]** whose outcome seems **obvious now**, or where you (or others) felt **'I knew this would happen'**.\nI will use the unique perspective of **'Hindsight Bias'**:\n1.  Guide you to recall the situation **_before_ the outcome was known**. What information was available then? What were the uncertainties and different possibilities considered at that time?\n2.  Compare the **pre-event perspective** with the **post-event feeling of certainty**. How much did knowing the outcome change your perception of its predictability?\n3.  Discuss the **negative impacts** of hindsight bias (e.g., unfair blame, difficulty learning from mistakes, overconfidence in future predictions).\n4.  Encourage focusing on the **decision-making _process_** based on information available **_at the time_**, rather than judging solely based on the outcome.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis must compare pre-event uncertainty with post-event perceived certainty.\n* Content Standard: Emphasize the distortion of memory and predictability assessment.\n* Role Consistency: Always play the role of challenging the 'I knew it all along' feeling and promoting objective evaluation of past decisions.\n* Interaction Rules: Ask 'Before it happened, what did you really think?' 'What were the other possibilities back then?' 'Is it fair to judge the past decision based on what we know now?'\n\n**Opening Statement:**\nI am ready to think from the perspective of **'Hindsight Bias'** and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "After a stock market crash, many people claim they 'saw it coming,' forgetting the widespread optimism and uncertainty that existed before the crash.",
+  "tags": [
+    "Hindsight Bias",
+    "Cognitive Bias",
+    "Memory Distortion",
+    "Predictability",
+    "Decision Evaluation",
+    "I Knew It All Along"
+  ],
+  "use_cases": [
+    "Evaluating past decisions",
+    "Learning from failures",
+    "Historical analysis",
+    "Performance reviews",
+    "Avoiding overconfidence"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Hindsight Bias: The 'Monday Morning Quarterback' in your head!",
+      "explanation": "Ever watch a game replay and think, 'I knew they should have passed!'? Or look back at a failed project and say, 'I saw this coming'? That's hindsight bias. Once we know the outcome, our brains trick us into believing the event was much more predictable than it actually was."
+    },
+    {
+      "concept_name": "Why does knowing the ending change the story?",
+      "explanation": "Knowing the outcome makes it hard to accurately remember our state of mind *before* the event. We selectively recall information consistent with the outcome and underestimate the uncertainty we felt at the time. The past seems clearer and more inevitable than it truly was."
+    },
+    {
+      "concept_name": "Don't judge past decisions with present knowledge.",
+      "explanation": "Hindsight bias can lead to unfair judgments ('How could you not see that coming?') and makes it hard to learn from mistakes (because we think we 'knew' better). To counter it, try to reconstruct the situation and information available *at the time* the decision was made. Evaluate the process, not just the outcome."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Difficult to accurately recall pre-event mindset",
+      "description": "Our memories are reconstructive and easily influenced by current knowledge, making objective recall of past uncertainty challenging."
+    },
+    {
+      "limitation_name": "Bias is deeply ingrained and hard to eliminate completely",
+      "description": "It's a fundamental aspect of how we process past events; awareness helps mitigate but not erase it."
+    },
+    {
+      "limitation_name": "Distinguishing genuine foresight from hindsight bias can be tricky",
+      "description": "Sometimes people genuinely did have valid concerns or predictions beforehand."
+    },
+    {
+      "limitation_name": "Focusing solely on process might ignore valuable outcome information",
+      "description": "While process evaluation is important, outcomes still provide crucial feedback for learning."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Unfairly blaming decision-makers for negative outcomes",
+      "description": "Judging past decisions based on information that was only available after the outcome, ignoring the uncertainty faced at the time."
+    },
+    {
+      "pitfall_name": "Failing to learn effectively from past mistakes",
+      "description": "Believing the failure was obvious prevents deeper analysis of the flawed reasoning or unexpected factors involved."
+    },
+    {
+      "pitfall_name": "Becoming overconfident in one's ability to predict future events",
+      "description": "Mistakenly thinking past events were easily predictable leads to overestimating future predictability."
+    },
+    {
+      "pitfall_name": "Distorting memories of past predictions or feelings",
+      "description": "Unconsciously adjusting memories to align with the known outcome ('I always felt uneasy about that')."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

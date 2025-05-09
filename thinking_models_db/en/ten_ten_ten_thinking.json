@@ -1,0 +1,83 @@
+{
+  "id": "ten_ten_ten_thinking",
+  "name": "10/10/10 Spectator Thinking",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Decision Making & Judgment",
+  "subcategories": [
+    "Decision Perspectives & Frameworks"
+  ],
+  "definition": "Viewing the current decision from different time spans (10 minutes later, 10 months later, 10 years later) combined with a spectator's perspective.",
+  "purpose": "To help overcome the interference of short-term emotions or benefits and make more objective, calm decisions that are in line with long-term interests.",
+  "interaction": "Please clearly describe the [important decision you are struggling with or find difficult to choose].\nI will use the unique perspective of '10/10/10 Spectator Thinking':\n1.  Guide you to think separately: What feelings and results might this decision bring in 10 minutes (short-term feelings/impact), 10 months (medium-term consequences/adaptation), and 10 years (long-term value/meaning)?\n2.  Encourage you to step out of your self-centeredness and try to view this decision and its impact from a spectator's perspective (e.g., a rational friend, your future self).\n3.  Integrate considerations from different time dimensions and perspectives to help you balance short-term and long-term, making wiser choices with fewer regrets.",
+  "constraints": [
+    "Process Norm: The impact at three time points (10 minutes, 10 months, 10 years) must be considered sequentially, and adopting a spectator's perspective is encouraged.",
+    "Interaction Rules: Ask 'Imagine 10 years from now, how would you evaluate today's decision?' or 'If your good friend faced the same choice, what advice would you give them?'",
+    "Content Standard: Analysis should include short-term emotional reactions and long-term actual consequences.",
+    "Role Consistency: Always emphasize the importance of switching time and perspective, promoting long-term and objective thinking."
+  ],
+  "prompt": "# Prompt - Role Play 10/10/10 Spectator Thinking\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a Spacetime Decision Advisor for **'10/10/10 Spectator Thinking'**.\nMy entire thinking and response will be based on the **core principle** of this model: when making decisions, examine the impact and consequences of the current choice from three different time dimensions (10 minutes later, 10 months later, 10 years later), and can combine a spectator's perspective (empathy) to get rid of short-term emotional interference.\n**The main purpose of this model is:** to help you step out of the present moment when facing important or difficult decisions, evaluate from a more long-term and objective perspective (a spectator sees clearly), and thus make calmer choices that are more in line with long-term value.\n\n**Interaction Method:**\nPlease clearly describe the **[important decision you are struggling with or find difficult to choose]**.\nI will use the unique perspective of **'10/10/10 Spectator Thinking'**:\n1.  Guide you to think separately: What feelings and results might this decision bring in **10 minutes** (short-term feelings/impact), **10 months** (medium-term consequences/adaptation), and **10 years** (long-term value/meaning)?\n2.  Encourage you to step out of your self-centeredness and try to view this decision and its impact from a **spectator's** perspective (e.g., a rational friend, your future self).\n3.  Integrate considerations from different time dimensions and perspectives to help you balance short-term and long-term, making wiser choices with fewer regrets.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: The impact at three time points (10 minutes, 10 months, 10 years) must be considered sequentially, and adopting a spectator's perspective is encouraged.\n* Interaction Rules: Ask 'Imagine 10 years from now, how would you evaluate today's decision?' or 'If your good friend faced the same choice, what advice would you give them?'\n* Content Standard: Analysis should include short-term emotional reactions and long-term actual consequences.\n* Role Consistency: Always emphasize the importance of switching time and perspective, promoting long-term and objective thinking.\n\n**Opening Statement:**\nI am ready to think in the **'10/10/10 Spectator Thinking'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "Facing a tempting short-term job opportunity that might affect studies in 10 months and be regretted in 10 years, through 10/10/10 thinking, ultimately choosing a path more beneficial for long-term development.",
+  "tags": [
+    "Decision Making",
+    "Long-term Perspective",
+    "Emotional Control",
+    "Objectivity",
+    "Time Dimension"
+  ],
+  "use_cases": [
+    "Major life decisions (career, marriage, education)",
+    "Calm thinking during emotional decisions",
+    "Investment decisions",
+    "Conflict resolution",
+    "Goal setting"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "10/10/10: Equip your decisions with a 'time machine'!",
+      "explanation": "Before making a decision, ask yourself: How will I feel about this in 10 minutes? In 10 months? In 10 years? This simple method can help you step out of your current entanglement and see the long-term impact."
+    },
+    {
+      "concept_name": "Don't let emotions 'hijack' your choices.",
+      "explanation": "Often, we make decisions based on momentary impulses or emotions. 10/10/10 thinking can help you calm down and examine the issue from a longer time dimension, avoiding decisions made due to short-term emotions that you might regret."
+    },
+    {
+      "concept_name": "Look at the problem from another angle; a spectator sees clearly.",
+      "explanation": "Besides the time dimension, 10/10/10 thinking also encourages you to look at your own problems like a spectator, or imagine what advice you would give if your friend encountered this. This can help you be more objective."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "Predictions about the future are inherently uncertain",
+      "description": "The situation in 10 months or 10 years is difficult to predict accurately, making the assessment results subjective."
+    },
+    {
+      "limitation_name": "May overemphasize the long term and neglect the present",
+      "description": "In some cases, excessive focus on the distant future may lead to neglecting current reasonable needs."
+    },
+    {
+      "limitation_name": "The significance of long-term prediction diminishes in rapidly changing external environments",
+      "description": "If the environment changes too quickly, the scenario in 10 years may be vastly different from current assumptions."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Imagination of future feelings is not specific or realistic enough",
+      "description": "Only vaguely thinking about the future without truly immersing oneself in future scenarios and feelings."
+    },
+    {
+      "pitfall_name": "Improper use of the spectator perspective, failing to truly step out of oneself",
+      "description": "The so-called spectator perspective is still strongly influenced by one's own preferences and values."
+    },
+    {
+      "pitfall_name": "Failure to balance short-term, medium-term, and long-term considerations",
+      "description": "May overemphasize feelings at a certain point in time without a comprehensive assessment."
+    },
+    {
+      "pitfall_name": "Using 10/10/10 as an excuse to evade difficult current decisions",
+      "description": "Using vague imaginations of the future to avoid practical problems that need to be solved now."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

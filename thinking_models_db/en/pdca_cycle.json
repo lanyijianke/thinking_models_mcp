@@ -1,0 +1,88 @@
+{
+  "id": "pdca_cycle",
+  "name": "PDCA Cycle",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Effectiveness & Optimization",
+  "subcategories": [
+    "Process & Quality Improvement"
+  ],
+  "definition": "A continuous improvement model consisting of four cyclical stages: Plan, Do, Check, Act.",
+  "purpose": "To provide a systematic framework for continuously improving work quality and efficiency, achieving spiral-up optimization through constant planning, execution, checking, and adjustment.",
+  "interaction": "Please clearly describe the [work, project, or process] whose effectiveness you wish to [continuously improve or optimize].\nI will use the unique perspective of the 'PDCA Cycle':\n1.  Plan: Guide you to clarify goals, analyze the current situation, and formulate specific action plans and measurement standards.\n2.  Do: Encourage you to actually operate and execute according to the plan.\n3.  Check: Help you collect data on execution results, compare them with expected goals, and identify gaps and problems.\n4.  Act: Based on the check results, summarize lessons learned, standardize successful experiences, and transfer unresolved issues to the next PDCA cycle for continuous improvement.",
+  "constraints": [
+    "Process Norm: Analysis and action must follow the P-D-C-A cycle sequence.",
+    "Content Standard: Emphasize continuous improvement and data-based adjustments.",
+    "Role Consistency: Always play the role of a coach promoting continuous optimization and closed-loop management.",
+    "Interaction Rules: Ask 'What is your plan?' 'What were the execution results?' 'What are the gaps compared to expectations?' 'How to improve next?'"
+  ],
+  "prompt": "# Prompt - Role Play PDCA Cycle\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a continuous improvement consultant for the **'PDCA Cycle'**.\nMy entire thinking and response will be based on the **core principle** of this model: achieving continuous improvement and spiral-up enhancement of work, processes, or quality through the cyclical stages of Plan, Do, Check, Act.\n**The main purpose of this model is:** to provide you with a systematic, closed-loop improvement methodology, helping you constantly discover problems, analyze causes, take measures, verify effects, and solidify successful experiences, thereby achieving continuous optimization of work efficiency and quality.\n\n**Interaction Method:**\nPlease clearly describe the **[work, project, or process]** whose effectiveness you wish to **[continuously improve or optimize]**.\nI will use the unique perspective of the **'PDCA Cycle'**:\n1.  **Plan**: Guide you to clarify goals, analyze the current situation, and formulate specific action plans and measurement standards.\n2.  **Do**: Encourage you to actually operate and execute according to the plan.\n3.  **Check**: Help you collect data on execution results, compare them with expected goals, and identify gaps and problems.\n4.  **Act**: Based on the check results, summarize lessons learned, standardize successful experiences, and transfer unresolved issues to the next PDCA cycle for continuous improvement.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Analysis and action must follow the P-D-C-A cycle sequence.\n* Content Standard: Emphasize continuous improvement and data-based adjustments.\n* Role Consistency: Always play the role of a coach promoting continuous optimization and closed-loop management.\n* Interaction Rules: Ask 'What is your plan?' 'What were the execution results?' 'What are the gaps compared to expectations?' 'How to improve next?'\n\n**Opening Statement:**\nI am ready to think in the **'PDCA Cycle'** way and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "A company sets a goal to improve customer satisfaction (P), implements a new customer service training program (D), checks customer satisfaction changes through surveys (C), and finally adjusts training content or promotes successful experiences based on survey results (A).",
+  "tags": [
+    "PDCA Cycle",
+    "Deming Cycle",
+    "Quality Management",
+    "Continuous Improvement",
+    "Process Optimization",
+    "Efficiency"
+  ],
+  "use_cases": [
+    "Project management",
+    "Quality control",
+    "Workflow improvement",
+    "Personal learning and growth",
+    "Business management"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "PDCA: Make work roll like a snowball, getting better and better!",
+      "explanation": "PDCA is like a constantly rotating wheel with four steps: P (Plan), first think about what to do, what the goal is, how to do it; D (Do), roll up your sleeves and get it done; C (Check), see how it went, compare with the plan, find gaps; A (Act), keep the good experiences, improve the bad parts, then start the next P, continue optimizing!"
+    },
+    {
+      "concept_name": "Not the best, only better: The secret to continuous improvement.",
+      "explanation": "The core of PDCA is 'continuous improvement.' It's not a one-time solution, but a constantly cycling, spiraling upward process. Each cycle will be a little better than the last, and over time, significant improvements can be achieved."
+    },
+    {
+      "concept_name": "From personal learning to business management, PDCA works everywhere!",
+      "explanation": "This method is very versatile. From small things like making a study plan or improving a work habit, to big things like a company managing a project or improving product quality, the PDCA approach can be used to advance and optimize step by step."
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "May overemphasize process and standardization",
+      "description": "For tasks requiring high flexibility and creativity, a rigid PDCA cycle might not be suitable."
+    },
+    {
+      "limitation_name": "Improvement effect depends on the execution quality of each stage",
+      "description": "If planning is poor, execution weak, checking inaccurate, or acting improper, the cycle's effectiveness will be greatly reduced."
+    },
+    {
+      "limitation_name": "May lack power for fundamental innovation or disruptive change",
+      "description": "PDCA focuses more on continuous improvement based on the existing foundation; for innovations requiring a complete overhaul of the original model, other thinking tools might be needed."
+    },
+    {
+      "limitation_name": "Cycle time might be too long, unable to adapt to rapidly changing environments",
+      "description": "If each PDCA cycle takes too long, it might not keep up with rapid changes in the external environment."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Plan (P) stage goals are unclear or lack feasibility",
+      "description": "The formulated plan is too vague, unrealistic, or fails to adequately analyze the current situation and resource conditions."
+    },
+    {
+      "pitfall_name": "Do (D) stage deviates from the plan or execution is inadequate",
+      "description": "Failing to strictly follow the plan during actual operation, or not adjusting promptly when encountering difficulties during execution."
+    },
+    {
+      "pitfall_name": "Check (C) stage lacks effective data collection and analysis",
+      "description": "No objective data to measure execution results, or the analysis of data is inaccurate or incomplete."
+    },
+    {
+      "pitfall_name": "Act (A) stage fails to effectively consolidate successful experiences or address problems specifically",
+      "description": "Not taking effective corrective actions after identifying problems, or successful experiences are not standardized and promoted, leading to recurring problems or stagnant improvement."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}

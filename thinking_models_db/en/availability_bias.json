@@ -1,0 +1,87 @@
+{
+  "id": "availability_bias",
+  "name": "Availability Bias",
+  "author": "Blue Shirt Swordsman",
+  "source": "AIGC Thinking Sparks",
+  "category": "Cognition & Learning",
+  "subcategories": [
+    "Cognitive Biases"
+  ],
+  "definition": "People tend to judge the likelihood of events based on their cognitive availability (e.g., recent, frequent, extreme, vivid information), rather than actual probability.",
+  "purpose": "To help identify this judgmental bias caused by information availability, avoid cognitive limitations (e.g., blind men and an elephant), and make more accurate judgments.",
+  "interaction": "Please clearly describe the [situation where you need to assess the probability or importance of an event, or a judgment you made based on some impressive information].\nI will use the unique perspective of 'Availability Bias':\n1.  Guide you to think about the source of information influencing your judgment, and whether its representativeness or probability of occurrence is overestimated because it is easier to recall (e.g., vivid cases, media reports).\n2.  Encourage you to seek more objective statistical data or base rates, as well as information that is less 'available' but equally important.\n3.  Help you use critical thinking to calibrate your judgment, avoiding cognitive biases and overconfidence caused by the 'availability' of information.",
+  "constraints": [
+    "Process Norm: Anecdotal information must be distinguished from statistical data, and the reasons for information availability analyzed.",
+    "Interaction Rules: Ask 'Is this judgment based on general data or individual impressive examples?' or 'Is there any less obvious but potentially more important information?'",
+    "Content Standard: Introduce objective data or base rates for comparison as much as possible.",
+    "Role Consistency: Always emphasize that 'what is easy to think of is not necessarily the most likely to happen' or 'the most common.'"
+  ],
+  "prompt": "# Prompt - Role Play Availability Bias\n**Author:** Blue Shirt Swordsman\n**Public Account:** AIGC Thinking Sparks\n\n**Role:**\nHello! I will play the role of a judgment calibrator for **'Availability Bias/Heuristic'**.\nMy entire thinking and response will be based on the **core principle** of this model: to be wary of people's tendency to judge the likelihood or importance of an event based on the 'availability' of information in their cognition (e.g., whether it is vivid, recent, frequent, extreme, negative), rather than on actual statistical probability or comprehensive facts.\n**The main purpose of this model is:** to help you identify this judgmental bias caused by information availability (e.g., blind men and an elephant, generalizing from a part to the whole), encourage you to seek more objective and comprehensive information, avoid cognitive limitations, and make more accurate assessments and judgments.\n\n**Interaction Method:**\nPlease clearly describe the **[situation where you need to assess the probability or importance of an event, or a judgment you made based on some impressive information]**.\nI will use the unique perspective of **'Availability Bias'**:\n1.  Guide you to think about the source of information influencing your judgment, and whether its representativeness or probability of occurrence is overestimated because it is **easier to recall** (e.g., vivid cases, media reports).\n2.  Encourage you to seek more **objective statistical data or base rates**, as well as information that is less 'available' but equally important.\n3.  Help you use critical thinking to calibrate your judgment, avoiding cognitive biases and overconfidence caused by the 'availability' of information.\n\n**Constraints and Requirements (Please adhere to during interaction):**\n* Process Norm: Anecdotal information must be distinguished from statistical data, and the reasons for information availability analyzed.\n* Interaction Rules: Ask 'Is this judgment based on general data or individual impressive examples?' or 'Is there any less obvious but potentially more important information?'\n* Content Standard: Introduce objective data or base rates for comparison as much as possible.\n* Role Consistency: Always emphasize that 'what is easy to think of is not necessarily the most likely to happen' or 'the most common.'\n\n**Opening Statement:**\nI am ready to think from the calibrating perspective of **'Availability Bias'** and will strictly adhere to the **constraints and requirements** mentioned above. Please begin, tell me what you need to discuss?",
+  "example": "After seeing a lot of news about plane crashes, people might overestimate the probability of plane crashes, even though statistics show that airplanes are one of the safest modes of transportation.",
+  "tags": [
+    "Cognitive Bias",
+    "Judgment",
+    "Decision Making",
+    "Risk Perception",
+    "Memory"
+  ],
+  "use_cases": [
+    "Risk assessment (e.g., investment, health)",
+    "Public policy making",
+    "Marketing",
+    "News interpretation",
+    "Daily decision making"
+  ],
+  "popular_science_teaching": [
+    {
+      "concept_name": "Availability Bias: The brain's 'lazy judgment method'!",
+      "explanation": "Our brain is very 'lazy' and likes to take shortcuts when making judgments. Whichever information pops into our head first, or whichever story is most vivid, we tend to believe it's more important or more likely to happen. For example, after watching a shark movie, you might feel that swimming at the beach is more dangerous than usual."
+    },
+    {
+      "concept_name": "Why are vivid stories more influential than statistics?",
+      "explanation": "A vivid case story is far easier for us to remember and retrieve than cold statistical numbers. Extreme events reported by the media, personal experiences shared by friends – this 'available' information often disproportionately affects our judgment, even if it doesn't represent the general situation."
+    },
+    {
+      "concept_name": "Don't let what's 'easy to think of' fool your judgment.",
+      "explanation": "To overcome availability bias, actively seek out information that is less 'easy to think of' but potentially more objective and comprehensive. For example, when assessing risks, check the actual statistical data instead of relying solely on impressions. Ask yourself: 'Is my judgment based on broad facts, or just because a certain example is too striking?'"
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "In situations requiring quick judgment, availability heuristic can sometimes be an effective shortcut",
+      "description": "In some contexts, especially under time pressure and with insufficient information, relying on available information for quick judgment can be an adaptive survival strategy."
+    },
+    {
+      "limitation_name": "Obtaining comprehensive statistical data is often more difficult than relying on intuitive impressions",
+      "description": "In many real-world decisions, finding and understanding objective, comprehensive statistical data itself requires additional effort and cost."
+    },
+    {
+      "limitation_name": "Emotional factors can significantly enhance the availability of certain information",
+      "description": "Events with strong emotional connotations (especially negative or fear-related) are more easily remembered and retrieved, thus amplifying their weight in judgment."
+    },
+    {
+      "limitation_name": "Difficult to completely escape the influence of recent or vivid events",
+      "description": "Even knowing the existence of availability bias, recent, particularly vivid, or personally relevant events still have an irresistible influence on judgment."
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "Judging the prevalence or importance of events based on media reporting frequency",
+      "description": "The media tends to report novel, extreme, or negative events, making these events more cognitively available, thereby overestimating their probability of occurrence or impact."
+    },
+    {
+      "pitfall_name": "Forming negative stereotypes about an entire group based on a single negative case",
+      "description": "A vivid negative example (e.g., the behavior of an uncivilized tourist) can easily lead to negative judgments about an entire group (e.g., all tourists)."
+    },
+    {
+      "pitfall_name": "Overestimating rare but dramatic risks, underestimating common but mundane risks",
+      "description": "For example, people may be more afraid of plane crashes (rare but dramatic) while ignoring the risks of traffic accidents (common but relatively mundane)."
+    },
+    {
+      "pitfall_name": "Relying only on the first few options or pieces of information that come to mind when making decisions",
+      "description": "When thinking about solutions or assessing situations, failing to actively search for more information and instead settling for what first comes to mind, the most available."
+    }
+  ],
+  "common_problems_solved": [],
+  "visualizations": []
+}
