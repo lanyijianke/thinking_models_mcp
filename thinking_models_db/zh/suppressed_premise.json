@@ -83,6 +83,44 @@
       "description": "只是找出了隐含前提，但没有分析这个前提本身是否成立、是否具有争议性。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何识别和分析论证中的隐含假设？",
+      "keywords": ["逻辑分析", "隐含前提", "论证评估", "批判性思维"],
+      "guiding_questions": [
+        "从前提到结论，中间缺少了什么环节？",
+        "这个论证成立需要哪些未说明的条件？",
+        "这些隐含前提是否合理？"
+      ]
+    },
+    {
+      "problem_description": "如何找出沟通障碍和分歧的根源？",
+      "keywords": ["沟通分析", "分歧解决", "前提识别", "共识建立"],
+      "guiding_questions": [
+        "双方的未说明假设是什么？",
+        "分歧是否源于不同的隐含前提？",
+        "如何让隐含前提显性化？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "论证结构分析图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[明确前提] --> B[结论];\nC[隐含前提1] --> B;\nD[隐含前提2] --> B;\nE[隐含前提3] --> B;\nstyle A fill:#00f,stroke:#333,stroke-width:2px;\nstyle B fill:#f00,stroke:#333,stroke-width:2px;\nstyle C,D,E fill:#ff0,stroke:#333,stroke-width:2px;",
+      "description": "展示论证中的明确前提、隐含前提和结论之间的关系。"
+    },
+    {
+      "title": "隐含前提分析步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别明确前提和结论",
+        "2. 寻找逻辑缺失环节",
+        "3. 提取隐含假设",
+        "4. 评估前提合理性",
+        "5. 检验论证有效性"
+      ],
+      "description": "分析和评估论证中隐含前提的系统方法。"
+    }
+  ]
 }

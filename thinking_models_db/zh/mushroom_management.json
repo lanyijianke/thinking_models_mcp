@@ -83,6 +83,44 @@
       "description": "害怕提问被视为能力不足或挑战权威，从而加剧了信息不对称。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何改善组织内的信息透明度和沟通效果？",
+      "keywords": ["组织沟通", "信息透明", "管理效能", "员工参与"],
+      "guiding_questions": [
+        "哪些信息应该分享？",
+        "如何平衡透明与保密？",
+        "怎样建立有效的沟通机制？"
+      ]
+    },
+    {
+      "problem_description": "如何在蘑菇管理环境中保持积极性和效能？",
+      "keywords": ["员工成长", "主动性", "适应策略", "信息获取"],
+      "guiding_questions": [
+        "如何主动获取必要信息？",
+        "如何在有限信息下做好工作？",
+        "如何展现自己的能力和价值？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "蘑菇管理模式图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[管理层] --> B[信息过滤];\nB --> C[任务分配];\nC --> D[执行层];\nD --> E[工作成果];\nE --> A;\nstyle B fill:#f00,stroke:#333,stroke-width:2px;\nstyle D fill:#00f,stroke:#333,stroke-width:2px;",
+      "description": "展示蘑菇管理中的信息流通和任务执行过程。"
+    },
+    {
+      "title": "改善沟通策略",
+      "type": "list_items",
+      "data": [
+        "1. 评估信息需求",
+        "2. 建立沟通机制",
+        "3. 提供适度背景",
+        "4. 鼓励双向反馈",
+        "5. 监控执行效果"
+      ],
+      "description": "改善组织沟通和管理透明度的关键步骤。"
+    }
+  ]
 }

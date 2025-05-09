@@ -84,6 +84,54 @@
       "description": "虽然拥有优势和资源，但未能将它们有效地结合起来发挥作用。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何用有限资源实现更大成果？",
+      "keywords": [
+        "资源利用",
+        "效率提升",
+        "成本控制",
+        "效果放大"
+      ],
+      "guiding_questions": [
+        "你的核心优势（支点）是什么？",
+        "有哪些可以借用的资源（杠杆）？",
+        "如何组合使用这些资源？"
+      ]
+    },
+    {
+      "problem_description": "如何识别和利用各种杠杆放大效果？",
+      "keywords": [
+        "杠杆识别",
+        "资源整合",
+        "风险管理",
+        "策略优化"
+      ],
+      "guiding_questions": [
+        "哪些杠杆最适合你的情况？",
+        "如何降低使用杠杆的风险？",
+        "如何评估杠杆效果？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "杠杆原理模型",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[支点:核心能力] --> B[杠杆1:资金];\nA --> C[杠杆2:技术];\nA --> D[杠杆3:人力];\nB,C,D --> E[放大效果];\nstyle A fill:#00f,stroke:#333,stroke-width:2px;\nstyle E fill:#f00,stroke:#333,stroke-width:2px;",
+      "description": "展示核心能力（支点）如何通过不同杠杆放大效果。"
+    },
+    {
+      "title": "杠杆应用步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别核心优势",
+        "2. 寻找可用杠杆",
+        "3. 评估杠杆效果",
+        "4. 控制使用风险",
+        "5. 持续优化调整"
+      ],
+      "description": "使用杠杆原理实现效果放大的关键步骤。"
+    }
+  ]
 }

@@ -83,6 +83,43 @@
       "description": "检查出问题后没有采取有效的纠正措施，或者成功的经验没有被标准化和推广，导致问题重复出现或改进停滞。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何系统化地改进工作流程？",
+      "keywords": ["流程优化", "持续改进", "质量提升", "闭环管理"],
+      "guiding_questions": [
+        "你是否明确了需要改进的具体目标？",
+        "你是否制定了详细的行动计划？",
+        "你是否收集了执行结果的数据并进行了分析？"
+      ]
+    },
+    {
+      "problem_description": "如何在项目管理中实现持续优化？",
+      "keywords": ["项目管理", "PDCA循环", "效率提升", "问题解决"],
+      "guiding_questions": [
+        "你是否在每个项目阶段都进行了检查和总结？",
+        "你是否将成功经验标准化并推广？",
+        "你是否针对未解决的问题制定了下一步改进计划？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "PDCA 循环的基本流程图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[计划 (Plan)] --> B[执行 (Do)];\nB --> C[检查 (Check)];\nC --> D[处理 (Act)];\nD --> A;",
+      "description": "展示PDCA循环的四个阶段及其循环往复的关系。"
+    },
+    {
+      "title": "PDCA 循环的关键步骤列表",
+      "type": "list_items",
+      "data": [
+        "1. 计划 (Plan)：明确目标，分析现状，制定行动计划",
+        "2. 执行 (Do)：按照计划实施具体行动",
+        "3. 检查 (Check)：收集数据，评估执行效果",
+        "4. 处理 (Act)：总结经验，改进问题，进入下一轮循环"
+      ],
+      "description": "帮助用户理解和应用PDCA循环的关键步骤。"
+    }
+  ]
 }

@@ -30,6 +30,19 @@ interface ThinkingModel {
   subcategories?: string[];
   tags?: string[];
   use_cases?: string[];
+  // 新增：该模型能解决的常见问题或适用的场景描述
+  common_problems_solved?: Array<{
+    problem_description: string;
+    keywords: string[];
+    guiding_questions?: string[];
+  }>;
+  // 新增：用于图表等可视化的结构化数据
+  visualizations?: Array<{
+    title: string;
+    type: "flowchart_dsl" | "bar_chart_data" | "table_data" | "list_items" | "comparison_table";
+    data: any;
+    description?: string;
+  }>;
   popular_science_teaching?: Array<{
     concept_name: string;
     explanation: string;
@@ -252,6 +265,20 @@ server.tool(
         )) {
           match_reasons.push("常见误区");
         }
+
+        // 新增字段的搜索逻辑
+        if (m.common_problems_solved?.some(
+          problem => problem.problem_description.toLowerCase().includes(keyword_lower) ||
+                     problem.keywords.some(k => k.toLowerCase().includes(keyword_lower))
+      )) {
+          match_reasons.push("能解决的问题或关键词");
+      }
+      if (m.visualizations?.some(
+          viz => viz.title.toLowerCase().includes(keyword_lower) ||
+                 (viz.description && viz.description.toLowerCase().includes(keyword_lower))
+      )) {
+          match_reasons.push("可视化标题或描述");
+      }
 
         if (match_reasons.length > 0) {
           result.push({
@@ -532,6 +559,17 @@ server.tool(
             reasons.push(`适用于相同场景：${common_use_cases.join(", ")}`);
           }
 
+          // 5. 新增：解决的共同问题关键词相关度
+          const source_problem_keywords = new Set(
+            source_model.common_problems_solved?.flatMap(p => p.keywords) || []
+          );
+          const common_problem_keywords = (m.common_problems_solved?.flatMap(p => p.keywords) || [])
+            .filter(keyword => source_problem_keywords.has(keyword));
+          if (common_problem_keywords.length > 0) {
+            score += common_problem_keywords.length * 1.5; // 给予一定权重
+            reasons.push(`解决相似问题的关键词：${common_problem_keywords.join(", ")}`);
+          }
+
           return {
             id: m.id,
             name: m.name,
@@ -591,6 +629,135 @@ server.tool(
         content: [{ 
           type: "text",
           text: "0"
+        }]
+      };
+    }
+  }
+);
+
+// 注册工具: get_model_visualizations
+server.tool(
+  "get-model-visualizations",
+  "获取思维模型的可视化数据（如流程图、要素列表等）",
+  {
+    model_id: z.string().describe("思维模型的唯一id"),
+    lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
+  },
+  async ({ model_id, lang }) => {
+    try {
+      log(`获取模型 ID: ${model_id} 的可视化数据`);
+      const model = MODELS[lang].find(m => m.id === model_id);
+      if (model) {
+        return {
+          content: [{
+            type: "text",
+            text: JSON.stringify({
+              id: model.id,
+              name: model.name,
+              visualizations: model.visualizations || []
+            }, null, 2)
+          }]
+        };
+      }
+      log(`未找到模型 ID: ${model_id}`);
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify({ error: "未找到该模型" }, null, 2)
+        }]
+      };
+    } catch (e: any) {
+      log(`获取模型可视化数据时出错: ${e.message}`);
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify({ error: "服务异常" }, null, 2)
+        }]
+      };
+    }
+  }
+);
+
+// 注册工具: suggest-models-for-problem
+server.tool(
+  "suggest-models-for-problem",
+  "根据问题关键词推荐思维模型",
+  {
+    problem_keywords: z.array(z.string()).describe("用户输入的问题关键词数组"),
+    lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
+  },
+  async ({ problem_keywords, lang }) => {
+    try {
+      log(`根据关键词推荐模型: ${problem_keywords.join(", ")}, 语言: ${lang}`);
+      const keywordsLower = problem_keywords.map(k => k.toLowerCase());
+      const results = MODELS[lang].map(model => {
+        let score = 0;
+        const reasons: string[] = [];
+        // 匹配 common_problems_solved.keywords
+        if (model.common_problems_solved) {
+          for (const prob of model.common_problems_solved) {
+            const matched = keywordsLower.filter(k => prob.keywords.map(x => x.toLowerCase()).includes(k));
+            if (matched.length > 0) {
+              score += matched.length * 3;
+              reasons.push(`common_problems_solved.keywords 匹配: ${matched.join(", ")}`);
+            }
+            // 匹配 problem_description
+            for (const k of keywordsLower) {
+              if (prob.problem_description.toLowerCase().includes(k)) {
+                score += 2;
+                reasons.push(`common_problems_solved.problem_description 包含: ${k}`);
+              }
+            }
+          }
+        }
+        // 匹配 name
+        for (const k of keywordsLower) {
+          if (model.name.toLowerCase().includes(k)) {
+            score += 2;
+            reasons.push(`name 包含: ${k}`);
+          }
+        }
+        // 匹配 tags
+        if (model.tags) {
+          const matched = keywordsLower.filter(k => model.tags!.map(x => x.toLowerCase()).includes(k));
+          if (matched.length > 0) {
+            score += matched.length * 2;
+            reasons.push(`tags 匹配: ${matched.join(", ")}`);
+          }
+        }
+        // 匹配 definition
+        if (model.definition) {
+          for (const k of keywordsLower) {
+            if (model.definition.toLowerCase().includes(k)) {
+              score += 1;
+              reasons.push(`definition 包含: ${k}`);
+            }
+          }
+        }
+        return {
+          id: model.id,
+          name: model.name,
+          definition: model.definition || "",
+          score,
+          reasons
+        };
+      })
+      .filter(m => m.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 10);
+      log(`推荐结果数量: ${results.length}`);
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify(results, null, 2)
+        }]
+      };
+    } catch (e: any) {
+      log(`智能推荐模型时出错: ${e.message}`);
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify({ error: "服务异常" }, null, 2)
         }]
       };
     }

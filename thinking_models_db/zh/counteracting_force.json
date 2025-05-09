@@ -79,6 +79,43 @@
       "description": "虽然知道想要什么结果，但没有找到能够有效引发该结果的“作用力”。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何预测并管理行动可能引发的反应和后果？",
+      "keywords": ["反作用力", "行为预测", "互动管理", "风险规避"],
+      "guiding_questions": [
+        "你的行为可能引起对方怎样的反应？",
+        "如何避免或减少负面的反作用力？",
+        "如何利用对方的反作用力达到目标？"
+      ]
+    },
+    {
+      "problem_description": "如何从预期结果出发，设计合适的行动策略？",
+      "keywords": ["策略设计", "目标导向", "反向思维", "互动技巧"],
+      "guiding_questions": [
+        "要达到目标结果，需要施加怎样的作用力？",
+        "如何借助对方的反应来实现目标？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "作用力与反作用力互动图",
+      "type": "force_diagram",
+      "data": "graph TD;\nA[行动者] -->|作用力| B[接受者];\nB -->|反作用力| A;\nstyle A fill:#0f0;\nstyle B fill:#00f;",
+      "description": "展示行为主体之间作用力和反作用力的相互影响关系。"
+    },
+    {
+      "title": "反作用力分析步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别预期目标",
+        "2. 分析可能的反作用",
+        "3. 评估行动策略",
+        "4. 预判风险与机会",
+        "5. 调整作用力方向和强度"
+      ],
+      "description": "运用反作用力原理进行互动分析的五个关键步骤。"
+    }
+  ]
 }

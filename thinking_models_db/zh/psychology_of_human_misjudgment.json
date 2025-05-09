@@ -82,6 +82,43 @@
       "description": "轻易地用各种心理倾向来评判他人的“愚蠢”或“非理性”，而忽略了理解对方所处的情境和限制。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何识别和避免常见的认知偏差和非理性决策？",
+      "keywords": ["认知偏差", "人类误判", "理性决策", "心理倾向"],
+      "guiding_questions": [
+        "你的决策是否受到了强烈的情感影响？",
+        "你是否因为从众心理而忽视了客观事实？",
+        "你是否在寻找支持自己观点的证据时过于主观？"
+      ]
+    },
+    {
+      "problem_description": "如何应对多种心理倾向的组合效应（Lollapalooza效应）？",
+      "keywords": ["Lollapalooza效应", "多重偏差", "系统思维", "决策优化"],
+      "guiding_questions": [
+        "你能否识别出影响决策的多个心理因素？",
+        "你如何建立系统的决策检查清单来避免陷阱？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "人类误判心理影响决策流程图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[决策情境] -->|触发| B[心理倾向激活];\nB -->|单一倾向| C[轻度误判];\nB -->|多重倾向| D[Lollapalooza效应];\nC --> E[决策偏差];\nD --> F[严重误判];\nE --> G[决策检查与修正];\nF --> G;",
+      "description": "展示人类误判心理如何通过单一或多重心理倾向影响决策过程。"
+    },
+    {
+      "title": "心理误判检查清单",
+      "type": "list_items",
+      "data": [
+        "1. 识别情感因素（喜欢/讨厌）",
+        "2. 检查社会影响（从众/权威）",
+        "3. 评估损益认知（得失/剥夺）",
+        "4. 审视自我认知（过度自信）",
+        "5. 寻找客观依据（数据/事实）"
+      ],
+      "description": "用于识别和规避常见心理误判的系统检查步骤。"
+    }
+  ]
 }

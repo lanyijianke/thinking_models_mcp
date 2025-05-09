@@ -83,6 +83,44 @@
       "description": "下属能力提升后，领导者仍然采用过于指令性的方式，限制了其自主性和发展空间。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何根据员工状态选择合适的领导风格？",
+      "keywords": ["领导风格", "员工发展", "管理效能", "因材施教"],
+      "guiding_questions": [
+        "员工的能力水平如何？",
+        "员工的工作意愿如何？",
+        "目前的领导方式是否有效？"
+      ]
+    },
+    {
+      "problem_description": "如何帮助员工实现持续成长？",
+      "keywords": ["员工发展", "能力提升", "动态管理", "授权策略"],
+      "guiding_questions": [
+        "员工处于哪个发展阶段？",
+        "需要提供什么样的支持？",
+        "何时调整领导风格？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "情境领导矩阵",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[员工评估] --> B[D1:低能力低意愿];\nA --> C[D2:低能力高意愿];\nA --> D[D3:高能力低意愿];\nA --> E[D4:高能力高意愿];\nB --> F[S1:命令式];\nC --> G[S2:教练式];\nD --> H[S3:支持式];\nE --> I[S4:授权式];\nstyle A fill:#00f,stroke:#333,stroke-width:2px;",
+      "description": "展示员工发展阶段与对应的领导风格。"
+    },
+    {
+      "title": "领导力发展路径",
+      "type": "list_items",
+      "data": [
+        "1. 评估员工状态",
+        "2. 选择领导风格",
+        "3. 提供相应支持",
+        "4. 观察发展进度",
+        "5. 动态调整方式"
+      ],
+      "description": "情境领导的实施步骤和发展路径。"
+    }
+  ]
 }

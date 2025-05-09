@@ -83,6 +83,44 @@
       "description": "虽然能用简单语言解释，但在实际应用或解决复杂问题时仍然存在困难。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何判断自己是否真正理解了某个概念？",
+      "keywords": ["概念理解", "知识内化", "学习验证", "简单解释"],
+      "guiding_questions": [
+        "你能用简单的语言解释这个概念吗？",
+        "解释时有哪些地方会卡壳？",
+        "如何让一个外行人理解这个概念？"
+      ]
+    },
+    {
+      "problem_description": "如何将复杂知识转化为简单易懂的内容？",
+      "keywords": ["知识简化", "通俗化表达", "深度学习", "教学相长"],
+      "guiding_questions": [
+        "如何找到恰当的类比来解释？",
+        "如何避免使用专业术语？",
+        "如何让解释更生动直观？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "费曼技巧学习循环",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[学习概念] --> B[尝试简单解释];\nB --> C{能否讲清楚};\nC --否--> D[识别难点];\nD --> E[重新学习];\nE --> B;\nC --是--> F[掌握知识];",
+      "description": "展示费曼技巧的学习和验证循环过程。"
+    },
+    {
+      "title": "概念简化步骤",
+      "type": "list_items",
+      "data": [
+        "1. 选择要学习的概念",
+        "2. 用简单语言解释",
+        "3. 识别卡壳点",
+        "4. 回顾和深入学习",
+        "5. 重新组织表达"
+      ],
+      "description": "使用费曼技巧简化和内化知识的具体步骤。"
+    }
+  ]
 }

@@ -83,6 +83,44 @@
       "description": "将决策损失思维绝对化，变得过度保守，错失所有发展机会。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何做出更审慎的风险决策？",
+      "keywords": ["风险评估", "决策损失", "底线思维", "风险控制"],
+      "guiding_questions": [
+        "最坏的结果是什么？",
+        "损失的概率有多大？",
+        "能否承受最坏情况？"
+      ]
+    },
+    {
+      "problem_description": "如何平衡风险和收益？",
+      "keywords": ["风险收益", "决策平衡", "损失控制", "机会评估"],
+      "guiding_questions": [
+        "潜在收益是否值得冒险？",
+        "如何降低可能的损失？",
+        "是否有替代方案？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "决策损失评估框架",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[决策情境] -->|评估| B[潜在损失];\nB -->|分析| C[损失概率];\nB -->|评估| D[承受能力];\nC --> E[风险决策];\nD --> E;\nF[收益分析] -->|权衡| E;\nG[规避策略] -->|优化| E;",
+      "description": "展示决策损失评估的主要环节和考虑因素。"
+    },
+    {
+      "title": "审慎决策步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别潜在损失",
+        "2. 评估损失概率",
+        "3. 分析承受能力",
+        "4. 考虑规避方案",
+        "5. 权衡收益决策"
+      ],
+      "description": "进行审慎决策评估的五个关键步骤。"
+    }
+  ]
 }

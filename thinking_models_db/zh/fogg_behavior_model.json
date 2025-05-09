@@ -86,6 +86,44 @@
       "description": "设计的行为虽然简单，但用户缺乏足够的内在动机去完成。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何有效地改变行为或养成新习惯？",
+      "keywords": ["行为改变", "习惯养成", "动机设计", "行为触发"],
+      "guiding_questions": [
+        "做这件事的动机够强吗？",
+        "执行的难度是否合适？",
+        "是否有合适的触发机制？"
+      ]
+    },
+    {
+      "problem_description": "如何设计能促使用户采取行动的产品或服务？",
+      "keywords": ["用户体验", "行为设计", "产品优化", "转化率"],
+      "guiding_questions": [
+        "如何提高用户的动机？",
+        "如何降低使用门槛？",
+        "什么时候触发最有效？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "行为发生模型",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[动机M] --> D[行为B];\nB[能力A] --> D;\nC[触发器T] --> D;\nD --> E[成功];\nD --> F[失败];\nstyle D fill:#f9f,stroke:#333,stroke-width:4px;",
+      "description": "展示动机、能力和触发器三个要素如何共同影响行为的发生。"
+    },
+    {
+      "title": "行为设计关键要素",
+      "type": "list_items",
+      "data": [
+        "1. 动机水平评估",
+        "2. 能力要求分析",
+        "3. 触发器设计",
+        "4. 行为简化策略",
+        "5. 即时反馈机制"
+      ],
+      "description": "使用福格行为模型设计行为改变策略时需要考虑的要点。"
+    }
+  ]
 }

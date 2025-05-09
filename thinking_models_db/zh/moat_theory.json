@@ -83,6 +83,54 @@
       "description": "在建立优势后固步自封，被后来者超越。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何构建和维护可持续的竞争优势？",
+      "keywords": [
+        "竞争优势",
+        "护城河",
+        "战略规划",
+        "差异化"
+      ],
+      "guiding_questions": [
+        "现有的竞争优势是什么？",
+        "如何加深和拓宽护城河？",
+        "竞争对手如何应对？"
+      ]
+    },
+    {
+      "problem_description": "如何评估企业的长期投资价值？",
+      "keywords": [
+        "投资分析",
+        "价值评估",
+        "长期回报",
+        "风险防范"
+      ],
+      "guiding_questions": [
+        "护城河的类型和强度如何？",
+        "竞争优势能维持多久？",
+        "未来的回报率如何？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "护城河类型分析图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[护城河分析] --> B[无形资产];\nA --> C[成本优势];\nA --> D[网络效应];\nA --> E[转换成本];\nB,C,D,E --> F[竞争优势];\nF --> G[持续盈利];\nstyle A fill:#00f,stroke:#333,stroke-width:2px;\nstyle F fill:#f00,stroke:#333,stroke-width:2px;",
+      "description": "展示不同类型护城河及其对竞争优势的贡献。"
+    },
+    {
+      "title": "护城河构建步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别核心优势",
+        "2. 选择护城河类型",
+        "3. 投入资源构建",
+        "4. 持续加深拓宽",
+        "5. 动态防御调整"
+      ],
+      "description": "构建和维护企业护城河的系统方法。"
+    }
+  ]
 }

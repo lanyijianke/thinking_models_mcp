@@ -79,6 +79,44 @@
       "description": "非线性系统虽然难以精确预测，但其行为通常仍遵循一定的模式和规律，并非完全混乱。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何应对复杂多变的环境和问题？",
+      "keywords": ["复杂性", "不确定性", "系统思维", "适应性策略"],
+      "guiding_questions": [
+        "系统中存在哪些关键的反馈循环？",
+        "是否有可能出现临界点效应？",
+        "小的变化可能带来什么大的影响？"
+      ]
+    },
+    {
+      "problem_description": "如何避免线性思维的局限？",
+      "keywords": ["线性思维", "因果关系", "系统动力学", "模式识别"],
+      "guiding_questions": [
+        "是否存在过度简化的线性假设？",
+        "有哪些被忽视的相互作用？",
+        "系统的长期行为模式是什么？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "非线性系统特征图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[初始条件] --> B[反馈循环];\nB --> C[临界点];\nC --> D[突变效应];\nD --> E[新状态];\nE --> B;\nstyle A fill:#00f,stroke:#333,stroke-width:2px;\nstyle D fill:#f00,stroke:#333,stroke-width:2px;",
+      "description": "展示非线性系统中的关键特征和它们之间的相互作用。"
+    },
+    {
+      "title": "非线性思维要点",
+      "type": "list_items",
+      "data": [
+        "1. 识别复杂关联",
+        "2. 寻找反馈循环",
+        "3. 预测临界点",
+        "4. 观察蝴蝶效应",
+        "5. 构建适应策略"
+      ],
+      "description": "应用非线性思维分析问题的关键步骤。"
+    }
+  ]
 }

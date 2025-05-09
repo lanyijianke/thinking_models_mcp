@@ -83,6 +83,44 @@
       "description": "只是将系统在物理上分开，但没有按照独立的功能进行逻辑上的拆解和模块化。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何有效地分析和优化复杂系统？",
+      "keywords": ["系统分析", "模块化", "流程优化", "结构设计"],
+      "guiding_questions": [
+        "系统可以拆分为哪些基本单元？",
+        "各单元间如何交互？",
+        "如何优化单元功能和连接？"
+      ]
+    },
+    {
+      "problem_description": "如何设计清晰可维护的系统结构？",
+      "keywords": ["系统架构", "模块设计", "接口定义", "维护性"],
+      "guiding_questions": [
+        "每个模块的核心功能是什么？",
+        "如何定义模块间的接口？",
+        "如何确保低耦合高内聚？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "冯诺依曼架构流程图",
+      "type": "flowchart_dsl",
+      "data": "graph LR;\nA[输入单元] -->|数据流| B[存储单元];\nB -->|读取| C[处理单元];\nC -->|写入| B;\nB -->|输出| D[输出单元];\nE[控制单元] -->|控制| A;\nE -->|控制| B;\nE -->|控制| C;\nE -->|控制| D;",
+      "description": "展示冯诺依曼架构中各单元的关系和数据流动。"
+    },
+    {
+      "title": "系统模块化设计步骤",
+      "type": "list_items",
+      "data": [
+        "1. 功能需求分析",
+        "2. 模块划分定义",
+        "3. 接口设计规范",
+        "4. 控制流程设计",
+        "5. 模块集成测试"
+      ],
+      "description": "实施冯诺依曼思维进行系统设计的五个关键步骤。"
+    }
+  ]
 }

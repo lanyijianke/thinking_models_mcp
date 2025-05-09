@@ -84,6 +84,44 @@
       "description": "因为某次小概率事件发生了（或没发生），就推翻对概率的客观估计。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何在面对不确定性时做出更理性的决策？",
+      "keywords": ["概率分析", "风险评估", "期望值", "理性决策"],
+      "guiding_questions": [
+        "各种可能的结果及其概率是多少？",
+        "不同选择的期望收益如何？",
+        "如何客观评估风险和收益？"
+      ]
+    },
+    {
+      "problem_description": "如何将直觉判断转化为可量化的分析？",
+      "keywords": ["概率计算", "数据分析", "风险量化", "决策优化"],
+      "guiding_questions": [
+        "如何收集和使用历史数据？",
+        "如何估算事件发生的概率？",
+        "如何权衡多个不确定因素？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "概率决策分析流程",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[识别可能结果] --> B[估算概率];\nB --> C[计算期望值];\nC --> D[评估风险];\nD --> E[比较方案];\nE --> F[做出决策];",
+      "description": "展示使用费马帕斯卡系统进行决策分析的步骤流程。"
+    },
+    {
+      "title": "概率决策关键要素",
+      "type": "list_items",
+      "data": [
+        "1. 列举所有可能结果",
+        "2. 估算各结果概率",
+        "3. 计算期望收益",
+        "4. 评估风险程度",
+        "5. 考虑风险承受能力"
+      ],
+      "description": "进行概率决策分析时需要考虑的核心要素。"
+    }
+  ]
 }

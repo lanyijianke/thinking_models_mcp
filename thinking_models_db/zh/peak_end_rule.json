@@ -83,6 +83,54 @@
       "description": "认为只要过程好就行，对结束环节草草了事，未能给用户留下积极的最终印象。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何设计让人难忘的体验？",
+      "keywords": [
+        "体验设计",
+        "用户记忆",
+        "情感设计",
+        "满意度"
+      ],
+      "guiding_questions": [
+        "体验过程中的高峰时刻在哪里？",
+        "结束时给用户什么感受？",
+        "如何创造积极的峰值体验？"
+      ]
+    },
+    {
+      "problem_description": "如何提升用户的整体评价和回忆？",
+      "keywords": [
+        "用户评价",
+        "体验优化",
+        "记忆管理",
+        "情感触点"
+      ],
+      "guiding_questions": [
+        "哪些环节最容易形成深刻印象？",
+        "如何优化体验的结束阶段？",
+        "如何降低负面体验的影响？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "体验曲线图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[开始] --> B[过程体验];\nB --> C[峰值体验+];\nB --> D[峰值体验-];\nC,D --> E[结束体验];\nE --> F[记忆评价];\nstyle C fill:#0f0,stroke:#333,stroke-width:2px;\nstyle D fill:#f00,stroke:#333,stroke-width:2px;\nstyle E fill:#00f,stroke:#333,stroke-width:2px;",
+      "description": "展示体验过程中的峰值（正负）和终点对最终记忆的影响。"
+    },
+    {
+      "title": "体验优化策略",
+      "type": "list_items",
+      "data": [
+        "1. 识别关键时刻",
+        "2. 设计峰值体验",
+        "3. 管理负面情绪",
+        "4. 优化结束环节",
+        "5. 强化记忆印象"
+      ],
+      "description": "基于峰终定律优化用户体验的关键步骤。"
+    }
+  ]
 }

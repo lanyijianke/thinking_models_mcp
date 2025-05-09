@@ -79,6 +79,44 @@
       "description": "不是所有问题都需要升维思考，有时简单直接的方法更有效。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何突破思维局限找到根本解决方案？",
+      "keywords": ["升维思考", "问题解决", "思维突破", "系统思维"],
+      "guiding_questions": [
+        "这个问题的更高层面意义是什么？",
+        "从更长远的角度看重要吗？",
+        "有什么更根本的解决思路？"
+      ]
+    },
+    {
+      "problem_description": "如何将复杂问题简化并找到关键突破口？",
+      "keywords": ["维度提升", "问题简化", "关键点分析", "系统优化"],
+      "guiding_questions": [
+        "更高维度看，核心问题是什么？",
+        "是否存在更有效的解决路径？",
+        "如何实现降维打击？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "思维层级提升图",
+      "type": "pyramid_diagram",
+      "data": "graph TD;\nA[精神/使命] -->|引导| B[身份/角色];\nB -->|塑造| C[信念/价值];\nC -->|指导| D[能力/策略];\nD -->|决定| E[行为/环境];\nstyle A fill:#FFD700;\nstyle B fill:#FFA500;\nstyle C fill:#FF8C00;\nstyle D fill:#FF6347;\nstyle E fill:#FF4500;",
+      "description": "展示思维从环境层到精神层的逐级提升过程。"
+    },
+    {
+      "title": "升维思考步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别当前维度",
+        "2. 寻找更高视角",
+        "3. 重新定义问题",
+        "4. 找到根本方案",
+        "5. 降维实施"
+      ],
+      "description": "运用升维思维解决问题的五个关键步骤。"
+    }
+  ]
 }

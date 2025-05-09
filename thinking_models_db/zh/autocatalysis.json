@@ -83,6 +83,44 @@
       "description": "只关注了增长，而没有设计机制来防止或控制可能出现的负向螺旋。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何设计和启动自我增长机制？",
+      "keywords": ["自催化", "正反馈", "增长引擎", "系统设计"],
+      "guiding_questions": [
+        "系统中哪些输出可以促进输入？",
+        "如何达到自我强化的临界点？",
+        "需要哪些初始条件？"
+      ]
+    },
+    {
+      "problem_description": "如何维持和优化增长循环？",
+      "keywords": ["可持续增长", "循环优化", "资源管理", "风险控制"],
+      "guiding_questions": [
+        "如何保持循环的动力？",
+        "可能存在哪些瓶颈？",
+        "如何避免负向循环？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "自催化增长循环图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[投入/行动] -->|产生| B[产出/结果];\nB -->|强化| C[催化效应];\nC -->|促进| A;\nD[外部资源] -->|补充| A;\nE[风险管理] -->|控制| C;",
+      "description": "展示自催化过程中的正反馈循环、资源补充和风险控制机制。"
+    },
+    {
+      "title": "自催化机制构建步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别关键环节",
+        "2. 设计反馈机制",
+        "3. 准备启动条件",
+        "4. 建立监控指标",
+        "5. 持续优化调整"
+      ],
+      "description": "构建和优化自催化增长机制的五个关键步骤。"
+    }
+  ]
 }

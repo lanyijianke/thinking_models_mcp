@@ -83,6 +83,44 @@
       "description": "用户增长过快，但平台技术、管理或社区氛围未能跟上，导致用户体验下降。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何实现网络型产品的快速增长？",
+      "keywords": ["网络效应", "用户增长", "价值提升", "临界点"],
+      "guiding_questions": [
+        "如何加快用户增长速度？",
+        "临界点在什么规模？",
+        "如何激活网络效应？"
+      ]
+    },
+    {
+      "problem_description": "如何构建和维护网络竞争优势？",
+      "keywords": ["竞争壁垒", "用户粘性", "价值创造", "生态建设"],
+      "guiding_questions": [
+        "如何提高用户活跃度？",
+        "如何优化连接质量？",
+        "如何防止负向效应？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "网络价值增长曲线",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[初始用户] --> B[网络规模N];\nB --> C[连接数N²];\nC --> D[网络价值V];\nD --> E[吸引力增加];\nE --> B;\nstyle B fill:#00f,stroke:#333,stroke-width:2px;\nstyle D fill:#f00,stroke:#333,stroke-width:2px;",
+      "description": "展示网络规模、连接数和价值之间的指数关系及正向循环。"
+    },
+    {
+      "title": "网络效应实现路径",
+      "type": "list_items",
+      "data": [
+        "1. 初始用户积累",
+        "2. 达到临界规模",
+        "3. 激活网络效应",
+        "4. 价值快速增长",
+        "5. 建立竞争壁垒"
+      ],
+      "description": "实现网络效应和价值增长的关键步骤。"
+    }
+  ]
 }

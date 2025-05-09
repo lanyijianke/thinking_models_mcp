@@ -80,6 +80,44 @@
       "description": "僵化地将所有行为都套用三脑理论进行解释，而忽略了具体情境的特殊性。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何理解并管理复杂的行为反应？",
+      "keywords": ["三脑理论", "行为管理", "情绪控制", "理性思考"],
+      "guiding_questions": [
+        "这个反应是来自本能、情绪还是理性？",
+        "三种脑在这个情况下如何相互影响？",
+        "如何平衡三脑的需求？"
+      ]
+    },
+    {
+      "problem_description": "如何在压力情境下保持理性决策？",
+      "keywords": ["压力管理", "决策平衡", "情绪管理", "本能控制"],
+      "guiding_questions": [
+        "爬行脑的应激反应有多强？",
+        "情绪脑受到了什么影响？",
+        "如何让理智脑发挥主导作用？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "三脑层次与功能图",
+      "type": "layered_diagram",
+      "data": "graph TD;\nA[理智脑/新皮层] -->|主导| D[思考分析];\nB[情绪脑/古哺乳脑] -->|影响| E[社交情感];\nC[爬行脑/原始脑] -->|驱动| F[本能生存];\nstyle A fill:#87CEEB;\nstyle B fill:#FFB6C1;\nstyle C fill:#90EE90;",
+      "description": "展示三种大脑的层次结构及其主要功能。"
+    },
+    {
+      "title": "三脑协调管理步骤",
+      "type": "list_items",
+      "data": [
+        "1. 觉察本能反应",
+        "2. 识别情绪状态",
+        "3. 唤醒理性思维",
+        "4. 平衡三脑需求",
+        "5. 整合做出决策"
+      ],
+      "description": "管理和协调三种大脑功能的五个关键步骤。"
+    }
+  ]
 }

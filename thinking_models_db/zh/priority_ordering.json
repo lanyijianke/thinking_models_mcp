@@ -83,6 +83,54 @@
       "description": "对任务的复杂度和耗时估计不足，使得优先排序和计划难以执行。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何有效管理时间和任务优先级？",
+      "keywords": [
+        "时间管理",
+        "任务分类",
+        "优先级",
+        "效能提升"
+      ],
+      "guiding_questions": [
+        "这个任务有多重要？",
+        "截止时间有多紧急？",
+        "应该何时着手处理？"
+      ]
+    },
+    {
+      "problem_description": "如何平衡紧急事务和重要事项？",
+      "keywords": [
+        "资源分配",
+        "平衡策略",
+        "任务管理",
+        "规划执行"
+      ],
+      "guiding_questions": [
+        "哪些任务可以委托他人？",
+        "如何预防紧急事务？",
+        "重要事项如何提前规划？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "艾森豪威尔矩阵",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[任务分类] --> B[重要且紧急];\nA --> C[重要不紧急];\nA --> D[不重要但紧急];\nA --> E[不重要不紧急];\nB --> F[立即处理];\nC --> G[计划执行];\nD --> H[授权处理];\nE --> I[考虑删除];\nstyle A fill:#00f,stroke:#333,stroke-width:2px;\nstyle B,C fill:#f00,stroke:#333,stroke-width:2px;",
+      "description": "展示任务按重要性和紧急性的四象限分类及处理策略。"
+    },
+    {
+      "title": "优先级管理步骤",
+      "type": "list_items",
+      "data": [
+        "1. 列出所有任务",
+        "2. 评估重要紧急",
+        "3. 分配到四象限",
+        "4. 制定行动计划",
+        "5. 动态调整优先级"
+      ],
+      "description": "实施优先排序的系统步骤和方法。"
+    }
+  ]
 }

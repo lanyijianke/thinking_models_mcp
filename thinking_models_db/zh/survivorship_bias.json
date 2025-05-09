@@ -79,6 +79,44 @@
       "description": "例如，媒体更倾向于报道成功故事，导致我们接触到的信息本身就是经过筛选的。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何避免被成功案例误导？",
+      "keywords": ["幸存者偏差", "数据分析", "风险评估", "决策偏差"],
+      "guiding_questions": [
+        "失败案例的数量和特征是什么？",
+        "成功案例经历了怎样的筛选？",
+        "有多少未被报道的失败？"
+      ]
+    },
+    {
+      "problem_description": "如何进行更全面的风险评估？",
+      "keywords": ["风险分析", "数据完整性", "失败案例", "选择偏差"],
+      "guiding_questions": [
+        "数据来源是否有偏差？",
+        "是否忽略了关键的失败信息？",
+        "成功率的真实估计是多少？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "幸存者偏差分析框架",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[原始样本] -->|筛选过程| B[幸存样本];\nA -->|筛选过程| C[未幸存样本];\nB -->|可见数据| D[表面结论];\nC -->|隐藏数据| E[完整分析];\nD -->|修正| E;",
+      "description": "展示如何通过考虑未幸存样本来修正分析偏差。"
+    },
+    {
+      "title": "全面分析步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别数据来源",
+        "2. 估计筛选过程",
+        "3. 寻找失败案例",
+        "4. 分析筛选机制",
+        "5. 综合评估结论"
+      ],
+      "description": "进行全面分析以避免幸存者偏差的五个关键步骤。"
+    }
+  ]
 }

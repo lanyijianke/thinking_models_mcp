@@ -85,6 +85,46 @@
       "description": "急于给出建议或解决方案，而没有充分理解冰山的全貌。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何深入理解人的行为背后的真实动机和需求？",
+      "keywords": ["行为动机", "深层需求", "心理分析", "自我认知"],
+      "guiding_questions": [
+        "这个行为背后隐藏着什么样的感受？",
+        "这些感受源自什么样的观点或信念？",
+        "最深层的渴望是什么？"
+      ]
+    },
+    {
+      "problem_description": "如何改善人际关系和沟通效果？",
+      "keywords": ["人际沟通", "情感连接", "冲突化解", "共情理解"],
+      "guiding_questions": [
+        "如何看到表象之下的真实需求？",
+        "怎样建立更深层的情感连接？",
+        "如何避免简单化地评判他人？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "冰山层次模型",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[行为] --> B[应对方式];\nB --> C[感受];\nC --> D[观点];\nD --> E[期待];\nE --> F[渴望];\nF --> G[自我];\nstyle A fill:#fff,stroke:#333,stroke-width:2px;\nstyle G fill:#00f,stroke:#333,stroke-width:4px;",
+      "description": "展示从表层行为到深层自我的七个层次结构。"
+    },
+    {
+      "title": "冰山探索要点",
+      "type": "list_items",
+      "data": [
+        "1. 观察表面行为",
+        "2. 识别应对模式",
+        "3. 探索内在感受",
+        "4. 了解底层观点",
+        "5. 发现潜在期待",
+        "6. 触及深层渴望",
+        "7. 连接核心自我"
+      ],
+      "description": "探索个人或他人内在世界的关键步骤。"
+    }
+  ]
 }

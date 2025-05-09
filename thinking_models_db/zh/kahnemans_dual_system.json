@@ -85,6 +85,44 @@
       "description": "忽略了系统1在处理日常事务中的高效性，以及系统2可能存在的局限和错误。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何避免认知偏差，做出更理性的决策？",
+      "keywords": ["认知偏差", "决策优化", "理性思考", "判断校准"],
+      "guiding_questions": [
+        "你的第一反应是什么？",
+        "这个判断背后的依据是什么？",
+        "是否需要收集更多信息？"
+      ]
+    },
+    {
+      "problem_description": "如何在直觉和理性之间找到平衡？",
+      "keywords": ["思维模式", "快慢思考", "决策质量", "效率平衡"],
+      "guiding_questions": [
+        "这个决策需要多快做出？",
+        "依靠直觉的风险有多大？",
+        "值得投入更多认知资源吗？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "双系统思维模型",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[思考情境] --> B[系统1:快思考];\nA --> C[系统2:慢思考];\nB --> D[直觉/自动];\nC --> E[理性/分析];\nD,E --> F[决策结果];\nstyle B fill:#f00,stroke:#333,stroke-width:2px;\nstyle C fill:#00f,stroke:#333,stroke-width:2px;",
+      "description": "展示快思考和慢思考两个系统的工作方式和决策路径。"
+    },
+    {
+      "title": "思维系统使用指南",
+      "type": "list_items",
+      "data": [
+        "1. 识别思考场景",
+        "2. 观察直觉反应",
+        "3. 评估决策重要性",
+        "4. 适时启动系统2",
+        "5. 综合分析判断"
+      ],
+      "description": "如何有效运用双系统思维的关键步骤。"
+    }
+  ]
 }

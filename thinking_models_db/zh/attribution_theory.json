@@ -84,6 +84,44 @@
       "description": "将他人为自己行为辩解的理由直接当作行为的真实原因。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何更客观地理解他人行为？",
+      "keywords": ["行为归因", "内外归因", "基本归因错误", "客观分析"],
+      "guiding_questions": [
+        "这个行为在特定情境下常见吗？",
+        "是否考虑了所有可能的影响因素？",
+        "如何避免过度归因于个人特质？"
+      ]
+    },
+    {
+      "problem_description": "如何进行更有效的自我反思？",
+      "keywords": ["自我归因", "客观评估", "自利偏差", "改进方向"],
+      "guiding_questions": [
+        "是否存在自利偏差？",
+        "外部环境因素的影响有多大？",
+        "如何从失败中吸取经验？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "归因分析三维模型",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[行为] -->|分析维度| B[共识性];\nA -->|分析维度| C[特殊性];\nA -->|分析维度| D[一致性];\nB -->|高| E[外部归因];\nC -->|高| E;\nD -->|高| F[内部归因];",
+      "description": "展示行为归因分析的三个维度及其指向。"
+    },
+    {
+      "title": "客观归因分析步骤",
+      "type": "list_items",
+      "data": [
+        "1. 观察具体行为",
+        "2. 收集相关信息",
+        "3. 分析三维数据",
+        "4. 识别归因偏差",
+        "5. 形成综合判断"
+      ],
+      "description": "进行客观归因分析的五个关键步骤。"
+    }
+  ]
 }

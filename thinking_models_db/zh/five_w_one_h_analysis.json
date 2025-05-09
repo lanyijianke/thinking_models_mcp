@@ -80,6 +80,45 @@
       "description": "例如，对于需要创意发散或情感交流的场景，过于结构化的5W1H可能不太合适。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何系统全面地分析和理解一个问题或情况？",
+      "keywords": ["结构化思考", "问题分析", "信息收集", "系统思维"],
+      "guiding_questions": [
+        "是否已经从六个关键维度分析了问题？",
+        "是否遗漏了任何重要信息？",
+        "分析是否足够具体和清晰？"
+      ]
+    },
+    {
+      "problem_description": "如何制定完整的计划或进行有效的沟通？",
+      "keywords": ["计划制定", "沟通技巧", "信息传递", "执行方案"],
+      "guiding_questions": [
+        "计划或沟通中是否包含了所有必要元素？",
+        "各个要素是否明确且可执行？",
+        "是否考虑了所有相关方的需求？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "5W1H分析框架",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[问题/情况] --> B[What何事];\nA --> C[Why何因];\nA --> D[Who何人];\nA --> E[When何时];\nA --> F[Where何地];\nA --> G[How何法];\nB,C,D,E,F,G --> H[全面理解];",
+      "description": "展示5W1H分析法的六个关键维度及其关系。"
+    },
+    {
+      "title": "问题分析要点",
+      "type": "list_items",
+      "data": [
+        "1. 界定问题内容和目标(What)",
+        "2. 分析原因和目的(Why)",
+        "3. 确定相关人员(Who)",
+        "4. 规划时间节点(When)",
+        "5. 选择地点场景(Where)",
+        "6. 制定具体方法(How)"
+      ],
+      "description": "使用5W1H分析问题时需要考虑的关键要点。"
+    }
+  ]
 }

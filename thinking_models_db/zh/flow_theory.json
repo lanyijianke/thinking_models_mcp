@@ -85,6 +85,56 @@
       "description": "错误地认为只要全身心投入就是心流，而忽略了心流体验中通常伴随的愉悦感和掌控感。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何设计能让人投入忘我的活动或任务？",
+      "keywords": [
+        "心流",
+        "投入感",
+        "专注度",
+        "体验设计"
+      ],
+      "guiding_questions": [
+        "活动的难度是否合适？",
+        "目标是否明确清晰？",
+        "是否有及时的反馈？",
+        "如何减少外界干扰？"
+      ]
+    },
+    {
+      "problem_description": "如何提升工作或学习的效率和幸福感？",
+      "keywords": [
+        "效率提升",
+        "幸福感",
+        "掌控感",
+        "心理体验"
+      ],
+      "guiding_questions": [
+        "如何让任务更有吸引力？",
+        "如何创造适合专注的环境？",
+        "如何增强过程中的掌控感？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "心流状态模型",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[技能水平] --> B{心流通道};\nC[挑战难度] --> B;\nB --> D[焦虑];\nB --> E[心流];\nB --> F[无聊];\nE --> G[最佳体验];\nstyle E fill:#f9f,stroke:#333,stroke-width:4px;",
+      "description": "展示技能水平与挑战难度的匹配关系如何影响心理状态。"
+    },
+    {
+      "title": "心流要素清单",
+      "type": "list_items",
+      "data": [
+        "1. 挑战与技能匹配",
+        "2. 明确的目标",
+        "3. 即时的反馈",
+        "4. 强烈的专注",
+        "5. 掌控的感觉",
+        "6. 时间感扭曲"
+      ],
+      "description": "进入心流状态所需的关键要素。"
+    }
+  ]
 }

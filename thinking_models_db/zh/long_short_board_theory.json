@@ -84,6 +84,44 @@
       "description": "高估了自己的优势，或者低估了某个劣势的负面影响。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何在优势和劣势之间做出最优决策？",
+      "keywords": ["优势劣势", "资源配置", "战略决策", "能力发展"],
+      "guiding_questions": [
+        "当前的主要目标是什么？",
+        "哪个短板会制约目标达成？",
+        "哪个长板最值得投入发展？"
+      ]
+    },
+    {
+      "problem_description": "如何平衡个人或组织的发展策略？",
+      "keywords": ["平衡发展", "战略规划", "资源优化", "竞争力"],
+      "guiding_questions": [
+        "补短板和扬长板的优先级如何？",
+        "如何让长短板形成互补？",
+        "如何根据环境调整策略？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "长短板理论模型",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[系统评估] --> B[识别长板];\nA --> C[识别短板];\nB,C --> D[目标分析];\nD --> E[补短策略];\nD --> F[扬长策略];\nE,F --> G[资源配置];\nstyle A fill:#00f,stroke:#333,stroke-width:2px;\nstyle G fill:#f00,stroke:#333,stroke-width:2px;",
+      "description": "展示长短板评估和策略制定的完整过程。"
+    },
+    {
+      "title": "战略选择矩阵",
+      "type": "list_items",
+      "data": [
+        "1. 生存状态-补短板优先",
+        "2. 发展状态-扬长板优先",
+        "3. 稳定状态-长短平衡",
+        "4. 创新状态-长板突破",
+        "5. 危机状态-短板紧急修复"
+      ],
+      "description": "不同发展阶段的长短板策略选择指南。"
+    }
+  ]
 }

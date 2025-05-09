@@ -84,6 +84,43 @@
       "description": "犹豫不决，迟迟不开始行动，导致复利效应大打折扣。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何理解时间、持续投入和复利增长的关系，从而克服短期思维？",
+      "keywords": ["复利效应", "长期投资", "持续积累", "时间价值"],
+      "guiding_questions": [
+        "你是否因为看不到短期效果而容易放弃？",
+        "你是否想知道持续小额投入最终能带来多大收益？",
+        "你是否想了解为什么要尽早开始投资/学习/养成好习惯？"
+      ]
+    },
+    {
+      "problem_description": "如何提高\"利率\"（增长率）并保持长期稳定的复利增长？",
+      "keywords": ["增长率优化", "持续投入", "复利策略", "长期规划"],
+      "guiding_questions": [
+        "你是否想知道如何提高学习/投资的效率？",
+        "你是否在寻找能长期坚持的可靠方法？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "复利效应增长曲线图",
+      "type": "curve_graph",
+      "data": "graph TD;\nX[时间] -->|指数增长| Y[价值];\nstyle Y stroke:#f00,stroke-width:2px;\nstyle X stroke:#00f,stroke-width:2px;",
+      "description": "展示复利效应随时间推移呈指数增长的曲线，直观对比单利与复利的差异。"
+    },
+    {
+      "title": "复利效应关键要素",
+      "type": "list_items",
+      "data": [
+        "1. 本金（初始投入）",
+        "2. 利率（增长率）",
+        "3. 时间（投资期限）",
+        "4. 复投频率（计息周期）",
+        "5. 持续投入（定期追加）"
+      ],
+      "description": "复利效应中影响最终收益的五个关键要素。"
+    }
+  ]
 }

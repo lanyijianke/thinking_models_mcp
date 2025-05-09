@@ -81,6 +81,44 @@
       "description": "虽然通过放大细节找到了问题或机会，但未能将这些洞察转化为具体的改进措施或行动计划。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何发现问题的根源和关键突破点？",
+      "keywords": ["细节分析", "问题根源", "深入洞察", "关键点识别"],
+      "guiding_questions": [
+        "哪些细节最值得关注？",
+        "问题的关键环节在哪里？",
+        "细节分析揭示了什么？"
+      ]
+    },
+    {
+      "problem_description": "如何平衡细节分析和整体把握？",
+      "keywords": ["分析平衡", "重点识别", "效率优化", "系统思考"],
+      "guiding_questions": [
+        "这个细节的影响范围有多大？",
+        "如何避免过度关注细节？",
+        "分析结果如何指导行动？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "凸透放大分析流程",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[问题识别] --> B[聚焦细节];\nB --> C[放大观察];\nC --> D[拆解分析];\nD --> E[发现关键点];\nE --> F[制定行动];\nstyle B fill:#00f,stroke:#333,stroke-width:2px;\nstyle C fill:#f00,stroke:#333,stroke-width:2px;",
+      "description": "展示使用凸透放大思维分析问题的完整过程。"
+    },
+    {
+      "title": "细节分析层级",
+      "type": "list_items",
+      "data": [
+        "1. 问题表象层",
+        "2. 具体细节层",
+        "3. 内部机制层",
+        "4. 本质规律层",
+        "5. 解决方案层"
+      ],
+      "description": "从表象到本质的细节分析层级结构。"
+    }
+  ]
 }

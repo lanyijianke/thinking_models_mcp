@@ -83,6 +83,43 @@
       "description": "未能清晰地区分不同类型的观点组合，导致决策失误。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何在投资或创新领域找到真正的机会？",
+      "keywords": ["正确非共识", "机会发现", "独立思考", "逆向投资"],
+      "guiding_questions": [
+        "你是否敢于挑战主流观点？",
+        "你如何判断一个非共识观点的正确性？",
+        "你能否承受坚持非共识观点带来的压力？"
+      ]
+    },
+    {
+      "problem_description": "如何在众声喧哗中保持独立判断和思考？",
+      "keywords": ["独立思考", "判断力", "深度分析", "价值投资"],
+      "guiding_questions": [
+        "你是否经常深入分析市场共识背后的逻辑？",
+        "你如何验证自己的非共识观点是否正确？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "正确与非共识四象限分析图",
+      "type": "quadrant_chart",
+      "data": "graph TD;\nA[正确且共识:普通机会] --> B[正确非共识:巨大机会];\nC[错误且共识:普遍错误] --> D[错误非共识:危险陷阱];\nstyle B fill:#0f0;\nstyle D fill:#f00;",
+      "description": "展示正确性和共识度的四种组合及其投资/决策含义。"
+    },
+    {
+      "title": "发现正确非共识的方法步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别当前市场共识",
+        "2. 寻找与共识相悖的观点",
+        "3. 深入验证非共识观点的正确性",
+        "4. 评估坚持该观点的成本和风险",
+        "5. 制定长期实施策略"
+      ],
+      "description": "系统性寻找和验证正确非共识观点的五个关键步骤。"
+    }
+  ]
 }

@@ -82,6 +82,43 @@
       "description": "例如，数据备份不及时导致备份数据过时，或者备用流程与主流程存在差异，使得在主系统失效时备份系统无法有效替代或需要额外调整。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何设计更可靠、更具韧性的系统？",
+      "keywords": ["冗余备份", "系统可靠性", "风险管理", "容错设计"],
+      "guiding_questions": [
+        "系统中的关键环节是什么？",
+        "这些环节出问题的概率和影响有多大？",
+        "如何平衡冗余成本和系统可靠性？"
+      ]
+    },
+    {
+      "problem_description": "如何有效管理和维护冗余备份系统？",
+      "keywords": ["备份管理", "系统维护", "监控切换", "应急预案"],
+      "guiding_questions": [
+        "如何确保备份系统的可用性？",
+        "备份方案是否需要定期测试和更新？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "冗余备份系统架构图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[输入] --> B[主系统];\nA --> C[备份系统];\nB -->|正常| D[输出];\nB -->|失效| E[切换];\nC -->|激活| E;\nE --> D;\nstyle C fill:#f9f,stroke:#333,stroke-width:2px;",
+      "description": "展示具有冗余备份的系统基本架构，包括主系统、备份系统和切换机制。"
+    },
+    {
+      "title": "冗余备份实施步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别关键环节",
+        "2. 评估风险影响",
+        "3. 设计备份方案",
+        "4. 实施监控机制",
+        "5. 定期测试验证"
+      ],
+      "description": "实施冗余备份系统的五个关键步骤。"
+    }
+  ]
 }

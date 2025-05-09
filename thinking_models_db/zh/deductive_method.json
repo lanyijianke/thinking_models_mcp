@@ -83,6 +83,44 @@
       "description": "错误地将可能性的结论（归纳或溯因）当作演绎推理的必然结论。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何确保推理过程的严谨性？",
+      "keywords": ["演绎法", "逻辑推理", "三段论", "论证"],
+      "guiding_questions": [
+        "大前提是否普遍成立？",
+        "小前提是否符合实际？",
+        "推理过程是否符合逻辑规则？"
+      ]
+    },
+    {
+      "problem_description": "如何避免常见的推理谬误？",
+      "keywords": ["逻辑谬误", "推理准确性", "前提验证", "结论有效性"],
+      "guiding_questions": [
+        "前提之间是否存在矛盾？",
+        "结论是否超出了前提范围？",
+        "是否存在概念混淆？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "演绎推理结构图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[大前提：普遍规律] -->|结合| C[推理过程];\nB[小前提：具体情况] -->|结合| C;\nC -->|必然推出| D[结论];\nE[前提验证] -->|检验| A;\nE -->|检验| B;\nF[逻辑规则] -->|指导| C;",
+      "description": "展示演绎推理的基本结构和验证环节。"
+    },
+    {
+      "title": "有效演绎推理步骤",
+      "type": "list_items",
+      "data": [
+        "1. 确立普遍规律",
+        "2. 分析具体情况",
+        "3. 检验前提真实性",
+        "4. 应用逻辑规则",
+        "5. 得出必然结论"
+      ],
+      "description": "进行有效演绎推理的五个关键步骤。"
+    }
+  ]
 }

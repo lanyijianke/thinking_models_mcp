@@ -85,6 +85,44 @@
       "description": "无意识地走了思维捷径，却认为自己的判断是基于充分理性的分析。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何避免思维捷径导致的判断偏差？",
+      "keywords": ["启发式偏差", "思维捷径", "决策偏差", "理性思考"],
+      "guiding_questions": [
+        "你的判断是基于什么信息？",
+        "是否存在代表性、可得性或锚定偏差？",
+        "如何获取更全面的数据支持？"
+      ]
+    },
+    {
+      "problem_description": "如何在快速决策中平衡效率和准确性？",
+      "keywords": ["决策平衡", "认知校准", "判断准确性", "快速决策"],
+      "guiding_questions": [
+        "这个决策有多紧急？",
+        "可以通过什么方式快速验证？",
+        "是否需要更多的客观信息？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "常见启发式偏差分析图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[思维捷径] -->|以偏概全| B[代表性偏差];\nA -->|凭印象判断| C[可得性偏差];\nA -->|先入为主| D[锚定效应];\nB --> E[理性校准];\nC --> E;\nD --> E;",
+      "description": "展示三种主要的启发式偏差及其校准过程。"
+    },
+    {
+      "title": "避免启发式偏差的步骤",
+      "type": "list_items",
+      "data": [
+        "1. 意识思维捷径",
+        "2. 识别偏差类型",
+        "3. 收集客观数据",
+        "4. 多角度分析",
+        "5. 理性校准决策"
+      ],
+      "description": "避免陷入启发式偏差的五个关键步骤。"
+    }
+  ]
 }

@@ -85,6 +85,43 @@
       "description": "不考虑听众和情境，机械地按照顺序讲述，可能效果不佳。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何更有效地激励他人和传达价值主张？",
+      "keywords": ["黄金圈", "价值传递", "领导力", "沟通策略"],
+      "guiding_questions": [
+        "你为什么要做这件事？",
+        "是什么信念或使命在驱动你？",
+        "你如何让他人理解并认同你的理念？"
+      ]
+    },
+    {
+      "problem_description": "如何构建更有说服力的沟通框架？",
+      "keywords": ["沟通结构", "信念传递", "价值主张", "感染力"],
+      "guiding_questions": [
+        "你的核心理念是什么？",
+        "你如何将理念转化为具体行动？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "黄金圈思维模型",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[Why:为什么] -->|指引| B[How:怎么做];\nB -->|实现| C[What:做什么];\nstyle A fill:#FFD700;\nstyle B fill:#FFA500;\nstyle C fill:#FF8C00;",
+      "description": "展示黄金圈三层结构及其从内向外的影响关系。"
+    },
+    {
+      "title": "黄金圈应用步骤",
+      "type": "list_items",
+      "data": [
+        "1. 明确核心理念(Why)",
+        "2. 制定实现策略(How)",
+        "3. 规划具体行动(What)",
+        "4. 检验一致性",
+        "5. 有效传递"
+      ],
+      "description": "应用黄金圈思维模型进行沟通和决策的五个关键步骤。"
+    }
+  ]
 }

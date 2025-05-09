@@ -83,6 +83,44 @@
       "description": "虽然很忙碌，但没有进行有挑战性的学习和实践，能力并未得到实质提升。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何突破个人发展瓶颈？",
+      "keywords": ["成长破圈", "突破瓶颈", "能力提升", "个人发展"],
+      "guiding_questions": [
+        "你目前在哪个成长圈层？",
+        "什么阻碍了你的突破？",
+        "你需要获得哪些新技能或经验？"
+      ]
+    },
+    {
+      "problem_description": "如何克服恐惧实现持续成长？",
+      "keywords": ["克服恐惧", "学习成长", "自我突破", "持续发展"],
+      "guiding_questions": [
+        "你最害怕什么？",
+        "如何将大目标拆解为小步骤？",
+        "你的支持系统是什么？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "成长破圈模型图",
+      "type": "circle_layers",
+      "data": "graph TD;\nA[舒适区] -->|突破| B[恐惧区];\nB -->|挑战| C[学习区];\nC -->|掌握| D[成长区];\nD -->|新领域| A;\nstyle A fill:#90EE90;\nstyle B fill:#FFB6C1;\nstyle C fill:#87CEEB;\nstyle D fill:#DDA0DD;",
+      "description": "展示四个成长圈层（舒适区、恐惧区、学习区、成长区）的循环关系。"
+    },
+    {
+      "title": "成长破圈实施步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别当前圈层",
+        "2. 设定挑战目标",
+        "3. 分析障碍因素",
+        "4. 制定行动计划",
+        "5. 执行与反馈"
+      ],
+      "description": "实施成长破圈的五个关键步骤。"
+    }
+  ]
 }

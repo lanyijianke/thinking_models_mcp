@@ -83,6 +83,44 @@
       "description": "成功的长尾策略往往是头部和长尾并重，而非完全忽视主流热门产品。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何发现和开发小众市场机会？",
+      "keywords": ["市场机遇", "利基市场", "需求挖掘", "商业创新"],
+      "guiding_questions": [
+        "市场中有哪些被忽视的小众需求？",
+        "如何降低服务长尾市场的成本？",
+        "如何提高长尾产品的可发现性？"
+      ]
+    },
+    {
+      "problem_description": "如何构建和运营长尾平台？",
+      "keywords": ["平台战略", "供需匹配", "个性化推荐", "用户体验"],
+      "guiding_questions": [
+        "如何有效聚合供给和需求？",
+        "如何优化产品推荐系统？",
+        "如何平衡头部和长尾资源？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "长尾分布图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[市场规模] --> B[头部20%:热门产品];\nA --> C[长尾80%:小众产品];\nB --> D[传统市场关注];\nC --> E[数字平台机会];\nD,E --> F[总市场价值];\nstyle B fill:#f00,stroke:#333,stroke-width:2px;\nstyle C fill:#00f,stroke:#333,stroke-width:2px;",
+      "description": "展示市场中头部和长尾的分布及其价值贡献。"
+    },
+    {
+      "title": "长尾战略实施步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别市场分布",
+        "2. 降低运营成本",
+        "3. 聚合长尾供需",
+        "4. 优化推荐系统",
+        "5. 提升用户体验"
+      ],
+      "description": "实施长尾战略的关键步骤和执行路径。"
+    }
+  ]
 }

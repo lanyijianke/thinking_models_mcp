@@ -80,6 +80,54 @@
       "description": "只是罗列了各个维度的信息，但没有从系统和动态的角度深入挖掘问题的本质、关键驱动因素或潜在解决方案。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何全面系统地分析复杂问题？",
+      "keywords": [
+        "系统思维",
+        "全局视角",
+        "动态分析",
+        "问题解构"
+      ],
+      "guiding_questions": [
+        "问题的历史演变脉络是什么？",
+        "系统的内外部关系如何？",
+        "未来可能的发展趋势是什么？"
+      ]
+    },
+    {
+      "problem_description": "如何预测和规划系统的发展？",
+      "keywords": [
+        "发展预测",
+        "趋势分析",
+        "系统规划",
+        "战略思考"
+      ],
+      "guiding_questions": [
+        "各子系统如何协同发展？",
+        "超系统环境会如何变化？",
+        "哪些因素会影响未来走向？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "九宫格分析框架",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[子系统-过去] --> B[子系统-现在] --> C[子系统-未来];\nD[现系统-过去] --> E[现系统-现在] --> F[现系统-未来];\nG[超系统-过去] --> H[超系统-现在] --> I[超系统-未来];\nstyle E fill:#f00,stroke:#333,stroke-width:2px;\nstyle B,H fill:#00f,stroke:#333,stroke-width:2px;",
+      "description": "展示九宫格的时空维度结构和分析层级。"
+    },
+    {
+      "title": "系统分析步骤",
+      "type": "list_items",
+      "data": [
+        "1. 确定分析对象",
+        "2. 划分系统层级",
+        "3. 追溯历史演变",
+        "4. 分析现状关系",
+        "5. 预测未来趋势"
+      ],
+      "description": "使用九宫格进行系统分析的操作步骤。"
+    }
+  ]
 }

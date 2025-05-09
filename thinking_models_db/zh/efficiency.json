@@ -83,6 +83,44 @@
       "description": "投入资源优化了非瓶颈环节，对整体效率提升作用不大。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何提高工作效率，优化投入产出比？",
+      "keywords": ["效率优化", "资源管理", "流程改进", "时间管理"],
+      "guiding_questions": [
+        "当前的工作流程中存在哪些可以优化的环节？",
+        "如何减少不必要的资源浪费？",
+        "有什么工具或方法可以提高效率？"
+      ]
+    },
+    {
+      "problem_description": "如何平衡效率提升和质量保证？",
+      "keywords": ["质量控制", "效率平衡", "可持续发展", "流程优化"],
+      "guiding_questions": [
+        "如何在提高效率的同时保证质量？",
+        "哪些环节不能为了效率而妥协？",
+        "如何建立可持续的高效工作模式？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "效率优化流程图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[识别目标] --> B[分析流程];\nB --> C[找出瓶颈];\nC --> D[优化方案];\nD --> E[执行改进];\nE --> F[评估效果];\nF --> B;",
+      "description": "展示效率优化的系统性方法和循环改进过程。"
+    },
+    {
+      "title": "效率提升关键要素",
+      "type": "list_items",
+      "data": [
+        "1. 明确目标和预期产出",
+        "2. 分析现有流程和资源",
+        "3. 识别效率瓶颈",
+        "4. 制定优化方案",
+        "5. 合理配置资源"
+      ],
+      "description": "提高效率需要关注的核心要素。"
+    }
+  ]
 }

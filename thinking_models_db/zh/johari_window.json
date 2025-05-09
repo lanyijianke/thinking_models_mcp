@@ -84,6 +84,44 @@
       "description": "认为四个区域的大小是固定的，而没有意识到它们可以通过沟通行为主动改变。"
     }
   ],
-  "common_problems_solved": [],
-  "visualizations": []
+  "common_problems_solved": [
+    {
+      "problem_description": "如何改善人际沟通和关系？",
+      "keywords": ["自我认知", "人际沟通", "反馈交流", "关系建立"],
+      "guiding_questions": [
+        "如何让他人更了解真实的你？",
+        "如何更好地了解他人眼中的自己？",
+        "如何建立更开放透明的关系？"
+      ]
+    },
+    {
+      "problem_description": "如何增进自我认知和个人成长？",
+      "keywords": ["自我探索", "盲点发现", "潜能开发", "个人成长"],
+      "guiding_questions": [
+        "你有哪些尚未被发现的盲点？",
+        "如何获得有效的反馈？",
+        "如何探索自己的未知区域？"
+      ]
+    }
+  ],
+  "visualizations": [
+    {
+      "title": "周哈里窗四区域图",
+      "type": "flowchart_dsl",
+      "data": "graph TD;\nA[开放区]-->B[盲目区];\nA-->C[隐藏区];\nB-->D[未知区];\nC-->D;\nstyle A fill:#00f,stroke:#333,stroke-width:2px;",
+      "description": "展示自我认知和他人认知的四个区域及其关系。"
+    },
+    {
+      "title": "自我认知提升步骤",
+      "type": "list_items",
+      "data": [
+        "1. 识别四个区域现状",
+        "2. 主动表达想法感受",
+        "3. 寻求他人真诚反馈",
+        "4. 接纳并整合反馈",
+        "5. 持续探索未知区"
+      ],
+      "description": "通过周哈里窗提升自我认知和沟通的具体步骤。"
+    }
+  ]
 }
