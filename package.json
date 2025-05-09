@@ -1,6 +1,6 @@
 {
   "name": "@thinking-models/mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "type": "module",
   "main": "build/thinking_models_server.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "prepare": "npm run build"
   },
   "bin": {
-    "thinking-models-mcp": "./build/thinking_models_server.js"
+    "mcp-server": "build/thinking_models_server.js"
   },
   "files": [
     "build",
@@ -20,7 +20,7 @@
     "thinking-models",
     "mental-models"
   ],
-  "author": "",
+  "author": "lanyijianke",
   "license": "MIT",
   "description": "A Model Context Protocol (MCP) server for thinking models",
   "dependencies": {
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/thinking-models-mcp"
+    "url": "git+https://github.com/lanyijianke/thinking_models_mcp.git"
   },
   "publishConfig": {
     "access": "public",
