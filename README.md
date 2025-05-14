@@ -13,15 +13,26 @@ This is a Model Context Protocol (MCP) based service for querying thinking model
 
 ## Available Tools
 
-1. `list-models`: Get a list of all thinking models
-2. `get-model-detail`: Get detailed information about a specific model
-3. `search-models`: Search for thinking models by keyword
-4. `get-model-teaching`: Get popular science teaching content for a model
-5. `get-model-warnings`: Get usage notes for a model (limitations and common pitfalls)
-6. `get-categories`: Get model category information
-7. `get-models-by-category`: Get models by category
-8. `get-related-models`: Get related model recommendations
-9. `count-models`: Count the total number of models
+1. `list-models`: Get a list of all thinking models, with optional category filtering
+2. `get-model-info`: Get detailed information or specific fields about a model
+3. `search-models`: Search for models by keywords or recommend models for specific problems
+4. `get-categories`: Get model category information
+5. `get-related-models`: Get related model recommendations
+6. `count-models`: Count the total number of models
+
+## Configuration
+
+### Environment Variables
+
+The service supports the following environment variables:
+
+- `OPENROUTER_API_KEY`: OpenRouter API key (for semantic similarity calculation)
+- `OPENROUTER_MODEL_NAME`: OpenRouter model name to use, default is "qwen/qwen3-235b-a22b:free"
+- `HTTP_REFERER`: (Optional) HTTP Referer header
+- `X_TITLE`: (Optional) Application title
+- `MODE`: Running mode, can be "stdio" or "rest"
+- `PORT`: Port number for REST mode, default is 9593
+- `ENDPOINT`: Endpoint path for REST mode, default is "/rest"
 
 ## Usage
 
@@ -30,6 +41,11 @@ This is a Model Context Protocol (MCP) based service for querying thinking model
 ```bash
 # Install dependencies
 npm install
+
+# Set environment variables
+export OPENROUTER_API_KEY="your-openrouter-api-key" 
+# Optional: Set model
+export OPENROUTER_MODEL_NAME="your-chosen-model"
 
 # Build
 npm run build
@@ -67,9 +83,24 @@ These files should be placed in the service's running directory under the `think
 
 ## API Parameters
 
-Most tools accept the following parameters:
+### Common Parameters
 - `lang`: Language code (`zh` or `en`), defaults to `zh`
-- `model_id`: The unique identifier of a thinking model
+- `model_id`: The unique identifier of a thinking model (for specific model operations)
+
+### Tool-specific Parameters
+- `list-models`: Optional `category` and `subcategory` for filtering, `limit` for result count
+- `get-model-info`: `fields` array to specify which information to return (all, basic, detail, teaching, warnings, visualizations)
+- `search-models`: `mode` (keyword or problem), `query` for keyword search, `problem_keywords` for problem-based recommendations
+
+## API Optimization
+
+The API has been optimized by merging several related tools:
+
+1. `list-models` now incorporates functionality from the previous `get-models-by-category`
+2. `get-model-info` combines the functionality of `get-model-detail`, `get-model-teaching`, `get-model-warnings`, and `get-model-visualizations`
+3. `search-models` integrates both keyword-based search and problem-based recommendation (previously `suggest-models-for-problem`)
+
+These optimizations provide a more consistent and flexible API while reducing code duplication.
 
 ## Development
 

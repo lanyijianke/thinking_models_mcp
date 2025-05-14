@@ -1,17 +1,31 @@
 params:
   type: object
-  properties: {}
+  properties:    apiKey:
+      type: string
+      description: "OpenRouter API 密钥，用于语义相似度计算（请填写您自己的 OpenRouter API 密钥）"
+      default: ""
+    modelName:
+      type: string
+      description: "要使用的 OpenRouter 模型名称"
+      default: "qwen/qwen3-235b-a22b:free"
+    mode:
+      type: string
+      enum: ["stdio", "rest"]
+      description: "运行模式：stdio 或 rest"
+      default: "stdio"
   required: []
 
 rest:
   name: thinking_models
   port: 9593
-  endpoint: /rest
+  endpoint: /rest  env:
+    OPENROUTER_API_KEY: "{{params.apiKey || ''}}"
+    OPENROUTER_MODEL_NAME: "{{params.modelName || 'qwen/qwen3-235b-a22b:free'}}"
+    MODE: rest
 
 npx:
   command:
-    | npx -y @thinking-models/mcp-server
-  config:
+    | npx -y @thinking-models/mcp-server  config:
     | {
         "mcpServers": {
           "thinking-models": {
@@ -20,7 +34,11 @@ npx:
               "-y",
               "@thinking-models/mcp-server"
             ],
-            "env": {}
+            "env": {
+              "OPENROUTER_API_KEY": "{{params.apiKey || ''}}",
+              "OPENROUTER_MODEL_NAME": "{{params.modelName || 'qwen/qwen3-235b-a22b:free'}}",
+              "MODE": "{{params.mode || 'stdio'}}"
+            }
           }
         }
       }
@@ -38,8 +56,11 @@ docker:
               "-i",
               "--rm",
               "thinking-models/mcp-server"
-            ],
-            "env": {}
+            ],            "env": {
+              "OPENROUTER_API_KEY": "{{params.apiKey || ''}}",
+              "OPENROUTER_MODEL_NAME": "{{params.modelName || 'qwen/qwen3-235b-a22b:free'}}",
+              "MODE": "{{params.mode || 'stdio'}}"
+            }
           }
         }
       }

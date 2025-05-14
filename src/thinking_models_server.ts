@@ -7,6 +7,14 @@ import fs from "fs/promises";
 import path from "path";
 import { watch } from "fs";
 import { fileURLToPath } from "url";
+import { OpenRouterClient } from "./openrouter_client.js";
+import { calculateSemanticSimilarity as semanticSimilarityCalc } from "./semantic_similarity.js";
+
+// 增强的 calculateSemanticSimilarity 函数，使用导入的实现
+async function calculateSemanticSimilarity(text1: string, text2: string): Promise<number> {
+  // 调用新的、更健壮的实现
+  return semanticSimilarityCalc(openRouterClient, text1, text2);
+}
 
 // 兼容ESM的__dirname（修正Windows路径问题）
 const __filename = fileURLToPath(import.meta.url);
@@ -21,6 +29,43 @@ const SUPPORTED_LANGUAGES = {
 // 类型定义
 type SupportedLanguage = keyof typeof SUPPORTED_LANGUAGES;
 
+// 定义可视化数据的具体类型
+interface FlowchartDslData {
+  dsl: string; 
+  // 其他流图特定配置
+}
+
+interface BarChartData {
+  labels: string[];
+  datasets: Array<{
+    label: string;
+    data: number[];
+    backgroundColor?: string | string[];
+    // 其他图表库（如 Chart.js）支持的属性
+  }>;
+}
+
+interface TableData {
+  headers: string[];
+  rows: Array<Array<string | number | boolean>>; 
+}
+
+interface ListData {
+  items: Array<{
+    text: string;
+    subItems?: ListData['items']; 
+  }>;
+}
+
+interface ComparisonTableData {
+  criteria: string[]; 
+  items: Array<{
+    name: string; 
+    values: Array<string | number | boolean>; 
+    // 其他特定属性
+  }>;
+}
+
 interface ThinkingModel {
   id: string;
   name: string;
@@ -30,17 +75,15 @@ interface ThinkingModel {
   subcategories?: string[];
   tags?: string[];
   use_cases?: string[];
-  // 新增：该模型能解决的常见问题或适用的场景描述
   common_problems_solved?: Array<{
     problem_description: string;
     keywords: string[];
     guiding_questions?: string[];
   }>;
-  // 新增：用于图表等可视化的结构化数据
   visualizations?: Array<{
     title: string;
     type: "flowchart_dsl" | "bar_chart_data" | "table_data" | "list_items" | "comparison_table";
-    data: any;
+    data: FlowchartDslData | BarChartData | TableData | ListData | ComparisonTableData; // 使用联合类型
     description?: string;
   }>;
   popular_science_teaching?: Array<{
@@ -116,6 +159,17 @@ const server = new McpServer({
 // 初始加载所有语言的模型
 await loadModels();
 
+// 创建 OpenRouter 客户端实例，使用环境变量配置
+const openRouterClient = new OpenRouterClient();
+
+// 测试 OpenRouter 连接
+try {
+  const connectionTest = await openRouterClient.testConnection();
+  log(`OpenRouter 连接测试结果: ${connectionTest ? '成功' : '失败'}`);
+} catch (error) {
+  log(`OpenRouter 连接测试异常: ${error instanceof Error ? error.message : String(error)}`);
+}
+
 // 监控模型文件变化
 for (const [lang, dirPath] of Object.entries(SUPPORTED_LANGUAGES)) {
   const langDir = path.resolve(__dirname, "..", dirPath);
@@ -134,24 +188,55 @@ for (const [lang, dirPath] of Object.entries(SUPPORTED_LANGUAGES)) {
   }
 }
 
-// 注册工具: list_models
-// 修改 list-models 工具实现
+// 扩展的 list-models 工具实现 - 合并 list-models 和 get-models-by-category
 server.tool(
   "list-models",
-  "获取指定语言的所有思维模型简要信息",
+  "获取指定语言的思维模型列表，支持按分类过滤",
   {
     lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
+    category: z.string().optional().describe("主分类名称（可选）"),
+    subcategory: z.string().optional().describe("子分类名称（可选，需同时提供主分类）"),
+    limit: z.number().optional().default(100).describe("返回结果数量限制，默认为100")
   },
-  async ({ lang }) => {
+  async ({ lang, category, subcategory, limit }) => {
     try {
-      log(`开始获取 ${lang} 语言的思维模型列表...`);
-      const result = MODELS[lang].map(m => ({
-        id: m.id,
-        name: m.name,
-        definition: m.definition || "",
-        purpose: m.purpose || ""
-      }));
-      log(`成功返回 ${result.length} 个 ${lang} 语言的模型简要信息`);
+      if (subcategory && !category) {
+        return {
+          content: [{ 
+            type: "text",
+            text: JSON.stringify({ error: "提供子分类时必须同时提供主分类" }, null, 2)
+          }]
+        };
+      }
+      
+      let models = [...MODELS[lang]];
+      let filterDesc = "";
+      
+      // 根据分类过滤
+      if (category) {
+        filterDesc = `分类 '${category}'`;
+        models = models.filter(m => m.category === category);
+        
+        // 根据子分类进一步过滤
+        if (subcategory) {
+          filterDesc += ` 和子分类 '${subcategory}'`;
+          models = models.filter(m => m.subcategories?.includes(subcategory));
+        }
+      }
+      
+      // 映射到简要信息
+      const result = models
+        .slice(0, limit)
+        .map(m => ({
+          id: m.id,
+          name: m.name,
+          definition: m.definition || "",
+          purpose: m.purpose || "",
+          category: m.category || "",
+          subcategories: m.subcategories || []
+        }));
+      
+      log(`获取模型列表${filterDesc ? `（按${filterDesc}过滤）` : ""}，找到 ${models.length} 个模型，返回 ${result.length} 个结果`);
       return {
         content: [{ 
           type: "text",
@@ -163,50 +248,7 @@ server.tool(
       return {
         content: [{ 
           type: "text",
-          text: "[]"
-        }]
-      };
-    }
-  }
-);
-
-// 注册工具: get_model_detail
-// 修改 get-model-detail 工具实现
-server.tool(
-  "get-model-detail",
-  "获取指定语言的思维模型详细信息",
-  {
-    model_id: z.string().describe("思维模型的唯一id"),
-    lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
-  },
-  async ({ model_id, lang }) => {
-    try {
-      log(`正在查找 ${lang} 语言的模型 ID: ${model_id}`);
-      const model = MODELS[lang].find(m => m.id === model_id);
-      
-      if (model) {
-        log(`找到模型 '${model.name}'，标签: ${model.tags?.join(", ") || "无"}`);
-        return {
-          content: [{ 
-            type: "text",
-            text: JSON.stringify(model, null, 2)
-          }]
-        };
-      }
-      
-      log(`在 ${lang} 语言中未找到模型 ID: ${model_id}`);
-      return {
-        content: [{ 
-          type: "text",
-          text: JSON.stringify({ error: "未找到该模型" }, null, 2)
-        }]
-      };
-    } catch (e: any) {
-      log(`获取模型详情时出错: ${e.message}`);
-      return {
-        content: [{ 
-          type: "text",
-          text: JSON.stringify({ error: "服务异常" }, null, 2)
+          text: JSON.stringify({ error: "服务异常", message: e.message }, null, 2)
         }]
       };
     }
@@ -217,187 +259,278 @@ server.tool(
 // 修改 search-models 工具实现
 server.tool(
   "search-models",
-  "在指定语言的思维模型中搜索",
+  "在指定语言的思维模型中搜索或基于问题关键词推荐模型",
   {
-    keyword: z.string().describe("搜索关键词"),
+    mode: z.enum(["keyword", "problem"]).default("keyword").describe("搜索模式：'keyword'(关键词搜索) 或 'problem'(问题关键词推荐)"),
+    query: z.string().optional().describe("搜索关键词(用于keyword模式)"),
+    problem_keywords: z.array(z.string()).optional().describe("问题关键词数组(用于problem模式)"),
     lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
+    limit: z.number().optional().default(10).describe("返回结果数量限制，默认为10")
   },
-  async ({ keyword, lang }) => {
+  async ({ mode, query, problem_keywords, lang, limit }) => {
     try {
-      log(`开始在 ${lang} 语言中搜索关键词: '${keyword}'`);
-      const keyword_lower = keyword.toLowerCase();
-      const result: Array<ThinkingModel & { match_reasons: string[] }> = [];
-
-      for (const m of MODELS[lang]) {
-        const match_reasons: string[] = [];
-
-        // 基本信息匹配
-        if (m.name.toLowerCase().includes(keyword_lower)) {
-          match_reasons.push("模型名称");
-        }
-        if (m.definition?.toLowerCase().includes(keyword_lower)) {
-          match_reasons.push("核心定义");
-        }
-        if (m.tags?.some(tag => tag.toLowerCase().includes(keyword_lower))) {
-          match_reasons.push("标签");
-        }
-
-        // 科普教学内容匹配
-        if (m.popular_science_teaching?.some(
-          teaching => teaching.concept_name.toLowerCase().includes(keyword_lower) ||
-                     teaching.explanation.toLowerCase().includes(keyword_lower)
-        )) {
-          match_reasons.push("科普教学内容");
-        }
-
-        // 局限性匹配
-        if (m.limitations?.some(
-          limitation => limitation.limitation_name.toLowerCase().includes(keyword_lower) ||
-                       limitation.description.toLowerCase().includes(keyword_lower)
-        )) {
-          match_reasons.push("局限性说明");
-        }
-
-        // 常见误区匹配
-        if (m.common_pitfalls?.some(
-          pitfall => pitfall.pitfall_name.toLowerCase().includes(keyword_lower) ||
-                    pitfall.description.toLowerCase().includes(keyword_lower)
-        )) {
-          match_reasons.push("常见误区");
-        }
-
-        // 新增字段的搜索逻辑
-        if (m.common_problems_solved?.some(
-          problem => problem.problem_description.toLowerCase().includes(keyword_lower) ||
-                     problem.keywords.some(k => k.toLowerCase().includes(keyword_lower))
-      )) {
-          match_reasons.push("能解决的问题或关键词");
+      log(`开始在 ${lang} 语言中以 ${mode} 模式搜索模型`);
+      
+      if (mode === "keyword" && !query) {
+        return {
+          content: [{
+            type: "text",
+            text: JSON.stringify({ error: "关键词搜索模式下，query 参数不能为空" }, null, 2)
+          }]
+        };
       }
-      if (m.visualizations?.some(
-          viz => viz.title.toLowerCase().includes(keyword_lower) ||
-                 (viz.description && viz.description.toLowerCase().includes(keyword_lower))
-      )) {
-          match_reasons.push("可视化标题或描述");
+      
+      if (mode === "problem" && (!problem_keywords || problem_keywords.length === 0)) {
+        return {
+          content: [{
+            type: "text",
+            text: JSON.stringify({ error: "问题关键词推荐模式下，problem_keywords 参数不能为空" }, null, 2)
+          }]
+        };
       }
-
-        if (match_reasons.length > 0) {
-          result.push({
-            ...m,
-            match_reasons
-          });
+      
+      const results: Array<any> = [];
+      
+      // 关键词搜索模式
+      if (mode === "keyword" && query) {
+        const keyword_lower = query.toLowerCase();
+        
+        for (const m of MODELS[lang]) {
+          const match_reasons: string[] = [];
+          
+          // 基本信息匹配
+          if (m.name.toLowerCase().includes(keyword_lower)) {
+            match_reasons.push("模型名称");
+          }
+          if (m.definition?.toLowerCase().includes(keyword_lower)) {
+            match_reasons.push("核心定义");
+          }
+          if (m.tags?.some(tag => tag.toLowerCase().includes(keyword_lower))) {
+            match_reasons.push("标签");
+          }
+          
+          // 科普教学内容匹配
+          if (m.popular_science_teaching?.some(
+            teaching => teaching.concept_name.toLowerCase().includes(keyword_lower) ||
+                       teaching.explanation.toLowerCase().includes(keyword_lower)
+          )) {
+            match_reasons.push("科普教学内容");
+          }
+          
+          // 局限性匹配
+          if (m.limitations?.some(
+            limitation => limitation.limitation_name.toLowerCase().includes(keyword_lower) ||
+                         limitation.description.toLowerCase().includes(keyword_lower)
+          )) {
+            match_reasons.push("局限性说明");
+          }
+          
+          // 常见误区匹配
+          if (m.common_pitfalls?.some(
+            pitfall => pitfall.pitfall_name.toLowerCase().includes(keyword_lower) ||
+                      pitfall.description.toLowerCase().includes(keyword_lower)
+          )) {
+            match_reasons.push("常见误区");
+          }
+          
+          // 新增字段的搜索逻辑
+          if (m.common_problems_solved?.some(
+            problem => problem.problem_description.toLowerCase().includes(keyword_lower) ||
+                       problem.keywords.some(k => k.toLowerCase().includes(keyword_lower))
+          )) {
+            match_reasons.push("能解决的问题或关键词");
+          }
+          
+          if (m.visualizations?.some(
+            viz => viz.title.toLowerCase().includes(keyword_lower) ||
+                   (viz.description && viz.description.toLowerCase().includes(keyword_lower))
+          )) {
+            match_reasons.push("可视化标题或描述");
+          }
+          
+          if (match_reasons.length > 0) {
+            results.push({
+              id: m.id,
+              name: m.name,
+              definition: m.definition || "",
+              purpose: m.purpose || "",
+              match_reasons
+            });
+          }
         }
       }
-
-      log(`在 ${lang} 语言中搜索关键词 '${keyword}' 完成，找到 ${result.length} 个匹配的模型`);
+      // 问题关键词推荐模式
+      else if (mode === "problem" && problem_keywords) {
+        const keywordsLower = problem_keywords.map(k => k.toLowerCase());
+        
+        for (const model of MODELS[lang]) {
+          let score = 0;
+          const reasons: string[] = [];
+          
+          // 匹配 common_problems_solved.keywords
+          if (model.common_problems_solved) {
+            for (const prob of model.common_problems_solved) {
+              const matched = keywordsLower.filter(k => prob.keywords.map(x => x.toLowerCase()).includes(k));
+              if (matched.length > 0) {
+                score += matched.length * 3;
+                reasons.push(`问题关键词匹配: ${matched.join(", ")}`);
+              }
+              
+              // 匹配 problem_description
+              for (const k of keywordsLower) {
+                if (prob.problem_description.toLowerCase().includes(k)) {
+                  score += 2;
+                  reasons.push(`问题描述包含: ${k}`);
+                }
+              }
+            }
+          }
+          
+          // 匹配 name
+          for (const k of keywordsLower) {
+            if (model.name.toLowerCase().includes(k)) {
+              score += 2;
+              reasons.push(`模型名称包含: ${k}`);
+            }
+          }
+          
+          // 匹配 tags
+          if (model.tags) {
+            const matched = keywordsLower.filter(k => model.tags!.map(x => x.toLowerCase()).includes(k));
+            if (matched.length > 0) {
+              score += matched.length * 2;
+              reasons.push(`标签匹配: ${matched.join(", ")}`);
+            }
+          }
+          
+          // 匹配 definition
+          if (model.definition) {
+            for (const k of keywordsLower) {
+              if (model.definition.toLowerCase().includes(k)) {
+                score += 1;
+                reasons.push(`核心定义包含: ${k}`);
+              }
+            }
+          }
+          
+          if (score > 0) {
+            results.push({
+              id: model.id,
+              name: model.name,
+              definition: model.definition || "",
+              score,
+              reasons
+            });
+          }
+        }
+        
+        // 按评分排序
+        results.sort((a, b) => b.score - a.score);
+      }
+      
+      // 限制返回结果数量
+      const limitedResults = results.slice(0, limit);
+      
+      log(`搜索完成，找到 ${results.length} 个匹配的模型，返回 ${limitedResults.length} 个结果`);
       return {
-        content: [{ 
+        content: [{
           type: "text",
-          text: JSON.stringify(result, null, 2)
+          text: JSON.stringify(limitedResults, null, 2)
         }]
       };
     } catch (e: any) {
       log(`搜索模型时出错: ${e.message}`);
       return {
-        content: [{ 
+        content: [{
           type: "text",
-          text: "[]"
+          text: JSON.stringify({ error: "服务异常", message: e.message }, null, 2)
         }]
       };
     }
   }
 );
 
-// 注册工具: get_model_teaching
-// 修改 get-model-teaching 工具实现
+// 统一的 get-model-info 工具实现 - 合并 get-model-detail、get-model-teaching、get-model-warnings 和 get-model-visualizations
 server.tool(
-  "get-model-teaching",
-  "获取思维模型的流行科普教学内容",
+  "get-model-info",
+  "获取思维模型的详细信息或特定字段",
   {
     model_id: z.string().describe("思维模型的唯一id"),
+    fields: z.array(z.enum(["all", "basic", "detail", "teaching", "warnings", "visualizations"])).optional().default(["basic"]).describe("需要返回的字段，如 'all'(全部), 'basic'(基本信息), 'detail'(详细信息), 'teaching'(教学内容), 'warnings'(注意事项), 'visualizations'(可视化)"),
     lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
   },
-  async ({ model_id, lang }) => {
+  async ({ model_id, fields, lang }) => {
     try {
-      log(`获取模型 ID: ${model_id} 的流行科普教学内容`);
+      log(`获取模型 ID: ${model_id} 的信息，请求的字段: ${fields.join(', ')}`);
       const model = MODELS[lang].find(m => m.id === model_id);
-
-      if (model) {
-        const teaching_content = {
-          id: model.id,
-          name: model.name,
-          popular_science_teaching: model.popular_science_teaching || []
-        };
-        log(`找到 ${teaching_content.popular_science_teaching.length} 个科普教学内容`);
+      
+      if (!model) {
+        log(`未找到模型 ID: ${model_id}`);
         return {
-          content: [{ 
+          content: [{
             type: "text",
-            text: JSON.stringify(teaching_content, null, 2)
+            text: JSON.stringify({ error: "未找到该模型" }, null, 2)
           }]
         };
       }
-
-      log(`未找到模型 ID: ${model_id}`);
-      return {
-        content: [{ 
-          type: "text",
-          text: JSON.stringify({ error: "未找到该模型" }, null, 2)
-        }]
-      };
-    } catch (e: any) {
-      log(`获取模型科普教学内容时出错: ${e.message}`);
-      return {
-        content: [{ 
-          type: "text",
-          text: JSON.stringify({ error: "服务异常" }, null, 2)
-        }]
-      };
-    }
-  }
-);
-
-// 注册工具: get_model_warnings
-// 修改 get-model-warnings 工具实现
-server.tool(
-  "get-model-warnings",
-  "获取思维模型的使用注意事项（包含局限性和常见误区）",
-  {
-    model_id: z.string().describe("思维模型的唯一id"),
-    lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
-  },
-  async ({ model_id, lang }) => {
-    try {
-      log(`获取模型 ID: ${model_id} 的使用注意事项`);
-      const model = MODELS[lang].find(m => m.id === model_id);
-
-      if (model) {
-        const warnings = {
-          id: model.id,
-          name: model.name,
+      
+      const includeAll = fields.includes("all");
+      const result: Record<string, any> = {};
+      
+      // 基本信息（默认始终包含）
+      if (includeAll || fields.includes("basic")) {
+        result.id = model.id;
+        result.name = model.name;
+        result.category = model.category;
+        result.subcategories = model.subcategories || [];
+        result.tags = model.tags || [];
+      }
+      
+      // 详细信息
+      if (includeAll || fields.includes("detail")) {
+        result.detail = {
+          definition: model.definition || "",
+          purpose: model.purpose || "",
+          use_cases: model.use_cases || [],
+        };
+      }
+      
+      // 教学内容
+      if (includeAll || fields.includes("teaching")) {
+        result.teaching = model.popular_science_teaching || [];
+      }
+      
+      // 使用注意事项（包含局限性和常见误区）
+      if (includeAll || fields.includes("warnings")) {
+        result.warnings = {
           limitations: model.limitations || [],
           common_pitfalls: model.common_pitfalls || []
         };
-        log(`找到 ${warnings.limitations.length} 个局限性和 ${warnings.common_pitfalls.length} 个常见误区`);
-        return {
-          content: [{ 
-            type: "text",
-            text: JSON.stringify(warnings, null, 2)
-          }]
-        };
       }
-
-      log(`未找到模型 ID: ${model_id}`);
+      
+      // 可视化数据
+      if (includeAll || fields.includes("visualizations")) {
+        result.visualizations = model.visualizations || [];
+      }
+      
+      // 能解决的问题
+      if (includeAll) {
+        result.common_problems_solved = model.common_problems_solved || [];
+      }
+      
+      log(`成功返回模型信息，包含字段: ${Object.keys(result).join(', ')}`);
       return {
-        content: [{ 
+        content: [{
           type: "text",
-          text: JSON.stringify({ error: "未找到该模型" }, null, 2)
+          text: JSON.stringify(result, null, 2)
         }]
       };
     } catch (e: any) {
-      log(`获取模型使用注意事项时出错: ${e.message}`);
+      log(`获取模型信息时出错: ${e.message}`);
       return {
-        content: [{ 
+        content: [{
           type: "text",
-          text: JSON.stringify({ error: "服务异常" }, null, 2)
+          text: JSON.stringify({ error: "服务异常", message: e.message }, null, 2)
         }]
       };
     }
@@ -449,59 +582,20 @@ server.tool(
   }
 );
 
-// 修改 get-models-by-category 工具实现
-server.tool(
-  "get-models-by-category",
-  "按分类获取思维模型",
-  {
-    category: z.string().describe("主分类名称"),
-    subcategory: z.string().optional().describe("子分类名称（可选）"),
-    lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
-  },
-  async ({ category, subcategory, lang }) => {
-    try {
-      log(`开始获取分类 '${category}' ${subcategory ? `和子分类 '${subcategory}'` : ''} 下的模型...`);
-      
-      const result = MODELS[lang]
-        .filter(m => 
-          m.category === category && 
-          (subcategory === undefined || m.subcategories?.includes(subcategory))
-        )
-        .map(m => ({
-          id: m.id,
-          name: m.name,
-          definition: m.definition || "",
-          purpose: m.purpose || ""
-        }));
+// 引入大语言模型推荐函数
+import { getLlmRecommendations } from './llm_recommendations.js';
+import { LlmRelatedModel } from './types.js';
 
-      log(`在分类 '${category}' 下找到 ${result.length} 个模型`);
-      return {
-        content: [{ 
-          type: "text",
-          text: JSON.stringify(result, null, 2)
-        }]
-      };
-    } catch (e: any) {
-      log(`按分类获取模型时出错: ${e.message}`);
-      return {
-        content: [{ 
-          type: "text",
-          text: "[]"
-        }]
-      };
-    }
-  }
-);
-
-// 修改 get-related-models 工具实现
+// 修改 get-related-models 工具实现 - 使用大语言模型直接进行推荐
 server.tool(
   "get-related-models",
-  "基于分类和标签获取相关模型推荐",
+  "基于大语言模型理解与分析获取相关思维模型推荐",
   {
     model_id: z.string().describe("思维模型的唯一id"),
     lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
-  },
-  async ({ model_id, lang }) => {
+    use_llm: z.boolean().optional().default(true).describe("是否使用大语言模型进行相关性评估（如果为false则回退到基于规则的算法）")
+  },  
+  async ({ model_id, lang, use_llm }) => {
     try {
       // 查找源模型
       const source_model = MODELS[lang].find(m => m.id === model_id);
@@ -516,84 +610,48 @@ server.tool(
         };
       }
 
-      // 提取源模型特征
-      const source_tags = new Set(source_model.tags || []);
-      const source_category = source_model.category || "";
-      const source_subcats = new Set(source_model.subcategories || []);
-      const source_use_cases = new Set(source_model.use_cases || []);
-
-      // 计算相关度并收集推荐
-      const related = MODELS[lang]
-        .filter(m => m.id !== model_id) // 排除源模型
-        .map(m => {
-          let score = 0;
-          const reasons: string[] = [];
-
-          // 1. 分类相关度（权重最高）
-          if (m.category === source_category) {
-            score += 3;
-            reasons.push(`同属于「${source_category}」分类`);
-          }
-
-          // 2. 子分类相关度
-          const common_subcats = (m.subcategories || [])
-            .filter(subcat => source_subcats.has(subcat));
-          if (common_subcats.length > 0) {
-            score += common_subcats.length;
-            reasons.push(`共同的子分类：${common_subcats.join(", ")}`);
-          }
-
-          // 3. 标签相关度
-          const common_tags = (m.tags || [])
-            .filter(tag => source_tags.has(tag));
-          if (common_tags.length > 0) {
-            score += common_tags.length * 2;
-            reasons.push(`共同的标签：${common_tags.join(", ")}`);
-          }
-
-          // 4. 使用场景相关度
-          const common_use_cases = (m.use_cases || [])
-            .filter(use_case => source_use_cases.has(use_case));
-          if (common_use_cases.length > 0) {
-            score += common_use_cases.length;
-            reasons.push(`适用于相同场景：${common_use_cases.join(", ")}`);
-          }
-
-          // 5. 新增：解决的共同问题关键词相关度
-          const source_problem_keywords = new Set(
-            source_model.common_problems_solved?.flatMap(p => p.keywords) || []
-          );
-          const common_problem_keywords = (m.common_problems_solved?.flatMap(p => p.keywords) || [])
-            .filter(keyword => source_problem_keywords.has(keyword));
-          if (common_problem_keywords.length > 0) {
-            score += common_problem_keywords.length * 1.5; // 给予一定权重
-            reasons.push(`解决相似问题的关键词：${common_problem_keywords.join(", ")}`);
-          }
-
-          return {
-            id: m.id,
-            name: m.name,
-            definition: m.definition || "",
-            purpose: m.purpose || "",
-            relevance_score: score,
-            reasons
-          };
-        })
-        .filter(m => m.relevance_score > 0)
-        .sort((a, b) => b.relevance_score - a.relevance_score)
-        .slice(0, 5);
-
-      log(`找到 ${related.length} 个相关模型推荐`);
-      if (related.length > 0) {
-        log(`最相关的模型是 '${related[0].name}'，相关度分数：${related[0].relevance_score}`);
+      const candidateModels = MODELS[lang].filter(m => m.id !== model_id);
+        // 如果不使用LLM或候选模型过多（避免token超限），使用传统方法
+      if (!use_llm || candidateModels.length > 50) {
+        log(`使用传统权重算法计算相关模型`);
+        const traditionalData = await getRelatedModelsTraditionalData(source_model, candidateModels, lang);
+        return {
+          content: [{ 
+            type: "text",
+            text: JSON.stringify(traditionalData, null, 2)
+          }]
+        };
       }
-
-      return {
-        content: [{ 
-          type: "text",
-          text: JSON.stringify(related, null, 2)
-        }]
-      };
+        // 使用大语言模型推荐相关模型
+      log(`使用大语言模型为「${source_model.name}」生成相关思维模型推荐`);
+      
+      // 调用大语言模型推荐函数获取推荐结果
+      const recommendations = await getLlmRecommendations(
+        openRouterClient, 
+        source_model, 
+        candidateModels, 
+        lang
+      );
+      
+      // 如果获取到推荐结果，直接返回
+      if (recommendations && Array.isArray(recommendations) && recommendations.length > 0) {
+        log(`大语言模型成功生成了${recommendations.length}个相关模型推荐`);
+        return {
+          content: [{ 
+            type: "text",
+            text: JSON.stringify(recommendations, null, 2)
+          }]
+        };      } else {
+        // 如果未获取到推荐结果，回退到传统算法
+        log(`未能从大语言模型获取有效推荐，回退到传统算法`);
+        const traditionalData = await getRelatedModelsTraditionalData(source_model, candidateModels, lang);
+        return {
+          content: [{ 
+            type: "text",
+            text: JSON.stringify(traditionalData, null, 2)
+          }]
+        };
+      }
     } catch (e: any) {
       log(`获取相关模型推荐时出错: ${e.message}`);
       return {
@@ -605,6 +663,105 @@ server.tool(
     }
   }
 );
+
+// 传统基于权重的相关模型获取方法 - 返回处理过的数据格式用于 get-related-models 内部
+async function getRelatedModelsTraditionalData(source_model: ThinkingModel, candidateModels: ThinkingModel[], lang: SupportedLanguage) {
+  // 提取源模型特征
+  const source_tags = new Set(source_model.tags || []);
+  const source_category = source_model.category || "";
+  const source_subcats = new Set(source_model.subcategories || []);
+  const source_use_cases = new Set(source_model.use_cases || []);
+  const source_problem_keywords_set = new Set(
+    source_model.common_problems_solved?.flatMap(p => p.keywords.map(k => k.toLowerCase())) || []
+  );
+  const source_problem_descriptions_block = source_model.common_problems_solved
+    ?.map(p => p.problem_description)
+    .filter(desc => desc && desc.trim() !== "")
+    .join("\\n---\\n");
+
+  const relatedPromises = candidateModels.map(async m => {
+    let score = 0;
+    const reasons: string[] = [];
+
+    // 1. 分类相关度（权重最高）
+    if (m.category === source_category && source_category !== "") {
+      score += 3;
+      reasons.push(`同属于「${source_category}」分类`);
+    }
+
+    // 2. 子分类相关度
+    const common_subcats = (m.subcategories || [])
+      .filter(subcat => source_subcats.has(subcat));
+    if (common_subcats.length > 0) {
+      score += common_subcats.length;
+      reasons.push(`共同的子分类：${common_subcats.join(", ")}`);
+    }
+
+    // 3. 标签相关度
+    const common_tags = (m.tags || [])
+      .filter(tag => source_tags.has(tag));
+    if (common_tags.length > 0) {
+      score += common_tags.length * 2;
+      reasons.push(`共同的标签：${common_tags.join(", ")}`);
+    }
+
+    // 4. 使用场景相关度
+    const common_use_cases = (m.use_cases || [])
+      .filter(use_case => source_use_cases.has(use_case));
+    if (common_use_cases.length > 0) {
+      score += common_use_cases.length;
+      reasons.push(`适用于相同场景：${common_use_cases.join(", ")}`);
+    }
+
+    // 5. 解决的共同问题关键词相关度
+    const target_problem_keywords = (m.common_problems_solved?.flatMap(p => p.keywords.map(k => k.toLowerCase())) || []);
+    const common_problem_keywords = target_problem_keywords
+      .filter(keyword => source_problem_keywords_set.has(keyword));
+    if (common_problem_keywords.length > 0) {
+      score += common_problem_keywords.length * 1.5; // 给予一定权重
+      reasons.push(`解决相似问题的关键词：${common_problem_keywords.join(", ")}`);
+    }
+    
+    // 6. 解决的共同问题描述语义相似度 (LLM based)
+    const target_problem_descriptions_block = m.common_problems_solved
+      ?.map(p => p.problem_description)
+      .filter(desc => desc && desc.trim() !== "")
+      .join("\\n---\\n");
+
+    if (source_problem_descriptions_block && target_problem_descriptions_block) {
+      const semanticSimilarityScore = await calculateSemanticSimilarity(
+        source_problem_descriptions_block,
+        target_problem_descriptions_block
+      );
+      if (semanticSimilarityScore > 0.4) {
+        const similarityContribution = semanticSimilarityScore * 3.0;
+        score += similarityContribution;
+        reasons.push(`解决的问题主题相似 (LLM评估相似度: ${semanticSimilarityScore.toFixed(2)})`);
+      }
+    }
+
+    if (score <= 0) return null;
+
+    return {
+      id: m.id,
+      name: m.name,
+      definition: m.definition || "",
+      purpose: m.purpose || "",
+      relevance_score: score,
+      reasons
+    };
+  });
+
+  const relatedWithNulls = await Promise.all(relatedPromises);
+  const related = relatedWithNulls
+    .filter((r): r is NonNullable<typeof r> => r !== null)
+    .sort((a, b) => b.relevance_score - a.relevance_score)
+    .slice(0, 5);
+  log(`传统算法找到 ${related.length} 个相关模型`);
+  
+  // 返回处理好的数据，而不是完整的响应对象
+  return related;
+}
 
 // 修改 count-models 工具实现
 server.tool(
@@ -629,135 +786,6 @@ server.tool(
         content: [{ 
           type: "text",
           text: "0"
-        }]
-      };
-    }
-  }
-);
-
-// 注册工具: get_model_visualizations
-server.tool(
-  "get-model-visualizations",
-  "获取思维模型的可视化数据（如流程图、要素列表等）",
-  {
-    model_id: z.string().describe("思维模型的唯一id"),
-    lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
-  },
-  async ({ model_id, lang }) => {
-    try {
-      log(`获取模型 ID: ${model_id} 的可视化数据`);
-      const model = MODELS[lang].find(m => m.id === model_id);
-      if (model) {
-        return {
-          content: [{
-            type: "text",
-            text: JSON.stringify({
-              id: model.id,
-              name: model.name,
-              visualizations: model.visualizations || []
-            }, null, 2)
-          }]
-        };
-      }
-      log(`未找到模型 ID: ${model_id}`);
-      return {
-        content: [{
-          type: "text",
-          text: JSON.stringify({ error: "未找到该模型" }, null, 2)
-        }]
-      };
-    } catch (e: any) {
-      log(`获取模型可视化数据时出错: ${e.message}`);
-      return {
-        content: [{
-          type: "text",
-          text: JSON.stringify({ error: "服务异常" }, null, 2)
-        }]
-      };
-    }
-  }
-);
-
-// 注册工具: suggest-models-for-problem
-server.tool(
-  "suggest-models-for-problem",
-  "根据问题关键词推荐思维模型",
-  {
-    problem_keywords: z.array(z.string()).describe("用户输入的问题关键词数组"),
-    lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
-  },
-  async ({ problem_keywords, lang }) => {
-    try {
-      log(`根据关键词推荐模型: ${problem_keywords.join(", ")}, 语言: ${lang}`);
-      const keywordsLower = problem_keywords.map(k => k.toLowerCase());
-      const results = MODELS[lang].map(model => {
-        let score = 0;
-        const reasons: string[] = [];
-        // 匹配 common_problems_solved.keywords
-        if (model.common_problems_solved) {
-          for (const prob of model.common_problems_solved) {
-            const matched = keywordsLower.filter(k => prob.keywords.map(x => x.toLowerCase()).includes(k));
-            if (matched.length > 0) {
-              score += matched.length * 3;
-              reasons.push(`common_problems_solved.keywords 匹配: ${matched.join(", ")}`);
-            }
-            // 匹配 problem_description
-            for (const k of keywordsLower) {
-              if (prob.problem_description.toLowerCase().includes(k)) {
-                score += 2;
-                reasons.push(`common_problems_solved.problem_description 包含: ${k}`);
-              }
-            }
-          }
-        }
-        // 匹配 name
-        for (const k of keywordsLower) {
-          if (model.name.toLowerCase().includes(k)) {
-            score += 2;
-            reasons.push(`name 包含: ${k}`);
-          }
-        }
-        // 匹配 tags
-        if (model.tags) {
-          const matched = keywordsLower.filter(k => model.tags!.map(x => x.toLowerCase()).includes(k));
-          if (matched.length > 0) {
-            score += matched.length * 2;
-            reasons.push(`tags 匹配: ${matched.join(", ")}`);
-          }
-        }
-        // 匹配 definition
-        if (model.definition) {
-          for (const k of keywordsLower) {
-            if (model.definition.toLowerCase().includes(k)) {
-              score += 1;
-              reasons.push(`definition 包含: ${k}`);
-            }
-          }
-        }
-        return {
-          id: model.id,
-          name: model.name,
-          definition: model.definition || "",
-          score,
-          reasons
-        };
-      })
-      .filter(m => m.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 10);
-      log(`推荐结果数量: ${results.length}`);
-      return {
-        content: [{
-          type: "text",
-          text: JSON.stringify(results, null, 2)
-        }]
-      };
-    } catch (e: any) {
-      log(`智能推荐模型时出错: ${e.message}`);
-      return {
-        content: [{
-          type: "text",
-          text: JSON.stringify({ error: "服务异常" }, null, 2)
         }]
       };
     }
