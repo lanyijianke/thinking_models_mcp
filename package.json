@@ -1,6 +1,6 @@
 {
   "name": "@thinking-models/mcp-server",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "main": "build/thinking_models_server.js",
   "scripts": {
