@@ -7,14 +7,7 @@ import fs from "fs/promises";
 import path from "path";
 import { watch } from "fs";
 import { fileURLToPath } from "url";
-import { OpenRouterClient } from "./openrouter_client.js";
-import { calculateSemanticSimilarity as semanticSimilarityCalc } from "./semantic_similarity.js";
-
-// 增强的 calculateSemanticSimilarity 函数，使用导入的实现
-async function calculateSemanticSimilarity(text1: string, text2: string): Promise<number> {
-  // 调用新的、更健壮的实现
-  return semanticSimilarityCalc(openRouterClient, text1, text2);
-}
+import { calculateSemanticSimilarity } from "./semantic_similarity_local.js";
 
 // 兼容ESM的__dirname（修正Windows路径问题）
 const __filename = fileURLToPath(import.meta.url);
@@ -159,16 +152,8 @@ const server = new McpServer({
 // 初始加载所有语言的模型
 await loadModels();
 
-// 创建 OpenRouter 客户端实例，使用环境变量配置
-const openRouterClient = new OpenRouterClient();
-
-// 测试 OpenRouter 连接
-try {
-  const connectionTest = await openRouterClient.testConnection();
-  log(`OpenRouter 连接测试结果: ${connectionTest ? '成功' : '失败'}`);
-} catch (error) {
-  log(`OpenRouter 连接测试异常: ${error instanceof Error ? error.message : String(error)}`);
-}
+log('注意: 已移除OpenRouter依赖，使用本地算法计算相似度和相关性');
+log('语义相似度和模型推荐功能将使用基于词汇匹配的简化算法');
 
 // 监控模型文件变化
 for (const [lang, dirPath] of Object.entries(SUPPORTED_LANGUAGES)) {
@@ -582,18 +567,16 @@ server.tool(
   }
 );
 
-// 引入大语言模型推荐函数
-import { getLlmRecommendations } from './llm_recommendations.js';
-import { LlmRelatedModel } from './types.js';
+// 引入本地推荐系统
+import { getLocalRecommendations } from './local_recommendations.js';
 
 // 修改 get-related-models 工具实现 - 使用大语言模型直接进行推荐
-server.tool(
-  "get-related-models",
-  "基于大语言模型理解与分析获取相关思维模型推荐",
+server.tool(  "get-related-models",
+  "获取相关思维模型推荐",
   {
     model_id: z.string().describe("思维模型的唯一id"),
     lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
-    use_llm: z.boolean().optional().default(true).describe("是否使用大语言模型进行相关性评估（如果为false则回退到基于规则的算法）")
+    use_llm: z.boolean().optional().default(true).describe("是否使用本地优化算法进行相关性评估（如果为false则回退到基础规则算法）")
   },  
   async ({ model_id, lang, use_llm }) => {
     try {
@@ -621,13 +604,11 @@ server.tool(
             text: JSON.stringify(traditionalData, null, 2)
           }]
         };
-      }
-        // 使用大语言模型推荐相关模型
-      log(`使用大语言模型为「${source_model.name}」生成相关思维模型推荐`);
+      }      // 使用本地算法推荐相关模型
+      log(`使用本地推荐算法为「${source_model.name}」生成相关思维模型推荐`);
       
-      // 调用大语言模型推荐函数获取推荐结果
-      const recommendations = await getLlmRecommendations(
-        openRouterClient, 
+      // 调用本地推荐系统获取推荐结果
+      const recommendations = await getLocalRecommendations(
         source_model, 
         candidateModels, 
         lang
@@ -635,7 +616,7 @@ server.tool(
       
       // 如果获取到推荐结果，直接返回
       if (recommendations && Array.isArray(recommendations) && recommendations.length > 0) {
-        log(`大语言模型成功生成了${recommendations.length}个相关模型推荐`);
+        log(`本地推荐系统成功生成了${recommendations.length}个相关模型推荐`);
         return {
           content: [{ 
             type: "text",
@@ -643,7 +624,7 @@ server.tool(
           }]
         };      } else {
         // 如果未获取到推荐结果，回退到传统算法
-        log(`未能从大语言模型获取有效推荐，回退到传统算法`);
+        log(`未能从本地推荐系统获取有效推荐，回退到传统算法`);
         const traditionalData = await getRelatedModelsTraditionalData(source_model, candidateModels, lang);
         return {
           content: [{ 
@@ -721,8 +702,7 @@ async function getRelatedModelsTraditionalData(source_model: ThinkingModel, cand
       score += common_problem_keywords.length * 1.5; // 给予一定权重
       reasons.push(`解决相似问题的关键词：${common_problem_keywords.join(", ")}`);
     }
-    
-    // 6. 解决的共同问题描述语义相似度 (LLM based)
+      // 6. 解决的共同问题描述语义相似度 (本地评估)
     const target_problem_descriptions_block = m.common_problems_solved
       ?.map(p => p.problem_description)
       .filter(desc => desc && desc.trim() !== "")
@@ -736,7 +716,7 @@ async function getRelatedModelsTraditionalData(source_model: ThinkingModel, cand
       if (semanticSimilarityScore > 0.4) {
         const similarityContribution = semanticSimilarityScore * 3.0;
         score += similarityContribution;
-        reasons.push(`解决的问题主题相似 (LLM评估相似度: ${semanticSimilarityScore.toFixed(2)})`);
+        reasons.push(`解决的问题主题相似 (相似度: ${semanticSimilarityScore.toFixed(2)})`);
       }
     }
 

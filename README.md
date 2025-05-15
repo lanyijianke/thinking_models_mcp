@@ -1,123 +1,192 @@
 # Thinking Models MCP Server
 
-This is a Model Context Protocol (MCP) based service for querying thinking models. It provides a rich collection of thinking model data, including model definitions, purposes, categories, popular science teaching content, usage notes, and more.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## Features
+## Introduction
 
-- Supports both Chinese and English
-- Provides model search and category browsing
-- Includes popular science teaching content
-- Provides usage notes (limitations and common pitfalls)
-- Supports related model recommendations
-- Real-time monitoring of data file updates
+The Thinking Models MCP Server is an intelligent service based on the Model Context Protocol (MCP) that provides comprehensive access to a knowledge base of thinking models. This service integrates rich thinking model data, including model definitions, application scenarios, classification systems, educational content, and usage guidelines. Whether for personal learning, educational training, or decision support, this service offers professional thinking tools.
 
-## Available Tools
+## Core Features
 
-1. `list-models`: Get a list of all thinking models, with optional category filtering
-2. `get-model-info`: Get detailed information or specific fields about a model
-3. `search-models`: Search for models by keywords or recommend models for specific problems
-4. `get-categories`: Get model category information
-5. `get-related-models`: Get related model recommendations
-6. `count-models`: Count the total number of models
+- **Bilingual Support**: Full support for both Chinese and English to meet diverse linguistic needs
+- **Intelligent Search**: Keyword-based search and problem-oriented model recommendations
+- **Category Browsing**: Models organized by scientific classification systems for systematic learning
+- **Educational Content**: Detailed educational materials to help understand and apply models
+- **Usage Guidelines**: Limitations and common pitfalls for each model
+- **Related Recommendations**: Smart association of similar or complementary thinking models
+- **Real-time Updates**: Monitoring of data file changes with automatic model library updates
 
-## Configuration
+## API Toolkit
+
+| Tool Name | Description |
+|-----------|-------------|
+| `list-models` | Get a list of thinking models with category filtering |
+| `get-model-info` | Get detailed information or specific fields about a model |
+| `search-models` | Search by keywords or recommend models for specific problems |
+| `get-categories` | Get the complete model classification system |
+| `get-related-models` | Get recommendations related to a specific model |
+| `count-models` | Count the total number of thinking models |
+
+## System Configuration
 
 ### Environment Variables
 
-The service supports the following environment variables:
+| Environment Variable | Description | Default |
+|---------------------|-------------|---------|
+| `VERBOSE_LOGGING` | Enable detailed logging | `false` |
+| `ENABLE_LOCAL_ALGORITHMS` | Enable local algorithm features | `false` |
+| `MODE` | Running mode (stdio/rest) | `stdio` |
+| `PORT` | Port number for REST mode | `9593` |
+| `ENDPOINT` | Endpoint path for REST mode | `/rest` |
 
-- `OPENROUTER_API_KEY`: OpenRouter API key (for semantic similarity calculation)
-- `OPENROUTER_MODEL_NAME`: OpenRouter model name to use, default is "qwen/qwen3-235b-a22b:free"
-- `HTTP_REFERER`: (Optional) HTTP Referer header
-- `X_TITLE`: (Optional) Application title
-- `MODE`: Running mode, can be "stdio" or "rest"
-- `PORT`: Port number for REST mode, default is 9593
-- `ENDPOINT`: Endpoint path for REST mode, default is "/rest"
+## Deployment Guide
 
-## Usage
-
-### Local Execution
+### Option 1: Local Deployment
 
 ```bash
-# Install dependencies
+# Step 1: Install dependencies
 npm install
 
-# Set environment variables
-export OPENROUTER_API_KEY="your-openrouter-api-key" 
-# Optional: Set model
-export OPENROUTER_MODEL_NAME="your-chosen-model"
-
-# Build
+# Step 2: Build the code
 npm run build
 
-# Run with stdio interface (default)
+# Step 3: Run the service (choose one method)
+
+# Method A: Standard I/O mode
 node build/thinking_models_server.js
 
-# Run with REST interface
+# Method B: REST API mode
 node build/thinking_models_server.js --rest
-# or
-MODE=rest PORT=9593 node build/thinking_models_server.js
+
+# Method C: Configure via environment variables
+# For Windows PowerShell
+$env:MODE="rest"
+$env:PORT="9593"
+$env:VERBOSE_LOGGING="true"
+node build/thinking_models_server.js
+
+# For Linux/Mac
+export MODE="rest"
+export PORT="9593"
+export VERBOSE_LOGGING="true"
+node build/thinking_models_server.js
 ```
 
-### Docker Deployment
+### Option 2: NPX Deployment
 
 ```bash
-# Build image
+# Method A: Direct execution (stdio mode by default)
+npx -y @thinking-models/mcp-server
+
+# Method B: Run in REST mode
+npx -y @thinking-models/mcp-server --rest
+
+# Method C: Run with environment variables
+# For Windows PowerShell
+$env:MODE="rest"; npx -y @thinking-models/mcp-server
+
+# For Linux/Mac
+MODE=rest npx -y @thinking-models/mcp-server
+
+# Method D: Global installation
+npm install -g @thinking-models/mcp-server
+mcp-server
+```
+
+> Tip: When using NPX deployment, the latest version of the package will be automatically downloaded on first run
+
+### Option 3: Docker Container Deployment
+
+```bash
+# Step 1: Build Docker image
 docker build -t thinking-models-mcp .
 
-# Run container
+# Step 2: Run Docker container
 docker run -p 9593:9593 -e MODE=rest thinking-models-mcp
 ```
 
-### Using with MCP.so
+> Tip: For persistent storage or custom data, you can map data directories using volume mounts
 
-This service can be used directly through [MCP.so](https://mcp.so).
+### Option 4: Using via MCP Platform
 
-## Data Files
+This service is integrated with the [MCP.so](https://mcp.so) platform, allowing you to use it directly without self-deployment.
 
-The service relies on two JSON data files:
-- `model.zh.json`: Chinese thinking model data
-- `model.en.json`: English thinking model data
+## Data Structure
 
-These files should be placed in the service's running directory under the `thinking_models_db` folder.
+### Data Files
+
+The service runs on JSON-formatted thinking model databases:
+
+| File Name | Description | Location |
+|-----------|-------------|----------|
+| `model.zh.json` | Chinese thinking model dataset | Under `thinking_models_db` directory |
+| `model.en.json` | English thinking model dataset | Under `thinking_models_db` directory |
+
+### Directory Structure
+
+```
+thinking_models_mcp/
+├── thinking_models_db/    # Thinking model database directory
+│   ├── zh/               # Chinese model data files
+│   └── en/               # English model data files
+├── src/                  # Source code directory
+└── build/                # Compiled code directory
+```
 
 ## API Parameters
 
 ### Common Parameters
-- `lang`: Language code (`zh` or `en`), defaults to `zh`
-- `model_id`: The unique identifier of a thinking model (for specific model operations)
+
+| Parameter | Type | Description | Default |
+|-----------|------|-------------|---------|
+| `lang` | string | Language code (zh/en) | `zh` |
+| `model_id` | string | Unique identifier of a thinking model | - |
 
 ### Tool-specific Parameters
-- `list-models`: Optional `category` and `subcategory` for filtering, `limit` for result count
-- `get-model-info`: `fields` array to specify which information to return (all, basic, detail, teaching, warnings, visualizations)
-- `search-models`: `mode` (keyword or problem), `query` for keyword search, `problem_keywords` for problem-based recommendations
 
-## API Optimization
+#### `list-models` Tool
+- `category`: Category name for filtering results
+- `subcategory`: Subcategory name for precise filtering
+- `limit`: Maximum number of results to return
 
-The API has been optimized by merging several related tools:
+#### `get-model-info` Tool
+- `fields`: Array of information fields, can include:
+  - `all`: All information
+  - `basic`: Basic information
+  - `detail`: Detailed description
+  - `teaching`: Educational content
+  - `warnings`: Usage guidelines
+  - `visualizations`: Visual resources
 
-1. `list-models` now incorporates functionality from the previous `get-models-by-category`
-2. `get-model-info` combines the functionality of `get-model-detail`, `get-model-teaching`, `get-model-warnings`, and `get-model-visualizations`
-3. `search-models` integrates both keyword-based search and problem-based recommendation (previously `suggest-models-for-problem`)
+#### `search-models` Tool
+- `mode`: Search mode
+  - `keyword`: Keyword-based search
+  - `problem`: Problem-oriented recommendations
+- `query`: Search query keywords
+- `problem_keywords`: Array of problem description keywords
 
-These optimizations provide a more consistent and flexible API while reducing code duplication.
+## Architecture Optimization
+
+This version optimizes the API architecture by merging similar functionalities to reduce redundancy:
+
+1. Integrated category browsing functionality for simplified model retrieval
+2. Unified model information retrieval interface with flexible field selection
+3. Combined search and recommendation features for enhanced user experience
 
 ## Development
-
-To extend or modify this service:
 
 ```bash
 # Clone the repository
 git clone https://github.com/lanyijianke/thinking_models_mcp.git
 cd thinking_models_mcp
 
-# Install dependencies
+# Install development dependencies
 npm install
 
-# Run in development mode
+# Start development mode
 npm run dev
 ```
 
 ## License
 
-MIT
+[MIT](https://opensource.org/licenses/MIT)
