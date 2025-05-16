@@ -26,10 +26,7 @@ npx:
             "args": [
               "-y",
               "@thinking-models/mcp-server"
-            ],
-            "env": {
-              "MODE": "{{params.mode || 'stdio'}}"
-            }
+            ]
           }
         }
       }
@@ -47,10 +44,6 @@ docker:
               "-i",
               "--rm",
               "thinking-models/mcp-server"
-            ],
-            "env": {
-              "MODE": "{{params.mode || 'stdio'}}"
-            }
-          }
+            ]
         }
       }

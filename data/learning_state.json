@@ -1,0 +1,180 @@
+{
+  "userFeedbacks": [
+    {
+      "feedbackId": "feedback_1747363443689_2978",
+      "timestamp": 1747363443689,
+      "modelIds": [
+        "porters_five_forces_analysis",
+        "decision_tree",
+        "swot_analysis"
+      ],
+      "context": "市场进入策略分析",
+      "feedbackType": "helpful",
+      "comment": "分析过程全面且有逻辑性，考虑了多种思维框架，对决策很有帮助。",
+      "applicationResult": "最终采用了差异化策略并分阶段进入市场",
+      "suggestedImprovements": [
+        "增加量化分析工具",
+        "加入更多竞争对手案例分析"
+      ]
+    },
+    {
+      "feedbackId": "feedback_1747364632854_5633",
+      "timestamp": 1747364632854,
+      "modelIds": [
+        "five_w_one_h_analysis",
+        "survivorship_bias",
+        "abductive_reasoning",
+        "cartesian_thinking",
+        "confirmation_bias",
+        "critical_thinking",
+        "first_principles_thinking",
+        "ladder_of_inference"
+      ],
+      "context": "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。",
+      "feedbackType": "helpful",
+      "comment": "用户认为分析过程有帮助。",
+      "applicationResult": "谨慎推出，采用分阶段/区域试点策略，并结合性价比优势。"
+    }
+  ],
+  "knowledgeGaps": [
+    {
+      "gapId": "gap_1747363538742_9984",
+      "description": "数字化营销环境下的产品发布策略与消费者心理学",
+      "detectionCount": 1,
+      "relatedQueries": [
+        "数字化营销环境下的产品发布策略与消费者心理学"
+      ],
+      "possibleTags": [
+        "数字化营销环境下的产品发布策略与消费者心理学"
+      ],
+      "createdAt": 1747363538742,
+      "updatedAt": 1747363538742
+    },
+    {
+      "gapId": "gap_1747364801000_7202",
+      "description": "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。",
+      "detectionCount": 1,
+      "relatedQueries": [
+        "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。"
+      ],
+      "possibleTags": [
+        "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。"
+      ],
+      "createdAt": 1747364801000,
+      "updatedAt": 1747364801000
+    }
+  ],
+  "modelUsageStats": {
+    "porters_five_forces_analysis": {
+      "modelId": "porters_five_forces_analysis",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "市场进入策略分析"
+      ]
+    },
+    "decision_tree": {
+      "modelId": "decision_tree",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "市场进入策略分析"
+      ]
+    },
+    "swot_analysis": {
+      "modelId": "swot_analysis",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "市场进入策略分析"
+      ]
+    },
+    "five_w_one_h_analysis": {
+      "modelId": "five_w_one_h_analysis",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。"
+      ]
+    },
+    "survivorship_bias": {
+      "modelId": "survivorship_bias",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。"
+      ]
+    },
+    "abductive_reasoning": {
+      "modelId": "abductive_reasoning",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。"
+      ]
+    },
+    "cartesian_thinking": {
+      "modelId": "cartesian_thinking",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。"
+      ]
+    },
+    "confirmation_bias": {
+      "modelId": "confirmation_bias",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。"
+      ]
+    },
+    "critical_thinking": {
+      "modelId": "critical_thinking",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。"
+      ]
+    },
+    "first_principles_thinking": {
+      "modelId": "first_principles_thinking",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。"
+      ]
+    },
+    "ladder_of_inference": {
+      "modelId": "ladder_of_inference",
+      "usageCount": 1,
+      "averageHelpfulness": 1,
+      "positiveCount": 1,
+      "negativeCount": 0,
+      "commonContexts": [
+        "我们需要决定是否在当前经济环境下推出新产品，以及如何推出才能最大化成功概率。"
+      ]
+    }
+  },
+  "lastUpdated": 1747364801000
+}
