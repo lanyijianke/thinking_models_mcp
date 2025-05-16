@@ -43,26 +43,7 @@ npm run build
     npm run start
     ```
 
-2.  **REST API 模式启动**
-    在项目根目录下运行：
-    ```bash
-    node dist/thinking_models_server.js --rest
-    ```
-    或者使用 npm 脚本 (如果已在 package.json 中配置):
-    ```bash
-    npm run start:rest
-    ```
-    您还可以通过环境变量配置端口和端点：
-    ```bash
-    # PowerShell
-    $env:MODE="rest"
-    $env:PORT="9593" # 默认端口
-    $env:ENDPOINT="/rest" # 默认端点
-    node dist/thinking_models_server.js
 
-    # Bash
-    MODE="rest" PORT="9593" ENDPOINT="/rest" node dist/thinking_models_server.js
-    ```
 
 ### 基本使用
 
@@ -85,7 +66,6 @@ npm run build
 
 ### 1. Cursor 配置
 
-打开Cursor的 `settings.json` 文件 (通常通过 `Ctrl+,` 或 `Cmd+,` 打开设置，然后搜索 "Open User Settings (JSON)")，并添加以下配置：
 
 **方式一：使用本地Node.js运行服务器**
 
@@ -105,8 +85,6 @@ npm run build
 
 **方式二：使用 NPX 从 npm 远程包启动服务器**
 
-如果服务器已发布到npm (例如，包名为 `@thinking-models/mcp-server`)：
-
 ```json
 {
   // ... 其他配置 ...
@@ -115,11 +93,9 @@ npm run build
       "command": "npx",
       "args": [
         "--yes", // 自动确认安装
-        "@thinking-models/mcp-server", // 替换为实际的npm包名
-        "--data-dir", // 指定本地数据目录参数
+        "@thinking-models/mcp-server", // 替换为实际的npm包名        "--data-dir", // 指定本地数据目录参数
         "C:\\Users\\YourUserName\\AppData\\Local\\ThinkingModels" // 替换为您想存储数据的本地路径
         // 如果需要指定版本: "@thinking-models/mcp-server@1.3.1"
-        // 如果服务器包支持参数，可以在此添加，例如: "--rest", "--port", "9594"
       ]
     }
   }
@@ -212,14 +188,6 @@ npm run build
 `npx` 是一个npm包运行器，它允许您执行npm包中的命令，而无需全局或本地安装它们。
 `--yes` 参数用于自动对 `npx` 可能提出的任何安装提示回答“是”，这在配置文件中非常重要，因为没有用户交互来确认安装。
 
-### 4. Claude Web 界面配置 (使用 REST API)
-
-如果想在Claude Web界面使用此服务器，您需要：
-1.  以REST API模式启动服务器（见上文“启动服务器”部分）。
-2.  安装一个支持自定义MCP服务器的浏览器扩展（例如 "Claude Tools Browser Extension" 或类似工具）。
-3.  在浏览器扩展的设置中添加服务器：
-    *   **URL**: `http://localhost:9593/rest` (根据您的服务器端口和端点调整)
-    *   **Name**: 思维模型服务器 (或您喜欢的任何名称)
 
 ### 测试连接
 
@@ -397,28 +365,12 @@ thinking_models_mcp/
 
 #### 服务器 API
 
-服务器支持两种通信模式：
+服务器通信模式：
 
-1.  **stdio API (默认)**
+1.  **stdio API**
     *   通过标准输入/输出与客户端通信。
     *   遵循 MCP 协议规范。
     *   通常由客户端（如Cursor, Claude桌面版）自动管理。
-
-2.  **REST API (需通过 `--rest` 参数或 `MODE=rest` 环境变量启动)**
-    *   **端点**: 默认为 `/rest` (可通过 `ENDPOINT` 环境变量配置)
-    *   **端口**: 默认为 `9593` (可通过 `PORT` 环境变量配置)
-    *   **方法**: `POST`
-    *   **请求体**: JSON 对象，包含 `tool` (工具名称字符串) 和 `tool_params` (工具参数对象) 字段。
-        ```json
-        {
-          "tool": "list-models",
-          "tool_params": {
-            "lang": "zh",
-            "category": "决策理论"
-          }
-        }
-        ```
-    *   **响应体**: JSON 对象，通常包含 `content` 数组，其中每个元素是一个内容块 (例如 `type: "text"` 和 `text: "..."`)。
 
 #### 工具 API
 
@@ -565,14 +517,9 @@ npm run build
 #### 部署选项
 
 1.  **作为独立的 Node.js 服务器部署**
-    *   将整个项目（或至少 `dist` 目录、node_modules、package.json 和 thinking_models_db）复制到服务器。
-    *   运行服务器：
+    *   将整个项目（或至少 `dist` 目录、node_modules、package.json 和 thinking_models_db）复制到服务器。    *   运行服务器：
         ```bash
-        # stdio 模式
         node dist/thinking_models_server.js
-
-        # REST 模式
-        PORT=9593 ENDPOINT=/api node dist/thinking_models_server.js --rest
         ```
     *   考虑使用进程管理器如 `pm2` 来保持服务器运行。
 
@@ -587,11 +534,7 @@ npm run build
         RUN npm install --omit=dev # 只安装生产依赖
 
         COPY . .
-        RUN npm run build
-
-        ENV MODE=stdio
-        ENV PORT=9593
-        ENV ENDPOINT=/rest
+        RUN npm run build        ENV MODE=stdio
 
         EXPOSE ${PORT}
 
@@ -601,14 +544,10 @@ npm run build
     *   构建 Docker 镜像：
         ```bash
         docker build -t thinking-models-mcp .
-        ```
-    *   运行容器：
+        ```    *   运行容器：
         ```bash
-        # stdio 模式 (通常用于直接与另一个进程交互)
-        # docker run --rm -i thinking-models-mcp
-
-        # REST 模式
-        docker run -d -p 9593:9593 -e MODE=rest thinking-models-mcp
+        # stdio 模式
+        docker run --rm -i thinking-models-mcp
         ```
 
 ### 代码规范
@@ -642,7 +581,6 @@ npm run build
 
 #### 2. API 请求失败或工具未找到
 -   **服务器运行状态**：确认服务器已成功启动并且没有错误。
--   **端点和端口**：如果使用REST模式，检查客户端配置的URL、端口和端点是否与服务器匹配。
 -   **工具名称**：确认客户端调用的工具名称与服务器中注册的名称完全一致（区分大小写）。
 -   **参数格式**：确保发送给工具的参数符合其Zod模式定义。
 

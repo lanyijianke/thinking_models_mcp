@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { RestServerTransport } from "@chatmcp/sdk/server/rest.js";
 import { z } from "zod";
 import fs from "fs/promises";
 import path from "path";
@@ -2806,11 +2805,6 @@ function getDataDirectory(): string {
 
 // 主程序入口
 async function main() {
-  // 支持通过命令行参数或环境变量切换模式
-  const mode = process.env.MODE || (process.argv.includes("--rest") ? "rest" : "stdio");
-  const port = process.env.PORT ? Number(process.env.PORT) : 9593;
-  const endpoint = process.env.ENDPOINT || "/rest";
-  
   // 获取数据目录
   const dataDir = getDataDirectory();
   
@@ -2826,19 +2820,7 @@ async function main() {
       log(`已创建数据目录: ${dataDir}`);
     }
     
-    if (mode === "rest") {
-      const transport = new RestServerTransport({ 
-        port, 
-        endpoint
-        // 移除了不支持的 cors 配置
-      });
-      await server.connect(transport);
-      await transport.startServer();
-      log(`思维模型 MCP Server 正在通过 REST 运行，端口: ${port}，endpoint: ${endpoint}`);
-      return;
-    }
-    
-    // 默认 stdio
+    // stdio 模式
     const transport = new StdioServerTransport();
     await server.connect(transport);
     log("思维模型 MCP Server 正在通过 stdio 运行");
