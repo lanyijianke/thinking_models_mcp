@@ -1,147 +1,153 @@
-# Thinking Models MCP Server
+# 思维模型 MCP 服务器
 
-> A toolkit for intelligent thinking: Integrating systematic thinking methods into your problem-solving process
+> 智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中
 
-## What is the Thinking Models MCP Server?
+## 什么是思维模型 MCP 服务器？
 
-The Thinking Models MCP Server is a powerful tool that integrates hundreds of thinking models, frameworks, and methodologies to help users think about problems more systematically and comprehensively. Through the MCP (Model Context Protocol) interface, AI assistants can access these thinking tools and seamlessly apply structured thinking methods to conversations.
+思维模型 MCP 服务器是一个强大的工具，它集成了数百种思维模型、框架和方法论，能够帮助用户更系统、更全面地思考问题。通过 MCP (Model Context Protocol) 接口，AI 助手可以访问这些思维工具，将结构化思维方法无缝应用到对话中。
+**关于 `npx` 和 `--yes` 参数：**
+`npx` 是一个npm包运行器，它允许您执行npm包中的命令，而无需全局或本地安装它们。
+`--yes` 参数用于自动对 `npx` 可能提出的任何安装提示回答"是"，这在配置文件中非常重要，因为没有用户交互来确认安装。
 
-## Core Features
+**关于 `--data-dir` 参数：**
+`--data-dir` 参数用于指定本地数据存储目录的路径。这对于使用npx运行的服务特别重要，因为默认情况下，npx每次运行时会在临时目录中安装包，导致数据在重启后丢失。通过指定一个本地目录，您可以确保学习系统状态和用户创建的模型在重启后仍然保留。 核心功能
 
-- **Rich Thinking Model Library**: Contains classic thinking models from various domains including decision theory, systems thinking, and probabilistic thinking
-- **Intelligent Model Recommendations**: Automatically recommends the most appropriate thinking models based on problem characteristics
-- **Interactive Reasoning Process**: Guides users through structured thinking, step by step analyzing problems in depth
-- **Learning and Adaptation System**: Continuously improves recommendation algorithms through user feedback
-- **Model Creation and Combination**: Allows creating new models or combining existing models to produce innovative thinking frameworks
+- **丰富的思维模型库**：包含决策理论、系统思考、概率思维等多个领域的经典思维模型
+- **智能模型推荐**：根据问题特征自动推荐最合适的思维模型
+- **交互式推理过程**：引导用户进行结构化思考，一步步深入分析问题
+- **学习与适应系统**：通过用户反馈持续改进推荐算法
+- **模型创建与组合**：允许创建新模型或组合现有模型产生创新思维框架
 
-## Quick Start
+## 快速开始
 
-### Installation (Local Development)
+### 安装 (本地开发)
 
-If you want to run and develop this project locally:
+如果您想在本地运行和开发此项目：
 
 ```bash
-git clone https://github.com/yourusername/thinking-models-mcp.git # Replace with your repository address
+git clone https://github.com/yourusername/thinking-models-mcp.git # 替换为您的仓库地址
 cd thinking_models_mcp
 npm install
 npm run build
 ```
 
-### Starting the Server (Local Development)
+### 启动服务器 (本地开发)
 
-1.  **Standard Start (stdio mode)**
-    Run in the project root directory:
+1.  **普通启动 (stdio模式)**
+    在项目根目录下运行：
     ```bash
     node dist/thinking_models_server.js
     ```
-    Or use the npm script (if configured in package.json):
+    或者使用 npm 脚本 (如果已在 package.json 中配置):
     ```bash
     npm run start
     ```
 
-2.  **REST API Mode Start**
-    Run in the project root directory:
+2.  **REST API 模式启动**
+    在项目根目录下运行：
     ```bash
     node dist/thinking_models_server.js --rest
     ```
-    Or use the npm script (if configured in package.json):
+    或者使用 npm 脚本 (如果已在 package.json 中配置):
     ```bash
     npm run start:rest
     ```
-    You can also configure the port and endpoint using environment variables:
+    您还可以通过环境变量配置端口和端点：
     ```bash
     # PowerShell
     $env:MODE="rest"
-    $env:PORT="9593" # Default port
-    $env:ENDPOINT="/rest" # Default endpoint
+    $env:PORT="9593" # 默认端口
+    $env:ENDPOINT="/rest" # 默认端点
     node dist/thinking_models_server.js
 
     # Bash
     MODE="rest" PORT="9593" ENDPOINT="/rest" node dist/thinking_models_server.js
     ```
 
-### Basic Usage
+### 基本使用
 
-After the server starts, you can send requests to access thinking model tools through an MCP client. For example:
+服务器启动后，可以通过 MCP 客户端发送请求访问思维模型工具。例如：
 
 ```json
 {
   "tool": "recommend-models-for-problem",
   "tool_params": {
-    "problem_keywords": ["decision", "uncertainty", "risk"],
-    "lang": "en",
+    "problem_keywords": ["决策", "不确定性", "风险"],
+    "lang": "zh",
     "limit": 3
   }
 }
 ```
 
-## Client Configuration Guide
+## 客户端配置指南
 
-You can configure the Thinking Models MCP server in MCP-supporting clients such as Cursor, Claude Desktop, or VS Code's Claude extension.
+您可以将思维模型MCP服务器配置到支持MCP的客户端中，如Cursor、Claude桌面版或VS Code的Claude扩展。
 
-### 1. Cursor Configuration
+### 1. Cursor 配置
 
-Open Cursor's `settings.json` file (typically accessed via `Ctrl+,` or `Cmd+,`, then search for "Open User Settings (JSON)"), and add the following configuration:
+打开Cursor的 `settings.json` 文件 (通常通过 `Ctrl+,` 或 `Cmd+,` 打开设置，然后搜索 "Open User Settings (JSON)")，并添加以下配置：
 
-**Option 1: Run the server with local Node.js**
+**方式一：使用本地Node.js运行服务器**
 
 ```json
 {
-  // ... other settings ...
+  // ... 其他配置 ...
   "mcpServers": {
-    "thinking-models": { // You can customize this server name
+    "thinking-models": { // 您可以自定义此服务器名称
       "command": "node",
       "args": [
-        "e:\\thinking_models_mcp\\dist\\thinking_models_server.js" // Replace with your actual path
+        "e:\\thinking_models_mcp\\dist\\thinking_models_server.js" // 替换为您的实际路径
       ]
     }
   }
 }
 ```
 
-**Option 2: Use NPX to start the server from a remote npm package**
+**方式二：使用 NPX 从 npm 远程包启动服务器**
 
-If the server has been published to npm (e.g., package name `@thinking-models/mcp-server`):
+如果服务器已发布到npm (例如，包名为 `@thinking-models/mcp-server`)：
 
 ```json
 {
-  // ... other settings ...
+  // ... 其他配置 ...
   "mcpServers": {
     "thinking-models": {
       "command": "npx",
       "args": [
-        "--yes", // Automatically confirm installation
-        "@thinking-models/mcp-server" // Replace with the actual npm package name
-        // To specify a version: "@thinking-models/mcp-server@1.3.1"
-        // If the server package supports parameters, you can add them here, e.g.: "--rest", "--port", "9594"
+        "--yes", // 自动确认安装
+        "@thinking-models/mcp-server", // 替换为实际的npm包名
+        "--data-dir", // 指定本地数据目录参数
+        "C:\\Users\\YourUserName\\AppData\\Local\\ThinkingModels" // 替换为您想存储数据的本地路径
+        // 如果需要指定版本: "@thinking-models/mcp-server@1.3.1"
+        // 如果服务器包支持参数，可以在此添加，例如: "--rest", "--port", "9594"
       ]
     }
   }
 }
 ```
 
-### 2. Claude Desktop Configuration
+### 2. Claude 桌面版配置
 
-Open Claude Desktop's configuration file `claude_desktop_config.json` (typically located at `C:\Users\<YourUserName>\AppData\Roaming\Claude\claude_desktop_config.json`), and add the following configuration:
+打开Claude桌面版的配置文件 `claude_desktop_config.json` (通常位于 `C:\Users\<YourUserName>\AppData\Roaming\Claude\claude_desktop_config.json`)，并添加以下配置：
 
-**Option 1: Run the server with local Node.js**
+**方式一：使用本地Node.js运行服务器**
 
 ```json
 // filepath: c:\Users\<YourUserName>\AppData\Roaming\Claude\claude_desktop_config.json
 {
   "mcpServers": {
-    "thinking-models": { // You can customize this server name
+    "thinking-models": { // 您可以自定义此服务器名称
       "command": "node",
       "args": [
-        "e:\\thinking_models_mcp\\dist\\thinking_models_server.js" // Replace with your actual path
+        "e:\\thinking_models_mcp\\dist\\thinking_models_server.js" // 替换为您的实际路径
       ]
     }
   }
-  // ... other settings ...
+  // ... 其他配置 ...
 }
 ```
 
-**Option 2: Use NPX to start the server from a remote npm package**
+**方式二：使用 NPX 从 npm 远程包启动服务器**
 
 ```json
 // filepath: c:\Users\<YourUserName>\AppData\Roaming\Claude\claude_desktop_config.json
@@ -151,291 +157,295 @@ Open Claude Desktop's configuration file `claude_desktop_config.json` (typically
       "command": "npx",
       "args": [
         "--yes",
-        "@thinking-models/mcp-server" // Replace with the actual npm package name
-        // To specify a version: "@thinking-models/mcp-server@1.3.1"
+        "@thinking-models/mcp-server", // 替换为实际的npm包名
+        "--data-dir",
+        "C:\\Users\\YourUserName\\AppData\\Local\\ThinkingModels" // 指定本地数据存储路径
+        // 如果需要指定版本: "@thinking-models/mcp-server@1.3.1"
       ]
     }
   }
-  // ... other settings ...
+  // ... 其他配置 ...
 }
 ```
 
-### 3. VS Code + Claude Extension Configuration
+### 3. VS Code + Claude 扩展配置
 
-Open VS Code's `settings.json` file (typically accessed via `Ctrl+,` or `Cmd+,`, then search for "Open User Settings (JSON)"), and add the following configuration:
+打开VS Code的 `settings.json` 文件 (通常通过 `Ctrl+,` 或 `Cmd+,` 打开设置，然后搜索 "Open User Settings (JSON)")，并添加以下配置：
 
-**Option 1: Run the server with local Node.js**
+**方式一：使用本地Node.js运行服务器**
 
 ```json
 {
-  // ... other settings ...
+  // ... 其他配置 ...
   "claude.tools.additionalToolServers": [
     {
-      "name": "Thinking Models Server", // You can customize this server name
+      "name": "思维模型服务器", // 您可以自定义此服务器名称
       "command": "node",
-      "args": ["e:\\thinking_models_mcp\\dist\\thinking_models_server.js"] // Replace with your actual path
+      "args": ["e:\\thinking_models_mcp\\dist\\thinking_models_server.js"] // 替换为您的实际路径
     }
   ]
 }
 ```
 
-**Option 2: Use NPX to start the server from a remote npm package**
+**方式二：使用 NPX 从 npm 远程包启动服务器**
 
 ```json
 {
-  // ... other settings ...
+  // ... 其他配置 ...
   "claude.tools.additionalToolServers": [
     {
-      "name": "Thinking Models Server",
+      "name": "思维模型服务器",
       "command": "npx",
       "args": [
         "--yes",
-        "@thinking-models/mcp-server" // Replace with the actual npm package name
-        // To specify a version: "@thinking-models/mcp-server@1.3.1"
+        "@thinking-models/mcp-server", // 替换为实际的npm包名
+        "--data-dir",
+        "${env:USERPROFILE}\\AppData\\Local\\ThinkingModels" // 使用环境变量指向用户目录
+        // 如果需要指定版本: "@thinking-models/mcp-server@1.3.1"
       ]
     }
   ]
 }
 ```
 
-**About the `npx` and `--yes` parameters:**
-`npx` is an npm package runner that allows you to execute commands from npm packages without installing them globally or locally.
-The `--yes` parameter is used to automatically answer "yes" to any installation prompts that `npx` might present, which is important in configuration files where there is no user interaction to confirm installations.
+**关于 `npx` 和 `--yes` 参数：**
+`npx` 是一个npm包运行器，它允许您执行npm包中的命令，而无需全局或本地安装它们。
+`--yes` 参数用于自动对 `npx` 可能提出的任何安装提示回答“是”，这在配置文件中非常重要，因为没有用户交互来确认安装。
 
-### 4. Claude Web Interface Configuration (Using REST API)
+### 4. Claude Web 界面配置 (使用 REST API)
 
-If you want to use this server in the Claude Web interface, you need to:
-1.  Start the server in REST API mode (see "Starting the Server" section above).
-2.  Install a browser extension that supports custom MCP servers (e.g., "Claude Tools Browser Extension" or similar tools).
-3.  Add the server in the browser extension settings:
-    *   **URL**: `http://localhost:9593/rest` (adjust according to your server port and endpoint)
-    *   **Name**: Thinking Models Server (or any name you prefer)
+如果想在Claude Web界面使用此服务器，您需要：
+1.  以REST API模式启动服务器（见上文“启动服务器”部分）。
+2.  安装一个支持自定义MCP服务器的浏览器扩展（例如 "Claude Tools Browser Extension" 或类似工具）。
+3.  在浏览器扩展的设置中添加服务器：
+    *   **URL**: `http://localhost:9593/rest` (根据您的服务器端口和端点调整)
+    *   **Name**: 思维模型服务器 (或您喜欢的任何名称)
 
-### Testing the Connection
+### 测试连接
 
-After configuration, you can try calling tools on the server from the respective client (Cursor, Claude Desktop, Claude chat in VS Code), for example:
+配置完成后，您可以在相应的客户端（Cursor, Claude桌面版, VS Code中的Claude聊天）中尝试调用服务器上的工具，例如：
 
 ```
-Please use the get-server-version tool from the Thinking Models Server to query the current version.
+请使用思维模型服务器中的 get-server-version 工具查询当前版本。
 ```
 
-If configured correctly, the client should be able to call the server and return results.
+如果配置正确，客户端应该能够调用服务器并返回结果。
 
-## Tools Overview
+## 工具概览
 
-### Exploration Tools
+### 探索类工具
 
-- **list-models**: List all thinking models or filter by category
-- **search-models**: Search thinking models by keywords
-- **get-categories**: Get all thinking model categories
-- **get-model-info**: Get detailed information about a thinking model
-- **get-related-models**: Get other models related to a specific model
+- **list-models**: 列出所有思维模型或按分类筛选
+- **search-models**: 按关键词搜索思维模型
+- **get-categories**: 获取所有思维模型分类
+- **get-model-info**: 获取思维模型的详细信息
+- **get-related-models**: 获取与特定模型相关的其他模型
 
-### Problem-Solving Tools
+### 问题解决类工具
 
-- **recommend-models-for-problem**: Recommend suitable thinking models based on problem keywords
-- **interactive-reasoning**: Interactive reasoning process guidance
-- **generate-validate-hypotheses**: Generate multiple hypotheses for a problem and provide validation methods
-- **explain-reasoning-process**: Explain the reasoning process of a model and the thinking patterns applied
+- **recommend-models-for-problem**: 基于问题关键词推荐适合的思维模型
+- **interactive-reasoning**: 交互式推理过程指导
+- **generate-validate-hypotheses**: 为问题生成多个假设并提供验证方法
+- **explain-reasoning-process**: 解释模型的推理过程和应用的思维模式
 
-### Creation Tools
+### 创建类工具
 
-- **create-thinking-model**: Create a new thinking model
-- **emergent-model-design**: Create a new thinking model by combining existing thinking models
-- **delete-thinking-model**: Delete unnecessary thinking models
+- **create-thinking-model**: 创建新的思维模型
+- **emergent-model-design**: 通过组合现有思维模型创建新的思维模型
+- **delete-thinking-model**: 删除不需要的思维模型
 
-### System and Learning Tools
+### 系统与学习类工具
 
-- **get-started-guide**: Beginner's guide
-- **get-server-version**: Get server version information
-- **count-models**: Count the total number of current thinking models
-- **record-user-feedback**: Record user feedback on thinking model usage experiences
-- **detect-knowledge-gap**: Detect knowledge gaps in user queries
-- **get-model-usage-stats**: Get usage statistics for thinking models
-- **analyze-learning-system**: Analyze the status of the thinking model learning system
+- **get-started-guide**: 新手入门指南
+- **get-server-version**: 获取服务器版本信息
+- **count-models**: 统计当前思维模型的总数
+- **record-user-feedback**: 记录用户对思维模型使用体验的反馈
+- **detect-knowledge-gap**: 检测用户查询中的知识缺口
+- **get-model-usage-stats**: 获取思维模型的使用统计数据
+- **analyze-learning-system**: 分析思维模型学习系统状况
 
-## Use Cases
+## 使用场景
 
-### Solving Complex Problems
+### 解决复杂问题
 
-When facing complex problems, the system can recommend multiple thinking models to help you analyze the problem from different angles and avoid thinking blind spots.
+面对复杂问题时，系统可推荐多种思维模型，帮助您从不同角度分析问题，避免思维盲点。
 
-### Improving Thinking Quality
+### 提升思考质量
 
-Through structured thinking processes, avoid common cognitive biases and make more rational decisions.
+通过结构化思考流程，避免常见认知偏差，做出更理性的决策。
 
-### Learning Thinking Models
+### 学习思维模型
 
-The system not only provides definitions of thinking models but also includes detailed teaching content, application examples, and notes to help you master various thinking tools.
+系统不仅提供思维模型的定义，还包含详细的教学内容、应用示例和注意事项，帮助您掌握各种思维工具。
 
-### Creating Custom Models
+### 创建自定义模型
 
-When existing models cannot meet your needs, you can create new thinking models or combine existing models to create innovative thinking frameworks.
+当现有模型无法满足需求时，您可以创建新的思维模型，或者组合现有模型创造创新的思考框架。
 
-## System Architecture
+## 系统架构
 
 ```
 ┌─────────────────────┐     ┌──────────────────┐
 │                     │     │                  │
-│  Thinking Models DB │◄────┤  MCP Server Core │
+│  思维模型数据库      │◄────┤  MCP 服务器核心  │
 │  (JSON files)       │     │                  │
 └─────────────────────┘     └──────┬───────────┘
                                   │
                                   ▼
 ┌─────────────────────┐     ┌──────────────────┐
 │                     │     │                  │
-│  Similarity Engine  │◄────┤  Tool            │
-│                     │     │  Implementation  │
+│  语义相似度引擎      │◄────┤  工具实现模块    │
+│                     │     │                  │
 └─────────────────────┘     └──────┬───────────┘
                                   │
                                   ▼
 ┌─────────────────────┐     ┌──────────────────┐
 │                     │     │                  │
-│  Learning System    │◄────┤  API Interface   │
+│  学习系统           │◄────┤  API 接口层      │
 │                     │     │  (REST/stdio)    │
 └─────────────────────┘     └──────────────────┘
 ```
 
-### Key Modules
+### 关键模块
 
-- **MCP Server Core**: Handles requests and responses, manages tool registration
-- **Thinking Models Database**: Stores and manages thinking model data
-- **Semantic Similarity Engine**: Calculates the match between queries and models
-- **Learning System**: Collects feedback, optimizes recommendation algorithms
-- **Tool Implementation Module**: Implements specific functionality for various thinking model tools
-- **API Interface Layer**: Provides both REST and stdio access methods
+- **MCP 服务器核心**: 处理请求和响应，管理工具注册
+- **思维模型数据库**: 存储和管理思维模型数据
+- **语义相似度引擎**: 计算查询与模型间的匹配度
+- **学习系统**: 收集反馈，优化推荐算法
+- **工具实现模块**: 实现各种思维模型工具的具体功能
+- **API 接口层**: 提供 REST 和 stdio 两种访问方式
 
-## Developer Documentation
+## 开发者文档
 
-This section is for developers who want to understand, customize, or extend the Thinking Models MCP Server.
+本部分面向希望理解、定制或扩展思维模型 MCP 服务器的开发者。
 
-### Development Environment Setup
+### 开发环境设置
 
-#### Environment Requirements
+#### 环境要求
 
 - Node.js >= 18.0.0
-- npm >= 8.0.0 (or compatible package managers like yarn, pnpm)
+- npm >= 8.0.0 (或兼容的包管理器如 yarn, pnpm)
 - TypeScript 5.x
 
-#### Installing Dependencies (Local Development)
+#### 安装依赖 (本地开发)
 
 ```bash
-# Assuming you have cloned the repository and entered the project directory
+# 假设您已克隆仓库并进入项目目录
 npm install
 ```
 
-#### Development Mode (Local Development)
+#### 开发模式 (本地开发)
 
 ```bash
-# Watch mode, automatically recompiles TypeScript files when changes are detected
+# 监视模式，TypeScript文件更改时自动重新编译
 npm run watch
 
-# Start the development server in another terminal (usually runs the compiled files from the dist directory)
-# You might need a tool like nodemon to automatically restart the server
-npm run start:dev # (assuming you have configured this script in package.json)
+# 在另一个终端启动开发服务器 (通常会从 dist 目录运行编译后的文件)
+# 您可能需要一个类似 nodemon 的工具来自动重启服务器
+npm run start:dev # (假设您在 package.json 中配置了此脚本)
 ```
 
-### Code Architecture
+### 代码架构
 
-#### File Structure (Example)
+#### 文件结构 (示例)
 
 ```
 thinking_models_mcp/
-├── dist/                     # Compiled JavaScript files
-├── src/                      # TypeScript source code
-│   ├── thinking_models_server.ts  # Main server logic and tool registration
-│   ├── types.ts              # TypeScript type definitions
-│   ├── utils.ts              # Common utility functions
-│   ├── similarity_engine.ts  # Similarity calculation logic
-│   ├── reasoning_process.ts  # Reasoning process management
-│   ├── learning_capability.ts # Learning system functionality
-│   ├── recommendations.ts    # Model recommendation logic
-│   └── response_types.ts     # API response type definitions
-├── thinking_models_db/       # Thinking models database
-│   ├── zh/                   # Chinese models (JSON files)
-│   └── en/                   # English models (JSON files)
-├── package.json              # Project dependencies and scripts
-├── tsconfig.json             # TypeScript compiler configuration
-└── README.md                 # This document
+├── dist/                     # 编译输出的JavaScript文件
+├── src/                      # TypeScript源代码
+│   ├── thinking_models_server.ts  # 主服务器逻辑和工具注册
+│   ├── types.ts              # TypeScript类型定义
+│   ├── utils.ts              # 通用工具函数
+│   ├── similarity_engine.ts  # 相似度计算逻辑
+│   ├── reasoning_process.ts  # 推理过程管理
+│   ├── learning_capability.ts # 学习系统功能
+│   ├── recommendations.ts    # 模型推荐逻辑
+│   └── response_types.ts     # API响应类型定义
+├── thinking_models_db/       # 思维模型数据库
+│   ├── zh/                   # 中文模型 (JSON文件)
+│   └── en/                   # 英文模型 (JSON文件)
+├── package.json              # 项目依赖和脚本
+├── tsconfig.json             # TypeScript编译器配置
+└── README.md                 # 本文档
 ```
 
-#### Core Modules
+#### 核心模块
 
-1.  **Server Core (thinking_models_server.ts)**
-    *   Initializes the MCP server instance (`McpServer` from `@modelcontextprotocol/sdk`)
-    *   Registers all available tools, defines their parameter schemas (using `zod`) and handler functions
-    *   Loads and manages thinking model data
-    *   Handles client requests and routes to the appropriate tools
+1.  **服务器核心 (thinking_models_server.ts)**
+    *   初始化 MCP 服务器实例 (`McpServer` from `@modelcontextprotocol/sdk`)
+    *   注册所有可用的工具，定义其参数模式 (使用 `zod`) 和处理函数
+    *   加载和管理思维模型数据
+    *   处理客户端请求并路由到相应的工具
 
-2.  **Thinking Model Types (`types.ts`)**
-    *   Defines the core `ThinkingModel` interface, describing the data structure of models
-    *   Other TypeScript types and interfaces related to models
+2.  **思维模型类型 (`types.ts`)**
+    *   定义核心的 `ThinkingModel` 接口，描述模型的数据结构
+    *   其他与模型相关的TypeScript类型和接口
 
-3.  **Similarity Calculation Engine (`similarity_engine.ts`)**
-    *   `calculateQueryMatch`: Calculates the match between user queries and thinking models
-    *   `calculateKeywordRelevance`: Calculates the relevance of a list of keywords to thinking models
+3.  **相似度计算引擎 (`similarity_engine.ts`)**
+    *   `calculateQueryMatch`: 计算用户查询与思维模型之间的匹配度
+    *   `calculateKeywordRelevance`: 计算关键词列表与思维模型的相关性
 
-4.  **Reasoning Process Management (`reasoning_process.ts`)**
-    *   Used for building, managing, and visualizing structured reasoning paths
+4.  **推理过程管理 (`reasoning_process.ts`)**
+    *   用于构建、管理和可视化结构化的推理路径
 
-5.  **Learning System (`learning_capability.ts`)**
-    *   `recordUserFeedback`: Records user feedback on model usage
-    *   `detectKnowledgeGap`: Detects knowledge gaps based on user queries and feedback
-    *   `adjustModelRecommendations`: Adjusts model recommendations based on learning data
+5.  **学习系统 (`learning_capability.ts`)**
+    *   `recordUserFeedback`: 记录用户对模型使用的反馈
+    *   `detectKnowledgeGap`: 基于用户查询和反馈检测知识缺口
+    *   `adjustModelRecommendations`: 根据学习数据调整模型推荐
 
-### API Documentation
+### API 文档
 
-#### Server API
+#### 服务器 API
 
-The server supports two communication modes:
+服务器支持两种通信模式：
 
-1.  **stdio API (default)**
-    *   Communicates with clients through standard input/output.
-    *   Follows the MCP protocol specification.
-    *   Usually automatically managed by clients (like Cursor, Claude Desktop).
+1.  **stdio API (默认)**
+    *   通过标准输入/输出与客户端通信。
+    *   遵循 MCP 协议规范。
+    *   通常由客户端（如Cursor, Claude桌面版）自动管理。
 
-2.  **REST API (requires starting with the `--rest` parameter or `MODE=rest` environment variable)**
-    *   **Endpoint**: Default is `/rest` (can be configured via the `ENDPOINT` environment variable)
-    *   **Port**: Default is `9593` (can be configured via the `PORT` environment variable)
-    *   **Method**: `POST`
-    *   **Request Body**: JSON object containing `tool` (tool name string) and `tool_params` (tool parameters object) fields.
+2.  **REST API (需通过 `--rest` 参数或 `MODE=rest` 环境变量启动)**
+    *   **端点**: 默认为 `/rest` (可通过 `ENDPOINT` 环境变量配置)
+    *   **端口**: 默认为 `9593` (可通过 `PORT` 环境变量配置)
+    *   **方法**: `POST`
+    *   **请求体**: JSON 对象，包含 `tool` (工具名称字符串) 和 `tool_params` (工具参数对象) 字段。
         ```json
         {
           "tool": "list-models",
           "tool_params": {
-            "lang": "en",
-            "category": "Decision Theory"
+            "lang": "zh",
+            "category": "决策理论"
           }
         }
         ```
-    *   **Response Body**: JSON object, usually containing a `content` array where each element is a content block (e.g., `type: "text"` and `text: "..."`).
+    *   **响应体**: JSON 对象，通常包含 `content` 数组，其中每个元素是一个内容块 (例如 `type: "text"` 和 `text: "..."`)。
 
-#### Tool API
+#### 工具 API
 
-Each tool is registered through the `server.tool()` method, including:
-1.  **Tool Name** (string): Name used by clients when calling the tool.
-2.  **Tool Description** (string): Brief explanation of the tool's functionality.
-3.  **Parameter Schema** (Zod object): Uses the `zod` library to define the parameters the tool accepts and their types, descriptions, and constraints.
-4.  **Handler Function** (async function): Receives the validated parameter object, executes the tool logic, and returns a response conforming to the MCP protocol.
+每个工具都通过 `server.tool()` 方法注册，包含：
+1.  **工具名称** (字符串): 客户端调用时使用的名称。
+2.  **工具描述** (字符串): 工具功能的简要说明。
+3.  **参数模式** (Zod 对象): 使用 `zod`库定义工具接受的参数及其类型、描述和约束。
+4.  **处理函数** (异步函数): 接收经过验证的参数对象，执行工具逻辑，并返回符合MCP协议的响应。
 
-##### Example Tool Registration
+##### 工具注册示例
 
 ```typescript
 // filepath: src/thinking_models_server.ts
 // ... imports ...
 
 server.tool(
-  "get-model-count-by-category", // Tool name
-  "Get the number of thinking models in a specified category", // Tool description
-  { // Parameter schema (Zod schema)
-    category: z.string().describe("The main category of thinking models to query"),
-    lang: z.enum(["zh", "en"] as const).default("en").describe("Language code ('zh' or 'en')")
+  "get-model-count-by-category", // 工具名称
+  "获取指定分类下的思维模型数量", // 工具描述
+  { // 参数模式 (Zod schema)
+    category: z.string().describe("要查询的思维模型主分类"),
+    lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码 ('zh' 或 'en')")
   },
-  async ({ category, lang }) => { // Handler function
+  async ({ category, lang }) => { // 处理函数
     try {
-      const modelsInBuffer = MODELS[lang] || []; // MODELS is a cache of loaded models
+      const modelsInBuffer = MODELS[lang] || []; // MODELS是已加载模型的缓存
       const count = modelsInBuffer.filter(m => m.category === category).length;
-      log(`Tool 'get-model-count-by-category' called: category=${category}, lang=${lang}, count=${count}`);
+      log(`工具 'get-model-count-by-category' 被调用: category=${category}, lang=${lang}, count=${count}`);
       return {
         content: [{
           type: "text",
@@ -443,11 +453,11 @@ server.tool(
         }]
       };
     } catch (error: any) {
-      log(`Error executing tool 'get-model-count-by-category': ${error.message}`);
+      log(`工具 'get-model-count-by-category' 执行错误: ${error.message}`);
       return {
         content: [{
           type: "text",
-          text: JSON.stringify({ error: "Failed to get model count", message: error.message }, null, 2)
+          text: JSON.stringify({ error: "获取模型数量失败", message: error.message }, null, 2)
         }]
       };
     }
@@ -455,82 +465,82 @@ server.tool(
 );
 ```
 
-### Extension Guide
+### 扩展指南
 
-#### Adding New Tools
+#### 添加新工具
 
-1.  In thinking_models_server.ts (or related module files), register your new tool using the `server.tool()` method, as shown in the example above.
-2.  Define clear parameter schemas and descriptions.
-3.  Implement the tool's handler function, ensuring it includes error handling and logging.
-4.  Recompile the project (`npm run build`).
+1.  在 thinking_models_server.ts (或相关模块文件) 中，使用 `server.tool()` 方法注册您的新工具，如上例所示。
+2.  定义清晰的参数模式和描述。
+3.  实现工具的处理函数，确保包含错误处理和日志记录。
+4.  重新编译项目 (`npm run build`)。
 
-#### Creating New Thinking Models
+#### 创建新的思维模型
 
-1.  Create a new `.json` file in the zh (Chinese) or en (English) directory.
-2.  The filename is typically the model's ID (e.g., `new_decision_matrix.json`).
-3.  The file content should conform to the structure of the `ThinkingModel` interface (defined in types.ts). Example:
+1.  在 zh (中文) 或 en (英文) 目录下创建一个新的 `.json` 文件。
+2.  文件名通常是模型的ID (例如 `new_decision_matrix.json`)。
+3.  文件内容应符合 `ThinkingModel` 接口的结构 (定义在 types.ts)。示例：
     ```json
     {
       "id": "new_decision_matrix",
-      "name": "New Decision Matrix Model",
-      "definition": "A structured method for evaluating options across multiple criteria.",
-      "purpose": "Help make rational choices among complex options.",
-      "category": "Decision Making",
-      "subcategories": ["Multi-Criteria Decision"],
-      "tags": ["decision", "matrix", "evaluation", "choice"],
-      "use_cases": ["Product feature prioritization", "Vendor selection"],
-      // ... other fields like popular_science_teaching, limitations, common_pitfalls, visualizations, etc.
+      "name": "新决策矩阵模型",
+      "definition": "一个用于在多个标准下评估选项的结构化方法。",
+      "purpose": "帮助在复杂选项中做出理性选择。",
+      "category": "决策制定",
+      "subcategories": ["多标准决策"],
+      "tags": ["决策", "矩阵", "评估", "选择"],
+      "use_cases": ["产品功能优先级排序", "供应商选择"],
+      // ... 其他字段如 popular_science_teaching, limitations, common_pitfalls, visualizations 等
     }
     ```
-4.  The server will automatically load the new model when it starts, or if file monitoring is enabled, it will reload when the file is saved.
+4.  服务器在启动时会自动加载新模型，或者如果文件监控已启用，在文件保存后也会重新加载。
 
-#### Modifying the Recommendation Algorithm
+#### 修改推荐算法
 
-The recommendation logic is primarily located in similarity_engine.ts and recommendations.ts.
--   **`similarity_engine.ts`**: Contains the core algorithms for calculating text similarity and keyword relevance. You can adjust the weights of these algorithms, the techniques used (such as TF-IDF, embedding vectors, etc.) to improve matching precision.
--   **`recommendations.ts`**: Contains functions like `getModelRecommendations` that use the results of the similarity engine to generate the final list of model recommendations. You can modify the logic here, such as how to combine scores from different sources or how to adjust recommendations based on context.
+推荐逻辑主要位于 similarity_engine.ts 和 recommendations.ts。
+-   **`similarity_engine.ts`**: 包含计算文本相似度和关键词相关性的核心算法。您可以调整这些算法的权重、使用的技术（如TF-IDF、嵌入向量等）来改进匹配精度。
+-   **`recommendations.ts`**: 包含 `getModelRecommendations` 等函数，这些函数使用相似度引擎的结果来生成最终的模型推荐列表。您可以修改这里的逻辑，例如如何组合不同来源的评分，或者如何根据上下文调整推荐。
 
-### Testing
+### 测试
 
-The project typically uses a testing framework like Jest.
+项目通常使用像 Jest 这样的测试框架。
 
-#### Writing Tests
+#### 编写测试
 
-Create test files for your modules or functions in the `tests` directory (e.g., `tests/my_tool.test.ts`).
+在 `tests` 目录下为您的模块或函数创建测试文件 (例如 `tests/my_tool.test.ts`)。
 
 ```typescript
 // tests/example_tool.test.ts
-import { server, loadModels } from '../src/thinking_models_server'; // Assuming the server instance is exported
+import { server, loadModels } from '../src/thinking_models_server'; // 假设导出了server实例
 import { ThinkingModel } from '../src/types';
 
-// Mock MCP client request
+// 模拟MCP客户端请求
 async function callTool(toolName: string, params: any) {
   const toolDefinition = server.capabilities.tools[toolName];
   if (!toolDefinition || !toolDefinition.execute) {
     throw new Error(`Tool ${toolName} not found or not executable`);
   }
-  // In actual testing, a more complex mock may be needed to match the MCP SDK context
+  // 实际测试中可能需要更复杂的模拟来匹配MCP SDK的上下文
   return toolDefinition.execute(params, {} as any);
 }
 
 describe('My Custom Tool Tests', () => {
   beforeAll(async () => {
-    // Load test model data (if needed)
-    await loadModels('en'); // Load English models
+    // 加载测试用的模型数据 (如果需要)
+    await loadModels('zh'); // 加载中文模型
   });
 
   test('get-model-count-by-category should return correct count', async () => {
-    const response = await callTool('get-model-count-by-category', { category: 'Decision Making', lang: 'en' });
+    const response = await callTool('get-model-count-by-category', { category: '决策制定', lang: 'zh' });
     const result = JSON.parse(response.content[0].text);
-    expect(result.category).toBe('Decision Making');
-    expect(result.count).toBeGreaterThanOrEqual(0); // Specific count depends on your test data
+    expect(result.category).toBe('决策制定');
+    expect(result.count).toBeGreaterThanOrEqual(0); // 具体数量取决于您的测试数据
   });
 });
 ```
 
-#### Running Tests
+#### 运行测试
 
-Configure the test script in package.json:
+在 package.json 中配置测试脚本：
 ```json
 {
   "scripts": {
@@ -538,43 +548,43 @@ Configure the test script in package.json:
   }
 }
 ```
-Then run:
+然后运行：
 ```bash
 npm test
 ```
 
-### Building and Deployment
+### 构建与部署
 
-#### Building the Project
+#### 构建项目
 
 ```bash
 npm run build
 ```
-This will use `tsc` (TypeScript compiler) to compile the `.ts` files in the src directory into JavaScript files in the `dist` directory.
+这将使用 `tsc` (TypeScript编译器) 将 src 目录下的 `.ts` 文件编译成 JavaScript 文件到 `dist` 目录。
 
-#### Deployment Options
+#### 部署选项
 
-1.  **Deploy as a standalone Node.js server**
-    *   Copy the entire project (or at least the `dist` directory, node_modules, package.json, and thinking_models_db) to the server.
-    *   Run the server:
+1.  **作为独立的 Node.js 服务器部署**
+    *   将整个项目（或至少 `dist` 目录、node_modules、package.json 和 thinking_models_db）复制到服务器。
+    *   运行服务器：
         ```bash
-        # stdio mode
+        # stdio 模式
         node dist/thinking_models_server.js
 
-        # REST mode
+        # REST 模式
         PORT=9593 ENDPOINT=/api node dist/thinking_models_server.js --rest
         ```
-    *   Consider using a process manager like `pm2` to keep the server running.
+    *   考虑使用进程管理器如 `pm2` 来保持服务器运行。
 
-2.  **Deploy as a Docker container**
-    *   Create a Dockerfile:
+2.  **作为 Docker 容器部署**
+    *   创建一个 Dockerfile：
         ```dockerfile
         FROM node:18-alpine
 
         WORKDIR /usr/src/app
 
         COPY package*.json ./
-        RUN npm install --omit=dev # Only install production dependencies
+        RUN npm install --omit=dev # 只安装生产依赖
 
         COPY . .
         RUN npm run build
@@ -586,67 +596,67 @@ This will use `tsc` (TypeScript compiler) to compile the `.ts` files in the src 
         EXPOSE ${PORT}
 
         CMD [ "node", "dist/thinking_models_server.js" ]
-        # Or CMD npm start (if the start script in package.json points to the compiled file)
+        # 或者 CMD npm start (如果package.json中的start脚本指向编译后的文件)
         ```
-    *   Build the Docker image:
+    *   构建 Docker 镜像：
         ```bash
         docker build -t thinking-models-mcp .
         ```
-    *   Run the container:
+    *   运行容器：
         ```bash
-        # stdio mode (typically used for direct interaction with another process)
+        # stdio 模式 (通常用于直接与另一个进程交互)
         # docker run --rm -i thinking-models-mcp
 
-        # REST mode
+        # REST 模式
         docker run -d -p 9593:9593 -e MODE=rest thinking-models-mcp
         ```
 
-### Code Standards
+### 代码规范
 
-#### Coding Style
+#### 编码风格
 
--   Follow a consistent coding style (e.g., using Prettier and ESLint).
--   Use TypeScript's strong typing features and avoid using `any` unless absolutely necessary.
--   Write clear, self-explanatory code and add comments for complex logic.
+-   遵循一致的编码风格 (例如，使用 Prettier 和 ESLint)。
+-   使用 TypeScript 的强类型特性，避免使用 `any`除非绝对必要。
+-   编写清晰、自解释的代码，并为复杂逻辑添加注释。
 
-#### Naming Conventions
+#### 命名约定
 
--   **Functions and variables**: `camelCase` (e.g., `calculateSimilarity`)
--   **Classes and interfaces**: `PascalCase` (e.g., `ThinkingModel`, `McpServer`)
--   **Constants**: `UPPER_SNAKE_CASE` (e.g., `DEFAULT_PORT`)
--   **Filenames**: `snake_case.ts` or `kebab-case.ts` (maintain consistency within the project)
+-   **函数和变量**: `camelCase` (例如 `calculateSimilarity`)
+-   **类和接口**: `PascalCase` (例如 `ThinkingModel`, `McpServer`)
+-   **常量**: `UPPER_SNAKE_CASE` (例如 `DEFAULT_PORT`)
+-   **文件名**: `snake_case.ts` 或 `kebab-case.ts` (保持项目内一致)
 
-#### Documentation Standards
+#### 文档标准
 
--   Write JSDoc/TSDoc comments for all public APIs (functions, classes, interfaces).
--   Clearly explain the project's functionality and usage in README and other documentation.
--   Keep documentation in sync with code.
+-   为所有公共API（函数、类、接口）编写 JSDoc/TSDoc 注释。
+-   在 README 和其他文档中清晰地解释项目的功能和用法。
+-   保持文档与代码同步。
 
-### Common Development Issues and Troubleshooting
+### 常见开发问题与故障排除
 
-#### 1. Models Not Loading or Loading Incorrectly
--   **Check paths**: Ensure that the paths defined in `SUPPORTED_LANGUAGES` are correct relative to the compiled `thinking_models_server.js` file.
--   **JSON format**: Make sure all model `.json` files are valid JSON and conform to the structure of the `ThinkingModel` interface.
--   **File permissions**: Ensure the server process has permission to read the model directory and files.
--   **Logs**: Check the server startup logs, which typically include error information when loading models.
+#### 1. 模型文件未加载或加载错误
+-   **检查路径**：确认 `SUPPORTED_LANGUAGES` 中定义的路径相对于编译后的 `thinking_models_server.js` 文件是正确的。
+-   **JSON 格式**：确保所有模型 `.json` 文件都是有效的JSON，并且符合 `ThinkingModel` 接口的结构。
+-   **文件权限**：确保服务器进程有读取模型目录和文件的权限。
+-   **日志**：查看服务器启动时的日志输出，通常会包含加载模型时的错误信息。
 
-#### 2. API Requests Failing or Tools Not Found
--   **Server running status**: Confirm that the server has successfully started and has no errors.
--   **Endpoint and port**: If using REST mode, check if the URL, port, and endpoint configured in the client match the server.
--   **Tool names**: Confirm that the tool names called by the client exactly match those registered on the server (case-sensitive).
--   **Parameter format**: Ensure the parameters sent to the tools conform to their Zod schema definitions.
+#### 2. API 请求失败或工具未找到
+-   **服务器运行状态**：确认服务器已成功启动并且没有错误。
+-   **端点和端口**：如果使用REST模式，检查客户端配置的URL、端口和端点是否与服务器匹配。
+-   **工具名称**：确认客户端调用的工具名称与服务器中注册的名称完全一致（区分大小写）。
+-   **参数格式**：确保发送给工具的参数符合其Zod模式定义。
 
-#### 3. Similarity Calculation or Recommendations Not Accurate
--   **Model data quality**: Fields like `definition`, `purpose`, `tags`, `keywords` in the models are critical for similarity calculations. Ensure these fields are rich and accurate.
--   **Algorithm adjustment**: You may need to adjust algorithm parameters or weights in `similarity_engine.ts`.
--   **Learning system**: If the learning system is enabled, check if feedback data is correctly recorded and applied.
+#### 3. 相似度计算或推荐不准确
+-   **模型数据质量**：模型的 `definition`, `purpose`, `tags`, `keywords` 等字段对相似度计算至关重要。确保这些字段内容丰富且准确。
+-   **算法调整**：可能需要调整 `similarity_engine.ts` 中的算法参数或权重。
+-   **学习系统**：如果启用了学习系统，检查反馈数据是否正确记录和应用。
 
-#### Best Practices
--   **Logging**: Use the `log()` function (or a more sophisticated logging library) to record key operations, errors, and debug information.
--   **Error handling**: Implement robust error handling in all tool functions and asynchronous operations, and return meaningful error information to clients.
--   **Modularity**: Organize different functionalities (such as similarity calculation, learning system, tool implementation) into independent modules.
--   **Configuration management**: Use environment variables or configuration files for configurable items such as ports, paths, etc.
+#### 最佳实践
+-   **日志记录**: 使用 `log()` 函数（或更完善的日志库）记录关键操作、错误和调试信息。
+-   **错误处理**: 在所有工具函数和异步操作中实现健壮的错误处理，并向客户端返回有意义的错误信息。
+-   **模块化**: 将不同的功能（如相似度计算、学习系统、工具实现）组织到独立的模块中。
+-   **配置管理**: 对端口、路径等可配置项使用环境变量或配置文件。
 
-## Open Source License
+## 开源协议
 
-This project is open source under the MIT license.
+本项目使用 MIT 协议开源。

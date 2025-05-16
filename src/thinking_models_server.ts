@@ -2788,6 +2788,22 @@ function generateStartingPoint(userObjective: string, relevantModels: any[], exp
   }
 }
 
+// 获取数据目录路径
+function getDataDirectory(): string {
+  const args = process.argv;
+  let dataDir = path.resolve(__dirname, '..', 'data');
+  
+  // 查找--data-dir参数
+  for (let i = 0; i < args.length - 1; i++) {
+    if (args[i] === '--data-dir') {
+      dataDir = args[i + 1];
+      break;
+    }
+  }
+  
+  return dataDir;
+}
+
 // 主程序入口
 async function main() {
   // 支持通过命令行参数或环境变量切换模式
@@ -2795,8 +2811,20 @@ async function main() {
   const port = process.env.PORT ? Number(process.env.PORT) : 9593;
   const endpoint = process.env.ENDPOINT || "/rest";
   
+  // 获取数据目录
+  const dataDir = getDataDirectory();
+  
   try {
     log("思维模型 MCP Server 初始化中...");
+    log(`数据存储目录: ${dataDir}`);
+    
+    // 确保数据目录存在
+    try {
+      await fs.access(dataDir);
+    } catch {
+      await fs.mkdir(dataDir, { recursive: true });
+      log(`已创建数据目录: ${dataDir}`);
+    }
     
     if (mode === "rest") {
       const transport = new RestServerTransport({ 
