@@ -1379,9 +1379,9 @@ server.tool(
         )
       })
     ).optional().describe("比较表可视化（可选）")
-  },
-  async (model) => {
+  },  async (model) => {
     try {
+      log(`开始创建新思维模型，收到参数: id=${model.id}, name=${model.name}, category=${model.category}, lang=${model.lang}`);
       const { 
         lang, 
         flowchart_visualizations,
@@ -1391,8 +1391,11 @@ server.tool(
         comparison_table_visualizations,
         ...basicModelData 
       } = model;
-        // 验证ID格式
+      log(`解构参数完成，基础模型数据包含字段: ${Object.keys(basicModelData).join(', ')}`);
+      
+      // 验证ID格式
       if (!/^[a-z0-9_]+$/.test(basicModelData.id)) {
+        log(`模型ID格式验证失败: "${basicModelData.id}" 不符合要求的格式(仅小写字母、数字和下划线)`);
         return {
           content: [{
             type: "text",
@@ -1400,9 +1403,11 @@ server.tool(
           }]
         };
       }
+      log(`模型ID格式验证通过: ${basicModelData.id}`);
       
       // 检查ID是否已存在
       if (MODELS[lang].some(m => m.id === basicModelData.id)) {
+        log(`模型ID冲突检查失败: 模型ID "${basicModelData.id}" 已存在于 ${lang} 语言中`);
         return {
           content: [{
             type: "text",
@@ -1410,14 +1415,14 @@ server.tool(
           }]
         };
       }
-      
-      // 处理可视化数据
+      log(`模型ID冲突检查通过: ${basicModelData.id} 在 ${lang} 语言中不存在`);      // 处理可视化数据
       const visualizations: Array<{
         title: string;
         type: "flowchart_dsl" | "bar_chart_data" | "table_data" | "list_items" | "comparison_table";
         data: FlowchartDslData | BarChartData | TableData | ListData | ComparisonTableData;
         description?: string;
       }> = [];
+      log(`开始处理可视化数据...`);
       
       // 处理流程图可视化
       if (flowchart_visualizations) {
@@ -1493,10 +1498,12 @@ server.tool(
         ...basicModelData,
         visualizations: visualizations.length > 0 ? visualizations : undefined
       };
+      log(`已创建完整模型对象，可视化数量: ${visualizations.length}`);
       
       // 确定保存路径
       const modelLangDir = path.resolve(__dirname, "..", SUPPORTED_LANGUAGES[lang]);
       const modelFilePath = path.join(modelLangDir, `${basicModelData.id}.json`);
+      log(`模型将保存到路径: ${modelFilePath}`);
       
       // 确保目录存在
       try {
@@ -1522,7 +1529,7 @@ server.tool(
         const knowledgeGaps = getKnowledgeGaps(100); // 获取最多100个知识缺口进行检查
         
         if (knowledgeGaps && knowledgeGaps.length > 0) {
-          // 检查新模型是否可能填补了任何知识缺口
+          // 检查新模型是否可能填补任何知识缺口
           potentiallyFilledGaps = knowledgeGaps
             .filter(gap => {
               // 使用查询匹配算法检查模型与知识缺口的相关性
@@ -1562,98 +1569,353 @@ server.tool(
   }
 );
 
-// 添加删除思维模型的工具
+// 添加更新思维模型的工具
 server.tool(
-  "delete-thinking-model",
-  "删除不需要的思维模型文件并从系统中移除",
+  "update-thinking-model",
+  "更新现有思维模型的内容",
   {
-    model_id: z.string().describe("要删除的模型ID"),
+    model_id: z.string().describe("要更新的模型ID"),
     lang: z.enum(["zh", "en"] as const).default("zh").describe("模型的语言（'zh' 或 'en'），默认为 'zh'"),
-    confirm: z.boolean().default(true).describe("确认删除操作"),
+    // 可更新的字段
+    name: z.string().optional().describe("模型的名称（可选）"),
+    author: z.string().optional().describe("模型作者（可选）"),
+    source: z.string().optional().describe("模型来源（可选）"),
+    definition: z.string().optional().describe("模型的简明定义（可选）"),
+    purpose: z.string().optional().describe("模型的主要目的和使用场景（可选）"),
+    interaction: z.string().optional().describe("使用该模型与用户交互的方式指南（可选）"),
+    constraints: z.array(z.string()).optional().describe("使用此模型的约束条件（可选）"),
+    prompt: z.string().optional().describe("详细的提示词/角色扮演指南（可选）"),
+    example: z.string().optional().describe("模型使用的简短示例（可选）"),
+    category: z.string().optional().describe("模型的主要分类（可选）"),
+    subcategories: z.array(z.string()).optional().describe("模型的子分类列表（可选）"),
+    tags: z.array(z.string()).optional().describe("模型的相关标签（可选）"),
+    use_cases: z.array(z.string()).optional().describe("模型的使用案例（可选）"),
+    common_problems_solved: z.array(
+      z.object({
+        problem_description: z.string(),
+        keywords: z.array(z.string()),
+        guiding_questions: z.array(z.string()).optional()
+      })
+    ).optional().describe("模型解决的常见问题（可选）"),
+    popular_science_teaching: z.array(
+      z.object({
+        concept_name: z.string(),
+        explanation: z.string()
+      })
+    ).optional().describe("模型的通俗科学教学（可选）"),
+    limitations: z.array(
+      z.object({
+        limitation_name: z.string(),
+        description: z.string()
+      })
+    ).optional().describe("模型的局限性（可选）"),
+    common_pitfalls: z.array(
+      z.object({
+        pitfall_name: z.string(),
+        description: z.string()
+      })
+    ).optional().describe("使用模型的常见陷阱（可选）"),
+    // 可视化数据需要细分为具体类型
+    flowchart_visualizations: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        dsl: z.string()
+      })
+    ).optional().describe("流程图可视化（可选）"),
+    bar_chart_visualizations: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        labels: z.array(z.string()),
+        datasets: z.array(
+          z.object({
+            label: z.string(),
+            data: z.array(z.number()),
+            backgroundColor: z.union([z.string(), z.array(z.string())]).optional()
+          })
+        )
+      })
+    ).optional().describe("柱状图可视化（可选）"),
+    table_visualizations: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        headers: z.array(z.string()),
+        rows: z.array(z.array(z.union([z.string(), z.number(), z.boolean()])))
+      })
+    ).optional().describe("表格可视化（可选）"),    
+    list_visualizations: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        items: z.array(
+          z.object({
+            text: z.string(),
+            subItems: z.array(
+              z.object({
+                text: z.string()
+              })
+            ).optional()
+          })
+        )
+      })
+    ).optional().describe("列表可视化（可选）"),
+    comparison_table_visualizations: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        criteria: z.array(z.string()),
+        items: z.array(
+          z.object({
+            name: z.string(),
+            values: z.array(z.union([z.string(), z.number(), z.boolean()]))
+          })
+        )
+      })
+    ).optional().describe("比较表可视化（可选）")
   },
-  async ({ model_id, lang, confirm }) => {
+  async (model) => {
     try {
-      if (!confirm) {
-        return {
-          content: [{
-            type: "text",
-            text: JSON.stringify({ 
-              message: "删除操作已取消", 
-              model_id 
-            }, null, 2)
-          }]
-        };
-      }
-
-      // 检查模型是否存在
+      const { model_id, lang, ...updateData } = model;
+      log(`开始更新思维模型, ID: ${model_id}, 语言: ${lang}, 待更新字段: ${Object.keys(updateData).join(', ')}`);
+      
+      // 查找现有模型
       const modelIndex = MODELS[lang].findIndex(m => m.id === model_id);
       if (modelIndex === -1) {
+        log(`未找到要更新的模型: ID=${model_id}, 语言=${lang}`);
         return {
           content: [{
             type: "text",
-            text: JSON.stringify({ error: `未找到模型ID '${model_id}'` }, null, 2)
+            text: JSON.stringify({ error: `找不到ID为'${model_id}'的模型` }, null, 2)
           }]
         };
       }
-
-      // 获取模型信息用于记录
-      const modelName = MODELS[lang][modelIndex].name;
       
-      // 确定文件路径
+      // 获取现有模型
+      const existingModel = MODELS[lang][modelIndex];
+      log(`找到现有模型: ${existingModel.name} (ID: ${existingModel.id})`);
+      
+      // 提取可视化相关字段和基础字段
+      const {
+        flowchart_visualizations,
+        bar_chart_visualizations,
+        table_visualizations,
+        list_visualizations,
+        comparison_table_visualizations,
+        ...basicUpdateData
+      } = updateData;
+      
+      // 更新基础字段
+      const updatedModel = {
+        ...existingModel,
+        ...basicUpdateData
+      };
+      
+      log(`基础字段更新完成，开始处理可视化数据...`);
+      
+      // 初始化可视化数组（如果原模型没有则创建空数组）
+      let currentVisualizations = existingModel.visualizations || [];
+      
+      // 处理流程图可视化更新
+      if (flowchart_visualizations) {
+        flowchart_visualizations.forEach(viz => {
+          const vizIndex = currentVisualizations.findIndex(
+            v => v.type === "flowchart_dsl" && v.title === viz.title
+          );
+          
+          if (vizIndex >= 0) {
+            // 更新现有可视化
+            currentVisualizations[vizIndex] = {
+              title: viz.title,
+              type: "flowchart_dsl",
+              data: { dsl: viz.dsl } as FlowchartDslData,
+              description: viz.description
+            };
+            log(`更新流程图可视化: ${viz.title}`);
+          } else {
+            // 添加新可视化
+            currentVisualizations.push({
+              title: viz.title,
+              type: "flowchart_dsl",
+              data: { dsl: viz.dsl } as FlowchartDslData,
+              description: viz.description
+            });
+            log(`添加新流程图可视化: ${viz.title}`);
+          }
+        });
+      }
+      
+      // 处理柱状图可视化更新
+      if (bar_chart_visualizations) {
+        bar_chart_visualizations.forEach(viz => {
+          const vizIndex = currentVisualizations.findIndex(
+            v => v.type === "bar_chart_data" && v.title === viz.title
+          );
+          
+          if (vizIndex >= 0) {
+            // 更新现有可视化
+            currentVisualizations[vizIndex] = {
+              title: viz.title,
+              type: "bar_chart_data",
+              data: {
+                labels: viz.labels,
+                datasets: viz.datasets
+              } as BarChartData,
+              description: viz.description
+            };
+            log(`更新柱状图可视化: ${viz.title}`);
+          } else {
+            // 添加新可视化
+            currentVisualizations.push({
+              title: viz.title,
+              type: "bar_chart_data",
+              data: {
+                labels: viz.labels,
+                datasets: viz.datasets
+              } as BarChartData,
+              description: viz.description
+            });
+            log(`添加新柱状图可视化: ${viz.title}`);
+          }
+        });
+      }
+      
+      // 处理表格可视化更新
+      if (table_visualizations) {
+        table_visualizations.forEach(viz => {
+          const vizIndex = currentVisualizations.findIndex(
+            v => v.type === "table_data" && v.title === viz.title
+          );
+          
+          if (vizIndex >= 0) {
+            // 更新现有可视化
+            currentVisualizations[vizIndex] = {
+              title: viz.title,
+              type: "table_data",
+              data: {
+                headers: viz.headers,
+                rows: viz.rows
+              } as TableData,
+              description: viz.description
+            };
+            log(`更新表格可视化: ${viz.title}`);
+          } else {
+            // 添加新可视化
+            currentVisualizations.push({
+              title: viz.title,
+              type: "table_data",
+              data: {
+                headers: viz.headers,
+                rows: viz.rows
+              } as TableData,
+              description: viz.description
+            });
+            log(`添加新表格可视化: ${viz.title}`);
+          }
+        });
+      }
+      
+      // 处理列表可视化更新
+      if (list_visualizations) {
+        list_visualizations.forEach(viz => {
+          const vizIndex = currentVisualizations.findIndex(
+            v => v.type === "list_items" && v.title === viz.title
+          );
+          
+          if (vizIndex >= 0) {
+            // 更新现有可视化
+            currentVisualizations[vizIndex] = {
+              title: viz.title,
+              type: "list_items",
+              data: {
+                items: viz.items
+              } as ListData,
+              description: viz.description
+            };
+            log(`更新列表可视化: ${viz.title}`);
+          } else {
+            // 添加新可视化
+            currentVisualizations.push({
+              title: viz.title,
+              type: "list_items",
+              data: {
+                items: viz.items
+              } as ListData,
+              description: viz.description
+            });
+            log(`添加新列表可视化: ${viz.title}`);
+          }
+        });
+      }
+      
+      // 处理比较表可视化更新
+      if (comparison_table_visualizations) {
+        comparison_table_visualizations.forEach(viz => {
+          const vizIndex = currentVisualizations.findIndex(
+            v => v.type === "comparison_table" && v.title === viz.title
+          );
+          
+          if (vizIndex >= 0) {
+            // 更新现有可视化
+            currentVisualizations[vizIndex] = {
+              title: viz.title,
+              type: "comparison_table",
+              data: {
+                criteria: viz.criteria,
+                items: viz.items
+              } as ComparisonTableData,
+              description: viz.description
+            };
+            log(`更新比较表可视化: ${viz.title}`);
+          } else {
+            // 添加新可视化
+            currentVisualizations.push({
+              title: viz.title,
+              type: "comparison_table",
+              data: {
+                criteria: viz.criteria,
+                items: viz.items
+              } as ComparisonTableData,
+              description: viz.description
+            });
+            log(`添加新比较表可视化: ${viz.title}`);
+          }
+        });
+      }
+      
+      // 应用更新后的可视化
+      updatedModel.visualizations = currentVisualizations.length > 0 ? currentVisualizations : undefined;
+      log(`可视化数据处理完成，共有 ${currentVisualizations.length} 个可视化`);
+      
+      // 更新内存中的模型
+      MODELS[lang][modelIndex] = updatedModel;
+      
+      // 保存更新后的模型到文件系统
       const modelLangDir = path.resolve(__dirname, "..", SUPPORTED_LANGUAGES[lang]);
       const modelFilePath = path.join(modelLangDir, `${model_id}.json`);
       
-      try {
-        // 检查文件是否存在
-        await fs.access(modelFilePath);
-        
-        // 删除文件
-        await fs.unlink(modelFilePath);
-        log(`模型文件已删除: ${modelFilePath}`);
-        
-        // 从内存中移除模型
-        MODELS[lang].splice(modelIndex, 1);
-        
-        return {
-          content: [{
-            type: "text",
-            text: JSON.stringify({
-              success: true,
-              message: `思维模型 '${modelName}' (ID: ${model_id}) 已成功删除`,
-              model_id: model_id,
-              file_path: modelFilePath
-            }, null, 2)
-          }]
-        };
-      } catch (error) {
-        // 文件可能不存在或其他错误
-        if (error instanceof Error && 'code' in error && error.code === 'ENOENT') {
-          // 文件不存在，但仍然从内存中移除模型
-          MODELS[lang].splice(modelIndex, 1);
-          log(`模型文件不存在但已从内存中移除: ${model_id}`);
-          
-          return {
-            content: [{
-              type: "text",
-              text: JSON.stringify({
-                success: true,
-                warning: "模型文件不存在，但模型已从内存中移除",
-                message: `思维模型 '${modelName}' (ID: ${model_id}) 已从系统中移除`,
-                model_id: model_id
-              }, null, 2)
-            }]
-          };
-        } else {
-          // 其他错误
-          throw error;
-        }
-      }
-    } catch (e: any) {
-      log(`删除思维模型时出错: ${e.message}`);
+      await fs.writeFile(modelFilePath, JSON.stringify(updatedModel, null, 2), 'utf-8');
+      log(`模型 ${model_id} 已更新并保存到 ${modelFilePath}`);
+      
       return {
         content: [{
           type: "text",
-          text: JSON.stringify({ error: "删除思维模型失败", message: e.message }, null, 2)
+          text: JSON.stringify({
+            success: true,
+            message: `思维模型 '${updatedModel.name}' (ID: ${updatedModel.id}) 已成功更新`,
+            updated_fields: Object.keys(updateData),
+            file_path: modelFilePath
+          }, null, 2)
+        }]
+      };
+      
+    } catch (e: any) {
+      log(`更新思维模型时出错: ${e.message}`);
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify({ error: "更新思维模型失败", message: e.message }, null, 2)
         }]
       };
     }
@@ -2407,7 +2669,7 @@ function generateCreationWorkflowGuide(expertiseLevel: string) {
       {
         step: 2,
         title: "检查现有模型",
-        description: "使用search-models工具，确认是否已存在类似的思维模型",
+        description: "使用search-models工具，确认是否已有类似的思维模型",
         tool: "search-models"
       },
       {
