@@ -36,6 +36,7 @@
 ### 创建类工具
 
 - **create-thinking-model**: 创建新的思维模型
+- **update-thinking-model**: 更新现有思维模型的任意字段
 - **emergent-model-design**: 通过组合现有思维模型创建新的思维模型
 - **delete-thinking-model**: 删除不需要的思维模型
 
