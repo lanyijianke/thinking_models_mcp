@@ -87,93 +87,55 @@ npm run build
 1.  **普通启动 (stdio模式)**
     在项目根目录下运行：
     ```bash
-    node dist/thinking_models_server.js
+    node build/thinking_models_server.js
     ```
     或者使用 npm 脚本 (如果已在 package.json 中配置):
     ```bash
     npm run start
     ```
 
-## 客户端配置指南
+## 配置指南
 
-您可以将思维模型MCP服务器配置到支持MCP的客户端中，如Cursor、Claude桌面版或VS Code的Claude扩展。
+您可以将思维模型MCP服务器集成到任何支持MCP协议的客户端中。以下是两种不同的实现方式：
 
-### 1. Cursor 配置
+### 方式一：使用本地Node.js运行服务器
 
-
-**方式一：使用本地Node.js运行服务器**
+此方式需要您在本地安装和配置服务器代码，适合需要自定义开发或修改服务器代码的场景。
 
 ```json
 {
-  // ... 其他配置 ...
   "mcpServers": {
     "thinking-models": { // 您可以自定义此服务器名称
       "command": "node",
       "args": [
-        "e:\\thinking_models_mcp\\dist\\thinking_models_server.js" // 替换为您的实际路径
+        "e:\\thinking_models_mcp\\build\\thinking_models_server.js" // 替换为您的实际路径
       ]
     }
   }
+  // ... 其他配置 ...
 }
 ```
 
-**方式二：使用 NPX 从 npm 远程包启动服务器**
+### 方式二：使用 NPX 从 npm 远程包启动服务器
+
+此方式更简单，无需本地安装完整代码，直接从npm仓库拉取包并运行。
 
 ```json
 {
-  // ... 其他配置 ...
   "mcpServers": {
     "thinking-models": {
       "command": "npx",
       "args": [
         "--yes", // 自动确认安装
-        "@thinking-models/mcp-server", // 替换为实际的npm包名        "--data-dir", // 指定本地数据目录参数
+        // "--no-cache", // 可选：避免使用缓存的版本，确保每次使用最新版本
+        "--", // 参数分隔符，确保后面的参数传递给实际的程序
+        "@thinking-models/mcp-server", // npm包名
+        "--data-dir", // 指定本地数据目录参数
         "C:\\Users\\YourUserName\\AppData\\Local\\ThinkingModels" // 替换为您想存储数据的本地路径
         // 如果需要指定版本: "@thinking-models/mcp-server@1.3.1"
       ]
     }
   }
-}
-```
-
-### 2. Claude 桌面版配置
-
-打开Claude桌面版的配置文件 `claude_desktop_config.json` (通常位于 `C:\Users\<YourUserName>\AppData\Roaming\Claude\claude_desktop_config.json`)，并添加以下配置：
-
-**方式一：使用本地Node.js运行服务器**
-
-```json
-// filepath: c:\Users\<YourUserName>\AppData\Roaming\Claude\claude_desktop_config.json
-{
-  "mcpServers": {
-    "thinking-models": { // 您可以自定义此服务器名称
-      "command": "node",
-      "args": [
-        "e:\\thinking_models_mcp\\dist\\thinking_models_server.js" // 替换为您的实际路径
-      ]
-    }
-  }
-  // ... 其他配置 ...
-}
-```
-
-**方式二：使用 NPX 从 npm 远程包启动服务器**
-
-```json
-// filepath: c:\Users\<YourUserName>\AppData\Roaming\Claude\claude_desktop_config.json
-{
-  "mcpServers": {
-    "thinking-models": {
-      "command": "npx",
-      "args": [
-        "--yes",
-        "@thinking-models/mcp-server", // 替换为实际的npm包名
-        "--data-dir",
-        "C:\\Users\\YourUserName\\AppData\\Local\\ThinkingModels" // 指定本地数据存储路径
-        // 如果需要指定版本: "@thinking-models/mcp-server@1.3.1"
-      ]
-    }
-  }
   // ... 其他配置 ...
 }
 ```
@@ -181,12 +143,16 @@ npm run build
 
 
 
-**关于 `npx` 和 `--yes` 参数：**
-`npx` 是一个npm包运行器，它允许您执行npm包中的命令，而无需全局或本地安装它们。
-`--yes` 参数用于自动对 `npx` 可能提出的任何安装提示回答"是"，这在配置文件中非常重要，因为没有用户交互来确认安装。
+**命令行参数说明：**
 
-**关于 `--data-dir` 参数：**
-`--data-dir` 参数用于指定本地数据存储目录的路径。这对于使用npx运行的服务特别重要，因为默认情况下，npx每次运行时会在临时目录中安装包，导致数据在重启后丢失。通过指定一个本地目录，您可以确保学习系统状态和用户创建的模型在重启后仍然保留。 
+- **`node`**: 直接使用本地Node.js运行JavaScript文件
+- **`npx`**: npm包运行器，允许执行npm包中的命令，无需全局或本地安装
+- **`--yes`**: 自动确认npx的安装提示，适用于无交互环境
+- **`--no-cache`**: (可选) 禁用缓存，每次都获取最新版本包
+- **`--`**: 参数分隔符，确保后面的参数传递给目标程序而非npx
+- **`--data-dir`**: 指定数据存储目录，对npx方式尤为重要，因为默认情况下npx在临时目录安装包，导致数据重启后丢失
+
+> **重要提示**：正确指定`--data-dir`参数对于保存用户数据至关重要。通过指定一个固定的本地目录，您可以确保学习系统状态和用户创建的模型在服务重启后仍然保留。
 
 
 ### 基本使用
@@ -227,7 +193,7 @@ npm install
 # 监视模式，TypeScript文件更改时自动重新编译
 npm run watch
 
-# 在另一个终端启动开发服务器 (通常会从 dist 目录运行编译后的文件)
+# 在另一个终端启动开发服务器 (通常会从 build 目录运行编译后的文件)
 # 您可能需要一个类似 nodemon 的工具来自动重启服务器
 npm run start:dev # (假设您在 package.json 中配置了此脚本)
 ```
@@ -238,7 +204,7 @@ npm run start:dev # (假设您在 package.json 中配置了此脚本)
 
 ```
 thinking_models_mcp/
-├── dist/                     # 编译输出的JavaScript文件
+├── build/                    # 编译输出的JavaScript文件
 ├── src/                      # TypeScript源代码
 │   ├── thinking_models_server.ts  # 主服务器逻辑和工具注册
 │   ├── types.ts              # TypeScript类型定义
@@ -431,43 +397,22 @@ npm test
 ```bash
 npm run build
 ```
-这将使用 `tsc` (TypeScript编译器) 将 src 目录下的 `.ts` 文件编译成 JavaScript 文件到 `dist` 目录。
+这将使用 `tsc` (TypeScript编译器) 将 src 目录下的 `.ts` 文件编译成 JavaScript 文件到 `build` 目录。
 
 #### 部署选项
 
-1.  **作为独立的 Node.js 服务器部署**
-    *   将整个项目（或至少 `dist` 目录、node_modules、package.json 和 thinking_models_db）复制到服务器。    *   运行服务器：
-        ```bash
-        node dist/thinking_models_server.js
-        ```
-    *   考虑使用进程管理器如 `pm2` 来保持服务器运行。
-
-2.  **作为 Docker 容器部署**
-    *   创建一个 Dockerfile：
-        ```dockerfile
-        FROM node:18-alpine
-
-        WORKDIR /usr/src/app
-
-        COPY package*.json ./
-        RUN npm install --omit=dev # 只安装生产依赖
-
-        COPY . .
-        RUN npm run build        ENV MODE=stdio
-
-        EXPOSE ${PORT}
-
-        CMD [ "node", "dist/thinking_models_server.js" ]
-        # 或者 CMD npm start (如果package.json中的start脚本指向编译后的文件)
-        ```
-    *   构建 Docker 镜像：
-        ```bash
-        docker build -t thinking-models-mcp .
-        ```    *   运行容器：
-        ```bash
-        # stdio 模式
-        docker run --rm -i thinking-models-mcp
-        ```
+**作为独立的 Node.js 服务器部署**
+*   将整个项目（或至少 `build` 目录、node_modules、package.json 和 thinking_models_db）复制到服务器
+*   运行服务器：
+    ```bash
+    node build/thinking_models_server.js
+    ```
+*   或使用进程管理器如 `pm2` 来保持服务器运行：
+    ```bash
+    npm install -g pm2
+    pm2 start build/thinking_models_server.js --name "thinking-models-mcp"
+    pm2 save
+    ```
 
 ### 代码规范
 
