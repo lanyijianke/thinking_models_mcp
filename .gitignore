@@ -7,6 +7,8 @@ yarn-error.log*
 # 忽略的文档文件
 天机产品介绍-个人视角版.md
 测试指令.md
+content.md
+overview.md
 
 
 # TypeScript
