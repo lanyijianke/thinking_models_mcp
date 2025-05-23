@@ -1,125 +1,773 @@
-# 思维模型 MCP 服务器
+# "Tianji" — Thinking Models MCP Server
+![alt text](image/tianji.png)
 
-> 智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9+-blue.svg)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18.0+-green.svg)](https://nodejs.org/)
+[![MCP Protocol](https://img.shields.io/badge/MCP_Protocol-1.11+-brightgreen.svg)](https://github.com/modelcontextprotocol)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/Version-2.2.0-orange.svg)](https://github.com/yourusername/thinking-models-mcp)
+[![Zod](https://img.shields.io/badge/Zod-3.24+-purple.svg)](https://github.com/colinhacks/zod)
 
-## 什么是思维模型 MCP 服务器？
+> Toolbox for intelligent thinking: Integrating systematic thinking methods into your problem-solving process
 
-思维模型 MCP 服务器是一个强大的工具，它集成了数百种思维模型、框架和方法论，能够帮助用户更系统、更全面地思考问题。通过 MCP (Model Context Protocol) 接口，AI 助手可以访问这些思维工具，将结构化思维方法无缝应用到对话中。
+## Table of Contents
 
+- [What is "Tianji"?](#what-is-tianji)
+- [Core Features](#core-features)
+- [Tools Overview](#tools-overview)
+  - [Exploration Tools](#exploration-tools)
+  - [Problem-Solving Tools](#problem-solving-tools)
+  - [Creation Tools](#creation-tools)
+  - [System and Learning Tools](#system-and-learning-tools)
+- [Tool Function Parameters and Return Values](#tool-function-parameters-and-return-values)
+  - [Exploration Tools](#exploration-tools-1)
+  - [Problem-Solving Tools](#problem-solving-tools-1)
+  - [Creation Tools](#creation-tools-1)
+  - [System and Learning Tools](#system-and-learning-tools-1)
+- [Use Cases](#use-cases)
+- [Quick Start](#quick-start)
+- [Configuration Guide](#configuration-guide)
+- [Developer Documentation](#developer-documentation)
+  - [Development Environment Setup](#development-environment-setup)
+  - [Code Architecture](#code-architecture)
+  - [API Documentation](#api-documentation)
+  - [Extension Guidelines](#extension-guidelines)
+  - [Testing](#testing)
+  - [Build and Deployment](#build-and-deployment)
+  - [Coding Standards](#coding-standards)
+  - [Common Development Issues and Troubleshooting](#common-development-issues-and-troubleshooting)
+- [License](#license)
 
+## What is "Tianji"?
 
-## 核心功能
+"Tianji" is a powerful thinking model MCP server that integrates hundreds of thinking models, frameworks, and methodologies to help users think more systematically and comprehensively about problems. Through the MCP (Model Context Protocol) interface, AI assistants can access these thinking tools and seamlessly apply structured thinking methods to conversations. The name "Tianji" originates from the ancient Chinese saying "Heaven's secrets must not be revealed," implying that it helps users uncover deeper patterns of thinking and wisdom.
 
-- **丰富的思维模型库**：包含决策理论、系统思考、概率思维等多个领域的经典思维模型
-- **智能模型推荐**：根据问题特征自动推荐最合适的思维模型
-- **交互式推理过程**：引导用户进行结构化思考，一步步深入分析问题
-- **学习与适应系统**：通过用户反馈持续改进推荐算法
-- **模型创建与组合**：允许创建新模型或组合现有模型产生创新思维框架
+## Core Features
 
-## 工具概览
+- **Rich Library of Thinking Models**: Contains classic thinking models across multiple domains including decision theory, systems thinking, and probabilistic thinking
+- **Intelligent Model Recommendations**: Automatically recommends the most suitable thinking models based on problem characteristics
+- **Interactive Reasoning Process**: Guides users through structured thinking, analyzing problems step by step
+- **Learning and Adaptation System**: Continuously improves recommendation algorithms through user feedback
+- **Model Creation and Combination**: Allows creation of new models or combination of existing models to generate innovative thinking frameworks
 
-### 探索类工具
+## Tools Overview
 
-- **list-models**: 列出所有思维模型或按分类筛选
-- **search-models**: 按关键词搜索思维模型
-- **get-categories**: 获取所有思维模型分类
-- **get-model-info**: 获取思维模型的详细信息
-- **get-related-models**: 获取与特定模型相关的其他模型
+### Exploration Tools
 
-### 问题解决类工具
+- **list-models**: List all thinking models or filter by category
+- **search-models**: Search thinking models by keywords
+- **get-categories**: Get all thinking model categories
+- **get-model-info**: Get detailed information about a thinking model
+- **get-related-models**: Get other models related to a specific model
 
-- **recommend-models-for-problem**: 基于问题关键词推荐适合的思维模型
-- **interactive-reasoning**: 交互式推理过程指导
-- **generate-validate-hypotheses**: 为问题生成多个假设并提供验证方法
-- **explain-reasoning-process**: 解释模型的推理过程和应用的思维模式
+### Problem-Solving Tools
 
-### 创建类工具
+- **recommend-models-for-problem**: Recommend suitable thinking models based on problem keywords
+- **interactive-reasoning**: Interactive reasoning process guidance
+- **generate-validate-hypotheses**: Generate multiple hypotheses for a problem and provide validation methods
+- **explain-reasoning-process**: Explain the reasoning process of a model and the thinking patterns applied
 
-- **create-thinking-model**: 创建新的思维模型
-- **update-thinking-model**: 更新现有思维模型的任意字段，包括基础信息和可视化数据，无需重新创建整个模型
-- **emergent-model-design**: 通过组合现有思维模型创建新的思维模型
-- **delete-thinking-model**: 删除不需要的思维模型
+### Creation Tools
 
-### 系统与学习类工具
+- **create-thinking-model**: Create a new thinking model
+- **update-thinking-model**: Update any field of an existing thinking model, including basic information and visualization data, without recreating the entire model
+- **emergent-model-design**: Create new thinking models by combining existing ones
+- **delete-thinking-model**: Delete unwanted thinking models
 
-- **get-started-guide**: 新手入门指南
-- **get-server-version**: 获取服务器版本信息
-- **count-models**: 统计当前思维模型的总数
-- **record-user-feedback**: 记录用户对思维模型使用体验的反馈
-- **detect-knowledge-gap**: 检测用户查询中的知识缺口
-- **get-model-usage-stats**: 获取思维模型的使用统计数据
-- **analyze-learning-system**: 分析思维模型学习系统状况
+### System and Learning Tools
 
+- **get-started-guide**: Beginner's guide
+- **get-server-version**: Get server version information
+- **count-models**: Count the total number of current thinking models
+- **record-user-feedback**: Record user feedback on thinking model experiences
+- **detect-knowledge-gap**: Detect knowledge gaps in user queries
+- **get-model-usage-stats**: Get usage statistics for thinking models
+- **analyze-learning-system**: Analyze the status of the thinking model learning system
 
+## Tool Function Parameters and Return Values
 
-## 使用场景
+Below are the detailed parameters and return values for all tool functions:
 
-### 解决复杂问题
+### Exploration Tools
 
-面对复杂问题时，系统可推荐多种思维模型，帮助您从不同角度分析问题，避免思维盲点。
+#### `list-models`
 
-### 提升思考质量
+Lists all thinking models or filters by category.
 
-通过结构化思考流程，避免常见认知偏差，做出更理性的决策。
+**Parameters:**
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+- `category` (optional): Main category name
+- `subcategory` (optional): Subcategory name (requires main category to be provided)
+- `limit` (optional, default 100): Limit on the number of results returned
 
-### 学习思维模型
+**Return Value:**
+```json
+{
+  "models": [
+    {
+      "id": "modelID",
+      "name": "model name",
+      "definition": "model definition",
+      "category": "model category"
+    }
+    // ... more models
+  ],
+  "total": total number of models queried,
+  "filter": "applied filter conditions"
+}
+```
 
-系统不仅提供思维模型的定义，还包含详细的教学内容、应用示例和注意事项，帮助您掌握各种思维工具。
+#### `search-models`
 
-### 创建自定义模型
+Search thinking models by keywords.
 
-当现有模型无法满足需求时，您可以创建新的思维模型，或者组合现有模型创造创新的思考框架。
+**Parameters:**
+- `query` (required): Search keywords
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+- `limit` (optional, default 10): Limit on the number of results returned
 
-## 快速开始
+**Return Value:**
+```json
+{
+  "results": [
+    {
+      "id": "modelID",
+      "name": "model name",
+      "definition": "model definition",
+      "purpose": "model purpose",
+      "match_score": match score,
+      "match_reasons": ["match reason 1", "match reason 2"]
+    }
+    // ... more matching results
+  ],
+  "total": total number of matching models,
+  "query": "search keywords"
+}
+```
 
-### 安装 (本地开发)
+#### `get-categories`
 
-如果您想在本地运行和开发此项目：
+Get all thinking model categories.
+
+**Parameters:**
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "categories": [
+    {
+      "name": "category name",
+      "count": number of models in this category,
+      "subcategories": [
+        {
+          "name": "subcategory name",
+          "count": number of models in this subcategory
+        }
+        // ... more subcategories
+      ]
+    }
+    // ... more categories
+  ],
+  "total_categories": total number of categories,
+  "total_models": total number of all models
+}
+```
+
+#### `get-model-info`
+
+Get detailed information about a thinking model.
+
+**Parameters:**
+- `model_id` (required): Unique ID of the thinking model
+- `fields` (optional, default ["basic"]): Fields to return, options: ["all", "basic", "detail", "teaching", "warnings", "visualizations"]
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "id": "modelID",
+  "name": "model name",
+  "definition": "model definition",
+  "purpose": "model purpose",
+  // Different levels of detailed information based on the fields parameter
+  "category": "model category",
+  "subcategories": ["subcategory 1", "subcategory 2"],
+  "application_steps": ["application step 1", "application step 2"],
+  "popular_science_teaching": [
+    {
+      "concept_name": "concept name",
+      "explanation": "popular explanation"
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_name": "limitation name",
+      "description": "limitation description"
+    }
+  ],
+  "common_pitfalls": [
+    {
+      "pitfall_name": "common pitfall name",
+      "description": "pitfall description"
+    }
+  ],
+  // Visualization-related fields (if requested)
+  "visualizations": {
+    "flowcharts": [...],
+    "tables": [...],
+    "bar_charts": [...],
+    "lists": [...]
+  }
+}
+```
+
+#### `get-related-models`
+
+Get models related to a specific model.
+
+**Parameters:**
+- `model_id` (required): Unique ID of the thinking model
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+- `limit` (optional, default 5): Limit on the number of results returned
+- `use_enhanced_similarity` (optional, default true): Whether to use enhanced similarity assessment
+
+**Return Value:**
+```json
+{
+  "related_models": [
+    {
+      "id": "related model ID",
+      "name": "related model name",
+      "similarity_score": similarity score,
+      "relationship_type": "relationship type",
+      "definition": "model definition"
+    }
+    // ... more related models
+  ],
+  "source_model": {
+    "id": "source model ID",
+    "name": "source model name"
+  }
+}
+```
+
+### Problem-Solving Tools
+
+#### `recommend-models-for-problem`
+
+Recommend suitable thinking models based on problem keywords.
+
+**Parameters:**
+- `problem_keywords` (required): Array of problem keywords
+- `problem_context` (optional): Complete context description of the problem
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+- `limit` (optional, default 10): Limit on the number of results returned
+- `use_learning_adjustment` (optional, default true): Whether to use the learning system to adjust recommendations
+
+**Return Value:**
+```json
+{
+  "models": [
+    {
+      "id": "model ID",
+      "name": "model name",
+      "match_score": match score,
+      "match_reasons": ["match reason 1", "match reason 2"],
+      "definition": "model definition",
+      "purpose": "model purpose",
+      "adjustment_reason": "adjustment reason (if learning adjustment is used)"
+    }
+    // ... more recommended models
+  ],
+  "learning_adjusted": whether learning adjustment was applied,
+  "total_models_matched": total number of matching models
+}
+```
+
+#### `interactive-reasoning`
+
+Provide interactive reasoning process guidance.
+
+**Parameters:**
+- `initialContext` (required): Initial problem or situation description
+- `reasoningStage` (required): Current reasoning stage, options: ["information_gathering", "hypothesis_generation", "hypothesis_testing", "conclusion"]
+- `currentPathId` (optional): Current reasoning path ID (if in an existing reasoning)
+- `requiredInformation` (optional): Array of additional information needed
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "pathId": "reasoning path ID",
+  "currentStage": "current stage",
+  "suggestedActions": [
+    "suggested action 1",
+    "suggested action 2"
+  ],
+  "relevantModels": [
+    {
+      "id": "related model ID",
+      "name": "related model name",
+      "relevance_reason": "relevance reason"
+    }
+    // ... more related models
+  ],
+  "nextStep": {
+    "action": "next action",
+    "description": "next step description"
+    // May contain other stage-specific data
+  }
+}
+```
+
+#### `generate-validate-hypotheses`
+
+Generate multiple hypotheses for a problem and provide validation methods.
+
+**Parameters:**
+- `problem` (required): Problem to solve
+- `context` (required): Background information related to the problem
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "problem_statement": "problem statement",
+  "hypotheses": [
+    {
+      "hypothesis": "hypothesis content",
+      "rationale": "formation rationale",
+      "validation_methods": [
+        {
+          "method": "validation method",
+          "expected_outcome": "expected result",
+          "resources_needed": "resources needed"
+        }
+        // ... more validation methods
+      ],
+      "potential_biases": ["potential bias 1", "potential bias 2"]
+    }
+    // ... more hypotheses
+  ],
+  "applicable_thinking_models": [
+    {
+      "id": "applicable model ID",
+      "name": "applicable model name",
+      "relevance": "relevance description"
+    }
+    // ... more applicable models
+  ]
+}
+```
+
+#### `explain-reasoning-process`
+
+Explain the reasoning process of a model and the thinking patterns applied.
+
+**Parameters:**
+- `problemDescription` (required): Problem or situation description
+- `reasoningSteps` (required): Array of reasoning step details, each step includes:
+  - `description` (required): Reasoning step description
+  - `modelIds` (optional): Array of thinking model IDs used
+  - `evidence` (optional): Array of supporting evidence
+  - `confidence` (optional, default 0.8): Confidence level (0-1)
+- `conclusion` (required): Reasoning conclusion
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "reasoning_path": {
+    "problem": "problem description",
+    "steps": [
+      {
+        "description": "step description",
+        "models_applied": [
+          {
+            "id": "applied model ID",
+            "name": "applied model name",
+            "explanation": "model application explanation"
+          }
+        ],
+        "cognitive_biases_avoided": ["avoided cognitive bias 1", "avoided cognitive bias 2"],
+        "confidence": confidence value
+      }
+      // ... more reasoning steps
+    ],
+    "conclusion": "conclusion",
+    "meta_cognition_insights": ["meta-cognition insight 1", "meta-cognition insight 2"]
+  },
+  "visualization": "reasoning path visualization (e.g., flowchart)"
+}
+```
+
+### Creation Tools
+
+#### `create-thinking-model`
+
+Create a new thinking model.
+
+**Parameters:**
+- `id` (required): Unique identifier for the model
+- `name` (required): Name of the model
+- `definition` (required): Concise definition of the model
+- `purpose` (required): Main purpose and usage scenarios of the model
+- `category` (required): Main category of the model
+- `lang` (required, default "zh"): Language of the model, options: ["zh", "en"]
+- `subcategories` (optional): List of subcategories for the model
+- `tags` (optional): Related tags for the model
+- `author` (optional): Model author
+- `source` (optional): Model source
+- `prompt` (optional): Detailed prompt/role-playing guide
+- `example` (optional): Brief example of model usage
+- `use_cases` (optional): Use cases for the model
+- `interaction` (optional): Guide for interacting with users using this model
+- `constraints` (optional): Constraints for using this model
+- `popular_science_teaching` (optional): Popular science teaching for the model
+- `limitations` (optional): Limitations of the model
+- `common_pitfalls` (optional): Common pitfalls when using the model
+- `common_problems_solved` (optional): Common problems solved by the model
+- Various visualization data (optional): Flowcharts, tables, bar charts, lists, etc.
+
+**Return Value:**
+```json
+{
+  "status": "operation status",
+  "message": "operation message",
+  "model_id": "created model ID"
+}
+```
+
+#### `update-thinking-model`
+
+Update any field of an existing thinking model.
+
+**Parameters:**
+- `model_id` (required): ID of the model to update
+- Other fields to update (optional): Same as create-thinking-model parameters
+
+**Return Value:**
+```json
+{
+  "status": "operation status",
+  "message": "operation message",
+  "updated_fields": ["updated field 1", "updated field 2"]
+}
+```
+
+#### `emergent-model-design`
+
+Create a new thinking model by combining existing thinking models.
+
+**Parameters:**
+- `source_model_ids` (required): List of source model IDs for combination, minimum 2, maximum 10
+- `target_model_id` (required): Unique identifier for the new model
+- `target_model_name` (required): Name of the new model
+- `design_goal` (required): Design goal and purpose description
+- `connection_description` (optional): Description of how source models are combined
+- `category` (optional): Main category of the new model
+- `lang` (required, default "zh"): Language of the model, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "status": "operation status",
+  "message": "operation message",
+  "model_id": "created model ID",
+  "emergent_properties": ["emergent property 1", "emergent property 2"],
+  "source_models_used": [
+    {
+      "id": "source model ID",
+      "name": "source model name",
+      "contribution": "contribution to the new model"
+    }
+    // ... more source models
+  ]
+}
+```
+
+#### `delete-thinking-model`
+
+Delete unwanted thinking models.
+
+**Parameters:**
+- `model_id` (required): ID of the model to delete
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+- `confirm` (required): Confirm deletion, must be true
+
+**Return Value:**
+```json
+{
+  "status": "operation status",
+  "message": "operation message",
+  "deleted_model_id": "deleted model ID"
+}
+```
+
+### System and Learning Tools
+
+#### `get-started-guide`
+
+Get beginner's guide.
+
+**Parameters:**
+- `user_objective` (optional, default "explore"): User objective, options: ["explore", "solve_problem", "create_model", "learn_tools"]
+- `expertise_level` (optional, default "beginner"): User experience level, options: ["beginner", "intermediate", "advanced"]
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "welcome_message": "welcome message",
+  "system_overview": "system overview",
+  "suggested_first_steps": [
+    {
+      "step": "step description",
+      "tool": "recommended tool",
+      "example": "usage example"
+    }
+    // ... more steps
+  ],
+  "recommended_models": [
+    {
+      "id": "recommended model ID",
+      "name": "recommended model name",
+      "purpose": "model purpose"
+    }
+    // ... more recommended models
+  ],
+  "learning_path": "learning path suggestions",
+  "additional_resources": ["additional resource 1", "additional resource 2"]
+}
+```
+
+#### `get-server-version`
+
+Get server version and status information.
+
+**Parameters:**
+- None
+
+**Return Value:**
+```json
+{
+  "version": "version number",
+  "build_date": "build date",
+  "api_version": "API version",
+  "status": "server status",
+  "uptime": uptime in seconds,
+  "models_loaded": total number of models loaded
+}
+```
+
+#### `count-models`
+
+Count the total number of current thinking models.
+
+**Parameters:**
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "total_count": total number of models,
+  "language": "language code",
+  "category_counts": {
+    "category1": number of models in this category,
+    "category2": number of models in this category
+    // ... more category statistics
+  }
+}
+```
+
+#### `record-user-feedback`
+
+Record user feedback on thinking model experiences.
+
+**Parameters:**
+- `modelIds` (required): Array of IDs for relevant thinking models
+- `context` (required): Context or problem description where the model was applied
+- `feedbackType` (required): Feedback type, options: ["helpful", "not_helpful", "incorrect", "insightful", "confusing"]
+- `comment` (optional): Detailed feedback explanation or comment
+- `applicationResult` (optional): Description of model application result
+- `suggestedImprovements` (optional): Array of suggested improvements
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "status": "operation status",
+  "message": "operation message",
+  "insights": "insights gained from the feedback"
+}
+```
+
+#### `detect-knowledge-gap`
+
+Detect knowledge gaps in user queries.
+
+**Parameters:**
+- `query` (required): User query or question
+- `matchThreshold` (optional, default 0.5): Match threshold, values below this are considered knowledge gaps
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "knowledge_gaps": [
+    {
+      "concept": "missing concept",
+      "match_score": match score,
+      "suggested_models": [
+        {
+          "id": "suggested model ID",
+          "name": "suggested model name",
+          "relevance": "relevance description"
+        }
+        // ... more suggested models
+      ],
+      "learning_resources": ["learning resource 1", "learning resource 2"]
+    }
+    // ... more knowledge gaps
+  ],
+  "query_coverage": query coverage,
+  "recommendations": ["recommendation 1", "recommendation 2"]
+}
+```
+
+#### `get-model-usage-stats`
+
+Get usage statistics for thinking models.
+
+**Parameters:**
+- `modelId` (required): Unique ID of the thinking model
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "model_id": "model ID",
+  "model_name": "model name",
+  "usage_count": usage count,
+  "average_rating": average rating,
+  "feedback_distribution": {
+    "helpful": number of helpful feedback,
+    "not_helpful": number of unhelpful feedback,
+    "incorrect": number of incorrect feedback,
+    "insightful": number of insightful feedback,
+    "confusing": number of confusing feedback
+  },
+  "common_usage_contexts": ["common usage context 1", "common usage context 2"],
+  "trend": "usage trend description",
+  "related_models_also_used": [
+    {
+      "id": "related model ID",
+      "name": "related model name",
+      "co_occurrence_count": co-occurrence count
+    }
+    // ... more related models
+  ]
+}
+```
+
+#### `analyze-learning-system`
+
+Analyze the status of the thinking model learning system.
+
+**Parameters:**
+- `lang` (required, default "zh"): Language code, options: ["zh", "en"]
+
+**Return Value:**
+```json
+{
+  "system_health": {
+    "total_feedback_count": total feedback count,
+    "knowledge_coverage": knowledge coverage,
+    "adaptation_score": adaptation score
+  },
+  "top_performing_models": [
+    {
+      "id": "model ID",
+      "name": "model name",
+      "effectiveness_score": effectiveness score
+    }
+    // ... more well-performing models
+  ],
+  "identified_gaps": ["identified gap 1", "identified gap 2"],
+  "learning_trends": ["learning trend 1", "learning trend 2"],
+  "improvement_suggestions": ["improvement suggestion 1", "improvement suggestion 2"]
+}
+```
+
+## Use Cases
+
+### Solving Complex Problems
+
+When facing complex problems, the system can recommend multiple thinking models to help you analyze problems from different angles and avoid mental blind spots.
+
+### Improving Thinking Quality
+
+Through structured thinking processes, avoid common cognitive biases and make more rational decisions.
+
+### Learning Thinking Models
+
+The system not only provides definitions of thinking models but also includes detailed teaching content, application examples, and notes to help you master various thinking tools.
+
+### Creating Custom Models
+
+When existing models cannot meet needs, you can create new thinking models or combine existing models to create innovative thinking frameworks.
+
+## Quick Start
+
+### Installation (Local Development)
+
+If you want to run and develop this project locally:
 
 ```bash
-git clone https://github.com/yourusername/thinking-models-mcp.git # 替换为您的仓库地址
+git clone https://github.com/yourusername/thinking-models-mcp.git # Replace with your repository address
 cd thinking_models_mcp
 npm install
 npm run build
 ```
 
-### 启动服务器 (本地开发)
+### Starting the Server (Local Development)
 
-1.  **普通启动 (stdio模式)**
-    在项目根目录下运行：
+1.  **Normal Start (stdio mode)**
+    In the project root directory, run:
     ```bash
     node build/thinking_models_server.js
     ```
-    或者使用 npm 脚本 (如果已在 package.json 中配置):
+    Or use the npm script (if configured in package.json):
     ```bash
     npm run start
     ```
 
-## 配置指南
+## Configuration Guide
 
-您可以将思维模型MCP服务器集成到任何支持MCP协议的客户端中。以下是两种不同的实现方式：
+You can integrate the thinking models MCP server into any client that supports the MCP protocol. Here are two different implementation methods:
 
-### 方式一：使用本地Node.js运行服务器
+### Method 1: Running the "Tianji" Server with Local Node.js
 
-此方式需要您在本地安装和配置服务器代码，适合需要自定义开发或修改服务器代码的场景。
+This method requires you to install and configure the "Tianji" server code locally and is suitable for scenarios where you need to customize development or modify server code.
 
 ```json
 {
   "mcpServers": {
-    "thinking-models": { // 您可以自定义此服务器名称
+    "tianji": { // "Tianji" server name
       "command": "node",
       "args": [
-        "e:\\thinking_models_mcp\\build\\thinking_models_server.js" // 替换为您的实际路径
+        "e:\\thinking_models_mcp\\build\\thinking_models_server.js" // Replace with your actual path
       ]
     }
   }
-  // ... 其他配置 ...
+  // ... other configurations ...
 }
 ```
 
-### 方式二：使用 NPX 从 npm 远程包启动服务器
+### Method 2: Using NPX to Start the Server from a Remote npm Package
 
-此方式更简单，无需本地安装完整代码，直接从npm仓库拉取包并运行。
+This method is simpler, doesn't require local installation of the full code, and directly pulls and runs packages from the npm repository.
 
 ```json
 {
@@ -127,156 +775,152 @@ npm run build
     "thinking-models": {
       "command": "npx",
       "args": [
-        "--no-cache", // 避免使用缓存版本，确保使用最新版本
-        "@thinking-models/mcp-server" // npm包名
-        // 如果需要指定版本: "@thinking-models/mcp-server@latest"
+        "--no-cache", // Avoid using cached versions, ensure using the latest version
+        "@thinking-models/mcp-server" // npm package name
+        // If you need to specify version: "@thinking-models/mcp-server@latest"
       ]
     }
   }
-  // ... 其他配置 ...
+  // ... other configurations ...
 }
 ```
 
+**Command Line Arguments Explanation:**
 
+- **`node`**: Directly use local Node.js to run JavaScript files
+- **`npx`**: npm package runner, allows executing commands in npm packages without global or local installation
+- **`--no-cache`**: Disable cache, ensure getting the latest version of the package each time, avoiding outdated versions
 
+> **Important Note**: Server data will be automatically saved in the `data` folder of the installation directory. Even if the service restarts, previous data will be retained without additional configuration. It is recommended to use the `--no-cache` parameter to ensure getting the latest version each time, avoiding using outdated features due to cache issues.
 
-**命令行参数说明：**
+### Basic Usage
 
-- **`node`**: 直接使用本地Node.js运行JavaScript文件
-- **`npx`**: npm包运行器，允许执行npm包中的命令，无需全局或本地安装
-- **`--no-cache`**: 禁用缓存，确保每次都获取最新版本的包，避免使用过时版本
-
-> **重要提示**：服务器数据会自动保存在安装目录的 `data` 文件夹中。即使服务重启，之前的数据也会保留，无需额外配置。建议使用 `--no-cache` 参数确保每次都获取最新版本，避免因缓存问题导致使用过时的功能。
-
-
-### 基本使用
-
-服务器启动后，可以通过 MCP 客户端发送请求访问思维模型工具。例如：
+After the "Tianji" server starts, you can send requests to access thinking model tools through the MCP client. For example:
 
 ```json
-1. 当前思维模型MCP服务器版本号是多少？
-2. 当前一共有多少个思维模型可供我使用？
-3. 我想调阅某个类型的思维模型，告诉我目前一共有多少种分类？
-4. 我遇到了XXXX事件，但我不知道该怎么办，推荐几个可以帮助我解决问题的思维模型。
+1. What is the current version number of "Tianji"?
+2. How many thinking models does "Tianji" currently have available for me to use?
+3. I want to check what types of thinking models are in "Tianji", tell me how many categories there are in total?
+4. I encountered XXXX event, but I don't know what to do, please have "Tianji" recommend some thinking models that can help me solve the problem.
 ```
 
-如果配置正确，客户端应该能够调用服务器并返回结果。
+If configured correctly, the client should be able to call the server and return results.
 
-## 开发者文档
+## Developer Documentation
 
-本部分面向希望理解、定制或扩展思维模型 MCP 服务器的开发者。
+This section is for developers who want to understand, customize, or extend the thinking model MCP server.
 
-### 开发环境设置
+### Development Environment Setup
 
-#### 环境要求
+#### Environment Requirements
 
 - Node.js >= 18.0.0
-- npm >= 8.0.0 (或兼容的包管理器如 yarn, pnpm)
+- npm >= 8.0.0 (or compatible package managers like yarn, pnpm)
 - TypeScript 5.x
 
-#### 安装依赖 (本地开发)
+#### Installing Dependencies (Local Development)
 
 ```bash
-# 假设您已克隆仓库并进入项目目录
+# Assuming you've already cloned the repository and entered the project directory
 npm install
 ```
 
-#### 开发模式 (本地开发)
+#### Development Mode (Local Development)
 
 ```bash
-# 监视模式，TypeScript文件更改时自动重新编译
+# Watch mode, automatically recompile TypeScript files when changed
 npm run watch
 
-# 在另一个终端启动开发服务器 (通常会从 build 目录运行编译后的文件)
-# 您可能需要一个类似 nodemon 的工具来自动重启服务器
-npm run start:dev # (假设您在 package.json 中配置了此脚本)
+# In another terminal, start the development server (usually runs compiled files from the build directory)
+# You might need a tool like nodemon to automatically restart the server
+npm run start:dev # (assuming you've configured this script in package.json)
 ```
 
-### 代码架构
+### Code Architecture
 
-#### 文件结构 (示例)
+#### File Structure (Example)
 
 ```
 thinking_models_mcp/
-├── build/                    # 编译输出的JavaScript文件
-├── src/                      # TypeScript源代码
-│   ├── thinking_models_server.ts  # 主服务器逻辑和工具注册
-│   ├── types.ts              # TypeScript类型定义
-│   ├── utils.ts              # 通用工具函数
-│   ├── similarity_engine.ts  # 相似度计算逻辑
-│   ├── reasoning_process.ts  # 推理过程管理
-│   ├── learning_capability.ts # 学习系统功能
-│   ├── recommendations.ts    # 模型推荐逻辑
-│   └── response_types.ts     # API响应类型定义
-├── thinking_models_db/       # 思维模型数据库
-│   ├── zh/                   # 中文模型 (JSON文件)
-│   └── en/                   # 英文模型 (JSON文件)
-├── package.json              # 项目依赖和脚本
-├── tsconfig.json             # TypeScript编译器配置
-└── README.md                 # 本文档
+├── build/                    # Compiled JavaScript files
+├── src/                      # TypeScript source code
+│   ├── thinking_models_server.ts  # Main server logic and tool registration
+│   ├── types.ts              # TypeScript type definitions
+│   ├── utils.ts              # Common utility functions
+│   ├── similarity_engine.ts  # Similarity calculation logic
+│   ├── reasoning_process.ts  # Reasoning process management
+│   ├── learning_capability.ts # Learning system functionality
+│   ├── recommendations.ts    # Model recommendation logic
+│   └── response_types.ts     # API response type definitions
+├── thinking_models_db/       # Thinking model database
+│   ├── zh/                   # Chinese models (JSON files)
+│   └── en/                   # English models (JSON files)
+├── package.json              # Project dependencies and scripts
+├── tsconfig.json             # TypeScript compiler configuration
+└── README.md                 # This document
 ```
 
-#### 核心模块
+#### Core Modules
 
-1.  **服务器核心 (thinking_models_server.ts)**
-    *   初始化 MCP 服务器实例 (`McpServer` from `@modelcontextprotocol/sdk`)
-    *   注册所有可用的工具，定义其参数模式 (使用 `zod`) 和处理函数
-    *   加载和管理思维模型数据
-    *   处理客户端请求并路由到相应的工具
+1.  **Server Core (thinking_models_server.ts)**
+    *   Initializes the MCP server instance (`McpServer` from `@modelcontextprotocol/sdk`)
+    *   Registers all available tools, defines their parameter schemas (using `zod`) and handler functions
+    *   Loads and manages thinking model data
+    *   Processes client requests and routes them to the appropriate tools
 
-2.  **思维模型类型 (`types.ts`)**
-    *   定义核心的 `ThinkingModel` 接口，描述模型的数据结构
-    *   其他与模型相关的TypeScript类型和接口
+2.  **Thinking Model Types (`types.ts`)**
+    *   Defines the core `ThinkingModel` interface, describing the model's data structure
+    *   Other model-related TypeScript types and interfaces
 
-3.  **相似度计算引擎 (`similarity_engine.ts`)**
-    *   `calculateQueryMatch`: 计算用户查询与思维模型之间的匹配度
-    *   `calculateKeywordRelevance`: 计算关键词列表与思维模型的相关性
+3.  **Similarity Calculation Engine (`similarity_engine.ts`)**
+    *   `calculateQueryMatch`: Calculates the match between user queries and thinking models
+    *   `calculateKeywordRelevance`: Calculates the relevance of keyword lists to thinking models
 
-4.  **推理过程管理 (`reasoning_process.ts`)**
-    *   用于构建、管理和可视化结构化的推理路径
+4.  **Reasoning Process Management (`reasoning_process.ts`)**
+    *   Used for building, managing, and visualizing structured reasoning paths
 
-5.  **学习系统 (`learning_capability.ts`)**
-    *   `recordUserFeedback`: 记录用户对模型使用的反馈
-    *   `detectKnowledgeGap`: 基于用户查询和反馈检测知识缺口
-    *   `adjustModelRecommendations`: 根据学习数据调整模型推荐
+5.  **Learning System (`learning_capability.ts`)**
+    *   `recordUserFeedback`: Records user feedback on model usage
+    *   `detectKnowledgeGap`: Detects knowledge gaps based on user queries and feedback
+    *   `adjustModelRecommendations`: Adjusts model recommendations based on learning data
 
-### API 文档
+### API Documentation
 
-#### 服务器 API
+#### Server API
 
-服务器通信模式：
+Server communication modes:
 
 1.  **stdio API**
-    *   通过标准输入/输出与客户端通信。
-    *   遵循 MCP 协议规范。
-    *   通常由客户端（如Cursor, Claude桌面版）自动管理。
+    *   Communicates with clients through standard input/output.
+    *   Follows MCP protocol specifications.
+    *   Usually managed automatically by clients (such as Cursor, Claude Desktop).
 
-#### 工具 API
+#### Tool API
 
-每个工具都通过 `server.tool()` 方法注册，包含：
-1.  **工具名称** (字符串): 客户端调用时使用的名称。
-2.  **工具描述** (字符串): 工具功能的简要说明。
-3.  **参数模式** (Zod 对象): 使用 `zod`库定义工具接受的参数及其类型、描述和约束。
-4.  **处理函数** (异步函数): 接收经过验证的参数对象，执行工具逻辑，并返回符合MCP协议的响应。
+Each tool is registered using the `server.tool()` method, containing:
+1.  **Tool Name** (string): The name used by clients when calling.
+2.  **Tool Description** (string): A brief description of the tool's functionality.
+3.  **Parameter Schema** (Zod object): Uses the `zod` library to define the parameters accepted by the tool and their types, descriptions, and constraints.
+4.  **Handler Function** (async function): Receives validated parameter objects, executes tool logic, and returns responses that comply with the MCP protocol.
 
-##### 工具注册示例
+##### Tool Registration Example
 
 ```typescript
 // filepath: src/thinking_models_server.ts
 // ... imports ...
 
 server.tool(
-  "get-model-count-by-category", // 工具名称
-  "获取指定分类下的思维模型数量", // 工具描述
-  { // 参数模式 (Zod schema)
-    category: z.string().describe("要查询的思维模型主分类"),
-    lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码 ('zh' 或 'en')")
+  "get-model-count-by-category", // Tool name
+  "Get the number of thinking models in a specified category", // Tool description
+  { // Parameter schema (Zod schema)
+    category: z.string().describe("Main category of thinking models to query"),
+    lang: z.enum(["zh", "en"] as const).default("zh").describe("Language code ('zh' or 'en')")
   },
-  async ({ category, lang }) => { // 处理函数
+  async ({ category, lang }) => { // Handler function
     try {
-      const modelsInBuffer = MODELS[lang] || []; // MODELS是已加载模型的缓存
+      const modelsInBuffer = MODELS[lang] || []; // MODELS is a cache of loaded models
       const count = modelsInBuffer.filter(m => m.category === category).length;
-      log(`工具 'get-model-count-by-category' 被调用: category=${category}, lang=${lang}, count=${count}`);
+      log(`Tool 'get-model-count-by-category' called: category=${category}, lang=${lang}, count=${count}`);
       return {
         content: [{
           type: "text",
@@ -284,11 +928,11 @@ server.tool(
         }]
       };
     } catch (error: any) {
-      log(`工具 'get-model-count-by-category' 执行错误: ${error.message}`);
+      log(`Tool 'get-model-count-by-category' execution error: ${error.message}`);
       return {
         content: [{
           type: "text",
-          text: JSON.stringify({ error: "获取模型数量失败", message: error.message }, null, 2)
+          text: JSON.stringify({ error: "Failed to get model count", message: error.message }, null, 2)
         }]
       };
     }
@@ -296,82 +940,82 @@ server.tool(
 );
 ```
 
-### 扩展指南
+### Extension Guidelines
 
-#### 添加新工具
+#### Adding New Tools
 
-1.  在 thinking_models_server.ts (或相关模块文件) 中，使用 `server.tool()` 方法注册您的新工具，如上例所示。
-2.  定义清晰的参数模式和描述。
-3.  实现工具的处理函数，确保包含错误处理和日志记录。
-4.  重新编译项目 (`npm run build`)。
+1.  In thinking_models_server.ts (or related module files), register your new tool using the `server.tool()` method, as shown in the example above.
+2.  Define clear parameter schemas and descriptions.
+3.  Implement the tool's handler function, ensuring it includes error handling and logging.
+4.  Recompile the project (`npm run build`).
 
-#### 创建新的思维模型
+#### Creating New Thinking Models
 
-1.  在 zh (中文) 或 en (英文) 目录下创建一个新的 `.json` 文件。
-2.  文件名通常是模型的ID (例如 `new_decision_matrix.json`)。
-3.  文件内容应符合 `ThinkingModel` 接口的结构 (定义在 types.ts)。示例：
+1.  Create a new `.json` file in the zh (Chinese) or en (English) directory.
+2.  The filename is typically the model's ID (for example, `new_decision_matrix.json`).
+3.  The file content should conform to the structure of the `ThinkingModel` interface (defined in types.ts). Example:
     ```json
     {
       "id": "new_decision_matrix",
-      "name": "新决策矩阵模型",
-      "definition": "一个用于在多个标准下评估选项的结构化方法。",
-      "purpose": "帮助在复杂选项中做出理性选择。",
-      "category": "决策制定",
-      "subcategories": ["多标准决策"],
-      "tags": ["决策", "矩阵", "评估", "选择"],
-      "use_cases": ["产品功能优先级排序", "供应商选择"],
-      // ... 其他字段如 popular_science_teaching, limitations, common_pitfalls, visualizations 等
+      "name": "New Decision Matrix Model",
+      "definition": "A structured method for evaluating options under multiple criteria.",
+      "purpose": "Help make rational choices among complex options.",
+      "category": "Decision Making",
+      "subcategories": ["Multi-criteria Decision"],
+      "tags": ["decision", "matrix", "evaluation", "selection"],
+      "use_cases": ["Product feature prioritization", "Vendor selection"],
+      // ... other fields like popular_science_teaching, limitations, common_pitfalls, visualizations, etc.
     }
     ```
-4.  服务器在启动时会自动加载新模型，或者如果文件监控已启用，在文件保存后也会重新加载。
+4.  The server will automatically load the new model when it starts, or if file monitoring is enabled, it will also reload when the file is saved.
 
-#### 修改推荐算法
+#### Modifying Recommendation Algorithms
 
-推荐逻辑主要位于 similarity_engine.ts 和 recommendations.ts。
--   **`similarity_engine.ts`**: 包含计算文本相似度和关键词相关性的核心算法。您可以调整这些算法的权重、使用的技术（如TF-IDF、嵌入向量等）来改进匹配精度。
--   **`recommendations.ts`**: 包含 `getModelRecommendations` 等函数，这些函数使用相似度引擎的结果来生成最终的模型推荐列表。您可以修改这里的逻辑，例如如何组合不同来源的评分，或者如何根据上下文调整推荐。
+Recommendation logic is mainly located in similarity_engine.ts and recommendations.ts.
+-   **`similarity_engine.ts`**: Contains core algorithms for calculating text similarity and keyword relevance. You can adjust these algorithms' weights, techniques used (such as TF-IDF, embedding vectors, etc.) to improve matching precision.
+-   **`recommendations.ts`**: Contains functions like `getModelRecommendations` that use the similarity engine's results to generate the final model recommendation list. You can modify the logic here, such as how to combine scores from different sources or how to adjust recommendations based on context.
 
-### 测试
+### Testing
 
-项目通常使用像 Jest 这样的测试框架。
+The project typically uses testing frameworks like Jest.
 
-#### 编写测试
+#### Writing Tests
 
-在 `tests` 目录下为您的模块或函数创建测试文件 (例如 `tests/my_tool.test.ts`)。
+Create test files for your modules or functions in the `tests` directory (for example, `tests/my_tool.test.ts`).
 
 ```typescript
 // tests/example_tool.test.ts
-import { server, loadModels } from '../src/thinking_models_server'; // 假设导出了server实例
+import { server, loadModels } from '../src/thinking_models_server'; // Assuming the server instance is exported
 import { ThinkingModel } from '../src/types';
 
-// 模拟MCP客户端请求
+// Mock MCP client request
 async function callTool(toolName: string, params: any) {
   const toolDefinition = server.capabilities.tools[toolName];
   if (!toolDefinition || !toolDefinition.execute) {
     throw new Error(`Tool ${toolName} not found or not executable`);
   }
-  // 实际测试中可能需要更复杂的模拟来匹配MCP SDK的上下文
+  // Actual testing might need more complex mocking to match the MCP SDK context
   return toolDefinition.execute(params, {} as any);
 }
 
 describe('My Custom Tool Tests', () => {
   beforeAll(async () => {
-    // 加载测试用的模型数据 (如果需要)
-    await loadModels('zh'); // 加载中文模型
+    // Load test model data (if needed)
+    await loadModels('zh'); // Load Chinese models
   });
 
   test('get-model-count-by-category should return correct count', async () => {
-    const response = await callTool('get-model-count-by-category', { category: '决策制定', lang: 'zh' });
+    const response = await callTool('get-model-count-by-category', { category: 'Decision Making', lang: 'zh' });
     const result = JSON.parse(response.content[0].text);
-    expect(result.category).toBe('决策制定');
-    expect(result.count).toBeGreaterThanOrEqual(0); // 具体数量取决于您的测试数据
+    expect(result.category).toBe('Decision Making');
+    expect(result.count).toBeGreaterThanOrEqual(0); // Specific count depends on your test data
   });
 });
 ```
 
-#### 运行测试
+#### Running Tests
 
-在 package.json 中配置测试脚本：
+Configure the test script in package.json:
 ```json
 {
   "scripts": {
@@ -379,80 +1023,80 @@ describe('My Custom Tool Tests', () => {
   }
 }
 ```
-然后运行：
+Then run:
 ```bash
 npm test
 ```
 
-### 构建与部署
+### Build and Deployment
 
-#### 构建项目
+#### Building the Project
 
 ```bash
 npm run build
 ```
-这将使用 `tsc` (TypeScript编译器) 将 src 目录下的 `.ts` 文件编译成 JavaScript 文件到 `build` 目录。
+This will use `tsc` (TypeScript compiler) to compile `.ts` files from the src directory into JavaScript files in the `build` directory.
 
-#### 部署选项
+#### Deployment Options
 
-**作为独立的 Node.js 服务器部署**
-*   将整个项目（或至少 `build` 目录、node_modules、package.json 和 thinking_models_db）复制到服务器
-*   运行服务器：
+**Deploy as a standalone Node.js server**
+*   Copy the entire project (or at least the `build` directory, node_modules, package.json, and thinking_models_db) to the server
+*   Run the server:
     ```bash
     node build/thinking_models_server.js
     ```
-*   或使用进程管理器如 `pm2` 来保持服务器运行：
+*   Or use process managers like `pm2` to keep the server running:
     ```bash
     npm install -g pm2
     pm2 start build/thinking_models_server.js --name "thinking-models-mcp"
     pm2 save
     ```
 
-### 代码规范
+### Coding Standards
 
-#### 编码风格
+#### Coding Style
 
--   遵循一致的编码风格 (例如，使用 Prettier 和 ESLint)。
--   使用 TypeScript 的强类型特性，避免使用 `any`除非绝对必要。
--   编写清晰、自解释的代码，并为复杂逻辑添加注释。
+-   Follow a consistent coding style (for example, using Prettier and ESLint).
+-   Use TypeScript's strong typing features, avoid using `any` unless absolutely necessary.
+-   Write clear, self-explanatory code, and add comments for complex logic.
 
-#### 命名约定
+#### Naming Conventions
 
--   **函数和变量**: `camelCase` (例如 `calculateSimilarity`)
--   **类和接口**: `PascalCase` (例如 `ThinkingModel`, `McpServer`)
--   **常量**: `UPPER_SNAKE_CASE` (例如 `DEFAULT_PORT`)
--   **文件名**: `snake_case.ts` 或 `kebab-case.ts` (保持项目内一致)
+-   **Functions and variables**: `camelCase` (e.g., `calculateSimilarity`)
+-   **Classes and interfaces**: `PascalCase` (e.g., `ThinkingModel`, `McpServer`)
+-   **Constants**: `UPPER_SNAKE_CASE` (e.g., `DEFAULT_PORT`)
+-   **File names**: `snake_case.ts` or `kebab-case.ts` (maintain consistency within the project)
 
-#### 文档标准
+#### Documentation Standards
 
--   为所有公共API（函数、类、接口）编写 JSDoc/TSDoc 注释。
--   在 README 和其他文档中清晰地解释项目的功能和用法。
--   保持文档与代码同步。
+-   Write JSDoc/TSDoc comments for all public APIs (functions, classes, interfaces).
+-   Clearly explain the project's functionality and usage in README and other documentation.
+-   Keep documentation in sync with the code.
 
-### 常见开发问题与故障排除
+### Common Development Issues and Troubleshooting
 
-#### 1. 模型文件未加载或加载错误
--   **检查路径**：确认 `SUPPORTED_LANGUAGES` 中定义的路径相对于编译后的 `thinking_models_server.js` 文件是正确的。
--   **JSON 格式**：确保所有模型 `.json` 文件都是有效的JSON，并且符合 `ThinkingModel` 接口的结构。
--   **文件权限**：确保服务器进程有读取模型目录和文件的权限。
--   **日志**：查看服务器启动时的日志输出，通常会包含加载模型时的错误信息。
+#### 1. Model Files Not Loaded or Loading Errors
+-   **Check Paths**: Ensure paths defined in `SUPPORTED_LANGUAGES` are correct relative to the compiled `thinking_models_server.js` file.
+-   **JSON Format**: Ensure all model `.json` files are valid JSON and conform to the structure of the `ThinkingModel` interface.
+-   **File Permissions**: Ensure the server process has permissions to read the model directory and files.
+-   **Logs**: View server startup logs, which usually include error information when loading models.
 
-#### 2. API 请求失败或工具未找到
--   **服务器运行状态**：确认服务器已成功启动并且没有错误。
--   **工具名称**：确认客户端调用的工具名称与服务器中注册的名称完全一致（区分大小写）。
--   **参数格式**：确保发送给工具的参数符合其Zod模式定义。
+#### 2. API Request Failure or Tool Not Found
+-   **Server Running Status**: Confirm the server has started successfully without errors.
+-   **Tool Names**: Confirm the tool name called by the client exactly matches the name registered in the server (case-sensitive).
+-   **Parameter Format**: Ensure parameters sent to the tool comply with its Zod schema definition.
 
-#### 3. 相似度计算或推荐不准确
--   **模型数据质量**：模型的 `definition`, `purpose`, `tags`, `keywords` 等字段对相似度计算至关重要。确保这些字段内容丰富且准确。
--   **算法调整**：可能需要调整 `similarity_engine.ts` 中的算法参数或权重。
--   **学习系统**：如果启用了学习系统，检查反馈数据是否正确记录和应用。
+#### 3. Inaccurate Similarity Calculation or Recommendations
+-   **Model Data Quality**: Fields like `definition`, `purpose`, `tags`, `keywords` are crucial for similarity calculation. Ensure these fields are rich and accurate.
+-   **Algorithm Adjustment**: You might need to adjust algorithm parameters or weights in `similarity_engine.ts`.
+-   **Learning System**: If the learning system is enabled, check if feedback data is correctly recorded and applied.
 
-#### 最佳实践
--   **日志记录**: 使用 `log()` 函数（或更完善的日志库）记录关键操作、错误和调试信息。
--   **错误处理**: 在所有工具函数和异步操作中实现健壮的错误处理，并向客户端返回有意义的错误信息。
--   **模块化**: 将不同的功能（如相似度计算、学习系统、工具实现）组织到独立的模块中。
--   **配置管理**: 对端口、路径等可配置项使用环境变量或配置文件。
+#### Best Practices
+-   **Logging**: Use the `log()` function (or more sophisticated logging libraries) to record key operations, errors, and debugging information.
+-   **Error Handling**: Implement robust error handling in all tool functions and asynchronous operations, and return meaningful error messages to clients.
+-   **Modularity**: Organize different functionalities (such as similarity calculation, learning systems, tool implementation) into separate modules.
+-   **Configuration Management**: Use environment variables or configuration files for configurable items such as ports and paths.
 
-## 开源协议
+## License
 
-本项目使用 MIT 协议开源。
+This project is open-sourced under the MIT License.
