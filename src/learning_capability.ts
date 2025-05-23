@@ -87,18 +87,8 @@ let systemState: LearningSystemState = { ...defaultSystemState };
 
 // 状态文件路径
 const getStateFilePath = () => {
-  // 检查命令行参数是否指定了数据目录
-  const args = process.argv;
-  let dataDir = path.resolve(__dirname, '..', 'data');
-  
-  // 查找--data-dir参数
-  for (let i = 0; i < args.length - 1; i++) {
-    if (args[i] === '--data-dir') {
-      dataDir = args[i + 1];
-      break;
-    }
-  }
-  
+  // 始终使用默认数据目录
+  const dataDir = path.resolve(__dirname, '..', 'data');
   return path.resolve(dataDir, 'learning_state.json');
 };
 

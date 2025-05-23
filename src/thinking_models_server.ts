@@ -2193,6 +2193,145 @@ server.tool(
   }
 );
 
+// 添加新手引导工具
+server.tool(
+  "get-started-guide",
+  "新手入门指南，帮助用户了解思维模型工具体系和建议使用流程",
+  {
+    lang: z.enum(["zh", "en"] as const).default("zh").describe("语言代码（'zh' 或 'en'），默认为 'zh'"),
+    expertise_level: z.enum(["beginner", "intermediate", "advanced"] as const).default("beginner").describe("用户经验水平，默认为 'beginner'"),
+    user_objective: z.enum(["explore", "solve_problem", "create_model", "learn_tools"] as const).default("explore").describe("用户目标，默认为 'explore'")
+  },
+  async ({ lang, expertise_level, user_objective }) => {
+    try {
+      log(`获取新手引导，语言: ${lang}, 级别: ${expertise_level}, 目标: ${user_objective}`);
+      
+      // 获取基于用户目标的工具指南
+      let toolGuide;
+      switch (user_objective) {
+        case "explore":
+          toolGuide = generateExploreToolsGuide(expertise_level, lang);
+          break;
+        case "solve_problem":
+          toolGuide = generateProblemSolvingToolsGuide(expertise_level, lang);
+          break;
+        case "create_model":
+          toolGuide = generateCreationToolsGuide(expertise_level, lang);
+          break;
+        case "learn_tools":
+          toolGuide = generateCompleteToolsGuide(expertise_level, lang);
+          break;
+      }
+      
+      // 获取工作流程指南
+      let workflowGuide;
+      switch (user_objective) {
+        case "explore":
+          workflowGuide = generateExploreWorkflowGuide(expertise_level);
+          break;
+        case "solve_problem":
+          workflowGuide = generateProblemSolvingWorkflowGuide(expertise_level);
+          break;
+        case "create_model":
+          workflowGuide = generateCreationWorkflowGuide(expertise_level);
+          break;
+        case "learn_tools":
+          workflowGuide = generateToolLearningWorkflowGuide(expertise_level);
+          break;
+      }
+      
+      // 获取示例
+      let examples;
+      switch (user_objective) {
+        case "explore":
+          examples = generateExploreExamples(expertise_level, lang);
+          break;
+        case "solve_problem":
+          examples = generateProblemSolvingExamples(expertise_level, lang);
+          break;
+        case "create_model":
+          examples = generateCreationExamples(expertise_level, lang);
+          break;
+        case "learn_tools":
+          examples = generateToolLearningExamples(expertise_level, lang);
+          break;
+      }
+      
+      // 获取学习路径
+      const learningPath = generateLearningPath(user_objective, expertise_level, lang);
+      
+      // 获取工具关系图
+      const toolsRelationshipMap = generateToolsRelationshipMap(user_objective);
+      
+      // 为初学者提供一些额外的指导说明
+      const generalGuidance = expertise_level === "beginner" ? {
+        welcome_message: "欢迎使用思维模型MCP服务器！",
+        general_tips: [
+          "从简单的工具开始，如list-models和get-categories",
+          "熟悉基本概念后再尝试高级工具",
+          "使用recommend-models-for-problem解决实际问题",
+          "不确定如何使用某个工具时，查看其参数描述"
+        ],
+        common_scenarios: [
+          "探索新的思维模型 - 使用list-models和get-categories",
+          "解决特定问题 - 使用recommend-models-for-problem",
+          "学习特定模型 - 使用get-model-details和get-related-models",
+          "创建自己的模型 - 使用create-thinking-model或emergent-model-design"
+        ]
+      } : null;
+        // 找到最适合当前目标的模型
+      const interestWords = user_objective === "explore" ? ["思考框架", "模型分类"] :
+                           user_objective === "solve_problem" ? ["决策", "分析", "问题解决"] :
+                           user_objective === "create_model" ? ["创新", "组合思维", "设计思维"] :
+                           ["学习系统", "工具使用", "反馈"];
+      
+      const interestArea = interestWords.join(" ");
+      const relevantCategories = analyzeInterestArea(interestArea, lang);
+      
+      // 生成起点建议
+      let startingPoint = null;
+      if (relevantCategories.length > 0) {
+        const relevantModels = MODELS[lang].filter(m => 
+          m.category === relevantCategories[0].category
+        ).slice(0, 3);
+        
+        startingPoint = generateStartingPoint(user_objective, relevantModels, expertise_level, lang);
+      }
+      
+      // 构建完整的指南
+      const completeGuide = {
+        expertise_level,
+        user_objective,
+        general_guidance: generalGuidance,
+        tool_guide: toolGuide,
+        workflow_guide: workflowGuide,
+        learning_path: learningPath,
+        tool_relationships: toolsRelationshipMap,
+        examples,
+        relevant_categories: relevantCategories,
+        starting_point: startingPoint
+      };
+      
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify(completeGuide, null, 2)
+        }]
+      };
+    } catch (e: any) {
+      log(`生成新手引导时出错: ${e.message}`);
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify({ error: "生成新手引导失败", message: e.message }, null, 2)
+        }]
+      };
+    }
+  }
+);
+
+
+
 // 新手引导辅助函数
 // 生成探索工具指南
 function generateExploreToolsGuide(expertiseLevel: string, lang: SupportedLanguage) {
@@ -2803,7 +2942,7 @@ function generateCreationExamples(expertiseLevel: string, lang: SupportedLanguag
       expected_result: "成功组合模型并返回新模型信息"
     }
   ];
-}
+};
 
 // 工具关系映射生成函数
 function generateToolsRelationshipMap(userObjective: string) {
@@ -3051,18 +3190,8 @@ function generateStartingPoint(userObjective: string, relevantModels: any[], exp
 
 // 获取数据目录路径
 function getDataDirectory(): string {
-  const args = process.argv;
-  let dataDir = path.resolve(__dirname, '..', 'data');
-  
-  // 查找--data-dir参数
-  for (let i = 0; i < args.length - 1; i++) {
-    if (args[i] === '--data-dir') {
-      dataDir = args[i + 1];
-      break;
-    }
-  }
-  
-  return dataDir;
+  // 始终使用默认数据目录
+  return path.resolve(__dirname, '..', 'data');
 }
 
 // 主程序入口

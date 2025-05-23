@@ -36,7 +36,7 @@
 ### 创建类工具
 
 - **create-thinking-model**: 创建新的思维模型
-- **update-thinking-model**: 更新现有思维模型的任意字段
+- **update-thinking-model**: 更新现有思维模型的任意字段，包括基础信息和可视化数据，无需重新创建整个模型
 - **emergent-model-design**: 通过组合现有思维模型创建新的思维模型
 - **delete-thinking-model**: 删除不需要的思维模型
 
@@ -127,13 +127,9 @@ npm run build
     "thinking-models": {
       "command": "npx",
       "args": [
-        "--yes", // 自动确认安装
-        // "--no-cache", // 可选：避免使用缓存的版本，确保每次使用最新版本
-        "--", // 参数分隔符，确保后面的参数传递给实际的程序
-        "@thinking-models/mcp-server", // npm包名
-        "--data-dir", // 指定本地数据目录参数
-        "C:\\Users\\YourUserName\\AppData\\Local\\ThinkingModels" // 替换为您想存储数据的本地路径
-        // 如果需要指定版本: "@thinking-models/mcp-server@1.3.1"
+        "--no-cache", // 避免使用缓存版本，确保使用最新版本
+        "@thinking-models/mcp-server" // npm包名
+        // 如果需要指定版本: "@thinking-models/mcp-server@latest"
       ]
     }
   }
@@ -148,12 +144,9 @@ npm run build
 
 - **`node`**: 直接使用本地Node.js运行JavaScript文件
 - **`npx`**: npm包运行器，允许执行npm包中的命令，无需全局或本地安装
-- **`--yes`**: 自动确认npx的安装提示，适用于无交互环境
-- **`--no-cache`**: (可选) 禁用缓存，每次都获取最新版本包
-- **`--`**: 参数分隔符，确保后面的参数传递给目标程序而非npx
-- **`--data-dir`**: 指定数据存储目录，对npx方式尤为重要，因为默认情况下npx在临时目录安装包，导致数据重启后丢失
+- **`--no-cache`**: 禁用缓存，确保每次都获取最新版本的包，避免使用过时版本
 
-> **重要提示**：正确指定`--data-dir`参数对于保存用户数据至关重要。通过指定一个固定的本地目录，您可以确保学习系统状态和用户创建的模型在服务重启后仍然保留。
+> **重要提示**：服务器数据会自动保存在安装目录的 `data` 文件夹中。即使服务重启，之前的数据也会保留，无需额外配置。建议使用 `--no-cache` 参数确保每次都获取最新版本，避免因缓存问题导致使用过时的功能。
 
 
 ### 基本使用
