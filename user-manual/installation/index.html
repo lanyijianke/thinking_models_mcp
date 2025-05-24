@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快速安装 | 思维模型 MCP 服务器</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">关于天机</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item active" href="index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item" href="cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item" href="claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../tools/index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="../tools/exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="../tools/problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="../tools/creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="../tools/system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
+                                <li><a class="dropdown-item" href="../models/search.html">搜索模型</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../applications/index.html">应用场景</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../api-docs/index.html">API文档</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../faq.html">常见问题</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="../search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-5 mb-4">快速安装指南</h1>
+                <p class="lead">
+                    本指南将帮助您快速设置并开始使用"天机"思维模型 MCP 服务器。"天机"采用模型上下文协议（Model Context Protocol, MCP）作为通信标准，可与多种支持 MCP 的客户端配合使用。
+                </p>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="h3 mb-4">安装步骤概览</h2>
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">1</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">系统要求</h3>
+                                <p>确认您的系统满足以下最低要求：</p>
+                                <ul>
+                                    <li>Node.js 16.x 或更高版本</li>
+                                    <li>NPM 7.x 或更高版本</li>
+                                    <li>至少 50MB 硬盘空间用于思维模型数据库</li>
+                                    <li>支持 MCP 协议的客户端应用（VS Code, Cursor, Claude 等）</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">2</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">安装"天机"服务器</h3>
+                                <p>您可以通过 NPM 全局安装思维模型 MCP 服务器：</p>
+                                <div class="bg-light p-3 rounded mb-3">
+                                    <pre class="mb-0"><code>npm install -g @thinking-models/mcp-server</code></pre>
+                                </div>
+                                <p>或者使用本地项目安装：</p>
+                                <div class="bg-light p-3 rounded">
+                                    <pre class="mb-0"><code>npm install @thinking-models/mcp-server</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">3</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">启动服务器</h3>
+                                <p>全局安装后，可以直接在命令行运行：</p>
+                                <div class="bg-light p-3 rounded mb-3">
+                                    <pre class="mb-0"><code>thinking-models-server</code></pre>
+                                </div>
+                                <p>如果进行了本地项目安装，可以添加到项目的 package.json 脚本中：</p>
+                                <div class="bg-light p-3 rounded mb-3">
+                                    <pre class="mb-0"><code>{
+  "scripts": {
+    "start-thinking-models": "thinking-models-server"
+  }
+}</code></pre>
+                                </div>
+                                <p>然后运行：</p>
+                                <div class="bg-light p-3 rounded">
+                                    <pre class="mb-0"><code>npm run start-thinking-models</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">4</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">配置客户端</h3>
+                                <p>启动服务器后，需要配置客户端连接到"天机"服务器。常见的客户端配置：</p>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h4 class="h6 card-title">VS Code</h4>
+                                                <p class="card-text small">使用 VS Code 连接至思维模型服务器</p>
+                                                <a href="vscode.html" class="btn btn-sm btn-outline-primary">配置指南</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h4 class="h6 card-title">Cursor</h4>
+                                                <p class="card-text small">将 Cursor 编辑器连接到思维模型服务器</p>
+                                                <a href="cursor.html" class="btn btn-sm btn-outline-primary">配置指南</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h4 class="h6 card-title">Claude</h4>
+                                                <p class="card-text small">使用 Claude 桌面应用访问思维模型</p>
+                                                <a href="claude.html" class="btn btn-sm btn-outline-primary">配置指南</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">5</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">验证安装</h3>
+                                <p>通过客户端发送一个简单请求测试服务器连接是否成功：</p>
+                                <div class="card bg-light border-0 mb-3">
+                                    <div class="card-body">
+                                        <p class="mb-0"><strong>请求示例：</strong> "天机"当前版本号是多少？</p>
+                                    </div>
+                                </div>
+                                <p>如果配置正确，应该收到一个包含版本信息的响应。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="h3 mb-4">高级安装选项</h2>
+                        
+                        <h3 class="h5 mb-3">自定义端口配置</h3>
+                        <p>默认情况下，服务器会监听标准输入/输出与客户端通信。如果需要网络模式，可以设置环境变量：</p>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code># Windows 命令行
+set THINKING_MODELS_PORT=3456
+thinking-models-server
+
+# Linux/macOS 终端
+THINKING_MODELS_PORT=3456 thinking-models-server</code></pre>
+                        </div>
+
+                        <h3 class="h5 mb-3">Docker 部署</h3>
+                        <p>使用 Docker 容器部署服务器：</p>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code># 构建 Docker 镜像
+docker build -t thinking-models-server .
+
+# 运行容器
+docker run -p 3456:3456 thinking-models-server</code></pre>
+                        </div>
+
+                        <h3 class="h5 mb-3">从源码安装</h3>
+                        <p>如果您想从源码安装并可能进行自定义修改：</p>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code># 克隆仓库
+git clone https://github.com/lanyijianke/thinking_models_mcp.git
+cd thinking_models_mcp
+
+# 安装依赖
+npm install
+
+# 编译代码
+npm run build
+
+# 启动服务器
+npm start</code></pre>
+                        </div>
+
+                        <h3 class="h5 mb-3">自定义模型配置</h3>
+                        <p>您可以添加自定义思维模型到数据目录：</p>
+                        <div class="bg-light p-3 rounded">
+                            <pre class="mb-0"><code># 模型文件存放位置
+# 全局安装: ~/.thinking_models_mcp/thinking_models_db/{zh|en}/
+# 本地安装: ./thinking_models_db/{zh|en}/
+
+# 添加自定义模型示例
+echo '{
+  "id": "my_custom_model",
+  "name": "我的自定义模型",
+  "definition": "模型定义...",
+  "category": "决策思维",
+  "purpose": "模型用途..."
+}' > ./thinking_models_db/zh/my_custom_model.json</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="h3 mb-4">常见安装问题</h2>
+                        
+                        <div class="accordion" id="installationFAQ">
+                            <div class="accordion-item border-0 mb-3 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        服务器启动但客户端无法连接
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#installationFAQ">
+                                    <div class="accordion-body">
+                                        <p>可能的原因和解决方案：</p>
+                                        <ul>
+                                            <li><strong>端口冲突</strong>：如果使用网络模式，检查端口是否被其他应用占用</li>
+                                            <li><strong>客户端配置错误</strong>：确认客户端中配置的连接 URL 或命令路径正确</li>
+                                            <li><strong>防火墙限制</strong>：检查防火墙是否允许指定端口的通信</li>
+                                        </ul>
+                                        <p>尝试重启服务器并使用默认配置，先确认基本连接是否可用。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 mb-3 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        服务器报错：无法加载模型
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#installationFAQ">
+                                    <div class="accordion-body">
+                                        <p>可能的原因和解决方案：</p>
+                                        <ul>
+                                            <li><strong>文件权限问题</strong>：确保模型目录有读取权限</li>
+                                            <li><strong>模型文件格式错误</strong>：检查自定义模型的 JSON 格式是否正确</li>
+                                            <li><strong>安装不完整</strong>：尝试重新安装服务器以确保所有依赖和数据文件完整</li>
+                                        </ul>
+                                        <p>检查服务器日志以获取更详细的错误信息。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Node.js 版本兼容性问题
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#installationFAQ">
+                                    <div class="accordion-body">
+                                        <p>可能的原因和解决方案：</p>
+                                        <ul>
+                                            <li><strong>Node.js 版本过低</strong>：升级 Node.js 到支持的版本（16.x 或更高）</li>
+                                            <li><strong>依赖冲突</strong>：在一个干净的环境中重新安装</li>
+                                        </ul>
+                                        <p>使用 <code>nvm</code>（Node Version Manager）可以轻松切换 Node.js 版本来测试兼容性。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="alert alert-info d-flex" role="alert">
+                    <div class="flex-shrink-0">
+                        <i class="bi bi-info-circle-fill fs-4 me-3"></i>
+                    </div>
+                    <div>
+                        <h4 class="alert-heading">下一步</h4>
+                        <p>成功安装"天机"思维模型 MCP 服务器后，建议：</p>
+                        <ul class="mb-0">
+                            <li>阅读<a href="../philosophy.html" class="alert-link">设计理念</a>了解"天机"的核心思想</li>
+                            <li>探索<a href="../tools/index.html" class="alert-link">工具文档</a>了解可用的思维工具</li>
+                            <li>浏览<a href="../models/index.html" class="alert-link">思维模型库</a>发现丰富的思维框架</li>
+                            <li>查看<a href="../applications/index.html" class="alert-link">应用场景</a>了解实际使用案例</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../api-docs/index.html" class="text-light">API文档</a></li>
+                        <li><a href="../changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

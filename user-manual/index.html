@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天机 - 思维模型 MCP 服务器 | 用户手册</title>    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">关于天机</a></li>
+                        <li class="nav-item"><a class="nav-link" href="philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="installation/index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="installation/vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item" href="installation/cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item" href="installation/claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="installation/others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tools/index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="tools/exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="models/categories.html">分类浏览</a></li>
+                                <li><a class="dropdown-item" href="models/search.html">搜索模型</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="applications/index.html">应用场景</a></li>
+                        <li class="nav-item"><a class="nav-link" href="api-docs/index.html">API文档</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">常见问题</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section class="row">
+            <div class="col-lg-8">
+                <h1>欢迎使用天机思维模型服务</h1>
+                <p class="lead">
+                    "天机"是一个强大的思维模型 MCP 服务器，它集成了数百种思维模型、框架和方法论，能够帮助用户更系统、更全面地思考问题。
+                </p>
+                <hr>
+                <h2>什么是"天机"？</h2>
+                <p>
+                    "天机"是一个基于 MCP (Model Context Protocol) 协议的思维模型服务器，它提供了丰富的思维工具，帮助 AI 助手和用户进行更深入、更系统的思考。"天机"取名源于"天机不可泄露"的古语，寓意着它能帮助用户揭示深层次的思考模式和智慧。
+                </p>
+                
+                <h2>核心功能</h2>
+                <ul>
+                    <li><strong>丰富的思维模型库</strong>：包含决策理论、系统思考、概率思维等多个领域的经典思维模型</li>
+                    <li><strong>智能模型推荐</strong>：根据问题特征自动推荐最合适的思维模型</li>
+                    <li><strong>交互式推理过程</strong>：引导用户进行结构化思考，一步步深入分析问题</li>
+                </ul>
+                
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+                    <a href="getting-started.html" class="btn btn-primary btn-lg px-4 me-md-2">快速开始</a>
+                    <a href="models.html" class="btn btn-outline-secondary btn-lg px-4">浏览模型库</a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">快速导航</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="getting-started.html" class="text-decoration-none">安装与配置</a></li>
+                            <li class="list-group-item"><a href="api.html" class="text-decoration-none">API文档</a></li>
+                            <li class="list-group-item"><a href="models.html" class="text-decoration-none">思维模型库</a></li>
+                            <li class="list-group-item"><a href="examples.html" class="text-decoration-none">使用示例</a></li>
+                            <li class="list-group-item"><a href="faq.html" class="text-decoration-none">常见问题</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="api.html" class="text-light">API文档</a></li>
+                        <li><a href="changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p>© 2025 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

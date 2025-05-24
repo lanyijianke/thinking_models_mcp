@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建类工具 | 思维模型 MCP 服务器</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">关于天机</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../installation/index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="../installation/vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item active" href="creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
+                                <li><a class="dropdown-item" href="../models/search.html">搜索模型</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../applications/index.html">应用场景</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../api-docs/index.html">API文档</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../faq.html">常见问题</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="../search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-5 mb-4">创建类工具</h1>
+                <p class="lead">
+                    创建类工具是"天机"的个性化引擎，赋予用户定制、创建和管理自己专属思维模型的能力。这些工具能将用户从标准思维工具的使用者转变为创造者，构建真正贴合个人需求的思考框架。
+                </p>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="emergent-model-design">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-warning bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-intersect text-warning fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">组合化创新模型 (emergent-model-design)</h2>
+                                <p class="text-muted mb-0">融合现有模型创造新框架</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>emergent-model-design</code> 工具通过组合现有思维模型的关键概念和特性来创建新的思维模型，实现创新的思考框架。这种方法基于认知嫁接原理，能够产生超越单一模型的涌现特性，解决更加复杂和特定的问题。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>source_model_ids</code></td>
+                                        <td>字符串数组</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>用于组合的源思维模型ID列表，最少2个，最多10个</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>target_model_id</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>新模型的唯一标识符，使用小写字母和下划线</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>target_model_name</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>新模型的名称</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>design_goal</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>设计目标和用途描述</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>category</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>新模型的主要分类（可选）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>connection_description</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>描述源模型是如何组合的（可选）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 创建战略思维与系统思维的融合模型
+{
+  "source_model_ids": ["swot_analysis", "feedback_loop", "mental_models"],
+  "target_model_id": "adaptive_strategy_system",
+  "target_model_name": "适应性战略系统模型",
+  "design_goal": "设计一个将战略思维与系统思维结合的模型，用于在快速变化的环境中制定自适应战略。",
+  "category": "战略与系统思维",
+  "connection_description": "将SWOT分析的结构化评估与反馈循环的动态调整机制结合，通过心智模型框架增强认知深度。",
+  "lang": "zh"
+}
+
+// 创建创新与决策融合模型
+{
+  "source_model_ids": ["first_principles_thinking", "decision_matrix", "inversion_thinking"],
+  "target_model_id": "innovative_decision_framework",
+  "target_model_name": "创新决策框架",
+  "design_goal": "建立一个结合第一性原理、决策矩阵和逆向思维的框架，用于在高不确定性环境中做出创新性决策。",
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">创建特定行业或领域的专用思维框架</li>
+                            <li class="list-group-item bg-transparent">应对跨领域复杂问题的综合思考方法设计</li>
+                            <li class="list-group-item bg-transparent">基于团队已有经验构建组织专属思维工具</li>
+                            <li class="list-group-item bg-transparent">学术研究中整合多种理论框架形成新视角</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 选择互补而非重复的源模型通常能产生更有价值的组合模型。明确的设计目标和应用场景描述有助于系统更准确地融合关键元素。创建后，可以使用 <code>update-thinking-model</code> 工具进一步完善新模型。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="create-thinking-model">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-warning bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-plus-circle text-warning fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">思维模型创建 (create-thinking-model)</h2>
+                                <p class="text-muted mb-0">自定义思考框架</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>create-thinking-model</code> 工具允许用户从零开始定义和创建全新的思维模型，包括基本定义、目的、应用场景、可视化内容等。这是"天机"最强大的个性化工具之一，能够将个人独特的思考方式形式化为可复用的框架。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>id</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>模型的唯一标识符，使用小写字母和下划线</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>name</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>模型的名称</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>definition</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>模型的简明定义</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>purpose</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>模型的主要目的和使用场景</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>category</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>模型的主要分类</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>prompt</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>详细的提示词/角色扮演指南（可选）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>example</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>模型使用的简短示例（可选）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>limitations</code></td>
+                                        <td>对象数组</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>模型的局限性（可选）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>table_visualizations</code>, <code>bar_chart_visualizations</code>, <code>flowchart_visualizations</code>, <code>comparison_table_visualizations</code>, <code>list_visualizations</code></td>
+                                        <td>对象数组</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>各类可视化内容（可选）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 创建基本思维模型
+{
+  "id": "resource_allocation_matrix",
+  "name": "资源分配矩阵模型",
+  "definition": "一种结构化分析框架，用于在有限资源条件下评估不同项目或投资机会的价值与成本，帮助做出最优的资源分配决策。",
+  "purpose": "帮助管理者在资源有限的环境下，系统化地评估和比较不同选项，确保资源投入能够获得最大化的回报或价值创造。",
+  "category": "决策思维",
+  "lang": "zh"
+}
+
+// 创建带有可视化的完整模型
+{
+  "id": "innovation_adoption_curve",
+  "name": "创新采用曲线模型",
+  "definition": "描述新产品或技术在市场中扩散过程的思维框架，将采用者分为创新者、早期采用者、早期大众、晚期大众和落后者五类。",
+  "purpose": "帮助产品设计者和营销人员理解不同阶段用户的特征，制定适当的策略以促进创新扩散和市场渗透。",
+  "category": "市场与用户思维",
+  "subcategories": ["技术扩散", "用户分层"],
+  "example": "某智能家居产品初期主要吸引科技爱好者(创新者)，随后吸引了追求生活品质的年轻专业人士(早期采用者)，接着开始被主流家庭接受(早期大众)，最终成为标准配置进入大多数家庭(晚期大众)，仍有部分传统消费者最后才接受(落后者)。",
+  "table_visualizations": [
+    {
+      "title": "创新采用者类型特征",
+      "description": "不同类型采用者的主要特点和百分比分布",
+      "headers": ["采用者类型", "人口占比", "特点", "营销策略"],
+      "rows": [
+        ["创新者", "2.5%", "追求新奇，愿意冒险", "强调技术先进性"],
+        ["早期采用者", "13.5%", "意见领袖，有社会影响力", "强调社会地位"],
+        ["早期大众", "34%", "谨慎但相对开放", "强调实用性和口碑"],
+        ["晚期大众", "34%", "保守，价格敏感", "强调可靠性和普及性"],
+        ["落后者", "16%", "传统，抗拒变化", "强调简单和必要性"]
+      ]
+    }
+  ],
+  "bar_chart_visualizations": [
+    {
+      "title": "创新采用分布",
+      "description": "各类型采用者在总人口中的百分比分布",
+      "labels": ["创新者", "早期采用者", "早期大众", "晚期大众", "落后者"],
+      "datasets": [
+        {
+          "label": "人口占比(%)",
+          "data": [2.5, 13.5, 34, 34, 16],
+          "backgroundColor": ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"]
+        }
+      ]
+    }
+  ],
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">将个人积累的思考方法形式化为可共享的模型</li>
+                            <li class="list-group-item bg-transparent">为特定领域或行业创建专属思维框架</li>
+                            <li class="list-group-item bg-transparent">研究人员将独特研究成果转化为实用思维工具</li>
+                            <li class="list-group-item bg-transparent">教育工作者创建教学专用的思考框架</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 虽然只有少数几个字段是必填的，但提供更完整的信息（如示例、可视化、常见问题等）会使模型更加实用。创建后，您可以通过 <code>get-model-info</code> 工具查看模型，并通过 <code>update-thinking-model</code> 工具进行迭代完善。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="update-thinking-model">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-warning bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-pencil-square text-warning fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">思维模型更新 (update-thinking-model)</h2>
+                                <p class="text-muted mb-0">迭代完善已有模型</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>update-thinking-model</code> 工具允许用户修改和完善现有的思维模型，包括更新任何字段、添加新内容或优化表达。此工具与 <code>create-thinking-model</code> 的主要区别是它保留了模型的演化历史，实现思维模式的迭代更新而非重新创建。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>model_id</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>要更新的模型ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>name</code>, <code>definition</code>, <code>purpose</code>, <code>category</code>, 等</td>
+                                        <td>各类型</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>任何需要更新的字段（与create-thinking-model相同）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 更新模型的基本信息
+{
+  "model_id": "resource_allocation_matrix",
+  "definition": "一种多维度评估框架，用于在资源受限条件下系统化分析不同项目或投资机会的价值、风险与资源需求，支持最优资源分配决策。",
+  "subcategories": ["资源管理", "投资组合分析"],
+  "lang": "zh"
+}
+
+// 添加可视化内容
+{
+  "model_id": "resource_allocation_matrix",
+  "table_visualizations": [
+    {
+      "title": "资源分配评估矩阵",
+      "description": "用于评估项目价值与资源需求的决策表",
+      "headers": ["项目", "战略价值(1-10)", "预期回报(1-10)", "资源需求(1-10)", "风险水平(1-10)", "综合评分"],
+      "rows": [
+        ["项目A", "8", "7", "5", "4", "高"],
+        ["项目B", "6", "9", "8", "6", "中"],
+        ["项目C", "9", "5", "3", "7", "高"],
+        ["项目D", "4", "6", "2", "3", "中"]
+      ]
+    }
+  ],
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">基于实际使用体验完善已创建的模型</li>
+                            <li class="list-group-item bg-transparent">添加新的可视化或示例丰富模型内容</li>
+                            <li class="list-group-item bg-transparent">根据新的见解或研究成果更新模型</li>
+                            <li class="list-group-item bg-transparent">修正模型中的不准确或过时内容</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 只需要提供需要更新的字段，未提供的字段将保持不变。这使得您可以进行小型、增量的模型优化，而不必每次都重新提交完整模型。定期更新和完善模型可以显著提升其实用性和准确性。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="delete-thinking-model">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-warning bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-trash text-warning fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">思维模型删除 (delete-thinking-model)</h2>
+                                <p class="text-muted mb-0">管理个人模型库</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>delete-thinking-model</code> 工具用于从系统中移除不再需要的思维模型。这有助于整理个人模型库，确保只保留高质量、实用的模型，提高思维工具的使用效率。
+                        </p>
+
+                        <div class="alert alert-warning d-flex align-items-center mb-4" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <div>
+                                <strong>注意：</strong> 模型删除是不可逆操作，请确认无误后再执行。系统预设的基础模型不能被删除。
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>model_id</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>要删除的模型ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>confirm</code></td>
+                                        <td>布尔值</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>确认删除操作，必须设为true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 删除模型
+{
+  "model_id": "resource_allocation_matrix",
+  "confirm": true,
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">移除已被更好模型替代的旧模型</li>
+                            <li class="list-group-item bg-transparent">清理实验性或测试性质的模型</li>
+                            <li class="list-group-item bg-transparent">移除不再适用于当前环境的模型</li>
+                            <li class="list-group-item bg-transparent">重新组织个人模型库，提高使用效率</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 在删除模型前，请确认是否有依赖于此模型的其他模型或推理过程。如果不确定是否还需要某个模型，可以考虑先使用<code>get-model-usage-stats</code>查看其使用情况，或者保留但添加废弃标记，而不是直接删除。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading"><i class="bi bi-lightbulb me-2"></i>创建个性化思维模型的最佳实践</h4>
+                    <p>要创建真正有价值的个性化思维模型，以下是一些建议的实践：</p>
+                    <ol>
+                        <li><strong>先研究后创造</strong> - 使用探索类工具深入了解已有的相关模型，避免重复创造</li>
+                        <li><strong>从问题出发</strong> - 基于真实的问题需求创建模型，而不是为了创新而创新</li>
+                        <li><strong>渐进式发展</strong> - 先用<code>create-thinking-model</code>创建基本版本，然后通过<code>update-thinking-model</code>不断迭代完善</li>
+                        <li><strong>组合优于发明</strong> - 对于复杂问题，使用<code>emergent-model-design</code>组合现有模型往往比从零创建更有效</li>
+                        <li><strong>重视可视化</strong> - 添加图表、表格等可视化内容能显著提升模型的可理解性和实用性</li>
+                    </ol>
+                    <hr>
+                    <p class="mb-0">记住，最有价值的思维模型是那些能够实际应用于解决问题、产生洞见的模型。不断使用、反馈和优化才能让您的个性化思维模型真正成熟。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center my-5">
+            <div class="btn-group" role="group">
+                <a href="problem-solving.html" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left me-2"></i>问题解决类工具
+                </a>
+                <a href="system.html" class="btn btn-primary">
+                    系统与学习类工具<i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../api-docs/index.html" class="text-light">API文档</a></li>
+                        <li><a href="../changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

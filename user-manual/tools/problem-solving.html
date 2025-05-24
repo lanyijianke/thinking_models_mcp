@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问题解决类工具 | 思维模型 MCP 服务器</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">关于天机</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../installation/index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="../installation/vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item active" href="problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
+                                <li><a class="dropdown-item" href="../models/search.html">搜索模型</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../applications/index.html">应用场景</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../api-docs/index.html">API文档</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../faq.html">常见问题</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="../search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-5 mb-4">问题解决类工具</h1>
+                <p class="lead">
+                    问题解决类工具是"天机"的核心引擎，帮助用户通过思维模型系统性地解决复杂问题。这些工具专注于思考过程的结构化、合理化和优化，使问题解决更加高效和全面。
+                </p>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="recommend-models-for-problem">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-danger bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-compass text-danger fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">问题导向推荐 (recommend-models-for-problem)</h2>
+                                <p class="text-muted mb-0">找到合适的思考工具</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>recommend-models-for-problem</code> 工具根据问题的关键词和上下文，智能推荐最适合解决该问题的思维模型组合。这是"天机"中最常用的工具之一，特别适合不确定应该使用哪种思维模型的情况。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>problem_keywords</code></td>
+                                        <td>字符串数组</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>问题关键词数组，至少需提供一个关键词</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>problem_context</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>问题的完整上下文描述</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>limit</code></td>
+                                        <td>数字</td>
+                                        <td>否</td>
+                                        <td>10</td>
+                                        <td>返回结果数量限制</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>use_learning_adjustment</code></td>
+                                        <td>布尔值</td>
+                                        <td>否</td>
+                                        <td>true</td>
+                                        <td>是否使用学习系统调整推荐结果</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 基本推荐查询
+{
+  "problem_keywords": ["决策", "不确定性"],
+  "lang": "zh"
+}
+
+// 带有详细上下文的推荐查询
+{
+  "problem_keywords": ["产品创新", "市场竞争", "差异化"],
+  "problem_context": "我们是一家中型软件公司，面临市场激烈竞争，需要在现有产品线基础上进行创新，寻找差异化竞争优势，但资源有限，需要做出最有效的创新决策。",
+  "limit": 5,
+  "lang": "zh"
+}
+
+// 不使用学习系统调整的推荐查询
+{
+  "problem_keywords": ["团队管理", "冲突"],
+  "use_learning_adjustment": false,
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">面对新问题时寻找合适的思考框架</li>
+                            <li class="list-group-item bg-transparent">在决策前扩展多种思考角度</li>
+                            <li class="list-group-item bg-transparent">分析复杂问题时获取系统性思维支持</li>
+                            <li class="list-group-item bg-transparent">教学环境中为特定主题推荐思维工具</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 提供更详细的问题上下文可以显著提高推荐精度。学习系统会根据您的使用反馈逐步调整推荐结果，使其更贴合您的思考习惯和问题领域。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="generate-validate-hypotheses">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-danger bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-clipboard-data text-danger fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">假设生成与验证 (generate-validate-hypotheses)</h2>
+                                <p class="text-muted mb-0">系统化的科学思维</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>generate-validate-hypotheses</code> 工具基于问题和上下文，系统性生成多个合理的假设，并提供针对每个假设的验证方法。此工具促进科学思维的形成，帮助用户避免单一假设导致的认知偏差。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>problem</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>需要解决的问题描述</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>context</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>问题相关的背景信息</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 为业务问题生成假设
+{
+  "problem": "公司网站流量在过去三个月持续下降，如何扭转这一趋势？",
+  "context": "我们是一家B2B软件公司，主要客户为中小企业。最近三个月网站流量下降了30%，同时转化率也从2.5%降到了1.8%。期间我们更新了网站设计，并调整了部分内容策略。",
+  "lang": "zh"
+}
+
+// 为产品设计问题生成假设
+{
+  "problem": "新推出的移动应用用户留存率低，如何提高30天留存？",
+  "context": "我们上个月推出了健康追踪应用，首日下载量很高，但30天留存率只有12%，远低于行业平均的20%。用户调研显示初始体验良好，但长期使用动力不足。",
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">业务问题诊断与解决方案探索</li>
+                            <li class="list-group-item bg-transparent">产品功能设计时的多方案评估</li>
+                            <li class="list-group-item bg-transparent">市场策略调整前的系统性分析</li>
+                            <li class="list-group-item bg-transparent">研究项目的假设框架构建</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 提供详细、具体的问题背景对于生成有价值的假设至关重要。生成假设后，建议实际执行验证计划，然后根据验证结果进一步迭代和完善假设。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="explain-reasoning-process">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-danger bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-shuffle text-danger fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">推理过程解释 (explain-reasoning-process)</h2>
+                                <p class="text-muted mb-0">可视化思考逻辑链</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>explain-reasoning-process</code> 工具可视化展示思考的逻辑链路，解释每个推理步骤使用的思维模型、支持证据和信心水平。这个工具帮助用户理解思考过程的构成，提升元认知能力，同时使思考过程更加透明和可追踪。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>problemDescription</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>问题或情境描述</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>reasoningSteps</code></td>
+                                        <td>对象数组</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>包含推理步骤的详细信息，每个步骤包含描述、使用的模型、支持证据、信心水平等</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>conclusion</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>推理得出的结论</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 简单推理过程解释示例
+{
+  "problemDescription": "公司需要决定是否投资开发一款新产品",
+  "reasoningSteps": [
+    {
+      "description": "分析市场需求和竞争环境",
+      "modelIds": ["swot_analysis", "porters_five_forces"],
+      "evidence": ["市场调研数据显示需求增长8%", "现有3家主要竞争对手"],
+      "confidence": 0.8
+    },
+    {
+      "description": "评估公司内部能力",
+      "modelIds": ["resource_based_view", "core_competence"],
+      "evidence": ["技术团队具备关键能力", "研发预算充足"],
+      "confidence": 0.9
+    },
+    {
+      "description": "分析财务可行性",
+      "modelIds": ["cost_benefit_analysis", "npv_analysis"],
+      "evidence": ["ROI预估为18%", "回收期约2年"],
+      "confidence": 0.7
+    }
+  ],
+  "conclusion": "基于市场机会、内部能力和财务预测，建议启动新产品开发项目。",
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">重要决策的思考过程记录与解释</li>
+                            <li class="list-group-item bg-transparent">团队协作中共享和讨论推理逻辑</li>
+                            <li class="list-group-item bg-transparent">教学环境中展示思维模型的实际应用</li>
+                            <li class="list-group-item bg-transparent">提升自身思考质量的元认知训练</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 用明确的"因为...所以..."等逻辑关系描述每个推理步骤，并明确指出使用了哪些思维模型，这样可以获得更清晰的解释。添加信心水平有助于识别思考中可能的薄弱环节。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="interactive-reasoning">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-danger bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-chat-dots text-danger fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">交互式推理引导 (interactive-reasoning)</h2>
+                                <p class="text-muted mb-0">实时思考指导与探索</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>interactive-reasoning</code> 工具提供逐步的思考引导和实时反馈，帮助用户在解决问题的过程中动态获取更多信息，调整思考方向。这是一个动态的、对话式的思考助手，可根据用户的反馈和新信息不断调整推理路径。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>initialContext</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>初始问题或情境描述</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>reasoningStage</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>当前推理阶段，可选值: "information_gathering"(信息收集), "hypothesis_generation"(假设生成), "hypothesis_testing"(假设检验), "conclusion"(结论形成)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>requiredInformation</code></td>
+                                        <td>字符串数组</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>需要获取的额外信息</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>currentPathId</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>当前推理路径ID（如在现有推理中）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 初始推理请求
+{
+  "initialContext": "我们的移动应用注册流程完成率只有40%，远低于行业平均的65%，需要找出原因并优化。",
+  "reasoningStage": "information_gathering",
+  "lang": "zh"
+}
+
+// 后续推理阶段请求
+{
+  "initialContext": "我们的移动应用注册流程完成率只有40%，远低于行业平均的65%。",
+  "reasoningStage": "hypothesis_generation",
+  "requiredInformation": ["目前注册流程的步骤数", "每个步骤的转化率", "用户反馈的主要问题"],
+  "currentPathId": "reasoning-path-123456",
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">复杂问题的探索式分析与解决</li>
+                            <li class="list-group-item bg-transparent">含有大量未知因素的决策过程</li>
+                            <li class="list-group-item bg-transparent">团队协作式思考的引导与记录</li>
+                            <li class="list-group-item bg-transparent">创新设计过程中的思路拓展</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 交互式推理最适合需要多角度思考和多轮信息收集的复杂问题。每次交互后，系统会保存推理路径ID，便于后续继续进行深入探索，形成完整的思考记录链。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading"><i class="bi bi-lightbulb me-2"></i>问题解决最佳实践</h4>
+                    <p>有效地使用问题解决类工具可以显著提升您应对复杂挑战的能力。以下是推荐的问题解决流程：</p>
+                    <ol>
+                        <li>首先使用 <code>recommend-models-for-problem</code> 确定适合问题的思维模型</li>
+                        <li>通过 <code>generate-validate-hypotheses</code> 生成多个可能的解决方案假设</li>
+                        <li>使用 <code>interactive-reasoning</code> 逐步深入探索每个假设，收集必要信息</li>
+                        <li>最后用 <code>explain-reasoning-process</code> 记录和分析整个思考过程，提取关键洞见</li>
+                    </ol>
+                    <hr>
+                    <p class="mb-0">结合这些工具，您可以构建一个系统性的问题解决框架，使复杂问题变得可管理，同时确保思考的深度和广度。这种结构化思考方式不仅提高解决问题的效率，也提升了决策的质量。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center my-5">
+            <div class="btn-group" role="group">
+                <a href="exploration.html" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left me-2"></i>探索类工具
+                </a>
+                <a href="creation.html" class="btn btn-primary">
+                    创建类工具<i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../api-docs/index.html" class="text-light">API文档</a></li>
+                        <li><a href="../changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

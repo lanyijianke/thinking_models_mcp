@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统与学习类工具 | 思维模型 MCP 服务器</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">关于天机</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../installation/index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="../installation/vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item active" href="system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
+                                <li><a class="dropdown-item" href="../models/search.html">搜索模型</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../applications/index.html">应用场景</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../api-docs/index.html">API文档</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../faq.html">常见问题</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="../search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-5 mb-4">系统与学习类工具</h1>
+                <p class="lead">
+                    系统与学习类工具是"天机"的自我优化引擎，它们帮助用户了解系统状态、收集反馈、识别知识缺口，并持续改进思维模型的推荐效果。这些工具使"天机"成为一个不断进化的思维伙伴，能够与用户共同成长。
+                </p>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="get-started-guide">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-rocket-takeoff text-success fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">新手入门指南 (get-started-guide)</h2>
+                                <p class="text-muted mb-0">快速上手"天机"思维模型体系</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>get-started-guide</code> 工具为新用户提供个性化的入门指南，包括系统概述、推荐的起步步骤、适合初学者的模型推荐，以及根据用户目标和经验水平定制的学习路径。这是新用户的理想起点，帮助快速理解并开始有效使用"天机"。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>user_objective</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"explore"</td>
+                                        <td>用户目标，可选值："explore"(探索), "solve_problem"(解决问题), "create_model"(创建模型), "learn_tools"(学习工具)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>expertise_level</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"beginner"</td>
+                                        <td>用户经验水平，可选值："beginner"(初学者), "intermediate"(中级), "advanced"(高级)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 初学者探索模式入门指南
+{
+  "user_objective": "explore",
+  "expertise_level": "beginner",
+  "lang": "zh"
+}
+
+// 中级用户解决问题指南
+{
+  "user_objective": "solve_problem",
+  "expertise_level": "intermediate",
+  "lang": "zh"
+}
+
+// 高级用户创建模型指南
+{
+  "user_objective": "create_model",
+  "expertise_level": "advanced",
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">首次使用"天机"的用户快速入门</li>
+                            <li class="list-group-item bg-transparent">希望转换使用目标的用户获取新的学习路径</li>
+                            <li class="list-group-item bg-transparent">团队培训中为不同经验水平的成员提供定制指南</li>
+                            <li class="list-group-item bg-transparent">课程教学中为学生提供结构化的思维工具学习路径</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 明确您的使用目标（探索、解决问题、创建模型或学习工具）和经验水平，可以获得更有针对性的入门指南。随着经验增长，重新使用此工具获取更高级的指导。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="get-server-version">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-info-circle text-success fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">服务器版本信息 (get-server-version)</h2>
+                                <p class="text-muted mb-0">获取系统状态与版本</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>get-server-version</code> 工具提供"天机"思维模型MCP服务器的版本、状态和模型统计信息。这有助于确认系统正常运行，了解可用模型的数量，以及验证API兼容性。当怀疑系统出现问题或需要确认功能更新时，此工具特别有用。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="5" class="text-center">此工具无需参数</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 获取服务器信息
+{}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">确认服务器版本以检查最新功能是否可用</li>
+                            <li class="list-group-item bg-transparent">验证服务器是否正常运行及模型是否加载</li>
+                            <li class="list-group-item bg-transparent">检查已加载模型的数量和语言分布</li>
+                            <li class="list-group-item bg-transparent">开发者检查API兼容性和版本信息</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 如果您在使用其他工具时遇到问题，先使用此工具检查服务器状态是否正常，以及所需的模型是否已加载。版本信息也有助于在报告问题或寻求支持时提供准确的系统状态描述。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="count-models">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-calculator text-success fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">模型统计 (count-models)</h2>
+                                <p class="text-muted mb-0">了解思维模型库规模</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>count-models</code> 工具提供当前系统中思维模型的数量统计，包括总数和各分类下的模型数量。这有助于了解思维模型库的规模和分布，特别是在系统更新或添加新模型后，可以确认变化是否已生效。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 获取中文思维模型统计
+{
+  "lang": "zh"
+}
+
+// 获取英文思维模型统计
+{
+  "lang": "en"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">了解系统中可用的思维模型总量</li>
+                            <li class="list-group-item bg-transparent">查看不同分类的模型数量分布</li>
+                            <li class="list-group-item bg-transparent">创建自定义模型后确认是否成功添加</li>
+                            <li class="list-group-item bg-transparent">比较不同语言版本的模型覆盖情况</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 使用此工具可以快速了解"天机"思维模型库的规模。结合<code>get-categories</code>工具可以获得更详细的分类信息，进而使用<code>list-models</code>查看特定分类下的具体模型。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="record-user-feedback">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-chat-left-dots text-success fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">用户反馈收集 (record-user-feedback)</h2>
+                                <p class="text-muted mb-0">提升系统智能推荐质量</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>record-user-feedback</code> 工具允许用户提供对思维模型使用体验的反馈，帮助系统不断学习和调整推荐算法。用户可以标记模型是否有帮助、准确或富有洞察力，并提供详细评论。这些反馈直接影响"天机"的学习系统，使其推荐越来越贴合用户的实际需求。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>modelIds</code></td>
+                                        <td>字符串数组</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>相关思维模型的ID数组</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>context</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>应用模型的上下文或问题描述</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>feedbackType</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>反馈类型，可选值："helpful"(有帮助), "not_helpful"(无帮助), "incorrect"(不正确), "insightful"(富有洞察力), "confusing"(令人困惑)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>comment</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>反馈详细说明或评论</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>applicationResult</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>模型应用结果描述</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>suggestedImprovements</code></td>
+                                        <td>字符串数组</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>建议的改进点</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 提供正面反馈
+{
+  "modelIds": ["first_principles_thinking", "occams_razor"],
+  "context": "我在分析一个复杂的产品开发问题，需要简化决策过程。",
+  "feedbackType": "helpful",
+  "comment": "这两个模型组合使用非常有效，帮助我找到了问题的核心。",
+  "lang": "zh"
+}
+
+// 提供负面反馈和改进建议
+{
+  "modelIds": ["swot_analysis"],
+  "context": "我在分析一个快速变化的市场环境下的战略选择。",
+  "feedbackType": "not_helpful",
+  "comment": "SWOT分析对动态变化的市场环境分析不够深入。",
+  "suggestedImprovements": ["增加时间维度考量", "结合情景分析"],
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">使用思维模型解决问题后提供使用体验反馈</li>
+                            <li class="list-group-item bg-transparent">指出模型应用中遇到的困难或局限</li>
+                            <li class="list-group-item bg-transparent">建议模型改进或在特定场景下的优化方向</li>
+                            <li class="list-group-item bg-transparent">分享模型组合使用的成功案例</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 积极提供反馈可以帮助系统更好地理解您的需求和思考方式，从而提供更精准的推荐。特别是对于专业领域的应用，详细的上下文描述和具体的改进建议尤为宝贵。系统会基于这些反馈动态调整其推荐算法。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="detect-knowledge-gap">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-clipboard-data text-success fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">知识缺口检测 (detect-knowledge-gap)</h2>
+                                <p class="text-muted mb-0">发现系统知识边界</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>detect-knowledge-gap</code> 工具分析用户查询，检测系统当前思维模型库是否充分覆盖相关领域。当发现知识缺口时，它会返回潜在缺口的描述、可能相关的模型以及弥补缺口的建议。这是系统自我完善的关键机制，也是用户了解"天机"知识边界的重要工具。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>query</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>用户查询或问题</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>matchThreshold</code></td>
+                                        <td>数字</td>
+                                        <td>否</td>
+                                        <td>0.5</td>
+                                        <td>匹配阈值，低于此值视为知识缺口</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 检测特定领域的知识缺口
+{
+  "query": "我需要一个适合分析量子计算对密码学影响的思维模型",
+  "lang": "zh"
+}
+
+// 使用自定义匹配阈值检测知识缺口
+{
+  "query": "如何应用战略思维分析新兴市场的供应链风险",
+  "matchThreshold": 0.7,
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">探索系统是否覆盖特定专业领域的思维工具</li>
+                            <li class="list-group-item bg-transparent">发现系统知识边界，寻找需要补充的思维框架</li>
+                            <li class="list-group-item bg-transparent">评估创建新思维模型的必要性</li>
+                            <li class="list-group-item bg-transparent">在组织内部发现可能需要开发的思维工具</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 当系统返回知识缺口时，您可以考虑使用<code>create-thinking-model</code>工具创建新的思维模型来填补缺口。系统发现的知识缺口也会被记录，以便未来版本可能添加相关模型。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="get-model-usage-stats">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-bar-chart-line text-success fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">模型使用统计 (get-model-usage-stats)</h2>
+                                <p class="text-muted mb-0">分析思维模型应用情况</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>get-model-usage-stats</code> 工具提供特定思维模型的使用统计数据，包括使用次数、反馈类型分布、常见应用场景以及经常一起使用的其他模型。这有助于了解模型的实际应用效果、适用场景，以及如何与其他模型组合使用以达到更佳效果。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>modelId</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>思维模型的唯一ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 查看特定模型的使用统计
+{
+  "modelId": "first_principles_thinking",
+  "lang": "zh"
+}
+
+// 查看另一模型的使用数据
+{
+  "modelId": "mental_models",
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">了解特定思维模型的受欢迎程度和有效性</li>
+                            <li class="list-group-item bg-transparent">发现模型的最佳应用场景和典型用例</li>
+                            <li class="list-group-item bg-transparent">探索与特定模型有协同效应的其他模型</li>
+                            <li class="list-group-item bg-transparent">评估自己创建的模型的实际使用效果</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 使用此工具可以发现哪些模型通常一起使用能取得最佳效果，帮助您构建更强大的思考组合。对于经常使用的模型，查看其使用统计可能揭示新的应用场景或发现可改进的方面。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="analyze-learning-system">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-graph-up text-success fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">学习系统分析 (analyze-learning-system)</h2>
+                                <p class="text-muted mb-0">整体评估系统学习效果</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>analyze-learning-system</code> 工具提供"天机"思维模型学习系统的综合分析，包括整体健康状态、表现最佳的模型、已识别的知识缺口和学习趋势。这是一个系统层面的分析工具，帮助了解"天机"的适应性学习情况，特别适合长期使用者了解系统的成长轨迹。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 中文版学习系统分析
+{
+  "lang": "zh"
+}
+
+// 英文版学习系统分析
+{
+  "lang": "en"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">评估系统对用户需求的适应情况</li>
+                            <li class="list-group-item bg-transparent">发现最受欢迎和最有效的思维模型</li>
+                            <li class="list-group-item bg-transparent">识别系统知识库中的主要缺口</li>
+                            <li class="list-group-item bg-transparent">了解用户思维工具使用的整体趋势</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 定期使用此工具可以跟踪"天机"系统的学习进展，特别是在频繁使用和提供反馈后。分析结果也可以帮助您发现可能有价值但尚未尝试的思维模型，或确定需要开发的新模型方向。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading"><i class="bi bi-lightbulb me-2"></i>系统与学习类工具的最佳实践</h4>
+                    <p>以下是充分利用"天机"系统与学习类工具的建议方法：</p>
+                    <ol>
+                        <li><strong>持续提供反馈</strong> - 使用<code>record-user-feedback</code>工具对每次重要的模型应用提供反馈，帮助系统更好地理解您的需求</li>
+                        <li><strong>定期分析系统状态</strong> - 使用<code>analyze-learning-system</code>工具查看系统的学习进展，了解知识缺口和趋势</li>
+                        <li><strong>主动检测知识边界</strong> - 遇到新的领域或问题时，使用<code>detect-knowledge-gap</code>工具检查系统是否有相关的思维模型</li>
+                        <li><strong>探索热门模型</strong> - 通过<code>get-model-usage-stats</code>了解各模型的实际使用情况和最佳应用场景</li>
+                    </ol>
+                    <hr>
+                    <p class="mb-0">将这些工具整合到您的日常工作流程中，可以使"天机"成为一个真正的学习伙伴，不断适应您的思考方式和专业领域，提供越来越精准的思维支持。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center my-5">
+            <div class="btn-group" role="group">
+                <a href="creation.html" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left me-2"></i>创建类工具
+                </a>
+                <a href="../models/index.html" class="btn btn-primary">
+                    思维模型库<i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../api-docs/index.html" class="text-light">API文档</a></li>
+                        <li><a href="../changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

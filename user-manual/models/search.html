@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模型搜索 - "天机"思维模型 MCP 服务器</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .search-result-card {
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .search-result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .highlight {
+            background-color: #ffffcc;
+            padding: 2px;
+        }
+        .search-stats {
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1>思维模型搜索</h1>
+                    <p class="lead mb-0">快速查找合适的思维模型工具</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-md-end mb-0">
+                            <li class="breadcrumb-item"><a href="../index.html" class="text-white">首页</a></li>
+                            <li class="breadcrumb-item"><a href="index.html" class="text-white">模型库</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">模型搜索</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">搜索思维模型</h5>
+                        <form id="searchForm">
+                            <div class="row g-2">
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                        <input type="text" id="searchQuery" class="form-control" placeholder="输入关键词、问题场景或模型名称..." aria-label="搜索关键词">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <select class="form-select" id="categoryFilter">
+                                        <option value="">全部分类</option>
+                                        <option value="behavior-psychology">行为与心理模型</option>
+                                        <option value="cognitive-learning">认知与学习</option>
+                                        <option value="system-strategic">系统与战略思维</option>
+                                        <option value="problem-solving-innovation">问题解决与创新</option>
+                                        <option value="decision-judgment">决策与判断</option>
+                                        <option value="marketing-analysis">营销分析</option>
+                                        <option value="efficiency-optimization">效能与优化</option>
+                                        <option value="communication-expression">沟通与表达</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-primary w-100">搜索</button>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="searchType" id="searchByKeyword" value="keyword" checked>
+                                    <label class="form-check-label" for="searchByKeyword">按关键词</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="searchType" id="searchByProblem" value="problem">
+                                    <label class="form-check-label" for="searchByProblem">按问题描述</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="searchType" id="searchByName" value="name">
+                                    <label class="form-check-label" for="searchByName">按模型名称</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">使用提示</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-key fs-3 text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6>关键词搜索技巧</h6>
+                                        <p class="small mb-0">使用专业术语或特定领域词汇，搜索结果更精准。例如：「决策矩阵」「根因分析」「系统思维」</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-question-circle fs-3 text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6>问题描述搜索</h6>
+                                        <p class="small mb-0">输入您想解决的实际问题，系统将智能匹配适合的思维模型。例如：「如何分析市场竞争格局」</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-code-slash fs-3 text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6>API调用示例</h6>
+                                        <p class="small mb-0">API调用格式：<code>bb7_search-models</code> 或 <code>bb7_recommend-models-for-problem</code>，详见<a href="../api-docs/tool-params.html">API文档</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 搜索结果区域 -->
+        <div id="searchResults" class="mt-4">
+            <div class="initial-state text-center py-5">
+                <img src="../assets/images/search-illustration.svg" alt="搜索" class="mb-4" style="width: 120px; opacity: 0.6;">
+                <h4 class="text-muted">输入关键词开始搜索思维模型</h4>
+                <p class="text-muted">或者浏览<a href="categories.html">模型分类</a>查找合适的思维工具</p>
+            </div>
+
+            <!-- 示例搜索结果，实际应由JavaScript动态生成 -->
+            <div class="search-results-container d-none">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3>搜索结果</h3>
+                    <p class="search-stats mb-0">找到 <span id="resultCount">12</span> 个匹配的思维模型</p>
+                </div>
+                
+                <div class="row row-cols-1 row-cols-md-3 g-4" id="resultsGrid">
+                    <!-- 示例结果1 -->
+                    <div class="col">
+                        <div class="card h-100 search-result-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">系统思维</span>
+                                    <span class="small text-muted">匹配度: 95%</span>
+                                </div>
+                                <h5 class="card-title">系统思维循环</h5>
+                                <p class="card-text">一种用于分析和解决复杂问题的方法，通过识别系统中的各组成部分及其<span class="highlight">相互关系</span>，建立全面理解。</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-light text-dark me-1">复杂系统</span>
+                                    <span class="badge bg-light text-dark me-1">因果关系</span>
+                                    <span class="badge bg-light text-dark">反馈循环</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <a href="#" class="btn btn-sm btn-outline-primary">查看详情</a>
+                                <button class="btn btn-sm btn-outline-success float-end">应用此模型</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 示例结果2 -->
+                    <div class="col">
+                        <div class="card h-100 search-result-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-success">问题解决</span>
+                                    <span class="small text-muted">匹配度: 87%</span>
+                                </div>
+                                <h5 class="card-title">五个为什么分析法</h5>
+                                <p class="card-text">通过连续五次追问"为什么"，深入挖掘问题的<span class="highlight">根本原因</span>而非表面现象的根因分析方法。</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-light text-dark me-1">根因分析</span>
+                                    <span class="badge bg-light text-dark me-1">问题诊断</span>
+                                    <span class="badge bg-light text-dark">持续改进</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <a href="#" class="btn btn-sm btn-outline-primary">查看详情</a>
+                                <button class="btn btn-sm btn-outline-success float-end">应用此模型</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 示例结果3 -->
+                    <div class="col">
+                        <div class="card h-100 search-result-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-info">决策思维</span>
+                                    <span class="small text-muted">匹配度: 82%</span>
+                                </div>
+                                <h5 class="card-title">决策矩阵</h5>
+                                <p class="card-text">通过评估多个选项在不同标准下的表现，帮助做出<span class="highlight">系统化决策</span>的结构化分析工具。</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-light text-dark me-1">多标准决策</span>
+                                    <span class="badge bg-light text-dark me-1">权重分析</span>
+                                    <span class="badge bg-light text-dark">选项评估</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <a href="#" class="btn btn-sm btn-outline-primary">查看详情</a>
+                                <button class="btn btn-sm btn-outline-success float-end">应用此模型</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 分页 -->
+                <nav aria-label="搜索结果分页" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">下一页</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- API示例部分 -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>搜索API使用示例</h3>
+                <hr>
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs" id="apiExampleTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="keyword-tab" data-bs-toggle="tab" data-bs-target="#keyword" type="button" role="tab" aria-controls="keyword" aria-selected="true">关键词搜索</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="problem-tab" data-bs-toggle="tab" data-bs-target="#problem" type="button" role="tab" aria-controls="problem" aria-selected="false">问题推荐</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="apiExampleTabsContent">
+                            <div class="tab-pane fade show active" id="keyword" role="tabpanel" aria-labelledby="keyword-tab">
+                                <h5 class="mb-3">按关键词搜索模型</h5>
+                                <p>使用 <code>bb7_search-models</code> 工具在模型库中搜索关键词：</p>
+                                <pre><code>{
+  "query": "系统思维",
+  "lang": "zh",
+  "limit": 10
+}</code></pre>
+                                <p>示例响应:</p>
+                                <pre><code>{
+  "models": [
+    {
+      "id": "systems_thinking",
+      "name": "系统思维",
+      "category": "系统与战略思维",
+      "relevance": 0.98,
+      "definition": "一种用于分析和解决复杂问题的方法，通过识别系统中的各组成部分及其相互关系，建立全面理解。"
+    },
+    {
+      "id": "causal_loop_diagrams",
+      "name": "因果环路图",
+      "category": "系统与战略思维",
+      "relevance": 0.92,
+      "definition": "可视化展示系统中变量之间因果关系的工具，帮助理解系统行为和识别关键杠杆点。"
+    },
+    // 更多结果...
+  ]
+}</code></pre>
+                            </div>
+                            <div class="tab-pane fade" id="problem" role="tabpanel" aria-labelledby="problem-tab">
+                                <h5 class="mb-3">按问题推荐模型</h5>
+                                <p>使用 <code>bb7_recommend-models-for-problem</code> 工具针对特定问题推荐模型：</p>
+                                <pre><code>{
+  "problem_keywords": ["市场分析", "竞争对手", "战略规划"],
+  "problem_context": "我需要分析我们公司在新市场的竞争环境，并制定合适的市场进入战略",
+  "lang": "zh",
+  "limit": 5
+}</code></pre>
+                                <p>示例响应:</p>
+                                <pre><code>{
+  "recommendations": [
+    {
+      "id": "porters_five_forces",
+      "name": "波特五力模型",
+      "relevance_score": 0.95,
+      "explanation": "非常适合分析新市场的竞争格局，评估供应商、买家、竞争对手、替代品和潜在进入者的影响力"
+    },
+    {
+      "id": "swot_analysis",
+      "name": "SWOT分析",
+      "relevance_score": 0.91,
+      "explanation": "帮助评估公司自身优势、劣势和外部环境的机会、威胁，适合战略规划"
+    },
+    // 更多推荐...
+  ]
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>"天机"思维模型 MCP 服务器</h5>
+                    <p class="mb-0">提供专业思维模型库，助您系统化解决各类问题</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="../index.html" class="text-white">首页</a></li>
+                        <li class="list-inline-item"><a href="../api-docs/index.html" class="text-white">API文档</a></li>
+                        <li class="list-inline-item"><a href="../installation/index.html" class="text-white">安装指南</a></li>
+                        <li class="list-inline-item"><a href="../faq.html" class="text-white">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <small>&copy; 2023-2024 天机思维模型. 保留所有权利。</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 搜索表单提交处理
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchForm = document.getElementById('searchForm');
+            const initialState = document.querySelector('.initial-state');
+            const resultsContainer = document.querySelector('.search-results-container');
+            
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const query = document.getElementById('searchQuery').value;
+                    const searchType = document.querySelector('input[name="searchType"]:checked').value;
+                    const category = document.getElementById('categoryFilter').value;
+                    
+                    if (!query) {
+                        // 如果查询为空，显示提示
+                        alert('请输入搜索关键词');
+                        return;
+                    }
+                    
+                    // 隐藏初始状态，显示结果容器
+                    initialState.classList.add('d-none');
+                    resultsContainer.classList.remove('d-none');
+                    
+                    // 在实际应用中，这里应发起API请求获取搜索结果
+                    // 这里仅展示页面状态变化
+                    console.log(`Searching for: ${query}, Type: ${searchType}, Category: ${category}`);
+                    
+                    // 模拟搜索结果更新
+                    document.getElementById('resultCount').textContent = Math.floor(Math.random() * 20) + 1;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

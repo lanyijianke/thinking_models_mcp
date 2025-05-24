@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模型分类 - "天机"思维模型 MCP 服务器</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .category-section {
+            padding-top: 60px;
+            margin-top: -50px;
+        }
+        .model-card {
+            transition: transform 0.3s;
+        }
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1>思维模型分类</h1>
+                    <p class="lead mb-0">按领域浏览全部思维模型</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-md-end mb-0">
+                            <li class="breadcrumb-item"><a href="../index.html" class="text-white">首页</a></li>
+                            <li class="breadcrumb-item"><a href="index.html" class="text-white">模型库</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">模型分类</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <i class="bi bi-info-circle-fill me-2"></i> 
+                    思维模型按领域分为8个主要类别，共包含94+种专业思维模型。选择下方类别查看相关模型，或使用<a href="search.html">模型搜索</a>查找特定模型。
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">类别导航</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 mb-2">
+                                <a href="#behavior-psychology" class="btn btn-outline-primary d-block">行为与心理模型</a>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <a href="#cognitive-learning" class="btn btn-outline-primary d-block">认知与学习</a>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <a href="#system-strategic" class="btn btn-outline-primary d-block">系统与战略思维</a>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <a href="#problem-solving-innovation" class="btn btn-outline-primary d-block">问题解决与创新</a>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <a href="#decision-judgment" class="btn btn-outline-primary d-block">决策与判断</a>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <a href="#marketing-analysis" class="btn btn-outline-primary d-block">营销分析</a>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <a href="#efficiency-optimization" class="btn btn-outline-primary d-block">效能与优化</a>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <a href="#communication-expression" class="btn btn-outline-primary d-block">沟通与表达</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 行为与心理模型 -->
+        <section id="behavior-psychology" class="category-section mt-5 pt-2">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-brain fs-1 text-primary me-3"></i>
+                        <div>
+                            <h2 class="mb-0">行为与心理模型</h2>
+                            <p class="text-muted">理解人类行为和心理机制的专业思维模型</p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <h4 class="mb-3">习惯与行为改变</h4>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">习惯环路模型</h5>
+                            <p class="card-text">帮助分析和改变习惯形成的关键环节，包括提示、渴望、行为和奖励四个基础组成部分。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="habit_loop">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">行为改变阶段模型</h5>
+                            <p class="card-text">描述行为改变的阶段性过程，从无意识到维持改变的全周期分析框架。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="stages_of_change">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">行为设计矩阵</h5>
+                            <p class="card-text">通过分析动机、能力和触发因素的关系，系统化设计行为干预措施。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="behavior_design_matrix">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="mb-3">人际与社会心理</h4>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">交易分析模型</h5>
+                            <p class="card-text">分析人际交流中的心理状态和沟通模式，识别健康与不健康的交流方式。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="transactional_analysis">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">社会影响力原理</h5>
+                            <p class="card-text">分析人类行为受社会影响的六大基本原理：互惠、承诺、社会认同、喜好、权威和稀缺性。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="principles_of_influence">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">冲突解决框架</h5>
+                            <p class="card-text">系统化分析和处理人际冲突，包括竞争、合作、妥协、回避和迁就五种冲突处理方式。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="conflict_resolution_framework">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 其他行为与心理子类别 -->
+
+        </section>
+
+        <!-- 认知与学习 -->
+        <section id="cognitive-learning" class="category-section mt-5 pt-2">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-mortarboard fs-1 text-primary me-3"></i>
+                        <div>
+                            <h2 class="mb-0">认知与学习</h2>
+                            <p class="text-muted">理解人类思维和学习过程的专业模型</p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <h4 class="mb-3">认知偏差</h4>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">认知偏差雷达图</h5>
+                            <p class="card-text">系统化检测决策过程中常见认知偏差的框架工具，帮助识别和避免思维陷阱。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="cognitive_bias_radar">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">确认偏误识别</h5>
+                            <p class="card-text">帮助识别和避免仅寻找支持现有信念的信息，而忽略反面证据的思维倾向。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="confirmation_bias_detection">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">决策偏差矩阵</h5>
+                            <p class="card-text">系统性分析决策过程中可能出现的认知偏差，并提供纠正方案的矩阵工具。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="decision_bias_matrix">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 其他认知与学习子类别 -->
+        </section>
+
+        <!-- 系统与战略思维 -->
+        <section id="system-strategic" class="category-section mt-5 pt-2">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-graph-up fs-1 text-primary me-3"></i>
+                        <div>
+                            <h2 class="mb-0">系统与战略思维</h2>
+                            <p class="text-muted">理解和应对复杂系统与制定战略的专业模型</p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <h4 class="mb-3">战略规划与分析</h4>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">SWOT分析</h5>
+                            <p class="card-text">系统分析内部优势(S)、劣势(W)和外部机会(O)、威胁(T)的战略规划工具。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="swot_analysis">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">波特五力模型</h5>
+                            <p class="card-text">分析行业竞争格局的框架，包括供应商议价能力、买家议价能力、替代品威胁、新进入者威胁和行业内竞争。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="porters_five_forces">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">PESTEL分析</h5>
+                            <p class="card-text">全面分析外部环境因素的模型，包括政治、经济、社会、技术、环境和法律六大维度。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="pestel_analysis">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 其他系统与战略思维子类别 -->
+        </section>
+
+        <!-- 其他主要类别 -->
+        <!-- 问题解决与创新 -->
+        <section id="problem-solving-innovation" class="category-section mt-5 pt-2">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-lightbulb fs-1 text-primary me-3"></i>
+                        <div>
+                            <h2 class="mb-0">问题解决与创新</h2>
+                            <p class="text-muted">解决复杂问题和激发创新思维的专业模型</p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            
+            <!-- 问题解决与创新模型展示... -->
+            <h4 class="mb-3">分析与解构工具</h4>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">5W2H分析法</h5>
+                            <p class="card-text">系统化分析问题的框架，通过回答What、Why、When、Where、Who、How和How much七个问题，全面理解问题。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="5w2h_analysis">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">五个为什么分析</h5>
+                            <p class="card-text">通过连续五次追问"为什么"，帮助发现问题的根本原因而非表面现象的根因分析工具。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="five_whys">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 model-card">
+                        <div class="card-body">
+                            <h5 class="card-title">问题树分析</h5>
+                            <p class="card-text">将复杂问题分解为树状结构，清晰展示问题的组成部分、原因和影响之间的关系。</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modelModal" data-modelid="problem_tree_analysis">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 其他剩余类别... -->
+        
+        <!-- 模型详情弹窗 -->
+        <div class="modal fade" id="modelModal" tabindex="-1" aria-labelledby="modelModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modelModalLabel">模型详情</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">加载模型信息...</p>
+                        </div>
+                        <div id="modelDetails" class="d-none">
+                            <!-- 通过JavaScript动态加载模型详情 -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                        <a href="#" id="viewFullDetails" class="btn btn-primary" target="_blank">查看完整详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>"天机"思维模型 MCP 服务器</h5>
+                    <p class="mb-0">提供专业思维模型库，助您系统化解决各类问题</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="../index.html" class="text-white">首页</a></li>
+                        <li class="list-inline-item"><a href="../api-docs/index.html" class="text-white">API文档</a></li>
+                        <li class="list-inline-item"><a href="../installation/index.html" class="text-white">安装指南</a></li>
+                        <li class="list-inline-item"><a href="../faq.html" class="text-white">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <small>&copy; 2023-2024 天机思维模型. 保留所有权利。</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 模型详情加载逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const modelModal = document.getElementById('modelModal');
+            if (modelModal) {
+                modelModal.addEventListener('show.bs.modal', function (event) {
+                    const button = event.relatedTarget;
+                    const modelId = button.getAttribute('data-modelid');
+                    const modalTitle = this.querySelector('.modal-title');
+                    const modelDetails = document.getElementById('modelDetails');
+                    const viewFullDetails = document.getElementById('viewFullDetails');
+                    
+                    // 重置和显示加载状态
+                    modelDetails.classList.add('d-none');
+                    const loadingIndicator = this.querySelector('.spinner-border').parentElement;
+                    loadingIndicator.classList.remove('d-none');
+                    
+                    // 设置查看完整详情链接
+                    viewFullDetails.href = `model-detail.html?id=${modelId}`;
+                    
+                    // 这里应当有一个API调用来获取模型详细信息
+                    // 以下为模拟加载过程
+                    setTimeout(() => {
+                        // 假设API已返回数据
+                        const mockData = {
+                            name: button.closest('.card').querySelector('.card-title').textContent,
+                            description: button.closest('.card').querySelector('.card-text').textContent,
+                            category: button.closest('section').querySelector('h2').textContent
+                        };
+                        
+                        // 更新模态框内容
+                        modalTitle.textContent = mockData.name;
+                        
+                        // 在实际应用中，这里应该解析API返回的真实数据
+                        modelDetails.innerHTML = `
+                            <div class="mb-3">
+                                <h6>分类:</h6>
+                                <p>${mockData.category}</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6>描述:</h6>
+                                <p>${mockData.description}</p>
+                            </div>
+                            <div class="alert alert-secondary">
+                                <p class="mb-0"><i class="bi bi-info-circle"></i> 加载简要信息成功。点击"查看完整详情"获取此模型的完整文档。</p>
+                            </div>
+                        `;
+                        
+                        // 隐藏加载指示器并显示内容
+                        loadingIndicator.classList.add('d-none');
+                        modelDetails.classList.remove('d-none');
+                    }, 1000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

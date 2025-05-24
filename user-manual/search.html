@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索结果 | 天机 - 思维模型 MCP 服务器</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="getting-started.html">快速开始</a></li>
+                        <li class="nav-item"><a class="nav-link" href="api.html">API文档</a></li>
+                        <li class="nav-item"><a class="nav-link" href="models.html">思维模型库</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <h1>搜索结果</h1>
+        
+        <div class="row mb-4">
+            <div class="col-lg-8 mx-auto">
+                <form id="search-form" class="mb-4">
+                    <div class="input-group">
+                        <input type="text" id="site-search-input" class="form-control form-control-lg" placeholder="搜索文档和思维模型..." aria-label="搜索" aria-describedby="search-button">
+                        <button class="btn btn-primary" type="submit" id="search-button">
+                            <i class="bi bi-search"></i> 搜索
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="search-results-container">
+            <p class="text-muted" id="search-status">请输入关键词进行搜索</p>
+            
+            <div class="accordion" id="search-results">
+                <!-- 搜索结果将动态插入此处 -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="api.html" class="text-light">API文档</a></li>
+                        <li><a href="changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p>© 2025 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 网站内容索引数据
+        const siteContent = [
+            {
+                title: "第一原理思维",
+                description: "通过将复杂问题分解为最基本的要素，然后从头开始重新构建解决方案。",
+                url: "models.html#first_principles_thinking",
+                category: "思维模型",
+                keywords: ["第一原理", "分解", "基础", "创新", "埃隆马斯克"]
+            },
+            {
+                title: "MECE原则",
+                description: "相互独立、完全穷尽的分析框架，确保所有可能性都被考虑且不重复。",
+                url: "models.html#mece_principle",
+                category: "思维模型",
+                keywords: ["MECE", "分析", "框架", "独立", "穷尽"]
+            },
+            {                title: "逆向思维",
+                description: "从相反的角度思考问题，思考\"如何失败\"而不是\"如何成功\"，以避免潜在陷阱。",
+                url: "models.html#inversion_thinking",
+                category: "思维模型",
+                keywords: ["逆向", "失败", "避免", "风险"]
+            },
+            {
+                title: "安装天机服务器",
+                description: "通过npm安装天机思维模型MCP服务器的指南。",
+                url: "getting-started.html#installation",
+                category: "指南",
+                keywords: ["安装", "npm", "指南", "开始"]
+            },
+            {
+                title: "配置服务器",
+                description: "如何配置天机思维模型MCP服务器，包括端口设置等。",
+                url: "getting-started.html#configuration",
+                category: "指南",
+                keywords: ["配置", "端口", "启动", "环境变量"]
+            },
+            {
+                title: "API接口概述",
+                description: "天机思维模型服务器API接口的完整说明文档。",
+                url: "api.html#api-overview",
+                category: "API文档",
+                keywords: ["API", "接口", "概述", "功能"]
+            },
+            {
+                title: "推荐模型API",
+                description: "如何使用API根据问题特征获取推荐的思维模型。",
+                url: "api.html#recommend-models-for-problem",
+                category: "API文档",
+                keywords: ["API", "推荐", "问题", "模型"]
+            },            {
+                title: "端口被占用问题",
+                description: "解决天机服务器启动时端口被占用的常见问题。",
+                url: "getting-started.html#troubleshooting",
+                category: "常见问题",
+                keywords: ["问题", "端口", "占用", "错误", "EADDRINUSE"]
+            },
+            {
+                title: "思维模型库概述",
+                description: "天机思维模型库包含了200多种精心选择的思维模型，涵盖多个领域。",
+                url: "models.html",
+                category: "思维模型",
+                keywords: ["模型库", "思维模型", "分类", "索引"]
+            }
+            // 更多内容项可以根据网站实际内容添加
+        ];
+
+        // 获取URL参数
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // 搜索函数
+        function searchSite(query) {
+            if (!query || query.trim() === '') {
+                return [];
+            }
+            
+            query = query.toLowerCase().trim();
+            const queryTerms = query.split(/\s+/);
+            
+            return siteContent.filter(item => {
+                // 搜索标题和描述
+                const titleMatch = item.title.toLowerCase().includes(query);
+                const descMatch = item.description.toLowerCase().includes(query);
+                
+                // 搜索关键词
+                const keywordMatch = item.keywords.some(keyword => 
+                    keyword.toLowerCase().includes(query) || 
+                    queryTerms.some(term => keyword.toLowerCase().includes(term))
+                );
+                
+                // 分词匹配（针对中文搜索优化）
+                const termMatch = queryTerms.some(term => 
+                    item.title.toLowerCase().includes(term) || 
+                    item.description.toLowerCase().includes(term)
+                );
+                
+                return titleMatch || descMatch || keywordMatch || termMatch;
+            });
+        }
+
+        // 显示搜索结果
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('search-results');
+            const searchStatus = document.getElementById('search-status');
+            
+            resultsContainer.innerHTML = '';
+            
+            if (results.length === 0) {
+                searchStatus.textContent = '没有找到匹配的结果';
+                return;
+            }
+            
+            searchStatus.textContent = `找到 ${results.length} 个匹配结果`;
+            
+            results.forEach((result, index) => {
+                const resultId = `result-${index}`;
+                const resultHtml = `
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${resultId}">
+                            <div>
+                                <span class="badge bg-secondary me-2">${result.category}</span>
+                                ${result.title}
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="${resultId}" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <p>${result.description}</p>
+                            <a href="${result.url}" class="btn btn-primary btn-sm">查看详情</a>
+                        </div>
+                    </div>
+                </div>`;
+                
+                resultsContainer.innerHTML += resultHtml;
+            });
+        }
+
+        // 页面加载时处理
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchForm = document.getElementById('search-form');
+            const searchInput = document.getElementById('site-search-input');
+            const queryParam = getQueryParam('q');
+            
+            // 如果URL中有查询参数，则自动搜索
+            if (queryParam) {
+                searchInput.value = queryParam;
+                const results = searchSite(queryParam);
+                displayResults(results);
+            }
+            
+            // 搜索表单提交处理
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const query = searchInput.value;
+                
+                // 更新URL，但不刷新页面
+                const url = new URL(window.location);
+                url.searchParams.set('q', query);
+                window.history.pushState({}, '', url);
+                
+                const results = searchSite(query);
+                displayResults(results);
+            });
+        });
+    </script>
+</body>
+</html>

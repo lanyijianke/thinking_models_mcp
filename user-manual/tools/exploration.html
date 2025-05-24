@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探索类工具 | 思维模型 MCP 服务器</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">关于天机</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../installation/index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="../installation/vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="../installation/others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">工具概览</a></li>
+                                <li><a class="dropdown-item active" href="exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
+                                <li><a class="dropdown-item" href="../models/search.html">搜索模型</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../applications/index.html">应用场景</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../api-docs/index.html">API文档</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../faq.html">常见问题</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="../search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-5 mb-4">探索类工具</h1>
+                <p class="lead">
+                    探索类工具是"天机"的发现引擎，帮助用户探索、了解并建立思维模型知识体系。这些工具专注于帮助用户找到合适的思维模型，并深入了解其内容和应用方法。
+                </p>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="list-models">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-info bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-list-ul text-info fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">模型列表浏览 (list-models)</h2>
+                                <p class="text-muted mb-0">探索思维工具库</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>list-models</code> 工具提供了对"天机"思维模型库的全面浏览功能，允许用户按类别、语言等条件查看可用的思维模型列表。这是用户初始探索思维模型库的重要入口，特别适合希望系统性了解现有思维工具的用户。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>category</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>主分类名称，用于过滤特定类别的模型</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>subcategory</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>-</td>
+                                        <td>子分类名称（需同时提供主分类）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>limit</code></td>
+                                        <td>数字</td>
+                                        <td>否</td>
+                                        <td>100</td>
+                                        <td>返回结果数量限制</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 列出所有中文思维模型
+{
+  "lang": "zh"
+}
+
+// 列出特定类别的思维模型
+{
+  "category": "决策思维",
+  "lang": "zh"
+}
+
+// 列出特定子类别的思维模型
+{
+  "category": "系统思维",
+  "subcategory": "反馈循环",
+  "lang": "zh",
+  "limit": 10
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">初学者系统性了解可用思维工具</li>
+                            <li class="list-group-item bg-transparent">研究特定领域（如决策思维）的相关模型</li>
+                            <li class="list-group-item bg-transparent">教学环境中创建思维模型课程大纲</li>
+                            <li class="list-group-item bg-transparent">构建个人思维工具体系的第一步</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 对初次使用天机的用户，建议先使用此工具浏览全部模型分类，建立对思维模型体系的整体认知，然后再深入特定类别。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="search-models">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-info bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-search text-info fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">关键词模型搜索 (search-models)</h2>
+                                <p class="text-muted mb-0">精确查找思维工具</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>search-models</code> 工具允许用户通过关键词在思维模型库中进行文本搜索，快速定位相关模型。相比于分类浏览，关键词搜索更加直接且高效，特别适合已经对思维模型有一定了解、寻找特定模型的用户。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>query</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>搜索关键词</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>limit</code></td>
+                                        <td>数字</td>
+                                        <td>否</td>
+                                        <td>10</td>
+                                        <td>返回结果数量限制</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 搜索与"偏见"相关的思维模型
+{
+  "query": "偏见",
+  "lang": "zh"
+}
+
+// 搜索与"系统"相关的思维模型，限制结果为5个
+{
+  "query": "系统",
+  "lang": "zh",
+  "limit": 5
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">快速查找特定主题相关的思维模型</li>
+                            <li class="list-group-item bg-transparent">解决问题时寻找相关的思考工具</li>
+                            <li class="list-group-item bg-transparent">研究特定概念在不同思维模型中的应用</li>
+                            <li class="list-group-item bg-transparent">准备演讲或写作时搜集相关思维框架</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 尝试使用多种相关关键词进行搜索，以获得更全面的结果。搜索不仅匹配模型名称，还会搜索模型描述、用途和标签等字段。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="get-model-info">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-info bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-file-earmark-text text-info fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">获取模型详情 (get-model-info)</h2>
+                                <p class="text-muted mb-0">深入了解模型内容</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>get-model-info</code> 工具提供思维模型的详细信息，包括定义、用途、示例、可视化内容等。用户可以指定需要返回的内容字段，从基本信息到完整细节都可定制。这是深入学习和应用特定模型的关键工具。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>model_id</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>思维模型的唯一ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>fields</code></td>
+                                        <td>字符串数组</td>
+                                        <td>否</td>
+                                        <td>["basic"]</td>
+                                        <td>需要返回的字段，如 'all'(全部), 'basic'(基本信息), 'detail'(详细信息), 'teaching'(教学内容), 'warnings'(注意事项), 'visualizations'(可视化)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 获取模型的基本信息
+{
+  "model_id": "first_principles_thinking",
+  "lang": "zh"
+}
+
+// 获取模型的所有信息
+{
+  "model_id": "first_principles_thinking",
+  "fields": ["all"],
+  "lang": "zh"
+}
+
+// 只获取模型的可视化和教学内容
+{
+  "model_id": "first_principles_thinking",
+  "fields": ["visualizations", "teaching"],
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">深入学习特定思维模型的原理和应用方法</li>
+                            <li class="list-group-item bg-transparent">准备培训材料时获取模型的教学内容和可视化</li>
+                            <li class="list-group-item bg-transparent">将模型应用于实际问题前了解其局限性和常见陷阱</li>
+                            <li class="list-group-item bg-transparent">研究不同语言版本的思维模型表达差异</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 使用 ["all"] 获取模型的完整信息可能返回较大的数据量。如果只需要特定信息，建议指定所需字段以提高效率。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="get-related-models">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-info bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-diagram-3 text-info fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">相关模型发现 (get-related-models)</h2>
+                                <p class="text-muted mb-0">扩展思考维度</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>get-related-models</code> 工具基于语义相似性和模型关联性，推荐与指定模型相关的其他思维模型。此工具帮助用户探索思维模型之间的联系，构建思维模型网络，发现更多相关的思考方法。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>model_id</code></td>
+                                        <td>字符串</td>
+                                        <td>是</td>
+                                        <td>-</td>
+                                        <td>源思维模型的唯一ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>limit</code></td>
+                                        <td>数字</td>
+                                        <td>否</td>
+                                        <td>5</td>
+                                        <td>返回结果数量限制</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>use_enhanced_similarity</code></td>
+                                        <td>布尔值</td>
+                                        <td>否</td>
+                                        <td>true</td>
+                                        <td>是否使用增强的相似度评估（如果为false则使用基础算法）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 获取与"第一性原理思维"相关的模型
+{
+  "model_id": "first_principles_thinking",
+  "lang": "zh"
+}
+
+// 获取更多相关模型并使用基础相似度算法
+{
+  "model_id": "first_principles_thinking",
+  "limit": 10,
+  "use_enhanced_similarity": false,
+  "lang": "zh"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">扩展单一思维模型的应用场景和视角</li>
+                            <li class="list-group-item bg-transparent">构建特定领域的思维模型知识网络</li>
+                            <li class="list-group-item bg-transparent">发现互补的思考方法，组合使用解决复杂问题</li>
+                            <li class="list-group-item bg-transparent">创建思维模型学习路径，从基础到进阶模型</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 增强的相似度评估算法会考虑模型之间更深层的语义关联，而不只是表面的文本相似性，通常能提供更有价值的推荐结果。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5" id="get-categories">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle bg-info bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-folder2 text-info fs-4"></i>
+                            </div>
+                            <div>
+                                <h2 class="h3 mb-0">获取模型分类 (get-categories)</h2>
+                                <p class="text-muted mb-0">建立思维体系认知</p>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">功能描述</h3>
+                        <p>
+                            <code>get-categories</code> 工具返回所有思维模型的分类信息，包括主分类和子分类，帮助用户了解思维模型的整体分类体系。这是构建系统化思维工具认知的重要工具。
+                        </p>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">参数说明</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>类型</th>
+                                        <th>必填</th>
+                                        <th>默认值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>lang</code></td>
+                                        <td>字符串</td>
+                                        <td>否</td>
+                                        <td>"zh"</td>
+                                        <td>语言代码，支持 "zh"(中文) 或 "en"(英文)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">使用示例</h3>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>// 获取中文思维模型分类
+{
+  "lang": "zh"
+}
+
+// 获取英文思维模型分类
+{
+  "lang": "en"
+}</code></pre>
+                        </div>
+
+                        <h3 class="h5 border-bottom pb-2 mb-3">实际应用场景</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent">了解思维模型的整体分类体系</li>
+                            <li class="list-group-item bg-transparent">规划系统性学习思维模型的路径</li>
+                            <li class="list-group-item bg-transparent">为团队或组织创建思维工具分类参考</li>
+                            <li class="list-group-item bg-transparent">设计思维模型培训课程的模块划分</li>
+                        </ul>
+
+                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <div>
+                                <strong>提示：</strong> 配合 list-models 工具使用可以先了解整体分类，然后有针对性地浏览各个类别的具体模型。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading"><i class="bi bi-lightbulb me-2"></i>探索技巧</h4>
+                    <p>有效地使用探索类工具可以显著提升您发现和学习思维模型的效率。以下是一些建议的探索流程：</p>
+                    <ol>
+                        <li>首先使用 <code>get-categories</code> 了解思维模型的整体分类体系</li>
+                        <li>使用 <code>list-models</code> 浏览感兴趣类别的具体模型</li>
+                        <li>通过 <code>get-model-info</code> 深入学习特定模型的详细内容</li>
+                        <li>利用 <code>get-related-models</code> 发现相关模型，扩展思考维度</li>
+                        <li>随时使用 <code>search-models</code> 快速查找特定关键词相关的模型</li>
+                    </ol>
+                    <hr>
+                    <p class="mb-0">通过这种系统化的探索方法，您可以逐步建立个人的思维模型知识体系，并在实际应用中更灵活地选择合适的思考工具。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center my-5">
+            <div class="btn-group" role="group">
+                <a href="index.html" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left me-2"></i>工具概览
+                </a>
+                <a href="problem-solving.html" class="btn btn-primary">
+                    问题解决类工具<i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../api-docs/index.html" class="text-light">API文档</a></li>
+                        <li><a href="../changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

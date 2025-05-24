@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor配置 | 思维模型 MCP 服务器</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">关于天机</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item active" href="cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item" href="claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../tools/index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="../tools/exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="../tools/problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="../tools/creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="../tools/system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
+                                <li><a class="dropdown-item" href="../models/search.html">搜索模型</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../applications/index.html">应用场景</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../api-docs/index.html">API文档</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../faq.html">常见问题</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="../search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-5 mb-4">Cursor 配置指南</h1>
+                <p class="lead">
+                    本指南将帮助您在 Cursor 编辑器中配置和使用"天机"思维模型 MCP 服务器，让您在编码过程中轻松访问强大的思维工具。Cursor 原生支持 MCP 协议，配置简单直观。
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="badge rounded-pill bg-primary">Cursor</span>
+                    <span class="badge rounded-pill bg-secondary">MCP</span>
+                    <span class="badge rounded-pill bg-success">思维模型</span>
+                    <span class="badge rounded-pill bg-info text-dark">AI 助手</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="h3 mb-4">配置步骤概览</h2>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">1</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">安装 Cursor 编辑器</h3>
+                                <p>如果您尚未安装 Cursor，请先下载并安装：</p>
+                                <a href="https://cursor.sh" target="_blank" class="btn btn-outline-primary mb-3">
+                                    <i class="bi bi-download me-2"></i>下载 Cursor
+                                </a>
+                                <p>Cursor 是一个基于 VS Code 的编辑器，具有强大的 AI 功能，同时原生支持 MCP 协议，适合与"天机"思维模型服务器配合使用。</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">2</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">启动"天机"MCP 服务器</h3>
+                                <p>确保"天机"思维模型 MCP 服务器已正确安装并且正在运行：</p>
+                                <div class="bg-light p-3 rounded mb-3">
+                                    <pre class="mb-0"><code># 如果使用全局安装
+thinking-models-server
+
+# 如果使用本地安装
+npm run start-thinking-models</code></pre>
+                                </div>
+                                <p>服务器启动后，应该会显示一条消息，表明服务器已经在监听连接。</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">3</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">配置 Cursor MCP 设置</h3>
+                                <p>在 Cursor 中配置 MCP 服务器：</p>
+                                
+                                <ol>
+                                    <li>点击左下角的设置图标（⚙️）或按下 <kbd>Ctrl</kbd>+<kbd>,</kbd> 打开设置</li>
+                                    <li>搜索"MCP"或导航至"AI"设置部分</li>
+                                    <li>找到"MCP: Servers"设置选项</li>
+                                    <li>点击"Edit in settings.json"编辑配置文件</li>
+                                </ol>
+                                
+                                <p>在 settings.json 中添加以下配置：</p>
+                                
+                                <div class="bg-light p-3 rounded mb-3">
+                                    <pre class="mb-0"><code>{
+  // ... 其他设置 ...
+  
+  "mcp.servers": [
+    {
+      "name": "天机思维模型服务器",
+      "command": "thinking-models-server",
+      "address": null,
+      "description": "思维模型MCP服务器",
+      "status": "stopped"
+    }
+  ],
+  
+  // 如果希望默认使用天机服务器，可以添加：
+  "mcp.defaultServer": "天机思维模型服务器"
+}</code></pre>
+                                </div>
+                                
+                                <div class="alert alert-info" role="alert">
+                                    <i class="bi bi-info-circle-fill me-2"></i>
+                                    如果您使用本地项目安装或自定义路径，请将"command"设置为正确的启动命令，例如：<code>npm run start-thinking-models</code> 或完整路径。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">4</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">连接到"天机"服务器</h3>
+                                <p>配置完成后，需要连接到服务器：</p>
+                                
+                                <h4 class="h6 mt-3">方法一：通过命令面板</h4>
+                                <ol>
+                                    <li>按下 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> 打开命令面板</li>
+                                    <li>输入"MCP: Connect to Server"并选择</li>
+                                    <li>从列表中选择"天机思维模型服务器"</li>
+                                </ol>
+                                
+                                <h4 class="h6 mt-3">方法二：通过状态栏</h4>
+                                <ol>
+                                    <li>在 Cursor 底部状态栏找到 MCP 相关图标</li>
+                                    <li>点击图标，从弹出的菜单中选择"天机思维模型服务器"</li>
+                                    <li>选择"Connect"进行连接</li>
+                                </ol>
+                                
+                                <div class="alert alert-success mt-3" role="alert">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="bi bi-check-circle-fill fs-4 me-2"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="alert-heading">连接成功指示</h4>
+                                            <p class="mb-0">连接成功后，Cursor 将显示通知，状态栏 MCP 图标会变成绿色，并显示"已连接到天机思维模型服务器"。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">5</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">使用"天机"思维模型</h3>
+                                <p>成功连接后，可以开始在 Cursor 中使用"天机"思维模型工具：</p>
+                                
+                                <h4 class="h6 mt-3">使用 Cursor 聊天面板</h4>
+                                <ol>
+                                    <li>点击左侧活动栏中的聊天图标，或使用快捷键 <kbd>Ctrl</kbd>+<kbd>I</kbd> 打开聊天面板</li>
+                                    <li>在聊天面板中输入与思维模型相关的查询，例如：
+                                        <ul>
+                                            <li>"天机"中有哪些决策类思维模型？</li>
+                                            <li>请使用SWOT分析模型评估一个新产品上市</li>
+                                            <li>我需要一个框架来分析复杂系统，有什么推荐？</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                                
+                                <div class="alert alert-info mt-3" role="alert">
+                                    <i class="bi bi-lightbulb-fill me-2"></i>
+                                    <strong>提示：</strong> Cursor 的智能度高于普通编辑器，可以直接在聊天面板中使用自然语言与"天机"服务器交互，获取思维模型推荐或分析问题。请参考<a href="../tools/index.html" class="alert-link">工具文档</a>了解更多使用方法。
+                                </div>
+                                
+                                <h4 class="h6 mt-3">在文档内使用内联提示</h4>
+                                <p>Cursor 允许在代码或文档中直接使用内联提示：</p>
+                                <ol>
+                                    <li>在代码或文档中输入注释形式的提示，例如：</li>
+                                </ol>
+                                <div class="bg-light p-3 rounded mb-3">
+                                    <pre class="mb-0"><code>// 使用天机的系统思维分析以下问题：
+// 我们的应用需要优化用户留存率，当前数据表明...</code></pre>
+                                </div>
+                                <ol start="2">
+                                    <li>选中提示文本，按 <kbd>Ctrl</kbd>+<kbd>Enter</kbd> 或 <kbd>Alt</kbd>+<kbd>\\</kbd></li>
+                                    <li>Cursor 将通过"天机"服务器处理提示并在下方生成回应</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="h3 mb-4">Cursor 的高级配置</h2>
+                        
+                        <h3 class="h5 mb-3">切换多个 MCP 服务器</h3>
+                        <p>Cursor 支持配置多个 MCP 服务器，方便在不同场景切换使用：</p>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>{
+  "mcp.servers": [
+    {
+      "name": "天机思维模型服务器",
+      "command": "thinking-models-server",
+      "address": null,
+      "description": "思维模型MCP服务器"
+    },
+    {
+      "name": "其他MCP服务器",
+      "command": "其他服务器命令",
+      "address": null,
+      "description": "其他MCP服务器"
+    }
+  ]
+}</code></pre>
+                        </div>
+                        <p>使用命令面板中的"MCP: Connect to Server"命令可以快速在多个服务器间切换。</p>
+                        
+                        <h3 class="h5 mb-3">使用网络模式连接</h3>
+                        <p>如果您更喜欢使用网络模式而非命令行模式，可以这样配置：</p>
+                        <ol>
+                            <li>使用网络模式启动"天机"服务器：</li>
+                        </ol>
+                        <div class="bg-light p-3 rounded mb-3">
+                            <pre class="mb-0"><code># 设置环境变量并启动
+THINKING_MODELS_PORT=3456 thinking-models-server</code></pre>
+                        </div>
+                        <ol start="2">
+                            <li>在 Cursor settings.json 中配置：</li>
+                        </ol>
+                        <div class="bg-light p-3 rounded mb-4">
+                            <pre class="mb-0"><code>{
+  "mcp.servers": [
+    {
+      "name": "天机思维模型服务器",
+      "command": null,
+      "address": "localhost:3456",
+      "description": "思维模型MCP服务器(网络模式)"
+    }
+  ]
+}</code></pre>
+                        </div>
+                        
+                        <h3 class="h5 mb-3">自定义快捷键</h3>
+                        <p>为快速访问"天机"功能，配置专用快捷键：</p>
+                        <ol>
+                            <li>打开键盘快捷键设置（<kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>Ctrl</kbd>+<kbd>S</kbd>）</li>
+                            <li>搜索"MCP"相关命令</li>
+                            <li>为"MCP: Connect to Server"等命令设置自定义快捷键</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="h3 mb-4">常见问题与排查</h2>
+                        
+                        <div class="accordion" id="cursorFAQ">
+                            <div class="accordion-item border-0 mb-3 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        连接失败或超时
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#cursorFAQ">
+                                    <div class="accordion-body">
+                                        <p>可能的原因和解决方案：</p>
+                                        <ul>
+                                            <li><strong>服务器未启动</strong>：确保在单独的终端窗口中启动了"天机"服务器</li>
+                                            <li><strong>命令路径错误</strong>：确保服务器命令在系统路径中，或提供完整路径</li>
+                                            <li><strong>配置错误</strong>：检查 settings.json 中的服务器配置是否正确</li>
+                                        </ul>
+                                        <p>尝试使用"MCP: Show Server Status"命令查看服务器状态和错误信息。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 mb-3 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Cursor 显示连接成功但无法获取响应
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#cursorFAQ">
+                                    <div class="accordion-body">
+                                        <p>可能的原因和解决方案：</p>
+                                        <ul>
+                                            <li><strong>服务器内部错误</strong>：检查服务器终端输出是否有错误信息</li>
+                                            <li><strong>查询格式</strong>：尝试使用更简单明确的查询格式</li>
+                                            <li><strong>冲突设置</strong>：检查 Cursor 的 AI 设置是否有其他冲突配置</li>
+                                        </ul>
+                                        <p>尝试重新连接服务器或重启 Cursor 解决临时问题。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        找不到 MCP 相关设置或命令
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#cursorFAQ">
+                                    <div class="accordion-body">
+                                        <p>可能的原因和解决方案：</p>
+                                        <ul>
+                                            <li><strong>Cursor 版本</strong>：确保使用最新版本的 Cursor，旧版可能不支持 MCP</li>
+                                            <li><strong>设置搜索</strong>：尝试在设置中搜索"Model Context Protocol"或直接编辑 settings.json</li>
+                                            <li><strong>重启问题</strong>：某些设置更改需要重启 Cursor 才能生效</li>
+                                        </ul>
+                                        <p>访问 <a href="https://cursor.sh/docs/ai-features" target="_blank">Cursor 官方文档</a> 了解更多关于 MCP 支持的详细信息。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="alert alert-info d-flex" role="alert">
+                    <div class="flex-shrink-0">
+                        <i class="bi bi-info-circle-fill fs-4 me-3"></i>
+                    </div>
+                    <div>
+                        <h4 class="alert-heading">Cursor 与思维模型的优势</h4>
+                        <p>Cursor 作为一款具有 AI 增强功能的编辑器，与"天机"思维模型的结合特别强大：</p>
+                        <ul class="mb-0">
+                            <li>内联代码生成与思维模型分析无缝结合</li>
+                            <li>可以在编码过程中直接应用系统思维、解决方案架构等高层次思考框架</li>
+                            <li>通过聊天面板获取思维模型建议，并直接应用于当前项目</li>
+                            <li>支持上下文理解，可分析当前代码并应用适当的思维模型</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center my-5">
+            <div class="btn-group" role="group">
+                <a href="vscode.html" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left me-2"></i>VS Code配置
+                </a>
+                <a href="claude.html" class="btn btn-primary">
+                    Claude配置<i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../api-docs/index.html" class="text-light">API文档</a></li>
+                        <li><a href="../changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

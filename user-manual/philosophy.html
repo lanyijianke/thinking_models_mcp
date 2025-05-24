@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计理念 | 思维模型 MCP 服务器</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">关于天机</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="installation/index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="installation/vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item" href="installation/cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item" href="installation/claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="installation/others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tools/index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="tools/exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="models/categories.html">分类浏览</a></li>
+                                <li><a class="dropdown-item" href="models/search.html">搜索模型</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="applications/index.html">应用场景</a></li>
+                        <li class="nav-item"><a class="nav-link" href="api-docs/index.html">API文档</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">常见问题</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 mb-4">天机设计理念</h1>
+                <p class="lead">
+                    "天机"是一个基于对现代思考挑战深刻理解而设计的思维模型MCP系统，旨在解决思考与决策之间的转化阻力、标准化思维工具适应性不足、知识孤岛问题以及认知偏见的桎梏。
+                </p>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="border-bottom pb-2 mb-4">思考的基础：洞见的三种原料</h2>
+                <div class="card-group mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title h5"><i class="bi bi-grid-3x3-gap me-2 text-primary"></i>范畴化思维</h3>
+                            <p class="card-text">帮助我们确定问题的边界和类型，建立清晰的认知边界，使复杂问题变得可管理。通过对事物进行分类和归纳，我们能够更有效地组织信息和知识。</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title h5"><i class="bi bi-diagram-3 me-2 text-success"></i>结构化思维</h3>
+                            <p class="card-text">提供解决问题的系统框架，将复杂问题分解为可管理的组成部分，并理清它们之间的关系。通过建立逻辑连接，使思考过程更加清晰和系统化。</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title h5"><i class="bi bi-lightbulb me-2 text-warning"></i>抽象化思维</h3>
+                            <p class="card-text">让我们理解问题的本质，超越表面现象看清核心要素。通过识别底层模式和原则，我们能够将特定问题的解决方案泛化到更广泛的场景。</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center fst-italic mb-5">
+                    "洞见是一种智慧的体现，也是认知飞跃的结果。当我们排除干扰、看清本质、加之系统思考，时间一长就会形成属于自己的真知灼见。"
+                </p>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="border-bottom pb-2 mb-4">思维之痛：当代思考的挑战</h2>
+                <div class="accordion" id="challenges">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                思考与决策之间的转化阻力
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#challenges">
+                            <div class="accordion-body">
+                                <p>分析瘫痪导致决策延迟；理论与实践脱节导致决策不接地气；过度依赖直觉或经验导致决策缺乏系统性支撑。这种割裂使得许多深刻的思考最终未能落地，让人沦为"思想的巨人，行动的矮子"。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                标准化工具与个性化思考的不匹配
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#challenges">
+                            <div class="accordion-body">
+                                <p>现有的思维工具大多是标准化设计，却要应对个体高度独特的思考方式。这就如同一件均码衣服，虽然人人可穿，却无法真正贴合每个人的身形。这种不匹配导致思维工具使用效率低下，甚至引发排斥，使得许多优秀的思考框架沦为形式而非实质性助力。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                知识孤岛：缺乏有效的思考分享机制
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#challenges">
+                            <div class="accordion-body">
+                                <p>个体的洞察与思考成果往往因缺乏有效的分享机制而成为"知识孤岛"。即使在同一组织内部，不同个体的思考方式和结果也难以有效融合和累积，导致集体智慧无法有机形成，每个人都在"重复发明轮子"，浪费宝贵的认知资源。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                认知偏见的桎梏
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#challenges">
+                            <div class="accordion-body">
+                                <p>许多人被无意识的确认偏误所束缚，只愿看到支持自己既有观点的信息；被锚定效应所限，过度依赖初始信息；被可得性偏见所误导，对近期或显著事件给予过高权重。这些认知偏见如同隐形镣铐，不知不觉中限制了我们看待世界的广度与思考问题的深度。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="border-bottom pb-2 mb-4">核心理念</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-light">
+                            <div class="card-body">
+                                <h3 class="card-title text-center mb-3">成长</h3>
+                                <p class="card-text">将"天机"设计成一个能够"成长"的有机系统，而非静态的工具集。</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-transparent">自适应学习机制：系统能够从每次交互中学习，不断调整和优化其推荐和辅助策略</li>
+                                    <li class="list-group-item bg-transparent">进化性思维模型：思维模型库不是固定的知识集合，而是能够随用户需求和反馈而不断发展</li>
+                                    <li class="list-group-item bg-transparent">共创成长模式：用户不只是使用者，更是系统进化的参与者，双方在互动中共同成长</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-light">
+                            <div class="card-body">
+                                <h3 class="card-title text-center mb-3">贴合</h3>
+                                <p class="card-text">以基础思维模型为基准，结合用户自身的认知特性，孕育出独特的个性化模型。</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-transparent">思维模式识别：深入理解用户的思考习惯和偏好</li>
+                                    <li class="list-group-item bg-transparent">动态调整机制：根据用户的使用反馈不断优化和调整</li>
+                                    <li class="list-group-item bg-transparent">个性化表达：允许用户用自己的方式诠释和应用思维模型</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-light">
+                            <div class="card-body">
+                                <h3 class="card-title text-center mb-3">平衡</h3>
+                                <p class="card-text">"天机"的设计追求多个维度的平衡，通过阶梯式的工具组合完成对个人认知的探索。</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-transparent">简单与强大的平衡：工具既要易于使用，又要功能强大</li>
+                                    <li class="list-group-item bg-transparent">结构与灵活的平衡：提供清晰的思维框架，同时保持足够的灵活性</li>
+                                    <li class="list-group-item bg-transparent">通用与专业的平衡：满足不同层次用户的需求</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="border-bottom pb-2 mb-4">天机的实际价值</h2>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">价值点</th>
+                                <th scope="col">从</th>
+                                <th scope="col">到</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>模型推荐</td>
+                                <td>被动寻找</td>
+                                <td>主动使用</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>创造力</td>
+                                <td>局限思维</td>
+                                <td>泛化涌现</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>问题解决</td>
+                                <td>无序思考</td>
+                                <td>结构化推理</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>复杂任务</td>
+                                <td>整体处理</td>
+                                <td>分段推理</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>适应场景</td>
+                                <td>通用模型</td>
+                                <td>定制解决方案</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>使用体验</td>
+                                <td>固定不变</td>
+                                <td>持续优化</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="border-bottom pb-2 mb-4">设计灵感：人马座协作模式</h2>
+                <blockquote class="blockquote">
+                    <p>"一个水平中等的棋手，加上一台普通的机器，但拥有更优越的协作流程，其战斗力往往能胜过一位顶尖棋手加上一台超级计算机，但配合着糟糕的流程。"</p>
+                    <footer class="blockquote-footer">加里·卡斯帕罗夫（Garry Kasparov）</footer>
+                </blockquote>
+                <p class="mb-4">
+                    "天机"的设计灵感来源于国际象棋世界冠军加里·卡斯帕罗夫提出的"人马座"协作模式。在与IBM的超级计算机"深蓝"对决后，卡斯帕罗夫意识到纯粹的人类智慧或纯粹的机器智能都不是最优解，他推广了"高级象棋"（后称"自由式象棋"）这种将人类与计算机结合的对弈形式。
+                </p>
+                <p class="mb-4">
+                    "人马座"模式（Centaur）的精髓在于：通过设计和管理有效的协作流程与互动机制，可以催生出超越个体能力总和的"涌现"智能。价值的源泉不在于个体能力的简单相加，而在于协同效应本身。
+                </p>
+                <p>
+                    "天机"正是基于这一理念设计的智能协作伙伴，其目标在于"增强"而非"取代"人类思考。我们追求的是构建"协作智能"或"混合智能"，放大和提升人类独有的认知能力——例如战略远见、创造性、情感沟通能力以及伦理判断力。
+                </p>
+            </div>
+        </section>
+
+        <div class="text-center my-5">
+            <a href="installation/index.html" class="btn btn-primary btn-lg">
+                开始安装与使用 <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="api-docs/index.html" class="text-light">API文档</a></li>
+                        <li><a href="changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

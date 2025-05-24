@@ -1,0 +1,142 @@
+/* 
+ * 天机 - 思维模型 MCP 服务器用户手册样式
+ */
+
+:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #8338ec;
+    --accent-color: #ff006e;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+/* 导航栏样式 */
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+/* 主要内容区样式 */
+main {
+    min-height: 70vh;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* 代码块样式 */
+pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    color: var(--accent-color);
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+/* 卡片样式 */
+.card {
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    font-weight: 600;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* 语言切换样式 */
+.language-switch {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.language-switch a {
+    padding: 0.25rem 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.language-switch a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* 文档导航样式 */
+.doc-nav {
+    position: sticky;
+    top: 1rem;
+    height: calc(100vh - 2rem);
+    overflow-y: auto;
+}
+
+.doc-nav .nav-link {
+    padding: 0.25rem 0;
+    color: var(--dark-color);
+}
+
+.doc-nav .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.doc-nav .nav-link:hover {
+    color: var(--secondary-color);
+}

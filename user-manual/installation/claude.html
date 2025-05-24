@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude配置 | 思维模型 MCP 服务器</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">关于天机</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item" href="cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item active" href="claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../tools/index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="../tools/exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="../tools/problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="../tools/creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="../tools/system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
+                                <li><a class="dropdown-item" href="../models/search.html">搜索模型</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../applications/index.html">应用场景</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../api-docs/index.html">API文档</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../faq.html">常见问题</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="../search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-5 mb-4">Claude 桌面应用配置指南</h1>
+                <p class="lead">
+                    本指南将帮助您在 Claude 桌面应用中配置和使用"天机"思维模型 MCP 服务器，让您在日常对话中轻松访问强大的思维框架和工具。Claude 桌面应用支持 MCP 协议，可与"天机"思维模型服务器无缝集成。
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="badge rounded-pill bg-primary">Claude</span>
+                    <span class="badge rounded-pill bg-secondary">MCP</span>
+                    <span class="badge rounded-pill bg-success">思维模型</span>
+                    <span class="badge rounded-pill bg-info text-dark">Anthropic</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="h3 mb-4">配置步骤概览</h2>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">1</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">安装 Claude 桌面应用</h3>
+                                <p>如果您尚未安装 Claude 桌面应用，请先下载并安装：</p>
+                                <a href="https://claude.ai/desktop" target="_blank" class="btn btn-outline-primary mb-3">
+                                    <i class="bi bi-download me-2"></i>下载 Claude 桌面应用
+                                </a>
+                                <p>Claude 桌面应用是 Anthropic 提供的官方客户端，支持 Model Context Protocol (MCP)，可以通过插件和扩展功能增强 Claude 的能力。</p>
+                                
+                                <div class="alert alert-secondary" role="alert">
+                                    <i class="bi bi-info-circle-fill me-2"></i>
+                                    <span>注意：请确保您安装的是支持 MCP 的最新版本 Claude 桌面应用。</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">2</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">启动"天机"MCP 服务器</h3>
+                                <p>确保"天机"思维模型 MCP 服务器已正确安装并且正在运行：</p>
+                                <div class="bg-light p-3 rounded mb-3">
+                                    <pre class="mb-0"><code># 如果使用全局安装
+thinking-models-server
+
+# 如果使用本地安装
+npm run start-thinking-models</code></pre>
+                                </div>
+                                <p>建议使用网络模式启动服务器，因为 Claude 桌面应用通常更好地支持网络连接：</p>
+                                <div class="bg-light p-3 rounded mb-3">
+                                    <pre class="mb-0"><code># 使用指定端口启动（Windows）
+set THINKING_MODELS_PORT=3456
+thinking-models-server
+
+# 使用指定端口启动（Linux/macOS）
+THINKING_MODELS_PORT=3456 thinking-models-server</code></pre>
+                                </div>
+                                <p>服务器启动后，应该会显示一条消息表明服务器已经在监听连接。</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">3</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">在 Claude 中配置 MCP 连接</h3>
+                                <p>打开 Claude 桌面应用，配置 MCP 服务器连接：</p>
+                                
+                                <ol>
+                                    <li>点击左下角的设置图标（⚙️）打开设置面板</li>
+                                    <li>找到"扩展"或"MCP 设置"部分（具体名称可能因版本而异）</li>
+                                    <li>点击"添加 MCP 服务器"或类似按钮</li>
+                                    <li>填写以下信息：</li>
+                                </ol>
+                                
+                                <div class="table-responsive mb-4">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>配置项</th>
+                                                <th>值</th>
+                                                <th>说明</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>名称</td>
+                                                <td>天机思维模型服务器</td>
+                                                <td>服务器的显示名称</td>
+                                            </tr>
+                                            <tr>
+                                                <td>地址</td>
+                                                <td>localhost:3456</td>
+                                                <td>如果使用网络模式，填写服务器地址和端口</td>
+                                            </tr>
+                                            <tr>
+                                                <td>命令（可选）</td>
+                                                <td>thinking-models-server</td>
+                                                <td>如果不使用网络模式，可提供命令行</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="alert alert-info" role="alert">
+                                    <i class="bi bi-info-circle-fill me-2"></i>
+                                    Claude 桌面应用的 MCP 配置界面可能因版本而有所不同。如果找不到相关设置，请检查应用是否为最新版本，或参考 Claude 官方文档查找当前版本的 MCP 配置方法。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">4</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">连接到"天机"服务器</h3>
+                                <p>完成配置后，在 Claude 桌面应用中连接到"天机"服务器：</p>
+                                
+                                <ol>
+                                    <li>在设置面板中找到您添加的"天机思维模型服务器"</li>
+                                    <li>点击"连接"或开关按钮启用连接</li>
+                                    <li>如果连接成功，状态指示器将变为绿色或显示"已连接"</li>
+                                </ol>
+                                
+                                <div class="alert alert-success mt-3" role="alert">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="bi bi-check-circle-fill fs-4 me-2"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="alert-heading">连接成功指示</h4>
+                                            <p class="mb-0">连接成功后，Claude 应用通常会显示已连接到"天机思维模型服务器"的通知，以及服务器提供的功能列表或工具清单。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                <h3 class="h5 mb-0 text-primary">5</h3>
+                            </div>
+                            <div>
+                                <h3 class="h5">使用"天机"思维模型</h3>
+                                <p>成功连接后，可以在 Claude 中使用"天机"思维模型工具：</p>
+                                
+                                <h4 class="h6 mt-3">直接在对话中使用</h4>
+                                <p>在 Claude 的对话框中，您可以直接询问与"天机"思维模型相关的问题：</p>
+                                <div class="bg-light p-3 rounded mb-3 border-start border-primary border-4">
+                                    <p class="mb-2 fw-medium">示例问题：</p>
+                                    <ul class="mb-0">
+                                        <li>"天机"中有哪些关于系统思维的模型？</li>
+                                        <li>使用SWOT分析思维模型帮我分析一个创业项目</li>
+                                        <li>我需要一个框架来理解复杂系统的反馈循环，有什么推荐？</li>
+                                        <li>请基于"天机"的思维模型库，推荐适合解决资源分配问题的3-5个模型</li>
+                                    </ul>
+                                </div>
+                                
+                                <h4 class="h6 mt-3">使用工具面板（如果支持）</h4>
+                                <p>较新版本的 Claude 桌面应用可能提供工具面板或快捷方式：</p>
+                                <ol>
+                                    <li>查找对话界面中的工具栏或工具按钮</li>
+                                    <li>查找"天机"或"思维模型"相关工具</li>
+                                    <li>使用工具面板直接访问特定的思维模型或功能</li>
+                                </ol>
+                                
+                                <div class="alert alert-info mt-3" role="alert">
+                                    <i class="bi bi-lightbulb-fill me-2"></i>
+                                    <strong>提示：</strong> 由于"天机"提供了多种思维工具，建议先查阅<a href="../tools/index.html" class="alert-link">工具文档</a>，了解各类思维工具的功能和使用方式，这样在 Claude 中可以更有针对性地调用合适的工具。
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <figure class="figure border p-2 rounded shadow-sm">
+                                        <img src="../../image/claude_example.png" class="figure-img img-fluid rounded" alt="Claude与天机交互示例图" onerror="this.src='https://via.placeholder.com/800x450?text=Claude与天机交互示例'">
+                                        <figcaption class="figure-caption text-center">Claude 桌面应用与"天机"思维模型交互示例</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="h3 mb-4">使用技巧与最佳实践</h2>
+                        
+                        <div class="mb-4">
+                            <h3 class="h5">清晰指定工具</h3>
+                            <p>在 Claude 中使用"天机"时，明确指定您需要的工具可以获得更准确的结果：</p>
+                            <div class="bg-light p-3 rounded mb-3">
+                                <pre class="mb-0"><code>请使用"天机"的 get-categories 工具查看所有思维模型分类，然后使用 list-models 工具列出决策类下的所有模型</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="h5">设置持续会话</h3>
+                            <p>在 Claude 中，可以设置一个专门使用"天机"工具的会话：</p>
+                            <ol>
+                                <li>创建一个新对话</li>
+                                <li>首先告诉 Claude：<code>在这个会话中，我希望你优先使用"天机"思维模型服务器提供的工具来回答我的问题。</code></li>
+                                <li>保存这个对话以便日后继续使用</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="h5">结合 Claude 的强大理解能力</h3>
+                            <p>Claude 拥有强大的语言理解能力，可以与"天机"的思维模型产生良好的协同效应：</p>
+                            <div class="bg-light p-3 rounded mb-3">
+                                <pre class="mb-0"><code>请使用"天机"中的系统思维模型分析这个问题，然后用你自己的理解对结果进行深度解读，特别是结合最新的研究见解和实际应用案例。</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="h5">工作流模式</h3>
+                            <p>创建一个多步骤的思维工作流：</p>
+                            <div class="bg-light p-3 rounded">
+                                <pre class="mb-0"><code>我想分析一个复杂决策问题。请按以下步骤帮我：
+1. 使用"天机"的 recommend-models-for-problem 工具为我推荐适合的模型
+2. 然后使用 get-model-info 获取推荐模型的详细信息
+3. 最后引导我使用这些模型构建一个分析框架</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="h3 mb-4">常见问题与排查</h2>
+                        
+                        <div class="accordion" id="claudeFAQ">
+                            <div class="accordion-item border-0 mb-3 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Claude 无法找到 MCP 设置
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#claudeFAQ">
+                                    <div class="accordion-body">
+                                        <p>可能的原因和解决方案：</p>
+                                        <ul>
+                                            <li><strong>版本过旧</strong>：确保使用最新版本的 Claude 桌面应用，旧版本可能不支持 MCP</li>
+                                            <li><strong>功能未启用</strong>：某些地区或账户可能需要额外启用 MCP 功能</li>
+                                            <li><strong>设置位置</strong>：尝试查找"扩展"、"插件"或"高级设置"等菜单项</li>
+                                        </ul>
+                                        <p>访问 <a href="https://claude.ai/docs" target="_blank">Claude 官方文档</a> 查看最新的 MCP 配置说明。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 mb-3 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        连接成功但 Claude 不识别"天机"命令
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#claudeFAQ">
+                                    <div class="accordion-body">
+                                        <p>可能的原因和解决方案：</p>
+                                        <ul>
+                                            <li><strong>连接问题</strong>：尽管显示已连接，但可能实际连接不稳定</li>
+                                            <li><strong>命令格式</strong>：尝试更明确的命令格式，如"使用天机的get-categories工具"</li>
+                                            <li><strong>服务器状态</strong>：检查服务器是否正常响应，尝试重启服务器</li>
+                                        </ul>
+                                        <p>断开并重新连接服务器，或者创建新的对话可能会解决临时问题。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Claude 报告权限错误或安全警告
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#claudeFAQ">
+                                    <div class="accordion-body">
+                                        <p>可能的原因和解决方案：</p>
+                                        <ul>
+                                            <li><strong>首次授权</strong>：首次连接到新的 MCP 服务器时，Claude 可能会请求授权确认</li>
+                                            <li><strong>权限设置</strong>：检查 Claude 设置中的服务器权限设置是否正确</li>
+                                            <li><strong>安全策略</strong>：某些企业环境可能限制外部连接，检查网络设置</li>
+                                        </ul>
+                                        <p>如果系统请求授权，请仔细阅读权限内容，确认无误后授权"天机"服务器。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="alert alert-info d-flex" role="alert">
+                    <div class="flex-shrink-0">
+                        <i class="bi bi-info-circle-fill fs-4 me-3"></i>
+                    </div>
+                    <div>
+                        <h4 class="alert-heading">Claude 与思维模型的优势组合</h4>
+                        <p>Claude 作为一款强大的对话式 AI 助手，与"天机"思维模型的结合带来独特优势：</p>
+                        <ul class="mb-0">
+                            <li>Claude 的自然语言理解能力可以准确捕捉问题核心，"天机"提供结构化思维框架</li>
+                            <li>复杂决策问题可以通过对话形式层层深入分析，并应用适当的思维模型</li>
+                            <li>Claude 可以结合上下文，将"天机"的思维模型适应到您的具体场景</li>
+                            <li>日常对话中可以随时调用专业思维工具，提升思考质量</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center my-5">
+            <div class="btn-group" role="group">
+                <a href="cursor.html" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left me-2"></i>Cursor配置
+                </a>
+                <a href="others.html" class="btn btn-primary">
+                    其他客户端配置<i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../api-docs/index.html" class="text-light">API文档</a></li>
+                        <li><a href="../changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
