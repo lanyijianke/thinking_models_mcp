@@ -17,7 +17,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    steps:      - name: Checkout
+    steps:
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Pages
@@ -25,10 +26,10 @@ jobs:
         with:
           enablement: true
 
-      - name: Upload Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './user-manual' # 使用相对路径指向用户手册目录
+          path: user-manual
 
       - name: Deploy to GitHub Pages
         id: deployment
