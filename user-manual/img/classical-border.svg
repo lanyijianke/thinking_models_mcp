@@ -1,0 +1,60 @@
+<![CDATA[<svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- 古典边框装饰 -->
+  <defs>
+    <!-- 图案重复使用 -->
+    <pattern id="cornerPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <path d="M0,10 Q5,0 10,10 Q15,20 20,10" stroke="#333" fill="none" stroke-width="0.5" opacity="0.7"/>
+    </pattern>
+    
+    <!-- 菱形图案 -->
+    <pattern id="diamondPattern" patternUnits="userSpaceOnUse" width="10" height="10">
+      <path d="M5,0 L10,5 L5,10 L0,5 Z" stroke="#333" fill="none" stroke-width="0.3" opacity="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- 顶部边框 -->
+  <rect x="20" y="10" width="360" height="4" fill="url(#diamondPattern)" opacity="0.3"/>
+  
+  <!-- 底部边框 -->
+  <rect x="20" y="86" width="360" height="4" fill="url(#diamondPattern)" opacity="0.3"/>
+  
+  <!-- 左侧装饰 -->
+  <g opacity="0.8">
+    <circle cx="12" cy="50" r="8" fill="none" stroke="#333" stroke-width="0.5"/>
+    <path d="M10,50 C10,48 14,48 14,50 C14,52 10,52 10,50 Z" fill="#333" opacity="0.7"/>
+    <line x1="12" y1="42" x2="12" y2="14" stroke="#333" stroke-width="0.5"/>
+    <line x1="12" y1="58" x2="12" y2="86" stroke="#333" stroke-width="0.5"/>
+  </g>
+  
+  <!-- 右侧装饰 -->
+  <g opacity="0.8" transform="translate(400, 0) scale(-1, 1)">
+    <circle cx="12" cy="50" r="8" fill="none" stroke="#333" stroke-width="0.5"/>
+    <path d="M10,50 C10,48 14,48 14,50 C14,52 10,52 10,50 Z" fill="#333" opacity="0.7"/>
+    <line x1="12" y1="42" x2="12" y2="14" stroke="#333" stroke-width="0.5"/>
+    <line x1="12" y1="58" x2="12" y2="86" stroke="#333" stroke-width="0.5"/>
+  </g>
+  
+  <!-- 顶部左侧角花 -->
+  <g transform="translate(20, 10)">
+    <path d="M0,0 Q10,-5 20,0 Q10,5 0,0 Z" fill="none" stroke="#333" stroke-width="0.5" opacity="0.7"/>
+    <path d="M0,0 Q5,10 0,20 Q-5,10 0,0 Z" fill="none" stroke="#333" stroke-width="0.5" opacity="0.7"/>
+  </g>
+  
+  <!-- 顶部右侧角花 -->
+  <g transform="translate(380, 10)">
+    <path d="M0,0 Q-10,-5 -20,0 Q-10,5 0,0 Z" fill="none" stroke="#333" stroke-width="0.5" opacity="0.7"/>
+    <path d="M0,0 Q-5,10 0,20 Q5,10 0,0 Z" fill="none" stroke="#333" stroke-width="0.5" opacity="0.7"/>
+  </g>
+  
+  <!-- 底部左侧角花 -->
+  <g transform="translate(20, 90)">
+    <path d="M0,0 Q10,5 20,0 Q10,-5 0,0 Z" fill="none" stroke="#333" stroke-width="0.5" opacity="0.7"/>
+    <path d="M0,0 Q5,-10 0,-20 Q-5,-10 0,0 Z" fill="none" stroke="#333" stroke-width="0.5" opacity="0.7"/>
+  </g>
+  
+  <!-- 底部右侧角花 -->
+  <g transform="translate(380, 90)">
+    <path d="M0,0 Q-10,5 -20,0 Q-10,-5 0,0 Z" fill="none" stroke="#333" stroke-width="0.5" opacity="0.7"/>
+    <path d="M0,0 Q-5,-10 0,-20 Q5,-10 0,0 Z" fill="none" stroke="#333" stroke-width="0.5" opacity="0.7"/>
+  </g>
+</svg>]]>

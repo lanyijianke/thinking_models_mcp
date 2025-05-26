@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于天机 | 思维模型 MCP 服务器</title>
+    <title>关于天机 | 思维模型</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tianji-theme.css">
+    <!-- 引入中文字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
-                    天机 - 思维模型 MCP
+<body>    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">                <a class="navbar-brand" href="index.html">
+                    <img src="img/tianji.png" alt="天机 Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+                    天机 · 思维模型
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -53,12 +56,8 @@
                                 思维模型库
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="models/index.html">模型概览</a></li>
-                                <li><a class="dropdown-item" href="models/categories.html">分类浏览</a></li>
-                                <li><a class="dropdown-item" href="models/search.html">搜索模型</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="applications/index.html">应用场景</a></li>
+                                <li><a class="dropdown-item" href="models/index.html">模型概览</a></li>                                <li><a class="dropdown-item" href="models/categories.html">分类浏览</a></li>
+                            </ul>                        </li>
                         <li class="nav-item"><a class="nav-link" href="api-docs/index.html">API文档</a></li>
                         <li class="nav-item"><a class="nav-link" href="faq.html">常见问题</a></li>
                     </ul>
@@ -71,76 +70,89 @@
                 </div>
             </div>
         </nav>
-    </header>
-
-    <main class="container my-5">
+    </header>    <main class="container my-5 fade-in">
         <section class="row mb-5">
-            <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4 mb-4">关于"天机"</h1>
+            <div class="col-lg-8 mx-auto text-center ink-decoration">
+                <h1>关于「天机」</h1>
                 <p class="lead">
-                    "天机"是一个思维模型MCP Server作品，寓意着能通过它揭示深层次的规律与智慧——"一窥天机"。在这个充满不确定性的时代，"天机"致力于成为大家接近真相、洞见本质、增强智慧的利器。
+                    「天机」源自古语"天机不可泄露"，寓意着通过它可揭示深层次的规律与智慧。在这个充满不确定性的时代，「天机」致力于成为您接近真相、洞见本质、增强智慧的利器。
                 </p>
+                <div class="quote-box my-4">
+                    <p class="mb-0">格物致知，穷理尽性，贵在一得</p>
+                </div>
                 <div class="d-flex justify-content-center gap-3 mt-4">
                     <a href="https://github.com/lanyijianke/thinking_models_mcp" class="btn btn-outline-dark" target="_blank">
-                        <i class="bi bi-github me-2"></i>GitHub
+                        <i class="bi bi-github me-2"></i>源码仓库
                     </a>
                     <a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="btn btn-outline-danger" target="_blank">
-                        <i class="bi bi-code-square me-2"></i>NPM
+                        <i class="bi bi-code-square me-2"></i>包管理
                     </a>
                     <a href="https://mcp.so/server/thinking-models-mcp/lanyijianke" class="btn btn-outline-primary" target="_blank">
                         <i class="bi bi-box me-2"></i>MCP.SO
                     </a>
                 </div>
             </div>
-        </section>
-
-        <section class="row mb-5">
+        </section>        <section class="row mb-5">
             <div class="col-lg-8 mx-auto">
-                <h2 class="border-bottom pb-2 mb-4">项目名称由来</h2>
-                <p>
-                    "天机"这一名称源自中国古语"天机不可泄露"，寓意深远。在古代，"天机"指的是天道运行的奥秘，是难以言表的深层规律。选择这个名字，正是希望这个思维模型服务能帮助用户揭示思考和决策背后的深层规律与智慧，让使用者能够"一窥天机"。
-                </p>
-                <p>
-                    在这个信息爆炸、复杂性剧增的时代，我们面临前所未有的思考挑战。"天机"希望成为引导大家接近真相、洞见本质、增强智慧的可靠伙伴。
-                </p>
-            </div>
-        </section>
-
-        <section class="row mb-5">
-            <div class="col-lg-8 mx-auto">
-                <h2 class="border-bottom pb-2 mb-4">关于作者</h2>
-                <div class="d-flex align-items-start mb-4">
-                    <div class="flex-grow-1">
-                        <h3 class="h5">蓝衣剑客</h3>
+                <h2>项目名称由来</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
                         <p>
-                            我从毕业起便投身软件行业，至今已有十余年经验。历任开发、架构、产品等软件项目中的多个岗位，负责过许多央国企、外企的软件项目建设，参与起草过多个AI领域行业标准与国家级AI行业报告，闲时写过几本提示词方面的书。
+                            「天机」一词源自中国古语"天机不可泄露"，寓意深远。在古代典籍中，"天机"指天道运行的奥秘，乃是难以言表的深层规律。选择此名，正是希望这个思维模型服务能帮助探索者揭示思考与决策背后的深层规律与智慧，让使用者能够"一窥天机"。
                         </p>
-                        <p>
-                            目前，我是一位AI领域的项目经理、作家，同时也是WaytoAGI、AGI掘金、火山引擎及LangGPT等社区的专栏作者与核心共建者。
+                        <p class="mb-0">
+                            身处信息洪流、复杂性剧增之时代，我们面临前所未有的思考挑战。「天机」愿成为引导您接近真相、洞见本质、增强智慧的良师益友。
                         </p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="row mb-5">
+        </section>        <section class="row mb-5">
             <div class="col-lg-8 mx-auto">
-                <h2 class="border-bottom pb-2 mb-4">特别感谢</h2>
-                <p>
-                    "天机"MCP Server的出现离不开多位朋友的帮助，在此特别感谢"罗伊可"提供的思维模型原始资料。同时感谢"刘洋"启发做了这个MCP Server，把理论更好地推广大众层面上去。
-                </p>
+                <h2>关于作者</h2>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h5 mb-0">蓝衣剑客</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="quote-box mb-4">
+                            <p class="mb-0">学而不思则罔，思而不学则殆</p>
+                        </div>
+                        <p>
+                            余自学成之日便投身软件行业，至今已有十余载。历任开发、架构、产品等要职，负责过众多央国企、外企之软件建设，参与起草多个AI领域行业标准与国家级AI报告，闲暇时著书数册，皆关乎提示词工艺。
+                        </p>
+                        <p class="mb-0">
+                            现为AI领域项目经理、作家，亦是WaytoAGI、AGI掘金、火山引擎及LangGPT等社区之专栏作者与核心共建者。
+                        </p>
+                    </div>
+                </div>
             </div>
-        </section>
-
-        <section class="row">
+        </section>        <section class="row mb-5">
             <div class="col-lg-8 mx-auto">
-                <h2 class="border-bottom pb-2 mb-4">项目愿景</h2>
-                <p>
-                    希望"天机"不只是一个普通的MCP工具，而是您在成长之路上的朋友。多学习思维模型，多用思维模型与AI对话，这或许是在未来展现自己特殊价值的方式之一。
-                </p>
-                <p>
-                    "天机"的长期愿景是成为人们探索复杂问题、深化思考能力的得力助手，帮助每个人都能够发展系统思考的能力，应对这个日益复杂的世界。
-                </p>
+                <h2>特别感谢</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="mb-0">
+                            「天机」MCP Server的出现得益于诸多好友之助，特别感谢「罗伊可」提供思维模型原始资料。同时感谢「刘洋」启发建造此MCP Server，使理论得以在大众层面更好传播。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>        <section class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>项目愿景</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="quote-box mb-4">
+                            <p class="mb-0">工欲善其事，必先利其器</p>
+                        </div>
+                        <p>
+                            愿「天机」不只是普通MCP工具，而是您成长道路上的良师益友。多习思维模型，多用思维模型与AI对话，此或为未来彰显自身特殊价值之道。
+                        </p>
+                        <p class="mb-0">
+                            「天机」长期愿景在于成为世人探索复杂问题、深化思考能力的得力助手，助每一位探索者发展系统思考之能力，从容应对这个日渐复杂的世界。
+                        </p>
+                    </div>
+                </div>
                 <div class="text-center mt-5">
                     <a href="philosophy.html" class="btn btn-primary btn-lg">
                         了解设计理念 <i class="bi bi-arrow-right"></i>
@@ -148,40 +160,37 @@
                 </div>
             </div>
         </section>
-    </main>
-
-    <footer class="bg-dark text-light py-4 mt-5">
+    </main>    <footer class="py-4 mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>天机 - 思维模型 MCP 服务器</h5>
-                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                    <h5>「天机」思维模型</h5>
+                    <p>思接千载，虑通万里：将系统性思维方法融入您的思考之境</p>
                 </div>
                 <div class="col-md-3">
-                    <h5>链接</h5>
+                    <h5>相关链接</h5>
                     <ul class="list-unstyled">
                         <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
                         <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5>资源</h5>
+                    <h5>学习资源</h5>
                     <ul class="list-unstyled">
-                        <li><a href="api-docs/index.html" class="text-light">API文档</a></li>
+                        <li><a href="tools/index.html" class="text-light">工具文档</a></li>
                         <li><a href="changelog.html" class="text-light">更新日志</a></li>
                     </ul>
                 </div>
             </div>
-            <hr>
-            <div class="row">
+            <hr>            <div class="row">
                 <div class="col text-center">
-                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                    <p>© 壬辰至乙巳 (2024-2025) 天机思维模型 · 采用 MIT 许可</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/tianji-theme.js"></script>
 </body>
 </html>

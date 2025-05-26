@@ -1,0 +1,51 @@
+<![CDATA[<svg width="400" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 水墨竹子 -->
+  <g stroke="#333" fill="none">
+    <!-- 主竿 -->
+    <path d="M200,500 C205,400 190,320 200,200 C205,150 210,80 200,20" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- 左侧枝条 -->
+    <path d="M200,150 C170,140 140,145 110,130" stroke-width="3" stroke-linecap="round"/>
+    <path d="M200,220 C160,215 130,230 90,210" stroke-width="3" stroke-linecap="round"/>
+    <path d="M200,300 C170,290 140,305 100,290" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- 右侧枝条 -->
+    <path d="M200,100 C230,95 260,110 290,90" stroke-width="3" stroke-linecap="round"/>
+    <path d="M200,180 C230,170 255,195 280,180" stroke-width="3" stroke-linecap="round"/>
+    <path d="M200,270 C230,260 260,270 290,245" stroke-width="3" stroke-linecap="round"/>
+    <path d="M200,350 C240,340 270,350 310,330" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- 竹节 -->
+    <line x1="190" y1="80" x2="210" y2="80" stroke-width="3" stroke-linecap="round"/>
+    <line x1="190" y1="160" x2="210" y2="160" stroke-width="3" stroke-linecap="round"/>
+    <line x1="190" y1="240" x2="210" y2="240" stroke-width="3" stroke-linecap="round"/>
+    <line x1="190" y1="320" x2="210" y2="320" stroke-width="3" stroke-linecap="round"/>
+    <line x1="190" y1="400" x2="210" y2="400" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 叶片 - 以水墨点画风格绘制 -->
+  <g fill="#283618" opacity="0.8">
+    <!-- 左侧叶片 -->
+    <path d="M110,130 C95,120 85,125 75,115 C90,120 100,115 110,130" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M130,145 C115,135 105,140 95,130 C110,135 120,130 130,145" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M90,210 C75,200 65,205 55,195 C70,200 80,195 90,210" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M110,225 C95,215 85,220 75,210 C90,215 100,210 110,225" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M100,290 C85,280 75,285 65,275 C80,280 90,275 100,290" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M120,305 C105,295 95,300 85,290 C100,295 110,290 120,305" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- 右侧叶片 -->
+    <path d="M290,90 C305,80 315,85 325,75 C310,80 300,75 290,90" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M270,105 C285,95 295,100 305,90 C290,95 280,90 270,105" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M280,180 C295,170 305,175 315,165 C300,170 290,165 280,180" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M260,195 C275,185 285,190 295,180 C280,185 270,180 260,195" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M290,245 C305,235 315,240 325,230 C310,235 300,230 290,245" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M270,260 C285,250 295,255 305,245 C290,250 280,245 270,260" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M310,330 C325,320 335,325 345,315 C330,320 320,315 310,330" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M290,345 C305,335 315,340 325,330 C310,335 300,330 290,345" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+</svg>]]>

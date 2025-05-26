@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见问题 | 思维模型 MCP 服务器</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tianji-theme.css">
+</head>
+<body>    <header class="tianji-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    天机 - 思维模型 MCP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>                        <li class="nav-item"><a class="nav-link" href="philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="installation/index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="installation/vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item" href="installation/cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item" href="installation/claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="installation/others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tools/index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="tools/exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>
+                            <ul class="dropdown-menu">                    <li><a class="dropdown-item" href="models/index.html">模型概览</a></li>
+                    <li><a class="dropdown-item" href="models/categories.html">分类浏览</a></li>
+                </ul></li>                        <li class="nav-item"><a class="nav-link active" href="faq.html">常见问题</a></li>
+                    </ul>
+                    <form class="d-flex" role="search" action="search.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">        <section class="row mb-5 fade-in">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="tianji-title">常见问题解答</h1>
+                <div class="scroll-container">
+                    <p class="lead">
+                        关于"天机"思维模型 MCP 服务器的常见问题解答。
+                    </p>
+                </div>
+            </div>
+        </section>        <section class="row mb-5 fade-in">
+            <div class="col-lg-8 mx-auto">
+                <!-- 常见问题手风琴 -->
+                <div class="tianji-accordion accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                "天机"与普通AI系统有什么区别？
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>"天机"思维模型 MCP 服务器并非单纯的AI系统，而是一个专注于思维模型应用的工具，通过MCP协议为各类AI助手提供结构化思考能力。它集成了系统性思维方法，能帮助用户从多维度分析问题，形成更全面、深入的思考。</p>
+                                <p>与一般的AI系统相比，"天机"不是简单地提供答案，而是引导思考过程，帮助用户理解问题的本质，并应用合适的思维方法进行分析。这种方式更强调思维能力的培养和方法论的应用。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                什么是MCP (Model Context Protocol)?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>MCP (Model Context Protocol) 是一种数据交换协议，专为思维模型设计，用于在AI助手和思维模型服务器之间传输结构化的思考上下文。通过MCP协议，AI助手可以：</p>
+                                <ul>
+                                    <li>获取适合特定问题的思维模型推荐</li>
+                                    <li>获得结构化的推理过程指导</li>
+                                    <li>记录学习状态和偏好</li>
+                                </ul>
+                                <p>MCP协议使思维模型服务能够与多种AI助手无缝集成，并保持一致的使用体验。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                "天机"支持哪些客户端？
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>"天机"思维模型MCP服务器支持多种AI助手和开发环境，包括：</p>
+                                <ul>
+                                    <li><strong>VS Code</strong> - 通过专用插件集成到VS Code环境中</li>
+                                    <li><strong>Cursor</strong> - 支持在Cursor编辑器中直接调用</li>
+                                    <li><strong>Claude</strong> - 可与Anthropic的Claude助手进行集成</li>
+                                    <li><strong>OpenAI</strong> - 支持与GPT系列模型协同工作</li>
+                                    <li><strong>其他通用客户端</strong> - 任何支持HTTP请求的应用都可以通过API与"天机"交互</li>
+                                </ul>
+                                <p>详细的客户端配置指南可参考<a href="installation/index.html">安装指南</a>部分。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                如何自定义和扩展思维模型库？
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>您可以通过以下步骤自定义和扩展"天机"的思维模型库：</p>
+                                <ol>
+                                    <li>在<code>thinking_models_db</code>目录中创建新的模型JSON文件</li>
+                                    <li>按照标准格式定义思维模型结构，包括名称、描述、应用方法等</li>
+                                    <li>重启服务器以加载新添加的模型</li>
+                                </ol>
+                                <p>模型JSON文件格式示例：</p>
+<pre><code>{
+  "id": "your_model_id",
+  "name": "思维模型名称",
+  "description": "模型详细描述...",
+  "categories": ["决策", "系统思考"],
+  "steps": [
+    "步骤1: ...",
+    "步骤2: ...",
+    "步骤3: ..."
+  ],
+  "examples": ["示例1", "示例2"],
+  "keywords": ["关键词1", "关键词2"]
+}</code></pre>
+                                <p>更多详细指南请参考<a href="tools/index.html">工具文档</a>和<a href="models/index.html">思维模型库</a>部分。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                "天机"如何选择合适的思维模型？
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>"天机"使用先进的语义相似度算法来推荐思维模型，主要包括以下步骤：</p>
+                                <ol>
+                                    <li><strong>问题分析</strong> - 分析用户提出的问题或情境</li>
+                                    <li><strong>语义匹配</strong> - 计算问题与思维模型描述之间的语义相似度</li>
+                                    <li><strong>上下文考量</strong> - 考虑用户的历史使用记录和偏好</li>
+                                    <li><strong>多样性排序</strong> - 确保推荐的模型覆盖多个思考角度</li>
+                                </ol>
+                                <p>此外，"天机"支持两种推荐策略：</p>
+                                <ul>
+                                    <li><strong>全局推荐</strong> - 针对整体问题推荐最合适的思维模型</li>
+                                    <li><strong>局部推荐</strong> - 针对问题的特定方面推荐专门的思维模型</li>
+                                </ul>
+                                <p>您可以通过API调用时指定所需的策略和参数来自定义推荐行为。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                如何评估"天机"对思考质量的提升？
+                            </button>
+                        </h2>
+                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>评估"天机"对思考质量的提升可以从以下几个维度：</p>
+                                <ul>
+                                    <li><strong>思考维度</strong> - 使用"天机"后，问题分析是否更全面，考虑了更多角度</li>
+                                    <li><strong>系统性</strong> - 思考过程是否更有条理、更系统化</li>
+                                    <li><strong>深度</strong> - 分析是否能够深入问题本质，而不仅停留在表面</li>
+                                    <li><strong>创新性</strong> - 是否能够产生更具创新性的解决方案</li>
+                                    <li><strong>决策质量</strong> - 最终决策是否更合理，更具可行性</li>
+                                </ul>
+                                <p>"天机"提供了思考过程记录功能，您可以通过比较使用前后的思考路径和结果来评估提升效果。我们也建议进行A/B测试，对比有无"天机"辅助的思考结果。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                "天机"的系统要求是什么？
+                            </button>
+                        </h2>
+                        <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <h5>最低系统要求：</h5>
+                                <ul>
+                                    <li><strong>操作系统</strong>：Windows 10/11、macOS 10.15+、Linux (Ubuntu 18.04+)</li>
+                                    <li><strong>处理器</strong>：双核处理器，2.0 GHz或更高</li>
+                                    <li><strong>内存</strong>：4 GB RAM</li>
+                                    <li><strong>存储空间</strong>：100 MB可用空间</li>
+                                    <li><strong>Node.js</strong>：v14.0.0或更高版本</li>
+                                    <li><strong>网络</strong>：互联网连接（用于初始安装和更新）</li>
+                                </ul>
+                                
+                                <h5>推荐系统配置：</h5>
+                                <ul>
+                                    <li><strong>处理器</strong>：四核处理器，3.0 GHz或更高</li>
+                                    <li><strong>内存</strong>：8 GB RAM或更高</li>
+                                    <li><strong>Node.js</strong>：v16.0.0或更高版本</li>
+                                </ul>
+                                <p>对于大规模模型库或高并发使用场景，建议增加内存配置。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        <section class="row mb-5 fade-in">
+            <div class="col-lg-8 mx-auto">
+                <div class="tianji-card">
+                    <div class="card-body">                        <h3 class="tianji-card-title">没有找到您的问题？</h3>
+                        <p>如果您有其他问题或需要更多帮助，可以通过以下方式与我们联系：</p>
+                        <ul>
+                            <li><a href="https://github.com/lanyijianke/thinking_models_mcp/issues" target="_blank">在GitHub上提交Issue</a></li>
+                            <li>查阅详细的<a href="tools/index.html">工具文档</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>    <footer class="tianji-footer py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>天机 - 思维模型 MCP 服务器</h5>
+                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
+                        <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">                    <h5>资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="tools/index.html" class="text-light">工具文档</a></li>
+                        <li><a href="changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>            <div class="row">
+                <div class="col text-center">
+                    <p>© 2023-2025 天机思维模型服务. 使用 MIT 许可证.</p>
+                </div>
+            </div>
+        </div>
+    </footer>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/tianji-theme.js"></script>
+</body>
+</html>

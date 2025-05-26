@@ -1,0 +1,51 @@
+<![CDATA[<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 水墨山水 -->
+  <defs>
+    <filter id="blurFilter" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feComponentTransfer in="blur" result="opacity">
+        <feFuncA type="linear" slope="0.7" intercept="0"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  
+  <!-- 远山 -->
+  <path d="M0,180 C50,150 100,160 150,140 C200,120 250,130 300,120 C350,110 400,130 450,120 C500,110 500,300 0,300 Z" 
+        fill="#e6e6e6" opacity="0.5" filter="url(#blurFilter)"/>
+  
+  <!-- 中景山 -->
+  <path d="M0,200 C60,170 120,190 180,170 C240,150 300,170 360,160 C420,150 480,170 500,160 L500,300 L0,300 Z" 
+        fill="#cccccc" opacity="0.6" filter="url(#blurFilter)"/>
+  
+  <!-- 近景山 -->
+  <path d="M0,220 C70,200 140,210 210,190 C280,170 350,190 420,180 L500,190 L500,300 L0,300 Z" 
+        fill="#999999" opacity="0.7"/>
+  
+  <!-- 水墨效果 - 山的轮廓线 -->
+  <path d="M0,180 C50,150 100,160 150,140 C200,120 250,130 300,120 C350,110 400,130 450,120" 
+        fill="none" stroke="#333333" stroke-width="1" stroke-opacity="0.3"/>
+  
+  <path d="M0,200 C60,170 120,190 180,170 C240,150 300,170 360,160 C420,150 480,170 500,160" 
+        fill="none" stroke="#333333" stroke-width="1.5" stroke-opacity="0.4"/>
+  
+  <path d="M0,220 C70,200 140,210 210,190 C280,170 350,190 420,180 L500,190" 
+        fill="none" stroke="#333333" stroke-width="2" stroke-opacity="0.5"/>
+  
+  <!-- 水面 -->
+  <rect x="0" y="240" width="500" height="60" fill="#f5f5f0" opacity="0.8"/>
+  
+  <!-- 水面纹理 -->
+  <path d="M0,250 C20,252 40,248 60,250 C80,252 100,248 120,250 C140,252 160,248 180,250 C200,252 220,248 240,250 C260,252 280,248 300,250 C320,252 340,248 360,250 C380,252 400,248 420,250 C440,252 460,248 480,250 L500,250 L500,260 L0,260 Z" 
+        fill="#e6f0f0" opacity="0.6"/>
+        
+  <path d="M0,270 C20,272 40,268 60,270 C80,272 100,268 120,270 C140,272 160,268 180,270 C200,272 220,268 240,270 C260,272 280,268 300,270 C320,272 340,268 360,270 C380,272 400,268 420,270 C440,272 460,268 480,270 L500,270 L500,280 L0,280 Z" 
+        fill="#e6f0f0" opacity="0.5"/>
+        
+  <!-- 水墨点缀 - 小船 -->
+  <path d="M350,245 C360,245 370,245 380,245 C383,250 377,250 370,250 C363,250 357,250 350,245 Z" 
+        fill="#333333" opacity="0.8"/>
+        
+  <!-- 几棵简单的树 -->
+  <path d="M120,190 L120,220 M115,200 L125,200 M117,210 L123,210" stroke="#333333" stroke-width="2" opacity="0.8"/>
+  <path d="M420,200 L420,230 M415,210 L425,210 M417,220 L423,220" stroke="#333333" stroke-width="2" opacity="0.8"/>
+</svg>]]>

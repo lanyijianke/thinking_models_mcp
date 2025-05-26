@@ -1,0 +1,19 @@
+<![CDATA[<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+  <!-- 水墨荷花 -->
+  <g stroke="#333" fill="none" stroke-opacity="0.8">
+    <!-- 荷叶 -->
+    <path d="M10,40 Q30,20 50,30 Q70,40 60,60 Q40,75 25,55 Q15,50 10,40 Z" 
+          stroke-width="1" fill="#e6f0f0" fill-opacity="0.3"/>
+    <path d="M15,45 Q30,30 45,35" stroke-width="1"/>
+    <path d="M20,50 Q35,40 50,45" stroke-width="1"/>
+    
+    <!-- 荷花 -->
+    <circle cx="40" cy="35" r="12" stroke-width="1" fill="#fff" fill-opacity="0.6"/>
+    <path d="M34,32 C38,26 42,26 46,32" stroke-width="1"/>
+    <path d="M34,38 C38,44 42,44 46,38" stroke-width="1"/>
+    <circle cx="40" cy="35" r="5" stroke-width="1" fill="#cd2c2c" fill-opacity="0.4"/>
+    
+    <!-- 荷梗 -->
+    <path d="M40,47 C42,55 45,60 50,70" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg>]]>

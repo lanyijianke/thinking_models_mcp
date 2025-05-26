@@ -140,3 +140,73 @@ th {
 .doc-nav .nav-link:hover {
     color: var(--secondary-color);
 }
+
+/* API文档样式 */
+.api-section {
+    margin-bottom: 3rem;
+}
+
+.api-endpoint {
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.api-endpoint-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.http-method {
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: white;
+    margin-right: 0.5rem;
+}
+
+.method-get { background-color: #28a745; }
+.method-post { background-color: #007bff; }
+.method-put { background-color: #fd7e14; }
+.method-delete { background-color: #dc3545; }
+
+/* 更新日志时间线样式 */
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 11px;
+    width: 2px;
+    background-color: #e9ecef;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 40px;
+}
+
+.timeline-badge {
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    line-height: 24px;
+    z-index: 100;
+}
+
+.timeline-content {
+    padding-top: 0.25rem;
+}

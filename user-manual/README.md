@@ -1,24 +1,36 @@
 # 天机思维模型 MCP 用户手册网站
 
-这个目录包含了天机思维模型 MCP 服务器的用户手册网站，提供中英双语支持。
+这个目录包含了天机思维模型 MCP 服务器的用户手册网站。
 
 ## 目录结构
 
 ```
 user-manual/
-├── index.html              # 中文首页
-├── getting-started.html    # 中文快速入门
-├── api.html                # 中文API文档
-├── models.html             # 中文思维模型库
-├── search.html             # 中文搜索页面
-├── css/                    # 样式文件
+├── index.html                    # 首页（融合了关于天机的内容）
+├── philosophy.html               # 设计理念
+├── faq.html                      # 常见问题
+├── changelog.html                # 更新日志
+├── search.html                   # 搜索页面
+├── css/                          # 样式文件
 │   └── style.css
-├── en/                     # 英文版本
-│   ├── index.html          # 英文首页
-│   ├── getting-started.html # 英文快速入门
-│   ├── api.html            # 英文API文档
-│   ├── models.html         # 英文思维模型库
-│   └── search.html         # 英文搜索页面
+├── js/
+│   └── main.js
+├── installation/                 # 安装指南
+│   ├── index.html                # 快速安装
+│   ├── vscode.html               # VS Code配置
+│   ├── cursor.html               # Cursor配置
+│   ├── claude.html               # Claude配置
+│   └── others.html               # 其他客户端配置
+├── tools/                        # 工具文档
+│   ├── index.html                # 工具概览
+│   ├── exploration.html          # 探索类工具
+│   ├── problem-solving.html      # 问题解决类工具
+│   ├── creation.html             # 创建类工具
+│   └── system.html               # 系统与学习类工具
+├── models/                       # 思维模型库
+│   ├── index.html                # 模型概览
+│   ├── categories.html           # 分类浏览
+│   └── search.html               # 搜索模型
 ```
 
 ## 使用自动部署脚本

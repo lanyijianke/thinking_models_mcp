@@ -7,24 +7,51 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tianji-theme.css">
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+<body>    <header class="tianji-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">                <a class="navbar-brand" href="index.html">
+                    <img src="img/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
                     天机 - 思维模型 MCP
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                </button>                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
-                        <li class="nav-item"><a class="nav-link" href="getting-started.html">快速开始</a></li>
-                        <li class="nav-item"><a class="nav-link" href="api.html">API文档</a></li>
-                        <li class="nav-item"><a class="nav-link" href="models.html">思维模型库</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>                        <li class="nav-item"><a class="nav-link" href="philosophy.html">设计理念</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                安装指南
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="installation/index.html">快速安装</a></li>
+                                <li><a class="dropdown-item" href="installation/vscode.html">VS Code配置</a></li>
+                                <li><a class="dropdown-item" href="installation/cursor.html">Cursor配置</a></li>
+                                <li><a class="dropdown-item" href="installation/claude.html">Claude配置</a></li>
+                                <li><a class="dropdown-item" href="installation/others.html">其他客户端配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                工具文档
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tools/index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="tools/exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="tools/system.html">系统与学习类工具</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                思维模型库
+                            </a>                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="models/categories.html">分类浏览</a></li>
+                            </ul>                        </li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">常见问题</a></li>
                     </ul>
                     <form class="d-flex" role="search" action="search.html" method="get">
                         <input class="form-control me-2" type="search" name="q" placeholder="搜索" aria-label="Search">
@@ -35,34 +62,28 @@
                 </div>
             </div>
         </nav>
-    </header>
-
-    <main class="container my-5">
-        <h1>搜索结果</h1>
+    </header>    <main class="container my-5">
+        <h1 class="tianji-title text-center mb-4">搜索结果</h1>
         
-        <div class="row mb-4">
+        <div class="row mb-4 fade-in">
             <div class="col-lg-8 mx-auto">
                 <form id="search-form" class="mb-4">
-                    <div class="input-group">
-                        <input type="text" id="site-search-input" class="form-control form-control-lg" placeholder="搜索文档和思维模型..." aria-label="搜索" aria-describedby="search-button">
-                        <button class="btn btn-primary" type="submit" id="search-button">
+                    <div class="tianji-search-container">
+                        <input type="text" id="site-search-input" class="tianji-search-input form-control-lg" placeholder="搜索文档和思维模型..." aria-label="搜索" aria-describedby="search-button">
+                        <button class="tianji-button" type="submit" id="search-button">
                             <i class="bi bi-search"></i> 搜索
                         </button>
                     </div>
                 </form>
             </div>
-        </div>
-
-        <div id="search-results-container">
-            <p class="text-muted" id="search-status">请输入关键词进行搜索</p>
+        </div>        <div id="search-results-container" class="fade-in">
+            <p class="text-muted text-center scroll-text" id="search-status">请输入关键词进行搜索</p>
             
-            <div class="accordion" id="search-results">
+            <div class="tianji-accordion accordion" id="search-results">
                 <!-- 搜索结果将动态插入此处 -->
             </div>
         </div>
-    </main>
-
-    <footer class="bg-dark text-light py-4 mt-5">
+    </main>    <footer class="tianji-footer py-4 mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -91,73 +112,123 @@
                 </div>
             </div>
         </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </footer>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/tianji-theme.js"></script>
     <script>
         // 网站内容索引数据
         const siteContent = [
-            {
-                title: "第一原理思维",
+            {                title: "第一原理思维",
                 description: "通过将复杂问题分解为最基本的要素，然后从头开始重新构建解决方案。",
-                url: "models.html#first_principles_thinking",
+                url: "models/index.html#first_principles_thinking",
                 category: "思维模型",
                 keywords: ["第一原理", "分解", "基础", "创新", "埃隆马斯克"]
             },
             {
                 title: "MECE原则",
                 description: "相互独立、完全穷尽的分析框架，确保所有可能性都被考虑且不重复。",
-                url: "models.html#mece_principle",
+                url: "models/index.html#mece_principle",
                 category: "思维模型",
                 keywords: ["MECE", "分析", "框架", "独立", "穷尽"]
             },
             {                title: "逆向思维",
                 description: "从相反的角度思考问题，思考\"如何失败\"而不是\"如何成功\"，以避免潜在陷阱。",
-                url: "models.html#inversion_thinking",
+                url: "models/index.html#inversion_thinking",
                 category: "思维模型",
                 keywords: ["逆向", "失败", "避免", "风险"]
-            },
-            {
+            },            {
                 title: "安装天机服务器",
                 description: "通过npm安装天机思维模型MCP服务器的指南。",
-                url: "getting-started.html#installation",
+                url: "installation/index.html#installation",
                 category: "指南",
                 keywords: ["安装", "npm", "指南", "开始"]
             },
             {
                 title: "配置服务器",
                 description: "如何配置天机思维模型MCP服务器，包括端口设置等。",
-                url: "getting-started.html#configuration",
+                url: "installation/index.html#configuration",
                 category: "指南",
                 keywords: ["配置", "端口", "启动", "环境变量"]
-            },
-            {
-                title: "API接口概述",
-                description: "天机思维模型服务器API接口的完整说明文档。",
-                url: "api.html#api-overview",
-                category: "API文档",
-                keywords: ["API", "接口", "概述", "功能"]
-            },
-            {
-                title: "推荐模型API",
-                description: "如何使用API根据问题特征获取推荐的思维模型。",
-                url: "api.html#recommend-models-for-problem",
-                category: "API文档",
-                keywords: ["API", "推荐", "问题", "模型"]
             },            {
+                title: "工具文档概览", 
+                description: "天机思维模型服务器工具文档的完整说明。",
+                url: "tools/index.html",
+                category: "工具文档",
+                keywords: ["工具", "文档", "概述", "功能"]
+            },
+            {
+                title: "思维模型推荐工具",
+                description: "如何使用思维模型推荐工具根据问题特征获取合适的模型。",
+                url: "tools/exploration.html#recommend-models",
+                category: "工具文档",
+                keywords: ["工具", "推荐", "问题", "模型"]
+            },{
                 title: "端口被占用问题",
                 description: "解决天机服务器启动时端口被占用的常见问题。",
-                url: "getting-started.html#troubleshooting",
+                url: "faq.html#troubleshooting",
                 category: "常见问题",
                 keywords: ["问题", "端口", "占用", "错误", "EADDRINUSE"]
-            },
-            {
+            },            {
                 title: "思维模型库概述",
                 description: "天机思维模型库包含了200多种精心选择的思维模型，涵盖多个领域。",
-                url: "models.html",
+                url: "models/index.html",
                 category: "思维模型",
                 keywords: ["模型库", "思维模型", "分类", "索引"]
-            }
+            },
+            {
+                title: "API文档概览",
+                description: "天机思维模型MCP服务器API文档入口，包含服务器API、工具API和模型API。",
+                url: "api-docs/index.html",
+                category: "文档",
+                keywords: ["API", "文档", "接口", "服务器", "开发"]
+            },
+            {
+                title: "更新日志",
+                description: "跟踪天机思维模型MCP服务器的版本历史和功能更新。",
+                url: "changelog.html",
+                category: "文档",
+                keywords: ["更新", "版本", "历史", "功能", "发布"]
+            },
+            {
+                title: "常见问题解答",
+                description: "关于天机思维模型MCP服务器的常见问题解答。",
+                url: "faq.html",
+                category: "文档",
+                keywords: ["FAQ", "问题", "解答", "帮助", "疑难解答"]
+            },
+            {
+                title: "VS Code配置指南",
+                description: "如何在VS Code中配置和使用天机思维模型MCP服务器。",
+                url: "installation/vscode.html",
+                category: "安装指南",
+                keywords: ["VSCode", "配置", "插件", "扩展", "集成"]
+            },
+            {
+                title: "Cursor编辑器配置",
+                description: "在Cursor编辑器中设置和使用天机思维模型MCP服务器的详细指南。",
+                url: "installation/cursor.html",
+                category: "安装指南",
+                keywords: ["Cursor", "编辑器", "配置", "设置", "集成"]
+            },
+            {
+                title: "Claude助手配置",
+                description: "如何将天机思维模型MCP服务器与Claude AI助手集成。",
+                url: "installation/claude.html",
+                category: "安装指南",
+                keywords: ["Claude", "Anthropic", "AI助手", "配置", "集成"]
+            },            {
+                title: "思维模型推荐方法",
+                description: "获取适用于特定问题或情境的思维模型推荐方法和技巧。",
+                url: "models/index.html#recommendations",
+                category: "思维模型",
+                keywords: ["推荐", "模型", "方法", "算法"]
+            },
+            {
+                title: "工具参数设置",
+                description: "天机思维模型服务器工具参数的详细说明。",
+                url: "tools/index.html#parameters",
+                category: "工具文档",
+                keywords: ["工具", "参数", "配置", "选项"]
+            },            // 应用场景示例已被移除
             // 更多内容项可以根据网站实际内容添加
         ];
 
@@ -213,20 +284,19 @@
             
             results.forEach((result, index) => {
                 const resultId = `result-${index}`;
-                const resultHtml = `
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${resultId}">
+                const resultHtml = `                <div class="tianji-result-item">
+                    <h2 class="result-header">
+                        <button class="result-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${resultId}">
                             <div>
-                                <span class="badge bg-secondary me-2">${result.category}</span>
+                                <span class="tianji-badge me-2">${result.category}</span>
                                 ${result.title}
                             </div>
                         </button>
                     </h2>
-                    <div id="${resultId}" class="accordion-collapse collapse">
-                        <div class="accordion-body">
+                    <div id="${resultId}" class="result-collapse collapse">
+                        <div class="result-content">
                             <p>${result.description}</p>
-                            <a href="${result.url}" class="btn btn-primary btn-sm">查看详情</a>
+                            <a href="${result.url}" class="tianji-button btn-sm">查看详情</a>
                         </div>
                     </div>
                 </div>`;

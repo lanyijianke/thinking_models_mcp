@@ -1,0 +1,6 @@
+<![CDATA[<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+  <!-- 中式传统纹样 - 回字纹 -->
+  <rect x="10" y="10" width="30" height="30" fill="none" stroke="#333" stroke-width="2" stroke-opacity="0.7"/>
+  <rect x="15" y="15" width="20" height="20" fill="none" stroke="#333" stroke-width="2" stroke-opacity="0.7"/>
+  <path d="M15,25 H30 M25,15 V30" stroke="#333" stroke-width="2" stroke-opacity="0.7"/>
+</svg>]]>

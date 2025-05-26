@@ -2,28 +2,29 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude配置 | 思维模型 MCP 服务器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Claude配置 | 天机 · 思维模型</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tianji-theme.css">
+    <!-- 引入中文字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body>    <header class="tianji-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <a class="navbar-brand" href="../index.html">
-                    <img src="../../image/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
-                    天机 - 思维模型 MCP
+                    <img src="../img/tianji.png" alt="天机 Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+                    天机 · 思维模型
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../about.html">关于天机</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 安装指南
@@ -57,9 +58,7 @@
                                 <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
                                 <li><a class="dropdown-item" href="../models/search.html">搜索模型</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="../applications/index.html">应用场景</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../api-docs/index.html">API文档</a></li>
+                        </li>                        <li class="nav-item"><a class="nav-link" href="../api-docs/index.html">API文档</a></li>
                         <li class="nav-item"><a class="nav-link" href="../faq.html">常见问题</a></li>
                     </ul>
                     <form class="d-flex" role="search" action="../search.html" method="get">
@@ -255,7 +254,7 @@ THINKING_MODELS_PORT=3456 thinking-models-server</code></pre>
                                 
                                 <div class="mt-4">
                                     <figure class="figure border p-2 rounded shadow-sm">
-                                        <img src="../../image/claude_example.png" class="figure-img img-fluid rounded" alt="Claude与天机交互示例图" onerror="this.src='https://via.placeholder.com/800x450?text=Claude与天机交互示例'">
+                                        <img src="../img/claude_example.png" class="figure-img img-fluid rounded" alt="Claude与天机交互示例图" onerror="this.src='https://via.placeholder.com/800x450?text=Claude与天机交互示例'">
                                         <figcaption class="figure-caption text-center">Claude 桌面应用与"天机"思维模型交互示例</figcaption>
                                     </figure>
                                 </div>
