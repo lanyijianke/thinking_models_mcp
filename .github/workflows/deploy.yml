@@ -1,9 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:    branches:
+  push:
+    branches:
       - master
-  workflow_dispatch: # 允许手动触发部署
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,7 +19,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4      - name: Setup Pages
+        uses: actions/checkout@v4
+        
+      - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload Pages artifact
