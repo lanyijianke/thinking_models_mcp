@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
+<html lang="zh-CN">
+<head>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>工具概览 | 思维模型 MCP 服务器</title>
+    <title>工具架构 - 天机思维模型</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
@@ -12,53 +11,139 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .architecture-diagram {
+            margin: 2rem auto;
+            max-width: 1000px;
+            font-family: var(--font-hei);
+        }
+        .arch-layer {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--rice-white);
+            border-radius: 12px;
+            border: var(--scroll-border);
+            box-shadow: var(--ink-shadow);
+            transition: var(--transition-smooth);
+        }
+        .arch-layer:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+        }
+        .arch-layer-title {
+            font-family: var(--font-kai);
+            font-size: 1.5rem;
+            color: var(--ink-black);
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.05em;
+        }        .arch-layer-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 4px;
+            height: 24px;
+            background-color: var(--cinnabar-red);
+            border-radius: 2px;
+        }
+        .tool-section {
+            background: white;
+            border-radius: 8px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-sm);
+            box-shadow: var(--ink-shadow);
+            border: var(--scroll-border);
+            transition: var(--transition-smooth);
+        }
+        .tool-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-family: var(--font-kai);
+            font-size: 1.2rem;
+            color: var(--ink-black);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-xs);
+            border-bottom: 2px solid var(--pale-cyan);
+            letter-spacing: 0.05em;
+        }
+        .tool-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+        .tool-item {
+            background: var(--rice-white);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--ink-black);
+            border: var(--scroll-border);
+            transition: var(--transition-smooth);
+        }
+        .tool-item:hover {
+            background: var(--pale-cyan);
+            border-color: var(--ink-gray);
+            transform: translateX(3px);
+        }
+        .description {
+            font-family: var(--font-song);
+            color: var(--ink-gray);
+            font-size: 0.95rem;
+            margin-top: var(--space-xs);
+            line-height: 1.8;
+            letter-spacing: 0.03em;
+        }
+    </style>
 </head>
 <body>    <header class="tianji-header">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">                <a class="navbar-brand" href="../index.html">
-                    <img src="../img/tianji.png" alt="天机 Logo" width="30" height="30" class="d-inline-block align-text-top">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/tianji.png" alt="天机 Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
                     天机 · 思维模型
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                </a>                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 安装指南
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../installation/index.html">快速安装</a></li>
-                                <li><a class="dropdown-item" href="../installation/vscode.html">VS Code配置</a></li>
-                                <li><a class="dropdown-item" href="../installation/cursor.html">Cursor配置</a></li>
-                                <li><a class="dropdown-item" href="../installation/claude.html">Claude配置</a></li>
-                                <li><a class="dropdown-item" href="../installation/others.html">其他客户端配置</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                工具文档
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item active" href="index.html">工具概览</a></li>
-                                <li><a class="dropdown-item" href="exploration.html">探索类工具</a></li>
-                                <li><a class="dropdown-item" href="problem-solving.html">问题解决类工具</a></li>
-                                <li><a class="dropdown-item" href="creation.html">创建类工具</a></li>
-                                <li><a class="dropdown-item" href="system.html">系统与学习类工具</a></li>
+                                <li><a class="dropdown-item" href="../installation/index.html">快速开始</a></li>
+                                <li><a class="dropdown-item" href="../installation/requirements.html">环境要求</a></li>
+                                <li><a class="dropdown-item" href="../installation/configuration.html">配置说明</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                思维模型库
+                                工具文档
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../models/index.html">模型概览</a></li>
-                                <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
-                                <li><a class="dropdown-item" href="../models/search.html">搜索模型</a></li>                            </ul>
+                                <li><a class="dropdown-item" href="index.html">工具概览</a></li>
+                                <li><a class="dropdown-item" href="exploration.html">探索类工具</a></li>
+                                <li><a class="dropdown-item" href="problem-solving.html">问题解决类工具</a></li>
+                                <li><a class="dropdown-item" href="creation.html">创建类工具</a></li>
+                                <li><a class="dropdown-item" href="system.html">系统工具</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="../api-docs/index.html">API文档</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                模型库
+                            </a>
+                            <ul class="dropdown-menu">                                <li><a class="dropdown-item" href="../models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="../faq.html">常见问题</a></li>
                     </ul>
                     <form class="d-flex" role="search" action="../search.html" method="get">
@@ -73,323 +158,261 @@
     </header>
 
     <main class="container my-5">
-        <section class="row mb-5">
-            <div class="col-lg-10 mx-auto text-center">
-                <h1 class="display-4 mb-4">天机工具概览</h1>
-                <p class="lead">
-                    "天机"提供一套完整的思维工具阶梯，从基础认知到高阶思维，帮助您在每一个思维能力层次找到适合的工具支持。
-                </p>
-            </div>
-        </section>
-
-        <section class="row mb-5">
-            <div class="col-lg-10 mx-auto">
-                <h2 class="border-bottom pb-2 mb-4">工具层级架构</h2>
-                <p class="mb-4">
-                    "天机"的工具设计遵循"由简入繁、循序渐进"的原则，构成了一套完整的思考阶梯，帮助用户从基础认知到高阶思维的全面提升。工具一共分为三层：
-                </p>
-                <div class="row g-4 mb-5">
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="card-title h5"><i class="bi bi-layers-fill me-2 text-primary"></i>基础层</h3>
-                                <p class="card-text">
-                                    提供对于整个MCP服务器版本、状态、学习系统等信息的统计支持工具，同时"天机"也预设了中英文两库的思维模型文件，帮助大家快速上手。
-                                </p>
-                            </div>
-                        </div>
+        <div class="architecture-diagram">            <!-- 应用层 -->
+            <div class="arch-layer">
+                <h2 class="arch-layer-title">
+                    <i class="bi bi-app me-2"></i>应用层
+                </h2>
+                <div class="tool-section">
+                    <div class="section-title">
+                        <i class="bi bi-lightbulb text-primary me-2"></i>模型推荐工具
                     </div>
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="card-title h5"><i class="bi bi-gear-fill me-2 text-success"></i>服务层</h3>
-                                <p class="card-text">
-                                    主要为应用入口提供必要的帮助，比如按不同维度检索模型、对现有模型进行删改，和增加新模型等功能。这算得上是天机内部的"工具"。
-                                </p>
-                            </div>
-                        </div>
+                    <div class="tool-group">
+                        <span class="tool-item">
+                            <i class="bi bi-diagram-3 me-2"></i>问题建模工具 (problem-modeling)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-stars me-2"></i>模型推荐 (recommend-models-for-problem)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-arrows-move me-2"></i>使用场景匹配 (match-scenarios)
+                        </span>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="card-title h5"><i class="bi bi-stars me-2 text-warning"></i>应用层</h3>
-                                <p class="card-text">
-                                    常用的"应用类"工具，这些工具从问题推荐到模型泛化都有涉及，可以满足在多数场景下的实际需求。
-                                </p>
-                            </div>
-                        </div>
+                    <div class="description mt-2">
+                        <i class="bi bi-info-circle text-primary me-2"></i>
+                        智能分析问题特征，推荐最适合的思维模型组合
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="row mb-5">
-            <div class="col-lg-10 mx-auto">
-                <h2 class="border-bottom pb-2 mb-4">思考能力阶梯</h2>
+                <div class="tool-section">
+                    <div class="section-title">
+                        <i class="bi bi-chat-dots text-primary me-2"></i>交互式辅助工具
+                    </div>
+                    <div class="tool-group">
+                        <span class="tool-item">
+                            <i class="bi bi-signpost-2 me-2"></i>推理引导 (interactive-reasoning)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-shield-check me-2"></i>假设验证 (generate-validate-hypotheses)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-magic me-2"></i>组合优化建议 (optimize-model-combination)
+                        </span>
+                    </div>
+                    <div class="description mt-2">
+                        <i class="bi bi-info-circle text-primary me-2"></i>
+                        提供交互式引导，帮助用户运用思维模型进行分析
+                    </div>
+                </div>
+            </div>            <!-- 服务层 -->
+            <div class="arch-layer">
+                <h2 class="arch-layer-title">
+                    <i class="bi bi-gear me-2"></i>服务层
+                </h2>
+                <div class="tool-section">
+                    <div class="section-title">
+                        <i class="bi bi-compass text-primary me-2"></i>核心探索工具
+                    </div>
+                    <div class="tool-group">
+                        <span class="tool-item">
+                            <i class="bi bi-folder-symlink me-2"></i>模型分类浏览 (get-categories)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-list-ul me-2"></i>模型列表查询 (list-models)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-info-circle me-2"></i>模型详情获取 (get-model-details)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-diagram-2 me-2"></i>相关模型发现 (get-related-models)
+                        </span>
+                    </div>
+                    <div class="description mt-2">
+                        <i class="bi bi-info-circle text-primary me-2"></i>
+                        提供模型库的浏览、检索和关联发现功能
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <div class="section-title">
+                        <i class="bi bi-tools text-primary me-2"></i>创建与维护工具
+                    </div>
+                    <div class="tool-group">
+                        <span class="tool-item">
+                            <i class="bi bi-plus-circle me-2"></i>模型创建 (create-thinking-model)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-stars me-2"></i>涌现模型设计 (emergent-model-design)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-pencil-square me-2"></i>模型更新 (update-thinking-model)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-git me-2"></i>版本管理 (version-control)
+                        </span>
+                    </div>
+                    <div class="description mt-2">
+                        <i class="bi bi-info-circle text-primary me-2"></i>
+                        支持模型的创建、更新和版本控制
+                    </div>
+                </div>
                 
-                <div class="accordion mb-5" id="thinking_levels">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#level1">
-                                <i class="bi bi-1-circle me-2"></i>认知入口工具 - 启动思考
-                            </button>
-                        </h2>
-                        <div id="level1" class="accordion-collapse collapse show" data-bs-parent="#thinking_levels">
-                            <div class="accordion-body">
-                                <p>最基础的工具层，帮助用户开始思考过程：</p>
-                                <ul class="list-group list-group-flush mb-3">
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-info me-2">探索类</span>
-                                        <strong class="me-2">模型列表浏览 (list-models)：</strong>
-                                        系统化展示可用模型，适合探索式学习
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-info me-2">探索类</span>
-                                        <strong class="me-2">关键词模型搜索 (search-models)：</strong>
-                                        最直接的模型获取方式，快速检索相关思维模型
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-danger me-2">问题解决类</span>
-                                        <strong class="me-2">问题导向推荐 (recommend-models-for-problem)：</strong>
-                                        分析场景，智能推荐模型组合，适合不确定使用哪种模型的场景
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-success me-2">系统与学习类</span>
-                                        <strong class="me-2">新手入门指南 (get-started-guide)：</strong>
-                                        为初次使用者提供系统性引导，降低学习门槛
-                                    </li>
-                                </ul>
-                                <p class="fst-italic">这一层工具操作简单，门槛低，是用户接触"天机"的第一步，特别适合思维模型初学者或特定问题急需解决方案的场景。</p>
-                            </div>
-                        </div>
+                <div class="tool-section">
+                    <div class="section-title">
+                        <i class="bi bi-mortarboard text-primary me-2"></i>学习与反馈工具
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#level2">
-                                <i class="bi bi-2-circle me-2"></i>应用深化工具 - 理解与关联
-                            </button>
-                        </h2>
-                        <div id="level2" class="accordion-collapse collapse" data-bs-parent="#thinking_levels">
-                            <div class="accordion-body">
-                                <p>在获取基础模型后，这一层工具帮助用户更深入地理解和应用：</p>
-                                <ul class="list-group list-group-flush mb-3">
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-info me-2">探索类</span>
-                                        <strong class="me-2">获取模型详情 (get-model-info)：</strong>
-                                        深入学习模型的原理和应用方法
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-info me-2">探索类</span>
-                                        <strong class="me-2">相关模型发现 (get-related-models)：</strong>
-                                        提供关联探索，扩展思考维度，构建思维模型网络
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-success me-2">系统与学习类</span>
-                                        <strong class="me-2">知识缺口检测 (detect-knowledge-gap)：</strong>
-                                        识别思考中的盲点，确保全面性
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-info me-2">探索类</span>
-                                        <strong class="me-2">获取模型分类 (get-categories)：</strong>
-                                        帮助用户建立思维工具体系认知
-                                    </li>
-                                </ul>
-                                <p class="fst-italic">这一层工具帮助用户从"知道有这个工具"到"会用这个工具"，是从理论到实践的重要桥梁。</p>
-                            </div>
-                        </div>
+                    <div class="tool-group">
+                        <span class="tool-item">
+                            <i class="bi bi-book me-2"></i>学习建议 (learning-suggestions)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-chat-dots me-2"></i>使用反馈 (record-user-feedback)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-graph-up me-2"></i>效果评估 (evaluate-effectiveness)
+                        </span>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#level3">
-                                <i class="bi bi-3-circle me-2"></i>思维提升工具 - 强化思考质量
-                            </button>
-                        </h2>
-                        <div id="level3" class="accordion-collapse collapse" data-bs-parent="#thinking_levels">
-                            <div class="accordion-body">
-                                <p>当用户熟悉了基本模型和应用后，这一层工具帮助提升思考质量：</p>
-                                <ul class="list-group list-group-flush mb-3">
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-danger me-2">问题解决类</span>
-                                        <strong class="me-2">假设生成与验证 (generate-validate-hypotheses)：</strong>
-                                        系统性生成并验证假设，培养科学思维
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-danger me-2">问题解决类</span>
-                                        <strong class="me-2">推理过程解释 (explain-reasoning-process)：</strong>
-                                        可视化展示思考逻辑链路，加深对思考机制的元认知
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-danger me-2">问题解决类</span>
-                                        <strong class="me-2">交互式推理引导 (interactive-reasoning)：</strong>
-                                        提供实时指导和反馈，引导逐步深入思考
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-success me-2">系统与学习类</span>
-                                        <strong class="me-2">模型使用统计 (get-model-usage-stats)：</strong>
-                                        帮助用户了解自己的思考偏好和模式
-                                    </li>
-                                </ul>
-                                <p class="fst-italic">这一层工具不仅关注结果，更关注思考过程本身的质量，帮助用户培养更严谨、更全面的思考习惯。</p>
-                            </div>
-                        </div>
+                    <div class="description mt-2">
+                        <i class="bi bi-info-circle text-primary me-2"></i>
+                        收集用户反馈并提供个性化学习建议
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#level4">
-                                <i class="bi bi-4-circle me-2"></i>个性化定制工具 - 创造独特思维
-                            </button>
-                        </h2>
-                        <div id="level4" class="accordion-collapse collapse" data-bs-parent="#thinking_levels">
-                            <div class="accordion-body">
-                                <p>这是最高级的工具层，实现真正的个性化思考：</p>
-                                <ul class="list-group list-group-flush mb-3">
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-warning me-2">创建类</span>
-                                        <strong class="me-2">组合化创新模型 (emergent-model-design)：</strong>
-                                        融合现有模型创造新思考框架，实现创新突破
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-warning me-2">创建类</span>
-                                        <strong class="me-2">思维模型创建 (create-thinking-model)：</strong>
-                                        用户自主定义新的思考框架，实现知识创造与分享
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-warning me-2">创建类</span>
-                                        <strong class="me-2">思维模型更新 (update-thinking-model)：</strong>
-                                        修改完善现有思维模型，持续迭代优化个人知识体系
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-warning me-2">创建类</span>
-                                        <strong class="me-2">思维模型删除 (delete-thinking-model)：</strong>
-                                        管理和优化个人模型库，确保资源高效配置
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-center">
-                                        <span class="badge bg-success me-2">系统与学习类</span>
-                                        <strong class="me-2">用户反馈记录 (record-user-feedback)：</strong>
-                                        记录使用体验，为系统持续优化提供数据基础
-                                    </li>
-                                </ul>
-                                <p class="fst-italic">这一层工具帮助用户从"使用标准化工具"过渡到"创造个性化工具"，实现思维模式的个人化提升。</p>
-                            </div>
-                        </div>
+                </div>
+            </div>            <!-- 基础层 -->
+            <div class="arch-layer">
+                <h2 class="arch-layer-title">
+                    <i class="bi bi-layers me-2"></i>基础层
+                </h2>
+                <div class="tool-section">
+                    <div class="section-title">
+                        <i class="bi bi-cpu text-primary me-2"></i>核心引擎
                     </div>
+                    <div class="tool-group">
+                        <span class="tool-item">
+                            <i class="bi bi-arrow-left-right me-2"></i>相似度计算引擎
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-braces me-2"></i>推理过程引擎
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-box me-2"></i>学习系统引擎
+                        </span>
+                    </div>
+                    <div class="description mt-2">
+                        <i class="bi bi-info-circle text-primary me-2"></i>
+                        为上层服务提供基础算法支持，包括模型相似度计算、推理链构建等核心功能
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <div class="section-title">
+                        <i class="bi bi-wrench text-primary me-2"></i>系统工具
+                    </div>
+                    <div class="tool-group">
+                        <span class="tool-item">
+                            <i class="bi bi-activity me-2"></i>服务器监控 (monitor-server)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-calculator me-2"></i>模型统计 (count-models)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-speedometer me-2"></i>性能分析 (analyze-performance)
+                        </span>
+                    </div>
+                    <div class="description mt-2">
+                        <i class="bi bi-info-circle text-primary me-2"></i>
+                        提供基础的系统监控和管理功能，确保服务的稳定运行
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <div class="section-title">
+                        <i class="bi bi-database text-primary me-2"></i>数据存储
+                    </div>
+                    <div class="tool-group">
+                        <span class="tool-item">
+                            <i class="bi bi-translate me-2"></i>中文模型库 (ZH)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-translate me-2"></i>英文模型库 (EN)
+                        </span>
+                        <span class="tool-item">
+                            <i class="bi bi-clipboard-data me-2"></i>用户反馈数据
+                        </span>
+                    </div>
+                    <div class="description mt-2">
+                        <i class="bi bi-info-circle text-primary me-2"></i>
+                        管理多语言思维模型库和相关数据资源
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 架构说明 -->
+        <section class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="border-bottom pb-2 mb-4">工具层级架构说明</h2>
+                <p class="lead mb-4">
+                    天机思维模型服务采用三层架构设计，每层各司其职，共同构建了一个完整的思维工具生态系统。
+                </p>
+                
+                <h3 class="h5 mb-3">应用层</h3>
+                <p class="mb-4">
+                    位于顶层的应用层主要负责与用户直接交互，提供问题建模、模型推荐和交互式推理等高级功能。这些工具能够理解用户的具体需求，并提供精准的思维模型解决方案。
+                </p>
+
+                <h3 class="h5 mb-3">服务层</h3>
+                <p class="mb-4">
+                    中间的服务层承担核心业务功能，包括模型管理、创建维护和学习反馈等服务。这一层的工具既要向上支持应用层的高级功能，又要合理调用基础层的核心能力。
+                </p>
+
+                <h3 class="h5 mb-3">基础层</h3>
+                <p class="mb-4">
+                    底层的基础设施层提供了各类基础算法引擎和系统功能，为整个服务提供可靠的支撑。包括相似度计算、推理过程管理、数据存储等核心能力。
+                </p>
+
+                <div class="alert alert-info">
+                    <h4 class="h5"><i class="bi bi-info-circle me-2"></i>使用建议</h4>
+                    <p class="mb-0">
+                        在设计"天机"的工具组成时，我们特别注重工具之间的协同效应与层级贯通。用户可能从应用层的问题导向推荐入手，通过服务层的获取模型详情深入学习，最后借助基础层的算法支持实现个性化的解决方案。这种跨层级的工具链条使思考过程更加流畅自然，各工具之间相互补充、相互强化。
+                    </p>
                 </div>
             </div>
         </section>
-
-        <section class="row mb-5">
-            <div class="col-lg-10 mx-auto">
-                <h2 class="border-bottom pb-2 mb-4">工具的分类方式</h2>
-                <div class="row row-cols-1 row-cols-md-4 g-4 mb-4">
-                    <div class="col">
-                        <div class="card h-100 bg-light border-0">
-                            <div class="card-body">
-                                <h3 class="card-title h5 text-center text-info mb-3">探索类工具</h3>
-                                <p class="card-text">用于发现和了解思维模型，帮助用户探索和学习不同类型的思考框架和方法。</p>
-                                <div class="text-center mt-3">
-                                    <a href="exploration.html" class="btn btn-outline-info btn-sm">了解更多</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 bg-light border-0">
-                            <div class="card-body">
-                                <h3 class="card-title h5 text-center text-danger mb-3">问题解决类工具</h3>
-                                <p class="card-text">协助用户使用思维模型解决具体问题，提供系统化的思考方法和推理支持。</p>
-                                <div class="text-center mt-3">
-                                    <a href="problem-solving.html" class="btn btn-outline-danger btn-sm">了解更多</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 bg-light border-0">
-                            <div class="card-body">
-                                <h3 class="card-title h5 text-center text-warning mb-3">创建类工具</h3>
-                                <p class="card-text">允许用户创建和定制自己的思维模型，实现个性化的思考框架定制。</p>
-                                <div class="text-center mt-3">
-                                    <a href="creation.html" class="btn btn-outline-warning btn-sm">了解更多</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 bg-light border-0">
-                            <div class="card-body">
-                                <h3 class="card-title h5 text-center text-success mb-3">系统与学习类工具</h3>
-                                <p class="card-text">支持系统管理和学习优化，提供用户使用反馈和系统自适应功能。</p>
-                                <div class="text-center mt-3">
-                                    <a href="system.html" class="btn btn-outline-success btn-sm">了解更多</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="row">
-                <div class="col-lg-10 mx-auto">
-                    <h2 class="border-bottom pb-2 mb-4">工具的协同效应</h2>
-                    <p>
-                        在设计"天机"的工具组成时，我们特别注重工具之间的协同效应与层级贯通。用户可能从第一层的问题导向推荐入手，通过第二层的获取模型详情深入学习，在第三层通过交互式推理引导应用模型，最后在第四层通过组合化创新模型创造个性化解决方案。这种跨层级的工具链条使思考过程更加流畅自然，各工具之间相互补充、相互强化。
-                    </p>
-                    <p>
-                        更重要的是，这些按能力层次组织的工具，在功能上分属于探索类、问题解决类、创建类和系统与学习类四大类别，但对用户而言，它们通过自然语言交互无缝连接，使用户能够专注于思考本身，而非工具的技术分类。
-                    </p>
-                </div>
-            </section>
-
-            <div class="text-center my-5">
-                <div class="btn-group" role="group">
-                    <a href="exploration.html" class="btn btn-primary">
-                        <i class="bi bi-search me-2"></i>探索类工具
-                    </a>
-                    <a href="problem-solving.html" class="btn btn-primary">
-                        <i class="bi bi-puzzle me-2"></i>问题解决类工具
-                    </a>
-                    <a href="creation.html" class="btn btn-primary">
-                        <i class="bi bi-plus-circle me-2"></i>创建类工具
-                    </a>
-                    <a href="system.html" class="btn btn-primary">
-                        <i class="bi bi-gear me-2"></i>系统与学习类工具
-                    </a>
-                </div>
-            </div>
-    </main>
-
-    <footer class="bg-dark text-light py-4 mt-5">
+    </main>    <footer class="tianji-footer py-4 mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>天机 - 思维模型 MCP 服务器</h5>
-                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                    <h5>「天机」思维模型 MCP 服务器</h5>
+                    <p>思接千载，虑通万里：将系统性思维方法融入您的思考之境</p>
                 </div>
-                <div class="col-md-3">
-                    <h5>链接</h5>
+                <div class="col-md-2">
+                    <h5>相关链接</h5>
                     <ul class="list-unstyled">
                         <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
                         <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <h5>资源</h5>
+                <div class="col-md-2">
+                    <h5>学习资源</h5>
                     <ul class="list-unstyled">
-                        <li><a href="../api-docs/index.html" class="text-light">API文档</a></li>
+                        <li><a href="../tools/index.html" class="text-light">工具文档</a></li>
                         <li><a href="../changelog.html" class="text-light">更新日志</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>其它资源</h5>
+                    <ul class="list-unstyled">                        <li><a href="../faq.html" class="text-light">常见问题</a></li>
                     </ul>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col text-center">
-                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                    <p>© 壬辰至乙巳 (2024-2025) 天机思维模型 · 采用 MIT 许可</p>
                 </div>
             </div>
         </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/main.js"></script>
+    </footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/tianji-theme.js"></script>
 </body>
 </html>

@@ -2,12 +2,63 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>设计理念 | 思维模型 MCP 服务器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>设计理念 | 天机 · 思维模型</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/tianji-theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .philosophy-card {
+            border: none;
+            background: rgba(255,255,255,0.9);
+            border-radius: 1rem;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .philosophy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--tianji-primary);
+            opacity: 0.8;
+        }
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+        }
+        .philosophy-card .card-body {
+            padding: 2rem;
+        }
+        .philosophy-icon {
+            font-size: 2.5rem;
+            color: var(--tianji-primary);
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .value-table th,
+        .value-table td {
+            padding: 1rem;
+            border: none;
+        }
+        .value-table tbody tr {
+            transition: background-color 0.3s ease;
+        }
+        .value-table tbody tr:hover {
+            background-color: rgba(var(--tianji-primary-rgb), 0.05);
+        }
+        .from-to-arrow {
+            color: var(--tianji-primary);
+            font-size: 1.2rem;
+            margin: 0 0.5rem;
+        }
+    </style>
 </head>
 <body>
     <header class="tianji-header">
@@ -66,57 +117,47 @@
                     </form>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <main class="container my-5">
-        <section class="row mb-5 fade-in ink-bamboo-decoration">
-            <div class="col-lg-8 mx-auto text-center">
-                <h1 class="tianji-title">天机设计理念</h1>
-                <div class="scroll-container">
-                    <p class="lead">
-                        "天机"是一个基于对现代思考挑战深刻理解而设计的思维模型MCP系统，旨在解决思考与决策之间的转化阻力、标准化思维工具适应性不足、知识孤岛问题以及认知偏见的桎梏。
-                    </p>
-                </div>
-            </div>
-        </section>        <section class="row mb-5 fade-in">
-        <section class="row mb-5 fade-in">
-            <div class="col-lg-10 mx-auto">
-                <h2 class="tianji-section-title">应对之道：天机的核心理念</h2>
+        </nav>    </header>    <main class="container my-5">        <section class="row mb-5 fade-in"><div class="col-lg-10 mx-auto">                <h2>设计理念</h2>
                 <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-                    <div class="col">
-                        <div class="tianji-card">
+                    <div class="col">                        <div class="philosophy-card">
                             <div class="card-body">
-                                <h3 class="tianji-card-title text-center mb-3">成长</h3>
+                                <div class="text-center">
+                                    <i class="bi bi-flower1 philosophy-icon"></i>
+                                    <h3 class="tianji-card-title mb-3">成长</h3>
+                                </div>
                                 <p class="card-text">将"天机"设计成一个能够"成长"的有机系统，而非静态的工具集。</p>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item bg-transparent">自适应学习机制：系统能够从每次交互中学习，不断调整和优化其推荐和辅助策略</li>
-                                    <li class="list-group-item bg-transparent">进化性思维模型：思维模型库不是固定的知识集合，而是能够随用户需求和反馈而不断发展</li>
-                                    <li class="list-group-item bg-transparent">共创成长模式：用户不只是使用者，更是系统进化的参与者，双方在互动中共同成长</li>
+                                    <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle text-primary me-2"></i>自适应学习机制：系统能够从每次交互中学习，不断调整和优化其推荐和辅助策略</li>
+                                    <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle text-primary me-2"></i>进化性思维模型：思维模型库不是固定的知识集合，而是能够随用户需求和反馈而不断发展</li>
+                                    <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle text-primary me-2"></i>共创成长模式：用户不只是使用者，更是系统进化的参与者，双方在互动中共同成长</li>
                                 </ul>
                             </div>
-                        </div>                    </div>
-                    <div class="col">
-                        <div class="tianji-card">
+                        </div></div>
+                    <div class="col">                        <div class="philosophy-card">
                             <div class="card-body">
-                                <h3 class="tianji-card-title text-center mb-3">贴合</h3>
+                                <div class="text-center">
+                                    <i class="bi bi-diagram-3 philosophy-icon"></i>
+                                    <h3 class="tianji-card-title mb-3">贴合</h3>
+                                </div>
                                 <p class="card-text">以基础思维模型为基准，结合用户自身的认知特性，孕育出独特的个性化模型。</p>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item bg-transparent">思维模式识别：深入理解用户的思考习惯和偏好</li>
-                                    <li class="list-group-item bg-transparent">动态调整机制：根据用户的使用反馈不断优化和调整</li>
-                                    <li class="list-group-item bg-transparent">个性化表达：允许用户用自己的方式诠释和应用思维模型</li>
+                                    <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle text-primary me-2"></i>思维模式识别：深入理解用户的思考习惯和偏好</li>
+                                    <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle text-primary me-2"></i>动态调整机制：根据用户的使用反馈不断优化和调整</li>
+                                    <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle text-primary me-2"></i>个性化表达：允许用户用自己的方式诠释和应用思维模型</li>
                                 </ul>
                             </div>
-                        </div>                    </div>
-                    <div class="col">
-                        <div class="tianji-card">
+                        </div></div>
+                    <div class="col">                        <div class="philosophy-card">
                             <div class="card-body">
-                                <h3 class="tianji-card-title text-center mb-3">平衡</h3>
+                                <div class="text-center">
+                                    <i class="bi bi-yin-yang philosophy-icon"></i>
+                                    <h3 class="tianji-card-title mb-3">平衡</h3>
+                                </div>
                                 <p class="card-text">"天机"的设计追求多个维度的平衡，通过阶梯式的工具组合完成对个人认知的探索。</p>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item bg-transparent">简单与强大的平衡：工具既要易于使用，又要功能强大</li>
-                                    <li class="list-group-item bg-transparent">结构与灵活的平衡：提供清晰的思维框架，同时保持足够的灵活性</li>
-                                    <li class="list-group-item bg-transparent">通用与专业的平衡：满足不同层次用户的需求</li>
+                                    <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle text-primary me-2"></i>简单与强大的平衡：工具既要易于使用，又要功能强大</li>
+                                    <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle text-primary me-2"></i>结构与灵活的平衡：提供清智的思维框架，同时保持足够的灵活性</li>
+                                    <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle text-primary me-2"></i>通用与专业的平衡：满足不同层次用户的需求</li>
                                 </ul>
                             </div>
                         </div>
@@ -124,13 +165,12 @@
             </div>
         </section>
         <section class="row mb-5 fade-in">
-            <div class="col-lg-10 mx-auto">
-                <h2 class="tianji-section-title">天机的实际价值</h2>
+            <div class="col-lg-10 mx-auto">                <h2 class="text-center mb-5">天机的实际价值</h2>
                 <div class="table-responsive">
-                    <table class="tianji-table table">
-                        <thead class="table-light">
+                    <table class="tianji-table table value-table">
+                        <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col" class="text-center">#</th>
                                 <th scope="col">价值点</th>
                                 <th scope="col">从</th>
                                 <th scope="col">到</th>
@@ -138,47 +178,46 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>模型推荐</td>
+                                <th scope="row" class="text-center">1</th>
+                                <td><i class="bi bi-magic text-primary me-2"></i>模型推荐</td>
                                 <td>被动寻找</td>
-                                <td>主动使用</td>
+                                <td><i class="bi bi-arrow-right from-to-arrow"></i>主动使用</td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>创造力</td>
+                            <tr>                                <th scope="row" class="text-center">2</th>
+                                <td><i class="bi bi-stars text-primary me-2"></i>创造力</td>
                                 <td>局限思维</td>
-                                <td>泛化涌现</td>
+                                <td><i class="bi bi-arrow-right from-to-arrow"></i>泛化涌现</td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
-                                <td>问题解决</td>
+                                <th scope="row" class="text-center">3</th>
+                                <td><i class="bi bi-diagram-2 text-primary me-2"></i>问题解决</td>
                                 <td>无序思考</td>
-                                <td>结构化推理</td>
+                                <td><i class="bi bi-arrow-right from-to-arrow"></i>结构化推理</td>
                             </tr>
                             <tr>
-                                <th scope="row">4</th>
-                                <td>复杂任务</td>
+                                <th scope="row" class="text-center">4</th>
+                                <td><i class="bi bi-grid-3x3-gap text-primary me-2"></i>复杂任务</td>
                                 <td>整体处理</td>
-                                <td>分段推理</td>
+                                <td><i class="bi bi-arrow-right from-to-arrow"></i>分段推理</td>
                             </tr>
                             <tr>
-                                <th scope="row">5</th>
-                                <td>适应场景</td>
+                                <th scope="row" class="text-center">5</th>
+                                <td><i class="bi bi-intersect text-primary me-2"></i>适应场景</td>
                                 <td>通用模型</td>
-                                <td>定制解决方案</td>
+                                <td><i class="bi bi-arrow-right from-to-arrow"></i>定制解决方案</td>
                             </tr>
                             <tr>
-                                <th scope="row">6</th>
-                                <td>使用体验</td>
+                                <th scope="row" class="text-center">6</th>
+                                <td><i class="bi bi-graph-up-arrow text-primary me-2"></i>使用体验</td>
                                 <td>固定不变</td>
-                                <td>持续优化</td>
+                                <td><i class="bi bi-arrow-right from-to-arrow"></i>持续优化</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>            </div>
         </section>        <div class="text-center my-5">
-            <a href="installation/index.html" class="tianji-button btn-lg">
-                开始安装与使用 <i class="bi bi-arrow-right"></i>
+            <a href="installation/index.html" class="tianji-button btn-lg px-5 py-3">
+                <i class="bi bi-lightning-charge me-2"></i>开始安装与使用
             </a>
         </div>
     </main>

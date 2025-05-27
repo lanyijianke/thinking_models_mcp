@@ -59,18 +59,6 @@ h1 {
   position: relative;
 }
 
-h1:after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 2px;
-  background-color: var(--cinnabar-red);
-  margin-top: var(--space-xs);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 h2 {
   font-size: 1.8rem;
   color: var(--ink-black);

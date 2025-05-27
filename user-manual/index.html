@@ -70,9 +70,7 @@
                             </a>
                             <ul class="dropdown-menu">                            <li><a class="dropdown-item" href="models/index.html">模型概览</a></li>
                             <li><a class="dropdown-item" href="models/categories.html">分类浏览</a></li>
-                        </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="api-docs/index.html">API文档</a></li>
+                        </ul>                        </li>
                         <li class="nav-item"><a class="nav-link" href="faq.html">常见问题</a></li>
                     </ul>
                     <form class="d-flex" role="search" action="search.html" method="get">
@@ -87,15 +85,8 @@
     </header>
 
     <main class="container my-5 fade-in ink-landscape-bg">
-        <!-- 欢迎部分 - 原首页内容 -->
-        <section class="row">
-            <div class="col-lg-10 mx-auto ink-bamboo-decoration">
-                <h1 class="tianji-title text-center">欢迎使用天机思维模型</h1>
-                <p class="lead scroll-text text-center mb-5">
-                    「天机」源自古语"天机不可泄露"，寓意着通过它可揭示深层次的规律与智慧。在这个充满不确定性的时代，「天机」致力于成为您接近真相、洞见本质、增强智慧的利器。
-                </p>
-                <div class="chinese-quote my-5 text-center">
-                    <p class="mb-0">格物致知，穷理尽性，天人合一</p>
+        <!-- 欢迎部分 - 原首页内容 -->        <section class="row">            <div class="col-lg-10 mx-auto">                <div class="text-center mb-4">
+                    <img src="img/tianji.png" alt="天机" class="img-fluid" style="max-width: 50vh;">
                 </div>
                 
                 <div class="row mt-5">
@@ -144,8 +135,7 @@
                             </a>
                             <a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="btn btn-outline-danger" target="_blank">
                                 <i class="bi bi-code-square me-2"></i>包管理
-                            </a>
-                            <a href="https://mcp.so/server/thinking-models-mcp/lanyijianke" class="btn btn-outline-primary" target="_blank">
+                            </a>                            <a href="https://mcp.so/server/tianji-thinking-models/lanyijianke" class="btn btn-outline-primary" target="_blank">
                                 <i class="bi bi-box me-2"></i>MCP.SO
                             </a>
                         </div>
@@ -154,25 +144,8 @@
             </div>
         </section>
         
-        <!-- 关于部分 - 原about.html内容 -->
-        <section class="about-section">
-            <div class="row mb-5">
-                <div class="col-lg-10 mx-auto">
-                    <h2 class="text-center mb-4">项目名称由来</h2>
-                    <div class="card mb-4 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <p class="fs-5">
-                                「天机」一词源自中国古语"天机不可泄露"，寓意深远。在古代典籍中，"天机"指天道运行的奥秘，乃是难以言表的深层规律。选择此名，正是希望这个思维模型服务能帮助探索者揭示思考与决策背后的深层规律与智慧，让使用者能够"一窥天机"。
-                            </p>
-                            <p class="fs-5 mb-0">
-                                身处信息洪流、复杂性剧增之时代，我们面临前所未有的思考挑战。「天机」愿成为引导您接近真相、洞见本质、增强智慧的良师益友。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mb-5">                <div class="col-lg-10 mx-auto">
+        <!-- 关于部分 - 原about.html内容 -->        <section class="about-section">
+            <div class="row mb-5"><div class="col-lg-10 mx-auto">
                     <h2 class="text-center mb-4">关于作者</h2>
                     <div class="card border-0 shadow-sm">
                         <div class="card-header bg-light py-3">
@@ -259,23 +232,39 @@
     <footer class="tianji-footer py-4 mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <h5>「天机」思维模型</h5>
                     <p>思接千载，虑通万里：将系统性思维方法融入您的思考之境</p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <h5>相关链接</h5>
                     <ul class="list-unstyled">
                         <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
                         <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <h5>学习资源</h5>
                     <ul class="list-unstyled">
                         <li><a href="tools/index.html" class="text-light">工具文档</a></li>
                         <li><a href="changelog.html" class="text-light">更新日志</a></li>
                     </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>联系方式</h5>                    <div class="row">
+                        <div class="col-6">
+                            <div class="text-center">
+                                <img src="img/wechat.png" alt="微信二维码" class="img-fluid mb-2" style="max-width: 120px;">
+                                <p class="small text-light mb-0">微信</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-center">
+                                <img src="img/gongzhonghao.png" alt="公众号二维码" class="img-fluid mb-2" style="max-width: 120px;">
+                                <p class="small text-light mb-0">公众号</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr>
