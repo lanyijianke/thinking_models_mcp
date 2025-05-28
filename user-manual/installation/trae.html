@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursor 配置 | 天机</title>
+    <title>Trae 配置 | 天机</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/tianji-theme.css">
 </head>
-<body>
-            <header class="tianji-header">
+<body>            <header class="tianji-header">
                 <!-- 导航菜单 -->
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <div class="container">
@@ -31,9 +30,9 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="index.html">快速安装</a></li>
                                         <li><a class="dropdown-item" href="vscode.html">VS Code配置</a></li>
-                                        <li><a class="dropdown-item active" href="cursor.html">Cursor配置</a></li>
+                                        <li><a class="dropdown-item" href="cursor.html">Cursor配置</a></li>
                                         <li><a class="dropdown-item" href="claude.html">Claude配置</a></li>
-                                        <li><a class="dropdown-item" href="trae.html">Trae配置</a></li>
+                                        <li><a class="dropdown-item active" href="trae.html">Trae配置</a></li>
                                         <li><a class="dropdown-item" href="cherry-studio.html">Cherry Studio配置</a></li>
                                     </ul>
                                 </li>
@@ -67,33 +66,43 @@
                     </div>
                 </nav>
             </header>
-    <div class="container my-5">        <h1 class="text-center">Claude 配置</h1>
-        <p class="lead text-center">本文档详细说明如何配置 Claude 以集成 MCP 服务器</p>
+    <div class="container my-5">
+        <h1 class="text-center">Trae 开发环境配置</h1>
+        <p class="lead text-center">本文档详细说明如何在 Trae 开发环境中配置 MCP 服务器连接</p>
         <hr>
         <section>
-            <h2>集成步骤</h2>
+            <h2>配置流程</h2>
             <div class="alert alert-info" role="alert">
-                <i class="bi bi-info-circle"></i> 请确保您已安装最新版本的 Cursor IDE，以获得最佳的兼容性支持。
-            </div>            <ol class="mt-4">
-                <li>首先需要下载 Claude 官方客户端</li>
-                <img src="../img/anzhuang/claude-0.jpg" alt="Claude 桌面端" class="img-fluid mb-3">
-                <li>找到并打开本地配置目录：
-                    <div class="tianji-alert info" role="alert">
-                        <code>C:\Users\你的用户名\AppData\Roaming\Claude</code>
-                    </div>
-                    <img src="../img/anzhuang/claude-1.png"  class="img-fluid mb-3">
-                </li>                
-                
-                <li>打开配置文件 <code>claude_desktop_config.json</code></li>
-                <li>将相应的配置放进去</li>
-                      <img src="../img/anzhuang/claude-2.png"  class="img-fluid mb-3">
-                <li>保存配置文件后打开（或重新启动）Claude 桌面端
-                    <div class="tianji-alert warning" role="alert">
-                        <i class="bi bi-info-circle"></i> 如果已经打开了 Claude，需要完全退出后重新启动才能生效
-                    </div>
+                <i class="bi bi-info-circle"></i> 配置前请确保您的 Trae 环境已正确安装并具有适当的访问权限。
+            </div>
+            <ol class="mt-4">
+                <li>访问 Trae 配置界面：
+                    <ul>
+                        <li>展开左侧导航栏</li>
+                        
+                        <li>找到系统设置图标（齿轮图标）</li>
+                        <li>选择 MCP 服务器配置选项</li>
+                         <img src="../img/anzhuang/trae-1.png" alt="VS Code 设置图标" class="img-fluid my-2">
+                    </ul>
                 </li>
-                <li>重启后，即可看到 MCP 工具已被加载</li>
-                   <img src="../img/anzhuang/claude-3.png"  class="img-fluid mb-3">
+                <li>在服务器管理界面中：
+                    <ul>
+                        <li>点击"添加服务器"按钮</li>
+                         <img src="../img/anzhuang/trae-2.png" alt="VS Code 设置图标" class="img-fluid my-2">
+                        <li>选择"手动配置"模式</li>
+                         <img src="../img/anzhuang/trae-3.png" alt="VS Code 设置图标" class="img-fluid my-2">
+
+                    </ul>
+                </li>
+                <li>在配置编辑器中：
+                    <ul>
+                        <li>按照指定格式输入或粘贴服务器配置信息</li>
+                         <img src="../img/anzhuang/trae-4.png" alt="VS Code 设置图标" class="img-fluid my-2">
+                        <li>验证配置格式的正确性</li>
+                    </ul>
+                </li>
+                <li>完成配置后，系统会自动将新服务器添加到 MCP 服务器管理列表</li>
+                 <img src="../img/anzhuang/trae-5.png" alt="VS Code 设置图标" class="img-fluid my-2">
             </ol>
         </section>
     </div>
@@ -143,7 +152,7 @@
                 </div>
             </div>
         </div>
-    </footer>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/tianji-theme.js"></script>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

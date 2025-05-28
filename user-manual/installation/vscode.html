@@ -2,17 +2,14 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>VS Code配置 | 天机 · 思维模型</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Code 配置 | 天机</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/tianji-theme.css">
-    <!-- 引入中文字体 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>    <header class="tianji-header">
+<body>
+    <header class="tianji-header">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <a class="navbar-brand" href="../index.html">
@@ -24,17 +21,19 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../philosophy.html">设计理念</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 安装指南
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="index.html">快速安装</a></li>
-                                <li><a class="dropdown-item active" href="vscode.html">VS Code配置</a></li>
-                                <li><a class="dropdown-item" href="cursor.html">Cursor配置</a></li>
-                                <li><a class="dropdown-item" href="claude.html">Claude配置</a></li>
-                                <li><a class="dropdown-item" href="others.html">其他客户端配置</a></li>
+                                        <li><a class="dropdown-item" href="index.html">快速安装</a></li>
+                                        <li><a class="dropdown-item" href="vscode.html">VS Code配置</a></li>
+                                        <li><a class="dropdown-item" href="cursor.html">Cursor配置</a></li>
+                                        <li><a class="dropdown-item" href="claude.html">Claude配置</a></li>
+                                        <li><a class="dropdown-item active" href="trae.html">Trae配置</a></li>
+                                        <li><a class="dropdown-item" href="cherry-studio.html">Cherry Studio配置</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -56,8 +55,8 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="../models/index.html">模型概览</a></li>
                                 <li><a class="dropdown-item" href="../models/categories.html">分类浏览</a></li>
-                                <li><a class="dropdown-item" href="../models/search.html">搜索模型</a></li>
-                            </ul>                        </li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="../faq.html">常见问题</a></li>
                     </ul>
                     <form class="d-flex" role="search" action="../search.html" method="get">
@@ -70,405 +69,87 @@
             </div>
         </nav>
     </header>
-
-    <main class="container my-5">
-        <section class="row mb-5">
-            <div class="col-lg-10 mx-auto">
-                <h1 class="display-5 mb-4">Visual Studio Code 配置指南</h1>
-                <p class="lead">
-                    本指南将帮助您在 VS Code 中配置和使用"天机"思维模型 MCP 服务器，通过 MCP (Model Context Protocol) 协议连接，让您在编码过程中轻松访问思维模型工具。
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                    <span class="badge rounded-pill bg-primary">VS Code</span>
-                    <span class="badge rounded-pill bg-secondary">MCP</span>
-                    <span class="badge rounded-pill bg-success">思维模型</span>
-                    <span class="badge rounded-pill bg-info text-dark">AI 助手</span>
-                </div>
+    <div class="container my-5">
+        <h1 class="text-center">Visual Studio Code 配置指南</h1>
+        <p class="lead text-center">本文档将指导您如何在 Visual Studio Code 中配置 MCP（Model Context Protocol）服务器</p>
+        <hr>
+        <section>
+            <h2>配置流程</h2>
+            <div class="alert alert-info" role="alert">
+                <i class="bi bi-info-circle"></i> 配置 MCP 服务器需要管理员权限。请确保您具有相应的操作权限。
             </div>
+            <ol class="mt-4">
+                <li>启动 Visual Studio Code，通过以下任一方式打开设置：
+                    <ul>
+                        <li>点击左下角的齿轮图标，选择"设置"</li>
+                        <img src="../img/anzhuang/vscode-1.png" alt="VS Code 设置图标" class="img-fluid my-2">
+                        <li>或者使用快捷键 <kbd>Ctrl</kbd>+<kbd>,</kbd></li>
+                    </ul>
+                </li>
+                <li>在设置界面中：
+                    <ul>
+                        <li>搜索"mcp"关键字</li>
+                               <img src="../img/anzhuang/vscode-2.png" alt="VS Code 设置图标" class="img-fluid my-2">
+                        <li>找到或创建 <code>mcpServers</code> 配置节点</li>
+                              <img src="../img/anzhuang/vscode-3.png" alt="VS Code 设置图标" class="img-fluid my-2">
+                        <li>按规范格式添加服务器配置信息</li>
+                            <img src="../img/anzhuang/vscode-4.png" alt="VS Code 设置图标" class="img-fluid my-2">
+
+                    </ul>
+                </li>
+                <li>配置完成后，MCP 服务器将在 Agent 模式的工具栏中显示，以供调用</li>
+                  
+                      <img src="../img/anzhuang/vscode-5.png" alt="VS Code 设置图标" class="img-fluid my-2">
+            </ol>
         </section>
-
-        <section class="row mb-5">
-            <div class="col-lg-10 mx-auto">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h2 class="h3 mb-4">配置步骤概览</h2>
-
-                        <div class="d-flex mb-4">
-                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
-                                <h3 class="h5 mb-0 text-primary">1</h3>
-                            </div>
-                            <div>
-                                <h3 class="h5">安装必要的 VS Code 扩展</h3>
-                                <p>首先需要安装 MCP 集成扩展，提供 VS Code 与"天机"服务器之间的通信桥梁。</p>
-                                
-                                <div class="mt-3 mb-4">
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <div class="card h-100 border-primary border-opacity-25">
-                                                <div class="card-body p-3">
-                                                    <div class="d-flex align-items-center gap-3 mb-3">
-                                                        <img src="https://automatalabs.gallerycdn.vsassets.io/extensions/automatalabs/copilot-mcp/0.20.3/1714033377636/Microsoft.VisualStudio.Services.Icons.Default" alt="Copilot MCP" width="40" height="40" class="rounded">
-                                                        <div>
-                                                            <h4 class="h6 mb-0">Copilot MCP</h4>
-                                                            <p class="small text-muted mb-0">管理和连接 MCP 服务器的 VS Code 扩展</p>
-                                                        </div>
-                                                    </div>
-                                                    <a href="https://marketplace.visualstudio.com/items?itemName=automatalabs.copilot-mcp" class="btn btn-sm btn-outline-primary" target="_blank">
-                                                        <i class="bi bi-box-arrow-up-right me-1"></i>在 Marketplace 查看
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="card h-100">
-                                                <div class="card-body p-3">
-                                                    <div class="d-flex align-items-center gap-3 mb-3">
-                                                        <img src="https://saoudrizwan.gallerycdn.vsassets.io/extensions/saoudrizwan/claude-dev/1.0.13/1710270784086/Microsoft.VisualStudio.Services.Icons.Default" alt="Cline" width="40" height="40" class="rounded">
-                                                        <div>
-                                                            <h4 class="h6 mb-0">Cline 或其他 AI 助手</h4>
-                                                            <p class="small text-muted mb-0">支持 MCP 的 AI 助手（可选）</p>
-                                                        </div>
-                                                    </div>
-                                                    <a href="https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev" class="btn btn-sm btn-outline-secondary" target="_blank">
-                                                        <i class="bi bi-box-arrow-up-right me-1"></i>在 Marketplace 查看
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <p>在 VS Code 中安装扩展的方法：</p>
-                                <ol>
-                                    <li>点击活动栏中的扩展图标（或按下 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>）</li>
-                                    <li>在搜索框中输入"Copilot MCP"</li>
-                                    <li>找到上述扩展并点击"安装"按钮</li>
-                                </ol>
-                            </div>
-                        </div>
-
-                        <div class="d-flex mb-4">
-                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
-                                <h3 class="h5 mb-0 text-primary">2</h3>
-                            </div>
-                            <div>
-                                <h3 class="h5">启动"天机"MCP 服务器</h3>
-                                <p>确保"天机"思维模型 MCP 服务器已正确安装并且正在运行：</p>
-                                <div class="bg-light p-3 rounded mb-3">
-                                    <pre class="mb-0"><code># 如果使用全局安装
-thinking-models-server
-
-# 如果使用本地安装
-npm run start-thinking-models</code></pre>
-                                </div>
-                                <p>服务器启动后，应该会显示一条消息，表明服务器已经在监听连接。</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex mb-4">
-                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
-                                <h3 class="h5 mb-0 text-primary">3</h3>
-                            </div>
-                            <div>
-                                <h3 class="h5">配置 Copilot MCP 扩展</h3>
-                                <p>安装完成后，需要配置 Copilot MCP 扩展连接到"天机"服务器：</p>
-                                <ol>
-                                    <li>点击 VS Code 状态栏中的 Copilot MCP 图标（或在命令面板中搜索"Copilot MCP"）</li>
-                                    <li>选择"Add Server"添加新服务器</li>
-                                    <li>对于本地运行的"天机"服务器，配置如下：</li>
-                                </ol>
-                                <div class="table-responsive mb-3">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>配置项</th>
-                                                <th>值</th>
-                                                <th>说明</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>名称</td>
-                                                <td>Tianji MCP</td>
-                                                <td>服务器的显示名称</td>
-                                            </tr>
-                                            <tr>
-                                                <td>命令行</td>
-                                                <td>thinking-models-server</td>
-                                                <td>启动服务器的命令（全局安装）</td>
-                                            </tr>
-                                            <tr>
-                                                <td>服务器类型</td>
-                                                <td>stdio</td>
-                                                <td>通过标准输入/输出与客户端通信</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="alert alert-info" role="alert">
-                                    <i class="bi bi-info-circle-fill me-2"></i>
-                                    如果您使用本地项目安装或自定义路径，请将命令行设置为正确的启动命令，例如：<code>npm run start-thinking-models</code> 或完整路径。
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="d-flex mb-4">
-                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
-                                <h3 class="h5 mb-0 text-primary">4</h3>
-                            </div>
-                            <div>
-                                <h3 class="h5">启动并连接服务器</h3>
-                                <p>配置完成后，需要启动并连接到服务器：</p>
-                                <ol>
-                                    <li>在 VS Code 状态栏中点击 Copilot MCP 图标</li>
-                                    <li>从下拉列表中选择刚刚添加的"Tianji MCP"服务器</li>
-                                    <li>点击"Connect"进行连接</li>
-                                </ol>
-                                <p>如果连接成功，状态栏图标会变为绿色，同时会显示"Tianji MCP"的名称。</p>
-                                
-                                <div class="alert alert-success" role="alert">
-                                    <div class="d-flex">
-                                        <div class="flex-shrink-0">
-                                            <i class="bi bi-check-circle-fill fs-4 me-2"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="alert-heading">连接成功指示</h4>
-                                            <p class="mb-0">当连接成功时，VS Code 将显示通知"连接到 Tianji MCP 成功"，并且状态栏会显示连接状态指示器。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="d-flex">
-                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3 d-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
-                                <h3 class="h5 mb-0 text-primary">5</h3>
-                            </div>
-                            <div>
-                                <h3 class="h5">使用"天机"思维模型</h3>
-                                <p>成功连接后，可以开始使用"天机"思维模型工具了：</p>
-                                
-                                <h4 class="h6 mt-3">方法一：通过 VS Code 聊天界面使用</h4>
-                                <ol>
-                                    <li>点击 VS Code 左侧活动栏中的聊天图标（如果已安装 GitHub Copilot、Cline 或其他支持聊天的 AI 插件）</li>
-                                    <li>在聊天框中输入与思维模型相关的查询，如：
-                                        <ul>
-                                            <li>"天机"当前版本号是多少？</li>
-                                            <li>请列出所有与决策相关的思维模型</li>
-                                            <li>我正在分析一个复杂问题，需要一个系统思维的框架，有什么推荐？</li>
-                                        </ul>
-                                    </li>
-                                </ol>
-                                
-                                <h4 class="h6 mt-3">方法二：通过 Copilot MCP 命令面板使用</h4>
-                                <ol>
-                                    <li>按下 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> 打开命令面板</li>
-                                    <li>输入"Copilot MCP"查看可用命令</li>
-                                    <li>选择"Send Command to Server"向服务器发送命令</li>
-                                    <li>在输入框中输入您的查询</li>
-                                </ol>
-                                
-                                <div class="alert alert-info mt-3" role="alert">
-                                    <i class="bi bi-lightbulb-fill me-2"></i>
-                                    <strong>提示：</strong> 要充分利用"天机"的功能，请查阅<a href="../tools/index.html" class="alert-link">工具文档</a>，了解各类思维工具的使用方法和示例。
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="row mb-5">
-            <div class="col-lg-10 mx-auto">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h2 class="h3 mb-4">高级配置选项</h2>
-                        
-                        <h3 class="h5 mb-3">使用网络模式连接</h3>
-                        <p>如果您更喜欢使用网络连接模式而非标准输入/输出模式，可以按以下步骤配置：</p>
-                        <ol>
-                            <li>使用网络模式启动"天机"服务器：</li>
-                        </ol>
-                        <div class="bg-light p-3 rounded mb-3">
-                            <pre class="mb-0"><code># 设置环境变量并启动
-THINKING_MODELS_PORT=3456 thinking-models-server</code></pre>
-                        </div>
-                        <ol start="2">
-                            <li>在 Copilot MCP 中添加服务器时配置：</li>
-                        </ol>
-                        <div class="table-responsive mb-4">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>配置项</th>
-                                        <th>值</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>服务器类型</td>
-                                        <td>network</td>
-                                    </tr>
-                                    <tr>
-                                        <td>地址</td>
-                                        <td>localhost:3456</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <h3 class="h5 mb-3">自动启动服务器</h3>
-                        <p>您可以配置 VS Code 在启动时自动连接到"天机"服务器：</p>
-                        <ol>
-                            <li>打开 VS Code 设置（<kbd>Ctrl</kbd>+<kbd>,</kbd>）</li>
-                            <li>搜索"Copilot MCP"</li>
-                            <li>找到"Auto Connect Server"选项并启用</li>
-                            <li>设置"Default Server"为您的"Tianji MCP"配置</li>
-                        </ol>
-                        
-                        <h3 class="h5 mb-3">快捷键配置</h3>
-                        <p>为快速访问"天机"功能，可以设置自定义快捷键：</p>
-                        <ol>
-                            <li>打开 VS Code 键盘快捷键（<kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>Ctrl</kbd>+<kbd>S</kbd>）</li>
-                            <li>搜索"Copilot MCP"</li>
-                            <li>为常用命令（如"Send Command to Server"）设置快捷键</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="row mb-5">
-            <div class="col-lg-10 mx-auto">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h2 class="h3 mb-4">常见问题与排查</h2>
-                        
-                        <div class="accordion" id="vscodeFAQ">
-                            <div class="accordion-item border-0 mb-3 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        无法连接到"天机"服务器
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#vscodeFAQ">
-                                    <div class="accordion-body">
-                                        <p>可能的原因和解决方案：</p>
-                                        <ul>
-                                            <li><strong>服务器未启动</strong>：确保您已在单独的终端窗口中启动了"天机"服务器</li>
-                                            <li><strong>命令路径错误</strong>：确认服务器命令在您的系统环境变量中，或提供完整路径</li>
-                                            <li><strong>端口冲突</strong>：如使用网络模式，确保指定的端口未被占用</li>
-                                        </ul>
-                                        <p>尝试在终端中手动运行服务器命令，查看是否有错误提示。</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item border-0 mb-3 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        服务器连接成功但无法获取响应
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#vscodeFAQ">
-                                    <div class="accordion-body">
-                                        <p>可能的原因和解决方案：</p>
-                                        <ul>
-                                            <li><strong>服务器异常</strong>：检查服务器终端输出是否有错误信息</li>
-                                            <li><strong>命令格式</strong>：确保您的请求格式符合服务器要求</li>
-                                            <li><strong>超时</strong>：大型请求可能需要更长处理时间，请耐心等待</li>
-                                        </ul>
-                                        <p>尝试发送一个简单的请求，如<code>"天机"当前版本号是多少？</code>测试连接状态。</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item border-0 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Copilot MCP 扩展未显示"天机"服务器
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#vscodeFAQ">
-                                    <div class="accordion-body">
-                                        <p>可能的原因和解决方案：</p>
-                                        <ul>
-                                            <li><strong>配置未保存</strong>：确认您已正确添加并保存了服务器配置</li>
-                                            <li><strong>扩展版本</strong>：确保 Copilot MCP 扩展是最新版本</li>
-                                            <li><strong>VS Code 重启</strong>：有时候需要重启 VS Code 使配置生效</li>
-                                        </ul>
-                                        <p>尝试重新添加服务器配置，或卸载并重新安装 Copilot MCP 扩展。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="row">
-            <div class="col-lg-10 mx-auto">
-                <div class="alert alert-info d-flex" role="alert">
-                    <div class="flex-shrink-0">
-                        <i class="bi bi-info-circle-fill fs-4 me-3"></i>
-                    </div>
-                    <div>
-                        <h4 class="alert-heading">接下来的步骤</h4>
-                        <p>现在您已成功配置 VS Code 连接到"天机"，您可以：</p>                        <ul class="mb-0">
-                            <li>探索<a href="../tools/index.html" class="alert-link">工具文档</a>，了解各类思维工具的详细用法</li>
-                            <li>浏览<a href="../models/index.html" class="alert-link">思维模型库</a>，熟悉可用的思维框架</li>
-                            <li>如果需要配置其他客户端，可以参考<a href="cursor.html" class="alert-link">Cursor</a>、<a href="claude.html" class="alert-link">Claude</a>或<a href="others.html" class="alert-link">其他客户端</a>的配置指南</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="text-center my-5">
-            <div class="btn-group" role="group">
-                <a href="index.html" class="btn btn-outline-primary">
-                    <i class="bi bi-arrow-left me-2"></i>快速安装
-                </a>
-                <a href="cursor.html" class="btn btn-primary">
-                    Cursor配置<i class="bi bi-arrow-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <footer class="bg-dark text-light py-4 mt-5">
+    </div>
+    <footer class="tianji-footer py-4 mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h5>天机 - 思维模型 MCP 服务器</h5>
-                    <p>智能思考的工具箱：将系统性思维方法集成到您的问题解决流程中</p>
+                <div class="col-md-4">
+                    <h5>「天机」思维模型</h5>
+                    <p>思接千载，虑通万里：将系统性思维方法融入您的思考之境</p>
                 </div>
-                <div class="col-md-3">
-                    <h5>链接</h5>
+                <div class="col-md-2">
+                    <h5>相关链接</h5>
                     <ul class="list-unstyled">
                         <li><a href="https://github.com/lanyijianke/thinking_models_mcp" class="text-light">GitHub</a></li>
                         <li><a href="https://www.npmjs.com/package/@thinking-models/mcp-server" class="text-light">NPM</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <h5>资源</h5>                    <ul class="list-unstyled">
+                <div class="col-md-2">
+                    <h5>学习资源</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../tools/index.html" class="text-light">工具文档</a></li>
                         <li><a href="../changelog.html" class="text-light">更新日志</a></li>
-                        <li><a href="../faq.html" class="text-light">常见问题</a></li>
                     </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>联系方式</h5>                    
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="text-center">
+                                <img src="../img/wechat.png" alt="微信二维码" class="img-fluid mb-2" style="max-width: 120px;">
+                                <p class="small text-light mb-0 text-center">微信</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-center">
+                                <img src="../img/gongzhonghao.png" alt="公众号二维码" class="img-fluid mb-2" style="max-width: 120px;">
+                                <p class="small text-light mb-0 text-center">公众号</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col text-center">
-                    <p>© 2024 天机思维模型服务. 使用 MIT 许可证.</p>
+                    <p>© 壬辰至乙巳 (2024-2025) 天机思维模型 · 采用 MIT 许可</p>
                 </div>
             </div>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/main.js"></script>
 </body>
 </html>

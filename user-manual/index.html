@@ -27,9 +27,10 @@
     </style>
 </head>
 <body>
-    <header class="tianji-header">
+            <header class="tianji-header">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">                <a class="navbar-brand" href="index.html">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
                     <img src="img/tianji.png" alt="天机 Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
                     天机 · 思维模型
                 </a>
@@ -45,11 +46,12 @@
                                 安装指南
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="installation/index.html">快速安装</a></li>
-                                <li><a class="dropdown-item" href="installation/vscode.html">VS Code配置</a></li>
-                                <li><a class="dropdown-item" href="installation/cursor.html">Cursor配置</a></li>
-                                <li><a class="dropdown-item" href="installation/claude.html">Claude配置</a></li>
-                                <li><a class="dropdown-item" href="installation/others.html">其他客户端配置</a></li>
+  <li><a class="dropdown-item" href="../installation/index.html">快速安装</a></li>
+                                        <li><a class="dropdown-item" href="../installation/vscode.html">VS Code配置</a></li>
+                                        <li><a class="dropdown-item" href="../installation/cursor.html">Cursor配置</a></li>
+                                        <li><a class="dropdown-item" href="../installation/claude.html">Claude配置</a></li>
+                                        <li><a class="dropdown-item" href="../installation/trae.html">Trae配置</a></li>
+                                        <li><a class="dropdown-item" href="../installation/cherry-studio.html">Cherry Studio配置</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -68,9 +70,11 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 思维模型库
                             </a>
-                            <ul class="dropdown-menu">                            <li><a class="dropdown-item" href="models/index.html">模型概览</a></li>
-                            <li><a class="dropdown-item" href="models/categories.html">分类浏览</a></li>
-                        </ul>                        </li>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="models/index.html">模型概览</a></li>
+                                <li><a class="dropdown-item" href="models/categories.html">分类浏览</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="faq.html">常见问题</a></li>
                     </ul>
                     <form class="d-flex" role="search" action="search.html" method="get">
@@ -83,6 +87,14 @@
             </div>
         </nav>
     </header>
+    <script src="js/nav-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadNavMenu);
+    </script>
+    <script src="js/nav-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadNavMenu);
+    </script>
 
     <main class="container my-5 fade-in ink-landscape-bg">
         <!-- 欢迎部分 - 原首页内容 -->        <section class="row">            <div class="col-lg-10 mx-auto">                <div class="text-center mb-4">
@@ -100,14 +112,52 @@
                 
                 <div class="row mt-5">
                     <div class="col-lg-10 mx-auto">
-                        <h2 class="mb-4">核心功能</h2>
-                        <div class="card border-0 shadow-sm">
-                            <div class="card-body">
-                                <ul class="fs-5">
-                                    <li class="mb-3"><strong>丰富的思维模型库</strong>：包含决策理论、系统思考、概率思维等多个领域的经典思维模型</li>
-                                    <li class="mb-3"><strong>智能模型推荐</strong>：根据问题特征自动推荐最合适的思维模型</li>
-                                    <li class="mb-3"><strong>交互式推理过程</strong>：引导用户进行结构化思考，一步步深入分析问题</li>
-                                </ul>
+                        <h2 class="mb-4">为什么选择"天机"</h2>
+                        <hr>
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-braces-asterisk fs-2 text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>系统化思维框架</h4>
+                                        <p>每个模型都提供结构化的思考框架，帮助您突破认知局限，从多角度分析复杂问题</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-lightning-charge fs-2 text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>即时应用转换</h4>
+                                        <p>模型可直接通过MCP协议在各种思考场景中应用，无需记忆复杂的理论知识</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-diagram-3 fs-2 text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>多元模型组合</h4>
+                                        <p>支持多模型融合应用，将不同思维方法组合使用，产生创新解决方案</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-shield-check fs-2 text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4>专业质量保证</h4>
+                                        <p>每个模型都基于专业理论基础，经过反复验证和优化，确保实际应用效果</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -255,13 +305,13 @@
                         <div class="col-6">
                             <div class="text-center">
                                 <img src="img/wechat.png" alt="微信二维码" class="img-fluid mb-2" style="max-width: 120px;">
-                                <p class="small text-light mb-0">微信</p>
+                                <p class="small text-light mb-0 text-center">微信</p>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="text-center">
                                 <img src="img/gongzhonghao.png" alt="公众号二维码" class="img-fluid mb-2" style="max-width: 120px;">
-                                <p class="small text-light mb-0">公众号</p>
+                                <p class="small text-light mb-0 text-center">公众号</p>
                             </div>
                         </div>
                     </div>
