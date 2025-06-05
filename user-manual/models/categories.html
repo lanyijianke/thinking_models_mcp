@@ -476,10 +476,26 @@
     <script>
         // 模型详情加载逻辑
         document.addEventListener('DOMContentLoaded', function() {
+            // 为所有模型详情按钮添加点击事件，直接跳转到详情页
+            const detailButtons = document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#modelModal"]');
+            detailButtons.forEach(button => {
+                button.removeAttribute('data-bs-toggle');
+                button.removeAttribute('data-bs-target');
+                
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const modelId = this.getAttribute('data-modelid');
+                    window.location.href = `model-detail.html?id=${modelId}`;
+                });
+            });
+            
+            // 保留模态框逻辑，以便向下兼容
             const modelModal = document.getElementById('modelModal');
             if (modelModal) {
                 modelModal.addEventListener('show.bs.modal', function (event) {
                     const button = event.relatedTarget;
+                    if (!button) return; // 防止报错
+                    
                     const modelId = button.getAttribute('data-modelid');
                     const modalTitle = this.querySelector('.modal-title');
                     const modelDetails = document.getElementById('modelDetails');
